@@ -1,0 +1,236 @@
+# SALT STUDIO Strategy Brain
+
+## Agents Built
+
+| # | Agent | Skill | Command | Status |
+|---|-------|-------|---------|--------|
+| 1 | `client-discovery` | `brand-voice-extraction` | `/discover` | ✅ Complete |
+| 2 | `icp-analyst` | `icp-development` | `/icp` | ✅ Complete |
+| 3 | `ux-strategist` | `conversion-architecture` | `/strategy` | ✅ Complete |
+| 4 | `design-translator` | `design-brief-creation` | `/brief` | ✅ Complete |
+| 5 | `conversion-reviewer` | - | `/review` | 🔲 Pending |
+| 6 | `creative-director` | - | `/project` | 🔲 Pending |
+
+---
+
+## What's Included
+
+```
+claude-strategy-brain/
+├── agents/
+│   ├── client-discovery.md      # Extracts Client DNA + Brand Voice
+│   ├── icp-analyst.md           # Builds psychological customer profiles
+│   ├── ux-strategist.md         # Creates conversion-optimized site architecture
+│   └── design-translator.md     # Translates inspiration to design specs
+├── commands/
+│   ├── discover.md              # /discover - Client onboarding
+│   ├── icp.md                   # /icp - Customer profiling
+│   ├── strategy.md              # /strategy - Site architecture
+│   └── brief.md                 # /brief - Design direction
+└── skills/
+    ├── brand-voice-extraction/
+    │   ├── SKILL.md             # Voice extraction methodology
+    │   └── references/
+    │       ├── voice-examples.md
+    │       └── voice-edge-cases.md
+    ├── icp-development/
+    │   ├── SKILL.md             # ICP creation methodology
+    │   └── references/
+    │       ├── awareness-messaging-examples.md
+    │       ├── objection-counters.md
+    │       └── transformation-examples.md
+    ├── conversion-architecture/
+    │   ├── SKILL.md             # Site architecture methodology
+    │   └── references/
+    │       ├── sitemap-templates.md
+    │       ├── page-types-guide.md
+    │       └── flow-examples.md
+    └── design-brief-creation/
+        ├── SKILL.md             # Design brief methodology
+        └── references/
+            ├── typography-pairings.md
+            ├── color-palette-examples.md
+            └── component-patterns.md
+```
+
+---
+
+## Installation
+
+### Using pnpm (Recommended)
+```bash
+# Copy to your project's .claude directory
+cp -r agents/ /path/to/your-project/.claude/
+cp -r commands/ /path/to/your-project/.claude/
+cp -r skills/ /path/to/your-project/.claude/
+```
+
+### User-Level (Available in All Projects)
+```bash
+cp -r agents/ ~/.claude/
+cp -r commands/ ~/.claude/
+cp -r skills/ ~/.claude/
+```
+
+---
+
+## Usage Flow
+
+### Step 1: Client Discovery
+```
+/discover Process the intake form for [Client Name]
+```
+**Outputs:** Client DNA + Brand Voice Profile + Missing Info Manifest
+
+### Step 2: ICP Development
+```
+/icp Build profiles for [Client Name]
+```
+**Requires:** Client DNA from Step 1
+**Outputs:** ICP Profiles + User Journey Map + Research Gaps
+
+### Step 3: Site Strategy
+```
+/strategy Create site architecture for [Client Name]
+```
+**Requires:** Client DNA + ICP Profiles
+**Outputs:** Strategic Sitemap + Page Briefs + Content Requirements
+
+### Step 4: Design Brief
+```
+/brief Analyze references and create design direction for [Client Name]
+```
+**Requires:** Client DNA + Inspiration/References
+**Outputs:** Design Brief + Visual System + Component Specs
+
+### Future Steps (Coming Soon)
+```
+/wireframe → Page-level wireframe specs
+/copy → ICP-informed copy
+/review → Conversion audit
+```
+
+---
+
+## Anti-Hallucination Architecture
+
+Both agents are built with rigorous anti-hallucination safeguards:
+
+### Evidence Requirements
+- ✅ Every fact has a source citation
+- ✅ Every inference is labeled (STATED / INFERRED / HYPOTHESIS)
+- ✅ Confidence levels on all extracted data
+- ✅ Missing info becomes documented gaps, not guesses
+
+### Tool Restrictions
+| Agent | Tools | Rationale |
+|-------|-------|-----------|
+| client-discovery | Read, Grep, Glob, WebFetch | Read-only prevents fabrication |
+| icp-analyst | Read, Grep, Glob, WebSearch, WebFetch | Research access for market analysis |
+| ux-strategist | Read, Grep, Glob, Write | Creates architecture outputs |
+| design-translator | Read, Grep, Glob, WebFetch, Write | Analyzes references, creates specs |
+
+### Output Validation
+- Built-in verification checklists
+- Structured JSON schemas for downstream consistency
+- Gap manifests for transparency
+
+---
+
+## Data Flow
+
+```
+Intake Form / Questionnaire
+         │
+         ▼
+┌────────────────────┐
+│  /discover         │
+│  client-discovery  │
+│  agent             │
+└────────┬───────────┘
+         │
+         ├──► Client DNA (JSON)
+         ├──► Brand Voice Profile (JSON)
+         └──► Missing Info Manifest (JSON)
+                    │
+                    ▼
+         ┌────────────────────┐
+         │  /icp              │
+         │  icp-analyst       │
+         │  agent             │
+         └────────┬───────────┘
+                  │
+                  ├──► ICP Profiles (JSON)
+                  ├──► User Journey Map (JSON)
+                  └──► Research Gaps (JSON)
+                             │
+                             ▼
+                  ┌────────────────────┐
+                  │  /strategy         │
+                  │  ux-strategist     │
+                  │  agent             │
+                  └────────┬───────────┘
+                           │
+                           ├──► Strategic Sitemap (JSON)
+                           ├──► Page Briefs (JSON)
+                           └──► Content Requirements (JSON)
+                                      │
+                                      ▼
+                           ┌────────────────────┐
+                           │  /brief            │
+                           │  design-translator │
+                           │  agent             │
+                           └────────┬───────────┘
+                                    │
+                                    ├──► Design Brief (JSON)
+                                    ├──► Visual System (JSON)
+                                    └──► Component Specs (JSON)
+                                               │
+                                               ▼
+                                    [Next: /wireframe, /copy, /review]
+```
+
+---
+
+## Key Frameworks Included
+
+### Brand Voice Extraction
+- 6 Voice Dimensions (Formality, Enthusiasm, Humor, Directness, Technical Complexity, Warmth)
+- Evidence-backed scoring (1-10 with quotes)
+- Do's and Don'ts with examples
+
+### ICP Development
+- Schwartz's 5 Levels of Awareness
+- Pain Point Archaeology (Surface → Root → Emotional → Identity)
+- Desire Mapping (Functional → Emotional → Identity)
+- Objection Taxonomy with counter-arguments
+- Transformation Narrative (Before/After)
+
+### Conversion Architecture
+- Page Purpose Hierarchy (Conversion → Persuasion → Education → Utility)
+- Awareness-Based Entry Strategy
+- One-Job Rule for pages
+- User Flow Design methodology
+- Navigation Architecture principles
+
+### Design Brief Creation
+- 6-Layer Inspiration Analysis (Typography → Color → Layout → Imagery → Details → Feeling)
+- Voice-to-Visual Translation frameworks
+- Typography System design (scales, pairings, rules)
+- Color System design (palettes, accessibility, psychology)
+- Spacing System design (8px grid, component/section spacing)
+- Component specification templates
+
+---
+
+## What's Next?
+
+**Agent #5: Conversion Reviewer** - Audits outputs against conversion best practices
+- Takes: All previous outputs (sitemap, page briefs, design specs)
+- Produces: Audit Report + Prioritized Recommendations
+
+**Agent #6: Creative Director** - Orchestrates the full workflow
+- Takes: Project brief or client request
+- Produces: Coordinates all agents, manages handoffs
+
+Ready to build?
