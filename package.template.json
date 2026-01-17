@@ -1,0 +1,47 @@
+{
+    "name": "{{PROJECT_CODENAME}}-webflow",
+    "version": "1.0.0",
+    "description": "{{CLIENT_NAME}} website - React prototyping workflow for Webflow deployment",
+    "private": true,
+    "packageManager": "pnpm@9.1.0",
+    "author": "SALT STUDIO",
+    "engines": {
+      "node": ">=20.0.0",
+      "pnpm": ">=9.0.0"
+    },
+    "keywords": [
+      "webflow",
+      "react",
+      "gsap",
+      "prototyping",
+      "{{INDUSTRY}}"
+    ],
+    "scripts": {
+      "setup": "pnpm install && cd prototype && pnpm install",
+      "dev": "cd prototype && pnpm dev",
+      "build": "cd prototype && pnpm build",
+      "preview": "cd prototype && pnpm preview",
+      "lint": "pnpm lint:root && cd prototype && pnpm lint",
+      "lint:root": "eslint . --ext js,jsx,md",
+      "lint:fix": "pnpm lint:root --fix && cd prototype && pnpm lint --fix",
+      "format": "prettier --write \"**/*.{js,jsx,json,md,css}\" && cd prototype && pnpm format",
+      "format:check": "prettier --check \"**/*.{js,jsx,json,md,css}\"",
+      "validate-webflow": "./scripts/validate-webflow-connection.sh",
+      "clean": "rm -rf node_modules prototype/node_modules .turbo",
+      "clean:cache": "pnpm store prune"
+    },
+    "devDependencies": {
+      "@types/node": "^20.12.7",
+      "eslint": "^8.57.0",
+      "eslint-config-prettier": "^9.1.0",
+      "prettier": "^3.2.5"
+    },
+    "prettier": {
+      "semi": true,
+      "singleQuote": true,
+      "tabWidth": 2,
+      "trailingComma": "es5",
+      "printWidth": 100,
+      "arrowParens": "avoid"
+    }
+  }
