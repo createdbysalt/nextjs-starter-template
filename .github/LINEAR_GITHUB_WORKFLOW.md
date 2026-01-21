@@ -132,8 +132,8 @@ Use Conventional Commits:
 
 ## PR Definition of Done (Standard Gates)
 Before merging, every PR must:
-- [ ] TypeScript typecheck passes (`npm run build`)
-- [ ] Lint passes (`npm run lint`)
+- [ ] TypeScript typecheck passes (`pnpm run build`)
+- [ ] Lint passes (`pnpm run lint`)
 - [ ] All tests pass (when tests exist)
 - [ ] PR description explains what/why/how
 - [ ] Security checklist completed

@@ -66,16 +66,32 @@ Consolidate all gaps into a single manifest:
 
 ### Step 5: Generate Outputs
 
-Create three files in the outputs directory:
+Create four files in the outputs directory:
 
 ```
-/mnt/user-data/outputs/
+/mnt/user-data/outputs/1_discovery/
 ├── {client_name}_client_dna.json
 ├── {client_name}_voice_profile.json
-└── {client_name}_missing_info.json
+├── {client_name}_missing_info.json
+└── message-draft.md
 ```
 
-### Step 6: Present Summary
+### Step 6: Generate Client Message Draft
+
+**ALWAYS** create a `message-draft.md` file that can be sent to the client. This message should:
+
+1. **Confirm key decisions** made during discovery (voice, positioning, etc.)
+2. **List items needed from client** with clear priority levels
+3. **Include testimonial request template** if testimonials are needed
+4. **Set expectations** for next steps
+
+The message should be:
+- Ready to copy/paste and send
+- Professional but friendly tone
+- Organized with clear sections
+- Include specific asks with context on why they matter
+
+### Step 7: Present Summary
 
 Provide a concise summary including:
 - Key findings (3-5 bullets)
@@ -104,6 +120,13 @@ Provide a concise summary including:
 - [ ] Prioritized gaps (critical → low)
 - [ ] Specific questions to ask client
 - [ ] Impact of each gap on downstream work
+
+### Client Message Draft Must Include:
+- [ ] Confirmation of key decisions (ready for client to approve/correct)
+- [ ] Clear list of items needed with priority levels
+- [ ] Testimonial request template (if testimonials needed)
+- [ ] Next steps and timeline expectations
+- [ ] Professional, ready-to-send formatting
 
 ---
 
@@ -186,6 +209,7 @@ Always save outputs to `/mnt/user-data/outputs/` for downstream access.
 - `greenleaf_organics_client_dna.json`
 - `greenleaf_organics_voice_profile.json` (placeholder - needs samples)
 - `greenleaf_organics_missing_info.json`
+- `message-draft.md` (ready to send to client)
 
 ### Recommended Next Steps
 1. Request 3-5 writing samples (emails, social posts, product descriptions)

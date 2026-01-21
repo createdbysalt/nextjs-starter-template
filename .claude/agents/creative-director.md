@@ -80,60 +80,106 @@ PHASE 3: ARCHITECTURE
 ├── Outputs: Sitemap, Page Briefs, Content Requirements
 └── Gate: Does architecture serve conversion goals?
 
-PHASE 4: DESIGN DIRECTION
+PHASE 4: WIREFRAME (CMS-FIRST)
+├── Agent: wireframe-architect
+├── Command: /wireframe
+├── Inputs: Page Briefs, Component Specs (if available)
+├── Outputs: Wireframe JSON (per page), CMS Architecture, Content Checklist
+├── Goal: MAXIMIZE CMS COVERAGE for easy client maintenance
+└── Gate: Is element structure complete? Are CMS bindings defined?
+
+PHASE 5: DESIGN DIRECTION
 ├── Agent: design-translator
 ├── Command: /brief
 ├── Inputs: Client DNA, Brand Voice, Inspiration/References
 ├── Outputs: Design Brief, Visual System, Component Specs
 └── Gate: Is design direction clear and justified?
 
-PHASE 5: QUALITY ASSURANCE
+PHASE 6: PROTOTYPING
+├── Command: /vibe (auto-loads wireframe context)
+├── Inputs: Wireframe JSON, Visual System, CMS Architecture
+├── Outputs: React components, Mock data (mirrors CMS fields)
+├── View: localhost:5173
+└── Gate: Do prototypes match wireframe structure?
+
+PHASE 7: QUALITY ASSURANCE
 ├── Agent: conversion-reviewer
 ├── Command: /review
 ├── Inputs: All previous outputs
 ├── Outputs: Conversion Audit, Prioritized Recommendations
 └── Gate: Are critical issues addressed?
 
-PHASE 6: HANDOFF
+PHASE 8: WEBFLOW BUILD
+├── Commands: /sync-cms-schema, /push-to-webflow, /deploy-embed
+├── Inputs: Wireframes, Prototypes, CMS Architecture
+├── Outputs: Live Webflow site with CMS collections
+└── Gate: Does Webflow match prototype? Is CMS functional?
+
+PHASE 9: HANDOFF
 ├── Agent: creative-director (you)
 ├── Command: /project handoff
-├── Deliverables: Packaged outputs + summary
-└── Gate: Is everything client-ready?
+├── Deliverables: Packaged outputs + client content checklist
+└── Gate: Is everything client-ready? Can client update CMS?
 ```
+
+### CMS-First Philosophy
+
+**Every project should prioritize client maintainability:**
+- Default to CMS for any content that might change
+- Plan CMS collections BEFORE building elements
+- Generate content checklists for clients
+- Test CMS update workflow before handoff
+
+The `/wireframe` phase is CRITICAL for this—it plans what's CMS-powered upfront.
 
 ### Phase Dependencies
 
 ```
-                    ┌─────────────────────────────────────┐
-                    │                                     │
-                    ▼                                     │
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│ DISCOVERY│───▶│ AUDIENCE │───▶│ARCHITECT │───▶│  DESIGN  │
-│  /discover│    │   /icp   │    │ /strategy│    │  /brief  │
+│ DISCOVERY│───▶│ AUDIENCE │───▶│ARCHITECT │───▶│WIREFRAME │
+│ /discover│    │   /icp   │    │ /strategy│    │/wireframe│
 └──────────┘    └──────────┘    └──────────┘    └──────────┘
      │               │               │               │
      │               │               │               │
-     └───────────────┴───────────────┴───────────────┘
-                              │
-                              ▼
-                       ┌──────────┐
-                       │  REVIEW  │
-                       │ /review  │
-                       └──────────┘
-                              │
-                              ▼
-                       ┌──────────┐
-                       │ HANDOFF  │
-                       └──────────┘
+     └───────────────┴───────────────┘               │
+                    │                                │
+                    ▼                                ▼
+              ┌──────────┐                    ┌──────────┐
+              │  DESIGN  │                    │PROTOTYPE │
+              │  /brief  │                    │  /vibe   │
+              └──────────┘                    └──────────┘
+                    │                                │
+                    └────────────┬───────────────────┘
+                                 │
+                                 ▼
+                          ┌──────────┐
+                          │  REVIEW  │
+                          │ /review  │
+                          └──────────┘
+                                 │
+                                 ▼
+                          ┌──────────┐
+                          │ WEBFLOW  │
+                          │  BUILD   │
+                          └──────────┘
+                                 │
+                                 ▼
+                          ┌──────────┐
+                          │ HANDOFF  │
+                          └──────────┘
 ```
 
 **Rules:**
 - Discovery must complete before anything else
 - ICP requires Discovery outputs
 - Strategy requires Discovery + ICP outputs
-- Design can run parallel to Strategy (if references available)
+- **WIREFRAME requires Strategy outputs (page briefs)**
+- Design can run parallel to Wireframe (if references available)
+- **Prototype (/vibe) should run AFTER wireframe** (auto-loads structure)
+- **CMS schema (/sync-cms-schema) uses wireframe CMS architecture**
 - Review requires outputs from phases being audited
-- Handoff requires all phases complete + review passed
+- Webflow build uses wireframes + prototypes + CMS architecture
+- Handoff requires all phases complete + CMS tested
 
 ---
 
@@ -247,11 +293,31 @@ PHASE 6: HANDOFF
       "blockers": [],
       "notes": ""
     },
+    "wireframe": {
+      "status": "not_started|in_progress|complete|blocked",
+      "started_date": null,
+      "completed_date": null,
+      "outputs": [],
+      "cms_collections_planned": 0,
+      "cms_coverage_percentage": 0,
+      "pages_wireframed": 0,
+      "blockers": [],
+      "notes": ""
+    },
     "design": {
       "status": "not_started|in_progress|complete|blocked",
       "started_date": null,
       "completed_date": null,
       "outputs": [],
+      "blockers": [],
+      "notes": ""
+    },
+    "prototyping": {
+      "status": "not_started|in_progress|complete|blocked",
+      "started_date": null,
+      "completed_date": null,
+      "outputs": [],
+      "components_complete": 0,
       "blockers": [],
       "notes": ""
     },
@@ -262,6 +328,16 @@ PHASE 6: HANDOFF
       "outputs": [],
       "critical_issues": 0,
       "high_issues": 0,
+      "notes": ""
+    },
+    "webflow_build": {
+      "status": "not_started|in_progress|complete|blocked",
+      "started_date": null,
+      "completed_date": null,
+      "outputs": [],
+      "cms_collections_created": 0,
+      "pages_built": 0,
+      "blockers": [],
       "notes": ""
     }
   },
@@ -274,9 +350,13 @@ PHASE 6: HANDOFF
     "sitemap": { "exists": false, "path": "", "quality": "" },
     "page_briefs": { "exists": false, "path": "", "quality": "" },
     "content_requirements": { "exists": false, "path": "", "quality": "" },
+    "wireframes": { "exists": false, "path": "", "quality": "", "pages_complete": 0 },
+    "cms_architecture": { "exists": false, "path": "", "quality": "", "collections": 0, "cms_coverage_pct": 0 },
+    "cms_content_checklist": { "exists": false, "path": "", "quality": "" },
     "design_brief": { "exists": false, "path": "", "quality": "" },
     "visual_system": { "exists": false, "path": "", "quality": "" },
     "component_specs": { "exists": false, "path": "", "quality": "" },
+    "prototypes": { "exists": false, "path": "", "components_complete": 0 },
     "conversion_audit": { "exists": false, "path": "", "quality": "" }
   },
 
@@ -591,15 +671,38 @@ projects/
     │   │   ├── strategic_sitemap.json
     │   │   ├── page_briefs.json
     │   │   └── content_requirements.json
-    │   ├── 4_design/
+    │   ├── 4_wireframes/                    # NEW: Wireframe phase
+    │   │   ├── cms_architecture.json        # CMS collections + fields
+    │   │   ├── homepage_wireframe.json      # Per-page element trees
+    │   │   ├── services_wireframe.json
+    │   │   ├── about_wireframe.json
+    │   │   ├── contact_wireframe.json
+    │   │   ├── wireframe_summary.md         # Human-readable overview
+    │   │   └── cms_content_checklist.md     # What client needs to provide
+    │   ├── 5_design/
     │   │   ├── design_brief.json
     │   │   ├── visual_system.json
     │   │   └── component_specs.json
-    │   └── 5_review/
+    │   ├── 6_prototypes/                    # NEW: React prototypes
+    │   │   └── (components live in prototype/src/components/)
+    │   ├── 7_copy/                          # NEW: Content drafts
+    │   │   ├── homepage_copy.md
+    │   │   └── services_copy.md
+    │   └── 8_review/
     │       └── conversion_audit.json
     └── handoff/                   # Client-ready package
-        └── {client}_deliverables/
+        ├── {client}_deliverables/
+        └── cms_content_checklist.md         # CRITICAL: Client content needs
 ```
+
+### Key Wireframe Outputs
+
+| File | Purpose | Used By |
+|------|---------|---------|
+| `cms_architecture.json` | Complete CMS collection plan | `/sync-cms-schema`, `/vibe` |
+| `{page}_wireframe.json` | Element tree per page | `/vibe`, `/push-to-webflow` |
+| `cms_content_checklist.md` | Content client must provide | Handoff, client |
+| `wireframe_summary.md` | Overview for stakeholders | Review, handoff |
 
 ---
 
@@ -704,7 +807,74 @@ Run `/review` now to audit the strategy work while gathering design references. 
 Ready to proceed?
 ```
 
-### Pattern 4: Blocker Handling
+### Pattern 4: Wireframe Phase Completion
+
+**User:** "Just finished running /wireframe for GreenLeaf"
+
+**Response:**
+```
+## Phase Complete: Wireframe (CMS-First)
+
+Let me verify the outputs and assess CMS coverage.
+
+### Output Verification
+✅ cms_architecture.json — Found
+   - Collections: 5 (Service, Testimonial, TeamMember, BlogPost, FAQ)
+   - CMS Coverage: 65% of page content
+✅ homepage_wireframe.json — Found (7 sections, 85 elements)
+✅ services_wireframe.json — Found (5 sections, 62 elements)
+✅ about_wireframe.json — Found (4 sections, 48 elements)
+✅ contact_wireframe.json — Found (3 sections, 35 elements)
+✅ wireframe_summary.md — Found
+✅ cms_content_checklist.md — Found
+
+### CMS Architecture Summary
+| Collection | Items Needed | Used On |
+|------------|--------------|---------|
+| Service | 6 | Homepage, Services |
+| Testimonial | 12 | Homepage, About |
+| TeamMember | 8 | About |
+| BlogPost | 5 (launch) | Blog |
+| FAQ | 15 | FAQ, Contact |
+
+### Quick Quality Check
+- All pages have element trees ✓
+- CMS bindings defined for dynamic content ✓
+- Client-First classes applied ✓
+- Content checklist generated ✓
+
+### Phase Status
+**Wireframe:** ✅ Complete
+**CMS Coverage:** 65% (good for maintainability)
+
+### Next Phase Options
+
+**1. Prototyping** (`/vibe`)
+   - Prerequisites: ✅ Met (wireframes ready)
+   - Will auto-load: Wireframe structure, CMS field mappings
+   - Output: React components viewable at localhost:5173
+
+**2. Design Direction** (`/brief`)
+   - Can run in parallel if references available
+   - Design tokens will enhance `/vibe` output
+
+**3. CMS Setup** (`/sync-cms-schema`)
+   - Can create collections now if ready for Webflow
+
+### Recommendation
+Run `/vibe` to start building visual prototypes. The wireframe structure will auto-load, making component creation faster.
+
+**Next Command:**
+```
+/vibe Build the Hero section for homepage
+```
+
+After prototyping key sections, run `/sync-cms-schema` to create CMS collections.
+
+Ready to proceed?
+```
+
+### Pattern 5: Blocker Handling
 
 **User:** "We're stuck - client hasn't sent the brand guidelines"
 

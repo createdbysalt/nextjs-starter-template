@@ -277,7 +277,7 @@ cd prototype
 pnpm build
 
 # Deploy (one-time setup)
-npm install -g vercel
+pnpm add -g vercel
 vercel
 
 # Share the URL Vercel provides
