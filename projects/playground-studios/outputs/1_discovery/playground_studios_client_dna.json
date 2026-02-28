@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "last_updated": "2026-01-17",
+    "version": "1.0",
+    "confidence_level": "HIGH",
+    "sources_analyzed": [
+      "Creative Project Kickoff.csv",
+      "Discovery Call - 2025_10_23",
+      "Playground Checkin - 2026_01_08",
+      "design-inspiration.md",
+      "Playground Studios Website Copy.md",
+      "Logo Concepts PDF (3)"
+    ]
+  },
+
+  "business_identity": {
+    "legal_name": "Playground Studios",
+    "operating_name": "Playground Studios",
+    "domain": "www.ontheplayground.studio",
+    "webflow_site_id": "696b6d3dce81a99f2c8ae15f",
+    "industry": "Creative Production Services / Photography & Videography",
+    "business_model": "B2B Creative Services Agency",
+    "current_stage": "Solo freelancer transitioning to agency model",
+    "founded": "2025",
+    "location": {
+      "primary": "Louisville, Kentucky",
+      "secondary": "Portland, Oregon (active client market)",
+      "positioning_strategy": "Dual presence - Portland & Kentucky markets, but do NOT highlight the move from Portland",
+      "marketing_approach": "Position as available in both markets without emphasizing relocation"
+    },
+    "team_size": "Solo operation with network of collaborators",
+    "confidence": "STATED"
+  },
+
+  "founder": {
+    "name": "Barrett Shutt",
+    "role": "Founder / Creative Director / Photographer",
+    "email": "barrett@ontheplayground.studio",
+    "background": "7+ years as professional photographer/creative director, transitioned from finance career",
+    "social": {
+      "instagram_personal": "@barrett.shutt",
+      "instagram_studio": "@ontheplayground.studio"
+    },
+    "personality_notes": "Self-described as 'least organized creative', collaborative, open to expertise, authentic communicator"
+  },
+
+  "origin_story": {
+    "narrative": "The idea for Playground Studios was born during a walk through a Portland neighborhood. Watching kids play on a playground sparked a memory of those carefree days when anything seemed possible, when imagination had no limits, and when dreams were the only currency that mattered. The playground represents where we dreamed, created, and imagined—a space for boundless creativity that Playground Studios channels into professional content creation.",
+    "tagline_concept": "Play, Innovate, Create",
+    "process_philosophy": {
+      "step_1": {
+        "name": "Play on Set",
+        "meaning": "Blue sky imagination. No limits. No budget. Dream. This is where ideas are born."
+      },
+      "step_2": {
+        "name": "Get in the Box",
+        "meaning": "Take the ideas and bring them into frame. Create within the borders. Leverage limitations to fuel focus."
+      },
+      "step_3": {
+        "name": "Go Home",
+        "meaning": "Leave with a product you are proud of. Deliver work that exceeds expectations."
+      }
+    },
+    "source": "Creative Project Kickoff.csv, Discovery Call",
+    "confidence": "STATED"
+  },
+
+  "services": {
+    "primary": [
+      {
+        "name": "Brand/Lifestyle Photography",
+        "description": "Commercial photography for brands and lifestyle campaigns",
+        "priority": "PRIMARY - Most desired work type"
+      },
+      {
+        "name": "Studio Photography",
+        "description": "Product and controlled environment photography",
+        "priority": "PRIMARY"
+      },
+      {
+        "name": "Videography & Video Production",
+        "description": "Branded content, commercials, social media video",
+        "priority": "PRIMARY (limited portfolio at launch due to legal constraints)"
+      }
+    ],
+    "secondary": [
+      {
+        "name": "Hospitality Photography",
+        "description": "Hotels, restaurants, food & beverage",
+        "priority": "SECONDARY"
+      },
+      {
+        "name": "Creative Development",
+        "description": "Concept development, story building, brand positioning, mood boards",
+        "priority": "SECONDARY"
+      }
+    ],
+    "full_service_offering": [
+      "Creative Development (concept, story, positioning, mood boards)",
+      "Production (commercials, branded content, UGC/social, film, aerial, studio, photography)",
+      "Post-Production (editing, VFX, color grading, SFX, sound mixing, retouching)"
+    ],
+    "confidence": "STATED"
+  },
+
+  "positioning": {
+    "value_proposition": "We cater every project with honesty, efficiency and purpose. Making Content is secondary, finding purpose is primary.",
+    "differentiators": [
+      {
+        "claim": "Seamless communication and tight deadlines",
+        "evidence": "Contrasts with 'big agencies' with many hurdles",
+        "confidence": "STATED"
+      },
+      {
+        "claim": "Work within any budget",
+        "evidence": "Flexible pricing vs rigid agency structures",
+        "confidence": "STATED",
+        "note": "Needs sharpening with specific ranges"
+      },
+      {
+        "claim": "Nimble operations - no hurdles to jump over",
+        "evidence": "Solo/small team enables faster decisions, direct client access",
+        "confidence": "STATED"
+      },
+      {
+        "claim": "Idea-to-reality execution",
+        "evidence": "End goal is taking ideas and bringing them to reality",
+        "confidence": "STATED"
+      }
+    ],
+    "market_position": {
+      "current": "Freelancer transitioning to boutique production studio",
+      "target": "Recognized small production company working with major brands",
+      "tier": "Mid-market (between solo freelancers and large agencies)"
+    },
+    "pricing": {
+      "minimum_project": "$5,000",
+      "sweet_spot": "$8,000 - $15,000",
+      "premium_range": "$15,000 - $25,000+",
+      "positioning": "Quality mid-market - premium results without enterprise agency pricing",
+      "confidence": "STATED"
+    },
+    "competitive_set": {
+      "direct_competitors": [
+        {
+          "name": "Rabithaus",
+          "url": "https://www.rabithaus.com",
+          "relationship": "Competitive peer, high creative output",
+          "note": "Founder knows personally, sometimes feels competitive pressure"
+        }
+      ],
+      "aspirational_references": [
+        {
+          "name": "Photon",
+          "relationship": "High-end production reference, acknowledged scale difference"
+        }
+      ],
+      "negative_references": [
+        "Large agencies (bureaucracy, inflexibility, too many hurdles)"
+      ]
+    },
+    "confidence": "STATED"
+  },
+
+  "brand_identity": {
+    "personality": {
+      "is": ["Creative", "Bold", "Authentic"],
+      "is_not": ["Overpriced", "Late", "Poor communication", "Cheesy"],
+      "desired_reaction": "Inspired, creative, and think 'wow this company is super sick'",
+      "source": "Creative Project Kickoff.csv",
+      "confidence": "STATED"
+    },
+    "personality_spectrum": {
+      "serious_playful": { "position": "Playful", "note": "But visual execution should be 'mature playful'" },
+      "modern_traditional": { "position": "Modern" },
+      "conventional_unconventional": { "position": "Unconventional" },
+      "accessible_premium": { "position": "Accessible" },
+      "simple_elaborate_typography": { "position": "Elaborate" },
+      "minimalist_maximalist": { "position": "Minimalist" }
+    },
+    "visual_direction": {
+      "color_palette": {
+        "primary": "#08090A (Black)",
+        "charcoal": "#2B2B2B",
+        "grey": "#7A7A7A",
+        "off_white": "#F4F4F2",
+        "approach": "Clean, neutral palette with white background and black typography"
+      },
+      "typography_preference": "Straightforward, mature fonts. Preference for bold typography but not overly playful",
+      "design_style": "Linear, straight edges preferred over rounded/curved. Clean, minimal design.",
+      "logo_status": "In development - 3 concepts explored, none finalized. Direction: less playful, more abstract, more mature"
+    },
+    "brand_references": {
+      "fashion_lifestyle": ["ALD (Aimé Leon Dore)", "Kith"],
+      "design_inspiration": [
+        { "name": "DVTK", "url": "https://dvtk.us/", "what_to_borrow": "Bold directional branding, clean typography" },
+        { "name": "Larra Studio", "url": "https://larra.studio/", "what_to_borrow": "Creative agency approach, portfolio presentation" },
+        { "name": "Gym Class", "url": "https://www.thisisgymclass.com/", "what_to_borrow": "Production company energy, dynamic content, bold typography" },
+        { "name": "Bandit Running", "url": "https://banditrunning.com/", "what_to_borrow": "Straightforward font with subtly curved icon, brand storytelling" },
+        { "name": "Tristan Bagot", "url": "https://www.tristanbagot.com/", "what_to_borrow": "Designer style and approach" },
+        { "name": "Studio Augmenta", "url": "https://studioaugmenta.com/", "what_to_borrow": "Creative studio approach" }
+      ]
+    },
+    "confidence": "STATED"
+  },
+
+  "target_audience": {
+    "summary": "Brands and hospitality businesses looking to elevate their digital presence with content that converts. They care about branding, increasing client rapport, and boosting sales.",
+    "primary_industries": [
+      "Hospitality (hotels, restaurants)",
+      "Creative/Lifestyle Brands"
+    ],
+    "decision_makers": [
+      "Hotel General Managers",
+      "Agencies (creative/marketing agencies hiring for client work)"
+    ],
+    "pain_points": [
+      "Bad content / low-quality creative",
+      "Not knowing how to take an idea and make it a reality",
+      "Agency bureaucracy and slow timelines",
+      "Budget constraints with large agencies"
+    ],
+    "desires": [
+      "Content that converts to sales",
+      "Elevated digital presence",
+      "Increased client rapport",
+      "Boosted sales"
+    ],
+    "how_they_find_playground": [
+      "Cold outreach by founder",
+      "Word of mouth",
+      "Social media"
+    ],
+    "demographics": {
+      "industries": ["Hospitality", "Creative/Lifestyle Brands"],
+      "decision_makers": ["Hotel GMs", "Agency Producers/Managers"],
+      "company_size": "Mid-market to enterprise brands",
+      "confidence": "STATED"
+    },
+    "proof_clients": [
+      "Celsius",
+      "Brumate",
+      "Bulletproof",
+      "Samsung",
+      "Kendra Scott",
+      "MVMT",
+      "Liquid IV",
+      "Michelob Ultra"
+    ],
+    "confidence": "PARTIAL - summary stated, details missing"
+  },
+
+  "project_goals": {
+    "website_goals": [
+      {
+        "goal": "Secure larger clients",
+        "priority": "PRIMARY",
+        "source": "Creative Project Kickoff.csv"
+      },
+      {
+        "goal": "Create centralized brand platform that attracts and builds clients",
+        "priority": "PRIMARY",
+        "source": "Checkin Call"
+      },
+      {
+        "goal": "Professional identity beyond personal name",
+        "priority": "PRIMARY",
+        "source": "Discovery Call"
+      },
+      {
+        "goal": "Unified pitch tool for outreach",
+        "priority": "PRIMARY",
+        "source": "Checkin Call"
+      },
+      {
+        "goal": "Showcase capabilities and portfolio",
+        "priority": "SECONDARY",
+        "source": "Discovery Call"
+      }
+    ],
+    "business_goals_5_year": [
+      "Build company with retaining clients and team",
+      "Shoot for major brands (Sazerac, Malbon Golf, 7 Eleven Golf)",
+      "Expand into clothing, branding studio, design",
+      "Create life of freedom and flexibility"
+    ],
+    "success_metrics": {
+      "stated": "More work and better opportunities",
+      "gap_flag": "HIGH PRIORITY - No quantifiable metrics defined"
+    },
+    "confidence": "STATED for goals, MISSING for metrics"
+  },
+
+  "project_constraints": {
+    "timeline": {
+      "original_target": "Early 2026",
+      "current_target": "End of January 2026",
+      "status": "On track per developer"
+    },
+    "budget": {
+      "context": "Previous quotes $2K-$15K, $15K beyond budget",
+      "tier": "Small to mid-sized business budget"
+    },
+    "content_limitations": [
+      "Video portfolio limited due to legal usage rights from pre-Playground work",
+      "Website will be photo-heavy initially",
+      "Updated headshot needed"
+    ],
+    "operational": [
+      "Wants to self-manage routine updates post-launch",
+      "Geographic transition (Portland to Kentucky) needs strategy",
+      "File organization in progress (compressing images for web)"
+    ],
+    "confidence": "STATED"
+  },
+
+  "contradictions_flagged": [
+    {
+      "topic": "Playful vs Professional Balance",
+      "conflict": "Brand personality marked 'Playful' but logo feedback requests 'less playful, more mature'",
+      "resolution": "RESOLVED - Subtle playfulness throughout (Option B)",
+      "status": "RESOLVED"
+    },
+    {
+      "topic": "Geographic Positioning",
+      "conflict": "Relocated to Kentucky but maintains Portland clients",
+      "resolution": "RESOLVED - Dual presence (Portland + Kentucky), do NOT highlight the move",
+      "status": "RESOLVED"
+    },
+    {
+      "topic": "Agency vs Solo Voice",
+      "conflict": "Copy uses 'We' throughout but currently solo operation",
+      "resolution": "RESOLVED - Use 'We' (agency voice) throughout",
+      "status": "RESOLVED"
+    }
+  ]
+}

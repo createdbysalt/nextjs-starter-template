@@ -1,0 +1,367 @@
+/**
+ * LINEAR LIGHT MODE - TAILWIND TOKENS
+ * Extracted from: https://linear.app
+ * Generated: 2026-01-31
+ * Theme: Light Mode (data-theme="light")
+ *
+ * Usage: Import in your globals.css
+ * @import './tailwind-tokens.css';
+ *
+ * Note: These tokens are extracted by setting data-theme="light" on the Linear homepage.
+ * Linear's marketing site uses a theming system that supports both light and dark modes.
+ */
+
+@layer base {
+  :root {
+    /* ==========================================================================
+       LIGHT MODE COLOR PALETTE
+       ========================================================================== */
+
+    /* Background Colors - Light Mode */
+    --linear-bg-primary: #ffffff;
+    --linear-bg-secondary: #f9f8f9;
+    --linear-bg-tertiary: #f4f2f4;
+    --linear-bg-quaternary: #eeedef;
+    --linear-bg-quinary: #e9e8ea;
+    --linear-bg-muted: #f4f4f4;
+    --linear-bg-tint: #f4f4f5;
+
+    /* Background Levels - Elevation System */
+    --linear-bg-level-0: #ffffff;
+    --linear-bg-level-1: #f8f8f8;
+    --linear-bg-level-2: #f4f4f4;
+    --linear-bg-level-3: #f0f0f0;
+
+    /* Translucent Backgrounds */
+    --linear-bg-translucent: rgba(0, 0, 0, 0.02);
+    --linear-header-bg: rgba(255, 255, 255, 0.8);
+    --linear-overlay: rgba(255, 255, 255, 0.65);
+
+    /* Text Colors - Light Mode */
+    --linear-text-primary: rgb(40, 42, 48);
+    --linear-text-secondary: rgb(60, 65, 73);
+    --linear-text-tertiary: rgb(111, 110, 119);
+    --linear-text-quaternary: rgb(134, 132, 141);
+    --linear-text-muted: rgba(0, 0, 0, 0.8);
+    --linear-text-inverse: #ffffff;
+
+    /* Hex equivalents for Tailwind theme */
+    --linear-text-primary-hex: #282a30;
+    --linear-text-secondary-hex: #3c4149;
+    --linear-text-tertiary-hex: #6f6e77;
+    --linear-text-quaternary-hex: #86848d;
+
+    /* Border Colors - Light Mode */
+    --linear-border-primary: #e9e8ea;
+    --linear-border-secondary: #e4e2e4;
+    --linear-border-tertiary: #dcdbdd;
+    --linear-border-subtle: rgba(0, 0, 0, 0.05);
+    --linear-border-medium: rgba(0, 0, 0, 0.08);
+    --linear-border-strong: rgba(0, 0, 0, 0.16);
+
+    /* Line Colors (Separators) */
+    --linear-line-primary: #d4d4d6;
+    --linear-line-secondary: #eaeaeb;
+    --linear-line-tertiary: #f0f0f0;
+    --linear-line-quaternary: #f4f4f4;
+
+    /* Accent Colors */
+    --linear-accent: #7170ff;
+    --linear-accent-hover: #8989f0;
+    --linear-accent-tint: #f1f1ff;
+    --linear-brand: #7070ff;
+    --linear-indigo: #5e6ad2;
+
+    /* Status Colors */
+    --linear-green: #4cb782;
+    --linear-green-bright: rgb(104, 204, 88);
+    --linear-green-dark: rgb(44, 144, 28);
+    --linear-yellow: #f2c94c;
+    --linear-yellow-muted: rgb(212, 177, 68);
+    --linear-orange: #fc7840;
+    --linear-orange-muted: rgb(242, 153, 74);
+    --linear-red: #eb5757;
+    --linear-red-status: rgb(197, 40, 40);
+    --linear-blue: #4ea7fc;
+    --linear-cyan: rgb(2, 184, 204);
+    --linear-purple: rgb(181, 154, 255);
+
+    /* Product Colors */
+    --linear-plan: #68cc58;
+    --linear-build: #d4b144;
+    --linear-security: #7a7fad;
+
+    /* Selection Colors */
+    --linear-selection-bg: color-mix(in lch, #7070ff, transparent 64%);
+    --linear-selection-dim: color-mix(in lch, #7070ff, transparent 80%);
+
+    /* ==========================================================================
+       SHADOWS - LIGHT MODE
+       Adjusted for visibility on light backgrounds
+       ========================================================================== */
+
+    --linear-shadow-tiny: 0px 1px 1px 0px rgba(0, 0, 0, 0.09);
+    --linear-shadow-low: 0px 1px 4px -1px rgba(0, 0, 0, 0.09);
+    --linear-shadow-medium: 0px 3px 12px rgba(0, 0, 0, 0.09);
+    --linear-shadow-high: 0px 7px 24px rgba(0, 0, 0, 0.06);
+    --linear-shadow-none: 0px 0px 0px transparent;
+
+    /* Component-specific shadows */
+    --linear-shadow-button: 0px 1px 4px -1px rgba(0, 0, 0, 0.09);
+    --linear-shadow-card: 0px 3px 12px rgba(0, 0, 0, 0.09);
+    --linear-shadow-dropdown: 0px 7px 24px rgba(0, 0, 0, 0.06);
+
+    /* ==========================================================================
+       TYPOGRAPHY
+       ========================================================================== */
+
+    /* Font Families */
+    --linear-font-sans: "Inter Variable", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+    --linear-font-mono: "Berkeley Mono", ui-monospace, "SF Mono", "Menlo", monospace;
+    --linear-font-serif: "Tiempos Headline", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+    /* Font Weights - Inter Variable uses optical sizing */
+    --linear-font-light: 300;
+    --linear-font-normal: 400;
+    --linear-font-medium: 510;
+    --linear-font-semibold: 590;
+    --linear-font-bold: 680;
+
+    /* Font Sizes */
+    --linear-text-xs: 0.6875rem;     /* 11px - micro */
+    --linear-text-sm: 0.75rem;       /* 12px - mini */
+    --linear-text-base: 0.8125rem;   /* 13px - small */
+    --linear-text-md: 0.9375rem;     /* 15px - regular */
+    --linear-text-lg: 1.0625rem;     /* 17px - body */
+    --linear-text-xl: 1.125rem;      /* 18px - large */
+
+    /* Title Sizes - Desktop (1440px) */
+    --linear-title-3: 1.3125rem;     /* 21px - h3 */
+    --linear-title-2: 1.5rem;        /* 24px - h2 small */
+    --linear-title-1: 2rem;          /* 32px - h2 */
+    --linear-hero-2: 3.5rem;         /* 56px - h2 large */
+    --linear-hero-1: 4rem;           /* 64px - h1 */
+
+    /* Line Heights */
+    --linear-leading-tight: 1.1;
+    --linear-leading-snug: 1.25;
+    --linear-leading-normal: 1.33;
+    --linear-leading-relaxed: 1.5;
+    --linear-leading-loose: 1.6;
+
+    /* Letter Spacing */
+    --linear-tracking-tighter: -0.022em;
+    --linear-tracking-tight: -0.012em;
+    --linear-tracking-normal: 0;
+
+    /* ==========================================================================
+       SPACING & LAYOUT
+       ========================================================================== */
+
+    /* Section Padding */
+    --linear-section-padding-xl: 160px;
+    --linear-section-padding-lg: 80px;
+    --linear-section-padding-md: 64px;
+    --linear-section-padding-sm: 48px;
+    --linear-section-padding-xs: 24px;
+
+    /* Container */
+    --linear-container-max: 1024px;
+    --linear-prose-max: 624px;
+    --linear-page-padding: 24px;
+
+    /* Header */
+    --linear-header-height: 64px;
+    --linear-header-blur: 20px;
+
+    /* ==========================================================================
+       BORDER RADIUS
+       ========================================================================== */
+
+    --linear-radius-xs: 4px;
+    --linear-radius-sm: 6px;
+    --linear-radius-md: 8px;
+    --linear-radius-lg: 12px;
+    --linear-radius-xl: 16px;
+    --linear-radius-2xl: 24px;
+    --linear-radius-3xl: 30px;
+    --linear-radius-4xl: 32px;
+    --linear-radius-full: 9999px;
+
+    /* ==========================================================================
+       TRANSITIONS
+       ========================================================================== */
+
+    /* Durations */
+    --linear-duration-fast: 0.1s;
+    --linear-duration-normal: 0.25s;
+    --linear-duration-slow: 0.4s;
+
+    /* Easings */
+    --linear-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --linear-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --linear-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* ==========================================================================
+       Z-INDEX LAYERS
+       ========================================================================== */
+
+    --linear-z-base: 1;
+    --linear-z-footer: 50;
+    --linear-z-scrollbar: 75;
+    --linear-z-header: 100;
+    --linear-z-overlay: 500;
+    --linear-z-popover: 600;
+    --linear-z-command: 650;
+    --linear-z-dialog-overlay: 699;
+    --linear-z-dialog: 700;
+    --linear-z-toast: 800;
+    --linear-z-tooltip: 1100;
+    --linear-z-context: 1200;
+    --linear-z-max: 10000;
+
+    /* ==========================================================================
+       FOCUS RING
+       ========================================================================== */
+
+    --linear-focus-ring-width: 2px;
+    --linear-focus-ring-offset: 2px;
+    --linear-focus-ring-color: rgba(0, 0, 0, 0.4);
+    --linear-focus-ring: 2px solid rgba(0, 0, 0, 0.4);
+
+    /* ==========================================================================
+       SCROLLBAR
+       ========================================================================== */
+
+    --linear-scrollbar-size: 6px;
+    --linear-scrollbar-active: 10px;
+    --linear-scrollbar-color: rgba(0, 0, 0, 0.1);
+    --linear-scrollbar-hover: rgba(0, 0, 0, 0.2);
+    --linear-scrollbar-active-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /* ==========================================================================
+     TABLET RESPONSIVE (768px)
+     ========================================================================== */
+
+  @media (max-width: 1024px) {
+    :root {
+      --linear-hero-1: 48px;
+      --linear-section-padding-xl: 64px;
+    }
+  }
+
+  /* ==========================================================================
+     MOBILE RESPONSIVE (375px)
+     ========================================================================== */
+
+  @media (max-width: 768px) {
+    :root {
+      --linear-hero-1: 40px;
+      --linear-hero-2: 40px;
+      --linear-section-padding-xl: 48px;
+      --linear-section-padding-md: 48px;
+      --linear-page-padding: 16px;
+    }
+  }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES FOR LINEAR LIGHT MODE
+   ========================================================================== */
+
+@layer utilities {
+  /* Background utilities */
+  .bg-linear-primary { background-color: var(--linear-bg-primary); }
+  .bg-linear-secondary { background-color: var(--linear-bg-secondary); }
+  .bg-linear-tertiary { background-color: var(--linear-bg-tertiary); }
+  .bg-linear-muted { background-color: var(--linear-bg-muted); }
+  .bg-linear-header { background-color: var(--linear-header-bg); }
+
+  /* Text utilities */
+  .text-linear-primary { color: var(--linear-text-primary); }
+  .text-linear-secondary { color: var(--linear-text-secondary); }
+  .text-linear-tertiary { color: var(--linear-text-tertiary); }
+  .text-linear-quaternary { color: var(--linear-text-quaternary); }
+
+  /* Border utilities */
+  .border-linear-primary { border-color: var(--linear-border-primary); }
+  .border-linear-secondary { border-color: var(--linear-border-secondary); }
+  .border-linear-subtle { border-color: var(--linear-border-subtle); }
+  .border-linear-medium { border-color: var(--linear-border-medium); }
+
+  /* Shadow utilities */
+  .shadow-linear-low { box-shadow: var(--linear-shadow-low); }
+  .shadow-linear-medium { box-shadow: var(--linear-shadow-medium); }
+  .shadow-linear-high { box-shadow: var(--linear-shadow-high); }
+
+  /* Header backdrop */
+  .backdrop-linear-header {
+    background-color: var(--linear-header-bg);
+    backdrop-filter: blur(var(--linear-header-blur));
+    border-bottom: 1px solid var(--linear-border-medium);
+  }
+
+  /* Card styles */
+  .card-linear-default {
+    background-color: var(--linear-bg-muted);
+    border-radius: var(--linear-radius-3xl);
+  }
+
+  .card-linear-elevated {
+    background-color: var(--linear-bg-primary);
+    border-radius: var(--linear-radius-xl);
+    border: 1px solid var(--linear-border-subtle);
+    box-shadow: var(--linear-shadow-medium);
+  }
+
+  /* Button base styles */
+  .btn-linear-primary {
+    background-color: var(--linear-text-primary);
+    color: var(--linear-text-inverse);
+    border-radius: var(--linear-radius-md);
+    font-weight: var(--linear-font-medium);
+  }
+
+  .btn-linear-secondary {
+    background-color: var(--linear-bg-primary);
+    color: var(--linear-text-primary);
+    border: 1px solid var(--linear-border-strong);
+    border-radius: var(--linear-radius-md);
+    box-shadow: var(--linear-shadow-low);
+    font-weight: var(--linear-font-medium);
+  }
+
+  .btn-linear-ghost {
+    background-color: transparent;
+    color: var(--linear-text-tertiary);
+    border-radius: var(--linear-radius-lg);
+    font-weight: var(--linear-font-medium);
+  }
+
+  /* Focus ring for accessibility */
+  .focus-linear:focus-visible {
+    outline: var(--linear-focus-ring);
+    outline-offset: var(--linear-focus-ring-offset);
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-linear {
+    scrollbar-width: thin;
+    scrollbar-color: var(--linear-scrollbar-color) transparent;
+  }
+
+  .scrollbar-linear::-webkit-scrollbar {
+    width: var(--linear-scrollbar-size);
+    height: var(--linear-scrollbar-size);
+  }
+
+  .scrollbar-linear::-webkit-scrollbar-thumb {
+    background-color: var(--linear-scrollbar-color);
+    border-radius: var(--linear-radius-full);
+  }
+
+  .scrollbar-linear::-webkit-scrollbar-thumb:hover {
+    background-color: var(--linear-scrollbar-hover);
+  }
+}

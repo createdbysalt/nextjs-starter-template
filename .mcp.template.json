@@ -1,32 +1,24 @@
 {
-    "mcpServers": {
-      "webflow": {
-        "command": "npx",
-        "args": ["-y", "@webflow/mcp-server-webflow"],
-        "env": {
-          "WEBFLOW_API_TOKEN": "${WEBFLOW_API_TOKEN}",
-          "WEBFLOW_SITE_ID": "{{WEBFLOW_SITE_ID}}"
-        }
-      },
-      "filesystem": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "@modelcontextprotocol/server-filesystem",
-          "./prototype",
-          "./webflow-embeds",
-          "./translation-docs",
-          "./design-system"
-        ]
-      },
-      "git": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "@modelcontextprotocol/server-git",
-          "--repository",
-          "."
-        ]
-      }
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./src",
+        "./public",
+        "./outputs",
+        "./design-system"
+      ]
+    },
+    "git": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "."
+      ]
     }
   }
+}

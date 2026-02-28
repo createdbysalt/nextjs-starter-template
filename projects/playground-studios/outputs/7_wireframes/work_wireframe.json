@@ -1,0 +1,418 @@
+{
+  "wireframe_metadata": {
+    "page_name": "Work",
+    "page_id": "work",
+    "url": "/work",
+    "priority": "CRITICAL",
+    "generated_date": "2026-01-17",
+    "based_on": {
+      "page_brief": "playground_studios_page_briefs.json → pages.work",
+      "component_specs": "playground_studios_component_specs.json"
+    }
+  },
+
+  "page_summary": {
+    "one_job": "Showcase portfolio breadth and quality, invite deeper exploration",
+    "target_awareness_level": "Solution-Aware → Product-Aware",
+    "primary_conversion_goal": "Click into project detail page",
+    "secondary_conversion_goal": "Click to Contact",
+    "total_sections": 3,
+    "cms_collections_used": ["Project"],
+    "estimated_elements": 45
+  },
+
+  "sections": [
+    {
+      "section_id": "page-header",
+      "section_index": 1,
+      "section_name": "Page Header",
+      "purpose": "Confirm location, set expectations",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Simple: 'Work' or 'Selected Work'. Maybe brief line about approach."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_page-header",
+        "attributes": [
+          { "name": "data-section", "value": "page-header" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-medium",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "page-header_component",
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h1",
+                            "class": "heading-style-h1",
+                            "content_slot": "page_title",
+                            "content": "Selected Work",
+                            "cms_binding": null
+                          },
+                          {
+                            "element": "Paragraph",
+                            "class": "text-size-regular page-header_subtitle",
+                            "content_slot": "page_subtitle",
+                            "content": "Photography, video, and creative production for brands that aim higher.",
+                            "cms_binding": null,
+                            "styling_note": "Optional - can be omitted for cleaner look"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "project-grid",
+      "section_index": 2,
+      "section_name": "Project Grid",
+      "purpose": "Display full portfolio, invite clicks",
+      "cms_binding": {
+        "collection": "Project",
+        "filter": "none",
+        "limit": "all",
+        "sort": "sortOrder ascending"
+      },
+      "from_page_brief": {
+        "filter_bar": "Optional category filters: All | Brand | Hospitality | Studio",
+        "content_direction": "Visual grid of projects. Each shows: featured image, project/client name, category tag.",
+        "notes": "Images do the talking. Hover states can reveal project name."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_project-grid",
+        "attributes": [
+          { "name": "data-section", "value": "project-grid" }
+        ],
+        "responsive": {
+          "desktop": "3 column masonry or uniform grid",
+          "tablet": "2 columns",
+          "mobile": "1-2 columns"
+        },
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "project-grid_component",
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "project-grid_filter-bar",
+                            "purpose": "Category filter controls",
+                            "styling_note": "Horizontal pills or text links. Finsweet CMS Filter recommended.",
+                            "layout": {
+                              "type": "flex",
+                              "gap": "16px",
+                              "justify": "center"
+                            },
+                            "children": [
+                              {
+                                "element": "LinkBlock",
+                                "class": "filter-button is-active",
+                                "content_direction": "All",
+                                "attributes": [
+                                  { "name": "data-filter", "value": "all" }
+                                ]
+                              },
+                              {
+                                "element": "LinkBlock",
+                                "class": "filter-button",
+                                "content_direction": "Brand",
+                                "attributes": [
+                                  { "name": "data-filter", "value": "Brand" }
+                                ]
+                              },
+                              {
+                                "element": "LinkBlock",
+                                "class": "filter-button",
+                                "content_direction": "Hospitality",
+                                "attributes": [
+                                  { "name": "data-filter", "value": "Hospitality" }
+                                ]
+                              },
+                              {
+                                "element": "LinkBlock",
+                                "class": "filter-button",
+                                "content_direction": "Studio",
+                                "attributes": [
+                                  { "name": "data-filter", "value": "Studio" }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "project-grid_grid",
+                            "layout": {
+                              "type": "grid",
+                              "columns": 3,
+                              "gap": "24px",
+                              "responsive": {
+                                "tablet": "columns: 2",
+                                "mobile": "columns: 1"
+                              }
+                            },
+                            "children": [
+                              {
+                                "element": "CollectionList",
+                                "class": "project-grid_list w-dyn-items",
+                                "cms_binding": {
+                                  "collection": "Project",
+                                  "filter": "none",
+                                  "limit": "all",
+                                  "sort": "sortOrder ascending"
+                                },
+                                "children": [
+                                  {
+                                    "element": "CollectionItem",
+                                    "class": "project-grid_item w-dyn-item",
+                                    "attributes": [
+                                      { "name": "data-category", "value": "{category}" }
+                                    ],
+                                    "children": [
+                                      {
+                                        "element": "LinkBlock",
+                                        "class": "project-card_link",
+                                        "link_to": "/work/{slug}",
+                                        "children": [
+                                          {
+                                            "element": "DivBlock",
+                                            "class": "project-card_component",
+                                            "note": "Reuses same card component from homepage",
+                                            "children": [
+                                              {
+                                                "element": "DivBlock",
+                                                "class": "project-card_image-wrapper",
+                                                "children": [
+                                                  {
+                                                    "element": "Image",
+                                                    "class": "project-card_image",
+                                                    "cms_binding": "heroImage",
+                                                    "alt_binding": "name"
+                                                  },
+                                                  {
+                                                    "element": "DivBlock",
+                                                    "class": "project-card_overlay",
+                                                    "purpose": "Hover state overlay"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "element": "DivBlock",
+                                                "class": "project-card_content",
+                                                "children": [
+                                                  {
+                                                    "element": "Heading",
+                                                    "tag": "h3",
+                                                    "class": "project-card_title",
+                                                    "cms_binding": "name"
+                                                  },
+                                                  {
+                                                    "element": "DivBlock",
+                                                    "class": "project-card_meta",
+                                                    "children": [
+                                                      {
+                                                        "element": "TextBlock",
+                                                        "class": "project-card_client",
+                                                        "cms_binding": "clientName"
+                                                      },
+                                                      {
+                                                        "element": "TextBlock",
+                                                        "class": "project-card_category tag",
+                                                        "cms_binding": "category"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      "animation_plan": [
+        {
+          "element": "project-card_component",
+          "animation": "Stagger fade-up on page load",
+          "implementation": "Webflow IX2"
+        },
+        {
+          "element": "filter transitions",
+          "animation": "Finsweet CMS Filter handles transitions",
+          "implementation": "Finsweet Attributes"
+        }
+      ],
+
+      "technical_notes": [
+        "Consider Finsweet CMS Filter for category filtering",
+        "Lazy load images below the fold",
+        "Consider masonry layout vs uniform grid"
+      ]
+    },
+
+    {
+      "section_id": "contact-cta",
+      "section_index": 3,
+      "section_name": "Contact CTA",
+      "purpose": "Convert those who've browsed the portfolio",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Bottom of page: 'Like what you see? Let's make something together.'",
+        "cta": "Get in Touch"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_contact-cta is-dark",
+        "note": "Reuses same CTA section component from homepage",
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-medium",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "contact-cta_component",
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h2",
+                            "class": "heading-style-h2 text-color-white",
+                            "content_slot": "cta_headline",
+                            "content": "Like What You See?"
+                          },
+                          {
+                            "element": "LinkBlock",
+                            "class": "button is-inverse is-large",
+                            "content": "Start a Project",
+                            "link_to": "/contact"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "global_elements": {
+    "navigation": {
+      "included": true,
+      "transparent_on_hero": false,
+      "current_page_indicator": "Work"
+    },
+    "footer": {
+      "included": true
+    }
+  },
+
+  "cms_collections_summary": [
+    {
+      "collection_name": "Project",
+      "used_in_sections": ["project-grid"],
+      "fields_used": ["name", "slug", "heroImage", "clientName", "category"]
+    }
+  ],
+
+  "class_inventory": [
+    "section_page-header",
+    "page-header_component",
+    "page-header_subtitle",
+    "section_project-grid",
+    "project-grid_component",
+    "project-grid_filter-bar",
+    "filter-button",
+    "is-active",
+    "project-grid_grid",
+    "project-grid_list",
+    "project-grid_item",
+    "project-card_link",
+    "project-card_component",
+    "project-card_image-wrapper",
+    "project-card_image",
+    "project-card_overlay",
+    "project-card_content",
+    "project-card_title",
+    "project-card_meta",
+    "project-card_client",
+    "project-card_category",
+    "section_contact-cta",
+    "contact-cta_component",
+    "padding-global",
+    "container-large",
+    "container-medium",
+    "padding-section-medium",
+    "padding-section-large",
+    "heading-style-h1",
+    "heading-style-h2",
+    "text-size-regular",
+    "text-color-white",
+    "button",
+    "is-inverse",
+    "is-large",
+    "is-dark",
+    "tag"
+  ]
+}

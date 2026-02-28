@@ -1,0 +1,167 @@
+{
+  "comparison": "Linear Dark Mode vs Light Mode",
+  "extractedAt": "2026-01-31",
+  "url": "https://linear.app",
+
+  "colorMappings": {
+    "backgrounds": {
+      "primary": {
+        "dark": "#000000 / rgb(0, 0, 0)",
+        "light": "#FFFFFF / rgb(255, 255, 255)"
+      },
+      "secondary": {
+        "dark": "rgb(26, 27, 28)",
+        "light": "rgb(249, 248, 249)"
+      },
+      "tertiary": {
+        "dark": "rgb(38, 39, 40)",
+        "light": "rgb(244, 242, 244)"
+      },
+      "muted": {
+        "dark": "rgb(47, 49, 56)",
+        "light": "rgb(244, 244, 244)"
+      },
+      "headerTranslucent": {
+        "dark": "rgba(0, 0, 0, 0.8)",
+        "light": "rgba(255, 255, 255, 0.8)"
+      }
+    },
+    "text": {
+      "primary": {
+        "dark": "#FFFFFF",
+        "light": "rgb(40, 42, 48)"
+      },
+      "secondary": {
+        "dark": "rgb(156, 157, 161)",
+        "light": "rgb(60, 65, 73)"
+      },
+      "tertiary": {
+        "dark": "rgb(98, 99, 102)",
+        "light": "rgb(111, 110, 119)"
+      }
+    },
+    "borders": {
+      "subtle": {
+        "dark": "rgba(255, 255, 255, 0.05)",
+        "light": "rgba(0, 0, 0, 0.05)"
+      },
+      "medium": {
+        "dark": "rgba(255, 255, 255, 0.08)",
+        "light": "rgba(0, 0, 0, 0.08)"
+      },
+      "strong": {
+        "dark": "rgba(255, 255, 255, 0.16)",
+        "light": "rgba(0, 0, 0, 0.16)"
+      },
+      "primary": {
+        "dark": "rgb(47, 49, 56)",
+        "light": "rgb(233, 232, 234)"
+      }
+    },
+    "shadows": {
+      "low": {
+        "dark": "0px 1px 4px -1px rgba(0, 0, 0, 0.2)",
+        "light": "0px 1px 4px -1px rgba(0, 0, 0, 0.09)"
+      },
+      "medium": {
+        "dark": "0px 3px 12px rgba(0, 0, 0, 0.3)",
+        "light": "0px 3px 12px rgba(0, 0, 0, 0.09)"
+      },
+      "high": {
+        "dark": "0px 7px 24px rgba(0, 0, 0, 0.4)",
+        "light": "0px 7px 24px rgba(0, 0, 0, 0.06)"
+      }
+    }
+  },
+
+  "buttons": {
+    "primary": {
+      "dark": {
+        "background": "#FFFFFF",
+        "text": "#000000",
+        "border": "#FFFFFF"
+      },
+      "light": {
+        "background": "rgb(40, 42, 48)",
+        "text": "#FFFFFF",
+        "border": "rgb(40, 42, 48)"
+      }
+    },
+    "secondary": {
+      "dark": {
+        "background": "rgba(255, 255, 255, 0.1)",
+        "text": "#FFFFFF",
+        "border": "rgba(255, 255, 255, 0.16)"
+      },
+      "light": {
+        "background": "#FFFFFF",
+        "text": "rgb(40, 42, 48)",
+        "border": "rgba(0, 0, 0, 0.16)"
+      }
+    },
+    "ghost": {
+      "dark": {
+        "background": "transparent",
+        "text": "rgba(255, 255, 255, 0.7)"
+      },
+      "light": {
+        "background": "transparent",
+        "text": "rgb(111, 110, 119)"
+      }
+    }
+  },
+
+  "accentColors": {
+    "note": "Accent colors remain largely consistent between themes",
+    "accent": "#7170ff",
+    "brand": "#7070ff",
+    "indigo": "#5e6ad2",
+    "green": "#4cb782",
+    "yellow": "#f2c94c",
+    "orange": "#fc7840",
+    "red": "#eb5757",
+    "blue": "#4ea7fc"
+  },
+
+  "focusStates": {
+    "dark": {
+      "ringColor": "rgba(255, 255, 255, 0.4)",
+      "outline": "2px solid rgba(255, 255, 255, 0.4)"
+    },
+    "light": {
+      "ringColor": "rgba(0, 0, 0, 0.4)",
+      "outline": "2px solid rgba(0, 0, 0, 0.4)"
+    }
+  },
+
+  "scrollbar": {
+    "dark": {
+      "track": "transparent",
+      "thumb": "rgba(255, 255, 255, 0.1)",
+      "thumbHover": "rgba(255, 255, 255, 0.2)"
+    },
+    "light": {
+      "track": "transparent",
+      "thumb": "rgba(0, 0, 0, 0.1)",
+      "thumbHover": "rgba(0, 0, 0, 0.2)"
+    }
+  },
+
+  "themeToggleImplementation": {
+    "cssVariable": "data-theme",
+    "values": ["dark", "light"],
+    "default": "dark",
+    "toggleMethod": "Set data-theme attribute on document.documentElement",
+    "example": "document.documentElement.setAttribute('data-theme', 'light')"
+  },
+
+  "implementationNotes": [
+    "Linear uses CSS custom properties that change based on data-theme attribute",
+    "The color scheme is inverted - backgrounds become white, text becomes dark",
+    "Shadows use lower opacity in light mode for subtlety",
+    "Borders switch from rgba(255,255,255,X) to rgba(0,0,0,X)",
+    "Typography (fonts, sizes, weights) remains unchanged between themes",
+    "Accent colors stay consistent for brand recognition",
+    "Header uses backdrop-filter: blur(20px) in both themes"
+  ]
+}

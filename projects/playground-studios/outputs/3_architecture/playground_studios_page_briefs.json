@@ -1,0 +1,454 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0"
+  },
+
+  "pages": {
+    "home": {
+      "page_name": "Homepage",
+      "slug": "/",
+      "one_job": "Orient visitors and route them to portfolio or contact within 5 seconds",
+
+      "target_audience": {
+        "primary": "Brand Builder (Solution-Aware) - comparing production partners",
+        "secondary": "Agency Producer (Most-Aware) - vetting for specific project",
+        "entry_context": "Clicked link from cold email, referral, or Instagram bio"
+      },
+
+      "user_questions_to_answer": [
+        "What does this company do?",
+        "Are they legit? (client logos)",
+        "Is their work good? (portfolio preview)",
+        "How do I see more / contact them?"
+      ],
+
+      "content_sections": [
+        {
+          "section": "Hero",
+          "purpose": "Communicate who + what + vibe instantly",
+          "content_direction": {
+            "headline": "Aspirational but clear. Convey creative production/content creation.",
+            "subhead": "Brief value prop - what Playground does and for whom",
+            "visual": "Full-bleed portfolio image or video reel. The WORK is the hero."
+          },
+          "cta": "View Work (primary), Let's Talk (secondary)",
+          "notes": "Hero image/video should be best work. First impression = everything."
+        },
+        {
+          "section": "Client Logos",
+          "purpose": "Instant credibility",
+          "content_direction": "Row of recognizable logos: Celsius, Samsung, Kendra Scott, MVMT, etc.",
+          "notes": "Can be simple, no explanation needed. Logos speak."
+        },
+        {
+          "section": "Featured Work",
+          "purpose": "Show portfolio quality, invite exploration",
+          "content_direction": "3-6 featured projects as visual grid. Click to see more.",
+          "cta": "View All Work"
+        },
+        {
+          "section": "Brief Intro",
+          "purpose": "Human touch, differentiation",
+          "content_direction": "2-3 sentences max. 'We're a creative production studio...' Warm but confident.",
+          "cta": "Learn More (→ About)"
+        },
+        {
+          "section": "Contact CTA",
+          "purpose": "Easy conversion path",
+          "content_direction": "Simple invitation: 'Ready to create something?' with contact button",
+          "cta": "Let's Talk"
+        }
+      ],
+
+      "conversion_goals": {
+        "primary": "Click to Work page (50%+ of visitors)",
+        "secondary": "Click to Contact (10-15% direct)"
+      },
+
+      "objections_to_address": {
+        "implicit": [
+          "Are they big enough? → Client logos prove scale",
+          "Is their work good? → Featured work shows quality",
+          "Are they professional? → Site design matches portfolio quality"
+        ]
+      },
+
+      "proof_elements": [
+        "Client logos (6-8 recognizable brands)",
+        "Featured portfolio images (best work)",
+        "Optional: brief testimonial snippet"
+      ],
+
+      "design_notes": [
+        "Portfolio-first: work should dominate",
+        "Minimal text, maximal imagery",
+        "Clean, sophisticated (matches 'mature playful' brand)",
+        "Fast loading (image optimization critical)"
+      ]
+    },
+
+    "work": {
+      "page_name": "Work",
+      "slug": "/work",
+      "one_job": "Showcase portfolio breadth and quality, invite deeper exploration",
+
+      "target_audience": {
+        "primary": "Solution-Aware visitor deciding if Playground fits their needs",
+        "entry_context": "Clicked from homepage or direct link in pitch email"
+      },
+
+      "user_questions_to_answer": [
+        "Have they done work like what I need?",
+        "Is the quality consistently good?",
+        "What industries/types of work do they do?",
+        "Can I see more detail on a specific project?"
+      ],
+
+      "content_sections": [
+        {
+          "section": "Page Header",
+          "purpose": "Confirm location, set expectations",
+          "content_direction": "Simple: 'Work' or 'Selected Work'. Maybe brief line about approach."
+        },
+        {
+          "section": "Filter/Categories",
+          "purpose": "Help visitors find relevant work",
+          "content_direction": "Optional category filters: All | Brand | Hospitality | Studio",
+          "notes": "Keep simple. Don't over-categorize with few projects."
+        },
+        {
+          "section": "Project Grid",
+          "purpose": "Display portfolio, invite clicks",
+          "content_direction": "Visual grid of projects. Each shows: featured image, project/client name, category tag.",
+          "notes": "Images do the talking. Hover states can reveal project name."
+        },
+        {
+          "section": "Contact CTA",
+          "purpose": "Conversion path for those ready",
+          "content_direction": "Bottom of page: 'Like what you see? Let's make something together.'",
+          "cta": "Get in Touch"
+        }
+      ],
+
+      "conversion_goals": {
+        "primary": "Click into project detail page",
+        "secondary": "Click to Contact"
+      },
+
+      "proof_elements": [
+        "Breadth of portfolio (variety of projects)",
+        "Quality of imagery",
+        "Recognizable client names visible"
+      ],
+
+      "design_notes": [
+        "Grid layout that showcases imagery",
+        "Consistent image aspect ratios for clean grid",
+        "Fast loading with lazy load for below-fold",
+        "Categories should not clutter - subtle filtering"
+      ]
+    },
+
+    "work_detail": {
+      "page_name": "Project Detail",
+      "slug": "/work/[project-slug]",
+      "one_job": "Deep dive on specific project, prove relevant capability",
+      "dynamic": true,
+
+      "target_audience": {
+        "primary": "Product-Aware visitor evaluating if Playground can do THEIR project",
+        "entry_context": "Clicked from Work grid or direct link to specific project"
+      },
+
+      "user_questions_to_answer": [
+        "What was this project about?",
+        "What did Playground actually do?",
+        "What were the results/deliverables?",
+        "Can they do something similar for me?"
+      ],
+
+      "content_sections": [
+        {
+          "section": "Project Hero",
+          "purpose": "Immerse in the work",
+          "content_direction": "Full-width hero image from project. Project name and client."
+        },
+        {
+          "section": "Project Info",
+          "purpose": "Context and scope",
+          "content_direction": "Brief description (2-4 sentences). Services provided. Year/date.",
+          "notes": "Keep it brief. Images are the star."
+        },
+        {
+          "section": "Image Gallery",
+          "purpose": "Show range of deliverables",
+          "content_direction": "6-15 images showcasing different shots, angles, deliverables",
+          "notes": "Mix of full-width and grid layouts for visual interest"
+        },
+        {
+          "section": "Next Project",
+          "purpose": "Keep exploration going",
+          "content_direction": "Preview of another project: 'Next: [Project Name]'",
+          "cta": "View Project"
+        },
+        {
+          "section": "Contact CTA",
+          "purpose": "Convert impressed visitors",
+          "content_direction": "'Ready to create something like this?'",
+          "cta": "Let's Talk"
+        }
+      ],
+
+      "conversion_goals": {
+        "primary": "Click to another project (explore more)",
+        "secondary": "Click to Contact"
+      },
+
+      "cms_fields_needed": [
+        "project_title",
+        "client_name",
+        "project_slug",
+        "hero_image",
+        "description (rich text)",
+        "services_provided (multi-select)",
+        "category",
+        "year",
+        "gallery_images (image gallery)",
+        "featured (boolean for homepage)"
+      ],
+
+      "design_notes": [
+        "Let images breathe - generous whitespace",
+        "Variable layout options for gallery (grid, full-width, side-by-side)",
+        "Seamless navigation to next project",
+        "Contact CTA should feel integrated, not intrusive"
+      ]
+    },
+
+    "about": {
+      "page_name": "About",
+      "slug": "/about",
+      "one_job": "Humanize the studio, build trust and connection",
+
+      "target_audience": {
+        "primary": "Product-Aware visitor who's seen work and wants to know 'who are these people?'",
+        "entry_context": "Clicked from homepage intro or nav after viewing portfolio"
+      },
+
+      "user_questions_to_answer": [
+        "Who's behind this studio?",
+        "What's their story/philosophy?",
+        "Why do they do this work?",
+        "What's it like to work with them?"
+      ],
+
+      "content_sections": [
+        {
+          "section": "Hero/Intro",
+          "purpose": "Set tone, introduce the studio",
+          "content_direction": "Origin story hook. The playground walk in Portland. 'Where imagination meets reality.'",
+          "notes": "This is where the brand personality shines. Authentic, not corporate."
+        },
+        {
+          "section": "Origin Story",
+          "purpose": "Build emotional connection",
+          "content_direction": "The playground story - watching kids play, remembering boundless creativity, channeling that into professional work.",
+          "source": "Website copy draft already exists"
+        },
+        {
+          "section": "Process/Philosophy",
+          "purpose": "Differentiate, set expectations",
+          "content_direction": "Play on Set → Get in the Box → Go Home. The three-step philosophy.",
+          "notes": "This is unique to Playground. Lean into it."
+        },
+        {
+          "section": "Barrett Bio",
+          "purpose": "Put a face to the brand",
+          "content_direction": "Photo of Barrett + brief bio. Background, approach, personality.",
+          "notes": "Needs updated headshot (flagged in missing info)"
+        },
+        {
+          "section": "Values/Promise",
+          "purpose": "Reinforce differentiators",
+          "content_direction": "'No bullying. No bullshit.' Honesty, efficiency, purpose.",
+          "source": "From approved website copy"
+        },
+        {
+          "section": "Contact CTA",
+          "purpose": "Convert those who connected with the story",
+          "content_direction": "'Let's create something together.'",
+          "cta": "Get in Touch"
+        }
+      ],
+
+      "conversion_goals": {
+        "primary": "Click to Contact",
+        "secondary": "Return to Work (see more portfolio)"
+      },
+
+      "objections_to_address": {
+        "explicit_in_content": [
+          "'Just a freelancer?' → 'We' voice, modular team positioning",
+          "'Will they be reliable?' → Emphasis on communication, honesty, deadlines"
+        ]
+      },
+
+      "proof_elements": [
+        "Founder photo (updated headshot needed)",
+        "Client logos (can repeat)",
+        "Testimonials (if available)"
+      ],
+
+      "design_notes": [
+        "Balance text with imagery",
+        "Founder photo should feel professional but approachable",
+        "Process steps could be visual/illustrated",
+        "Personality can show here more than other pages"
+      ]
+    },
+
+    "services": {
+      "page_name": "Services",
+      "slug": "/services",
+      "one_job": "Clarify offerings, help visitors self-qualify",
+
+      "target_audience": {
+        "primary": "Solution-Aware visitor wondering 'do they do what I need?'",
+        "secondary": "Product-Aware visitor confirming specific service availability"
+      },
+
+      "user_questions_to_answer": [
+        "What exactly do they offer?",
+        "Do they do photography AND video?",
+        "What's included in their services?",
+        "Are they in my budget range?"
+      ],
+
+      "content_sections": [
+        {
+          "section": "Intro",
+          "purpose": "Frame the offerings",
+          "content_direction": "Brief intro: 'From concept to final delivery, we handle it all.' Full-service positioning."
+        },
+        {
+          "section": "Service Categories",
+          "purpose": "Organize and explain offerings",
+          "content_direction": {
+            "creative_development": "Concept, story, positioning, mood boards",
+            "production": "Commercials, branded content, social, photography, studio work",
+            "post_production": "Editing, color grading, retouching, sound"
+          },
+          "notes": "Can link each category to relevant portfolio examples"
+        },
+        {
+          "section": "How We Work",
+          "purpose": "Set expectations, reduce friction",
+          "content_direction": "Brief overview of typical process. Discovery → Production → Delivery.",
+          "notes": "Addresses 'what's it like to work together?' question"
+        },
+        {
+          "section": "Budget Guidance",
+          "purpose": "Qualify leads, set expectations",
+          "content_direction": "Optional: subtle indication that projects typically start at $5K-$8K. Can be soft.",
+          "notes": "Per pricing discussion: sweet spot is $8K-$15K. Don't scare away inquiries but qualify."
+        },
+        {
+          "section": "Contact CTA",
+          "purpose": "Convert interested visitors",
+          "content_direction": "'Have a project in mind? Let's talk.'",
+          "cta": "Get in Touch"
+        }
+      ],
+
+      "conversion_goals": {
+        "primary": "Click to Contact",
+        "secondary": "Click to Work (see examples)"
+      },
+
+      "design_notes": [
+        "Keep it scannable - not a wall of text",
+        "Visual elements for each service category",
+        "Link to relevant portfolio pieces from each service",
+        "Process could be a simple visual timeline"
+      ]
+    },
+
+    "contact": {
+      "page_name": "Contact",
+      "slug": "/contact",
+      "one_job": "Capture lead information and start conversation",
+
+      "target_audience": {
+        "primary": "Most-Aware visitor ready to reach out",
+        "entry_context": "Clicked CTA from any page, ready to inquire"
+      },
+
+      "user_questions_to_answer": [
+        "How do I get in touch?",
+        "What info do they need from me?",
+        "What happens after I submit?",
+        "When will I hear back?"
+      ],
+
+      "content_sections": [
+        {
+          "section": "Headline",
+          "purpose": "Warm welcome, reduce friction",
+          "content_direction": "'Let's Make Something Great' or 'Start a Project'",
+          "notes": "Friendly, inviting. This is not a corporate contact page."
+        },
+        {
+          "section": "Contact Form",
+          "purpose": "Capture inquiry details",
+          "fields": [
+            { "field": "Name", "required": true },
+            { "field": "Email", "required": true },
+            { "field": "Company/Brand", "required": false },
+            { "field": "Project Type", "type": "dropdown", "options": ["Brand/Lifestyle Photography", "Studio Photography", "Video Production", "Full Production", "Not Sure Yet"], "required": false },
+            { "field": "Budget Range", "type": "dropdown", "options": ["Under $5K", "$5K-$10K", "$10K-$25K", "$25K+", "Not Sure"], "required": false },
+            { "field": "Tell us about your project", "type": "textarea", "required": true }
+          ],
+          "notes": "Keep it short. Don't intimidate. Optional fields help qualify but shouldn't block submission."
+        },
+        {
+          "section": "What to Expect",
+          "purpose": "Reduce anxiety, set expectations",
+          "content_direction": "'We'll get back to you within 24-48 hours to schedule a call.'",
+          "notes": "Clarity builds trust"
+        },
+        {
+          "section": "Alternative Contact",
+          "purpose": "Options for those who prefer direct",
+          "content_direction": "Email: barrett@ontheplayground.studio | Instagram: @ontheplayground.studio",
+          "notes": "Some people prefer email or DM"
+        },
+        {
+          "section": "Location",
+          "purpose": "Address geographic question",
+          "content_direction": "Based in Louisville & Portland. Available for projects nationwide.",
+          "notes": "Dual location per resolved gap. Don't highlight the move."
+        }
+      ],
+
+      "conversion_goals": {
+        "primary": "Form submission"
+      },
+
+      "form_behavior": {
+        "on_submit": "Show success message: 'Thanks! We'll be in touch soon.'",
+        "notification": "Email to Barrett with submission details",
+        "optional": "Redirect to thank you page or back to homepage"
+      },
+
+      "design_notes": [
+        "Clean, uncluttered",
+        "Form should feel easy, not like paperwork",
+        "Friendly tone throughout",
+        "Mobile-optimized form fields"
+      ]
+    }
+  }
+}

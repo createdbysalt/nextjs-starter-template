@@ -1,0 +1,369 @@
+{
+  "url": "https://vercel.com",
+  "extractedAt": "2026-01-31T00:00:00Z",
+
+  "components": {
+    "navigation": {
+      "header": {
+        "type": "Sticky header with mega-menu dropdowns",
+        "height": "64px (estimated)",
+        "layout": "flex justify-between",
+        "logo": {
+          "position": "left",
+          "component": "Vercel triangle + logotype"
+        },
+        "navLinks": {
+          "position": "center-left",
+          "items": ["Products", "Resources", "Solutions", "Enterprise", "Pricing"],
+          "typography": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(102, 102, 102)"
+          },
+          "hoverState": {
+            "color": "rgb(23, 23, 23)"
+          }
+        },
+        "actions": {
+          "position": "right",
+          "items": ["Log In", "Contact", "Sign Up"],
+          "styles": {
+            "logIn": {
+              "type": "ghost",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(23, 23, 23)",
+              "height": "32px",
+              "borderRadius": "6px"
+            },
+            "contact": {
+              "type": "ghost",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(23, 23, 23)",
+              "height": "32px",
+              "borderRadius": "6px"
+            },
+            "signUp": {
+              "type": "primary",
+              "backgroundColor": "rgb(23, 23, 23)",
+              "color": "rgb(255, 255, 255)",
+              "height": "32px",
+              "borderRadius": "6px"
+            }
+          }
+        }
+      },
+      "megaMenu": {
+        "type": "Dropdown panel with multiple columns",
+        "columns": "3-4 depending on section",
+        "categoryHeading": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "color": "rgb(102, 102, 102)",
+          "padding": "10px 12px 0px"
+        },
+        "menuItem": {
+          "layout": "Icon + Title + Description",
+          "title": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(23, 23, 23)"
+          },
+          "description": {
+            "fontSize": "12px",
+            "fontWeight": "400",
+            "color": "rgb(102, 102, 102)"
+          }
+        }
+      }
+    },
+
+    "hero": {
+      "layout": {
+        "type": "Centered content with visual below",
+        "textAlign": "center",
+        "maxWidth": "content fits naturally",
+        "padding": "64px 0px 0px"
+      },
+      "headline": {
+        "tag": "h1",
+        "fontSize": "48px",
+        "fontWeight": "600",
+        "lineHeight": "48px",
+        "letterSpacing": "-2.4px",
+        "color": "rgb(23, 23, 23)"
+      },
+      "subheadline": {
+        "tag": "p",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "lineHeight": "36px",
+        "color": "rgb(102, 102, 102)",
+        "maxWidth": "600px (estimated)"
+      },
+      "ctaGroup": {
+        "layout": "flex gap-4",
+        "primary": {
+          "text": "Start Deploying",
+          "icon": "Vercel triangle",
+          "backgroundColor": "rgb(23, 23, 23)",
+          "color": "rgb(255, 255, 255)",
+          "height": "48px",
+          "borderRadius": "100px",
+          "padding": "0px 14px"
+        },
+        "secondary": {
+          "text": "Get a Demo",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(23, 23, 23)",
+          "height": "48px",
+          "borderRadius": "100px",
+          "padding": "0px 14px"
+        }
+      }
+    },
+
+    "buttons": {
+      "variants": {
+        "primary": {
+          "description": "Dark background, white text, pill shape",
+          "backgroundColor": "rgb(23, 23, 23)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "100px",
+          "sizes": {
+            "sm": { "height": "32px", "padding": "0px 6px", "fontSize": "14px" },
+            "md": { "height": "40px", "padding": "0px 10px", "fontSize": "14px" },
+            "lg": { "height": "48px", "padding": "0px 14px", "fontSize": "16px" }
+          }
+        },
+        "secondary": {
+          "description": "White background, dark text, pill shape",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(23, 23, 23)",
+          "borderRadius": "100px"
+        },
+        "ghost": {
+          "description": "White/transparent background, rounded rectangle",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(23, 23, 23)",
+          "borderRadius": "6px"
+        },
+        "icon": {
+          "description": "Circular button for icon-only actions",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": "100%",
+          "size": "40px"
+        },
+        "tab": {
+          "description": "Underline style tabs",
+          "active": {
+            "color": "rgb(23, 23, 23)",
+            "borderBottom": "2px solid rgb(23, 23, 23)"
+          },
+          "inactive": {
+            "color": "rgb(102, 102, 102)",
+            "borderBottom": "2px solid transparent"
+          }
+        }
+      },
+      "transitions": "border-color 0.15s, background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s"
+    },
+
+    "cards": {
+      "feature": {
+        "description": "Content card with title, description, and visual",
+        "layout": "Vertical stack",
+        "textContent": {
+          "title": {
+            "tag": "h3",
+            "fontSize": "24px",
+            "fontWeight": "600",
+            "letterSpacing": "-0.96px",
+            "color": "rgb(23, 23, 23)"
+          },
+          "description": {
+            "tag": "p",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(102, 102, 102)"
+          },
+          "link": {
+            "type": "Arrow icon button",
+            "borderRadius": "100%",
+            "size": "40px"
+          }
+        },
+        "visual": {
+          "position": "Below text or beside",
+          "borderRadius": "8px-12px"
+        }
+      },
+      "template": {
+        "description": "Framework template card with icon",
+        "layout": "Visual preview + label below",
+        "visual": {
+          "aspectRatio": "varies",
+          "borderRadius": "8px",
+          "border": "separator elements"
+        },
+        "label": {
+          "fontSize": "16px (estimated)",
+          "fontWeight": "400",
+          "position": "below visual"
+        }
+      },
+      "testimonial": {
+        "description": "Quote with company logo",
+        "layout": "Logo + quote text",
+        "quote": {
+          "fontSize": "32px",
+          "fontWeight": "400",
+          "lineHeight": "48px",
+          "letterSpacing": "-1.28px",
+          "color": "rgb(102, 102, 102)"
+        }
+      }
+    },
+
+    "sections": {
+      "sectionHeader": {
+        "eyebrow": {
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "letterSpacing": "-0.28px",
+          "color": "rgb(102, 102, 102)",
+          "textTransform": "none"
+        },
+        "title": {
+          "fontSize": "32px-48px",
+          "fontWeight": "600",
+          "letterSpacing": "-1.28px to -2.88px",
+          "color": "rgb(23, 23, 23)"
+        },
+        "description": {
+          "fontSize": "24px",
+          "fontWeight": "500",
+          "lineHeight": "32px",
+          "color": "rgb(102, 102, 102)"
+        }
+      },
+      "featureGrid": {
+        "layout": "CSS Grid or Flex",
+        "gap": "varies by section",
+        "responsive": {
+          "desktop": "Multi-column",
+          "tablet": "2 columns",
+          "mobile": "Single column"
+        }
+      }
+    },
+
+    "codeBlock": {
+      "container": {
+        "backgroundColor": "rgb(250, 250, 250)",
+        "borderRadius": "8px",
+        "border": "1px solid rgba(0, 0, 0, 0.08)"
+      },
+      "tabs": {
+        "type": "Underline tabs",
+        "items": ["AI SDK", "Python", "OpenAI HTTP"]
+      },
+      "code": {
+        "fontFamily": "'Geist Mono'",
+        "fontSize": "13px",
+        "lineHeight": "20px",
+        "colors": {
+          "default": "rgb(23, 23, 23)",
+          "keyword": "rgb(189, 40, 100)",
+          "string": "rgb(41, 122, 58)",
+          "lineNumbers": "rgb(102, 102, 102)"
+        }
+      },
+      "copyButton": {
+        "position": "top-right of code area",
+        "icon": "Copy icon"
+      }
+    },
+
+    "footer": {
+      "layout": {
+        "type": "Multi-column directory",
+        "columns": ["Products", "Resources", "Company", "Social"],
+        "backgroundColor": "rgb(255, 255, 255)"
+      },
+      "sectionTitle": {
+        "tag": "h2",
+        "fontSize": "14px (estimated)",
+        "fontWeight": "500",
+        "color": "rgb(23, 23, 23)"
+      },
+      "links": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(102, 102, 102)",
+        "lineHeight": "20px"
+      },
+      "bottomBar": {
+        "items": ["Status link", "Theme toggle (system/light/dark)"],
+        "position": "Bottom of footer"
+      }
+    },
+
+    "tabs": {
+      "pillTabs": {
+        "description": "Category tabs with pill backgrounds",
+        "items": ["AI Apps", "Web Apps", "Ecommerce", "Marketing", "Platforms"],
+        "active": {
+          "backgroundColor": "rgb(23, 23, 23) or white",
+          "color": "contrasting"
+        },
+        "inactive": {
+          "backgroundColor": "transparent",
+          "color": "rgb(102, 102, 102)"
+        }
+      },
+      "underlineTabs": {
+        "description": "Simple underline indicator tabs",
+        "borderBottom": "2px",
+        "spacing": "14px 2px padding"
+      }
+    }
+  },
+
+  "layoutPatterns": {
+    "container": {
+      "maxWidth": "1440px (full) or content-dependent",
+      "padding": {
+        "desktop": "0px (edge-to-edge sections) or sectional",
+        "tablet": "0px 24px",
+        "mobile": "0px 24px"
+      }
+    },
+    "sectionSpacing": {
+      "desktop": "64px+ vertical rhythm",
+      "mobile": "48px+ vertical rhythm"
+    },
+    "grid": {
+      "featureCards": "Auto-fit or explicit columns",
+      "gap": "varies (16px-32px)"
+    }
+  },
+
+  "animationPatterns": {
+    "buttonHover": {
+      "transition": "0.15s ease",
+      "properties": ["background", "color", "border-color", "transform", "box-shadow"]
+    },
+    "cardHover": {
+      "transition": "0.15s ease",
+      "effect": "Subtle shadow increase"
+    },
+    "smoothTransition": {
+      "timing": "0.3s cubic-bezier(0.39, 0.18, 0.17, 0.99)",
+      "useCase": "Width changes, complex state transitions"
+    },
+    "globe": {
+      "type": "Animated WebGL/Canvas globe with pulsing nodes",
+      "style": "2D grid projection with network points"
+    }
+  }
+}

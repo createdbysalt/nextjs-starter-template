@@ -1,0 +1,63 @@
+# Ralph Docker Compose
+# Orchestrates Ralph containers for parallel feature development
+
+services:
+  ralph:
+    image: ralph:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ralph-${RALPH_FEATURE_NAME:-default}
+
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+    # Environment
+    environment:
+      - RALPH_FEATURE_NAME=${RALPH_FEATURE_NAME:-default}
+      - RALPH_MAX_ITERATIONS=${RALPH_MAX_ITERATIONS:-50}
+      - RALPH_LOG_FILE=/ralph-logs/${RALPH_FEATURE_NAME:-default}.log
+      - CLAUDE_CODE_OAUTH_TOKEN=${CLAUDE_CODE_OAUTH_TOKEN}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - GITHUB_TOKEN=${GITHUB_TOKEN:-}
+
+    # Volumes
+    volumes:
+      # Project workspace (the worktree)
+      - ${RALPH_WORKSPACE:-./ralph-worktrees/default}:/workspace:rw
+
+      # Main project .git folder (needed for worktrees)
+      - ${RALPH_PROJECT_ROOT:-./}/.git:/main-repo/.git:rw
+
+      # Logs (shared across containers)
+      - ./ralph-logs:/ralph-logs:rw
+
+      # SSH keys for git push (read-only, optional)
+      - ~/.ssh:/root/.ssh:ro
+
+      # Anthropic config (read-only, optional)
+      - ~/.anthropic:/root/.anthropic:ro
+
+    # Working directory
+    working_dir: /workspace
+
+    # Keep running
+    stdin_open: true
+    tty: true
+
+    # Restart policy
+    restart: "no"
+
+    # Network - full access for API calls, npm, etc.
+    network_mode: bridge
+
+# Named volumes for persistence
+volumes:
+  ralph-logs:

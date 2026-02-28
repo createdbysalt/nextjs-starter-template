@@ -1,0 +1,415 @@
+/**
+ * VERCEL DESIGN SYSTEM - TAILWIND TOKENS
+ * ======================================
+ * Extracted from: https://vercel.com
+ * Generated: 2026-01-31
+ * Method: getComputedStyle() extraction via browser automation
+ *
+ * Import in your global CSS:
+ * @import './tailwind-tokens.css';
+ *
+ * Compatible with Tailwind CSS v4 CSS-first configuration
+ */
+
+@layer base {
+  :root {
+    /* ============================================
+     * TYPOGRAPHY - Font Families
+     * ============================================ */
+    --font-sans: Geist, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+
+    /* ============================================
+     * TYPOGRAPHY - Font Sizes (Desktop 1440px)
+     * Vercel uses tight letter-spacing on headings
+     * ============================================ */
+
+    /* Hero headline - 48px/48px, -2.4px tracking */
+    --text-hero: 48px;
+    --leading-hero: 1;
+    --tracking-hero: -0.05em;
+
+    /* Section headline - 40px/48px, -2.4px tracking */
+    --text-h1: 40px;
+    --leading-h1: 1.2;
+    --tracking-h1: -0.06em;
+
+    /* Large feature - 48px/56px, -2.88px tracking */
+    --text-display: 48px;
+    --leading-display: 1.167;
+    --tracking-display: -0.06em;
+
+    /* Card title - 32px/40px, -1.28px tracking */
+    --text-h2: 32px;
+    --leading-h2: 1.25;
+    --tracking-h2: -0.04em;
+
+    /* Feature title - 24px/32px, -0.96px tracking */
+    --text-h3: 24px;
+    --leading-h3: 1.333;
+    --tracking-h3: -0.04em;
+
+    /* Eyebrow - 14px/20px, -0.28px tracking */
+    --text-eyebrow: 14px;
+    --leading-eyebrow: 1.428;
+    --tracking-eyebrow: -0.02em;
+
+    /* Lead paragraph - 20px/36px */
+    --text-lead: 20px;
+    --leading-lead: 1.8;
+
+    /* Body - 16px/24px */
+    --text-body: 16px;
+    --leading-body: 1.5;
+
+    /* Body small - 14px/20px */
+    --text-sm: 14px;
+    --leading-sm: 1.428;
+
+    /* Caption - 12px/16px */
+    --text-xs: 12px;
+    --leading-xs: 1.333;
+
+    /* Code - 13px/20px */
+    --text-code: 13px;
+    --leading-code: 1.538;
+
+    /* Feature list - 18px/27.36px */
+    --text-feature: 18px;
+    --leading-feature: 1.52;
+
+    /* Testimonial - 32px/48px, -1.28px tracking */
+    --text-quote: 32px;
+    --leading-quote: 1.5;
+    --tracking-quote: -0.04em;
+
+    /* ============================================
+     * TYPOGRAPHY - Font Weights
+     * Vercel uses Geist variable font (300-900)
+     * ============================================ */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    /* Note: On tablet/mobile, weights like 510, 538 appear (variable font) */
+
+    /* ============================================
+     * COLORS - Backgrounds
+     * Extracted from computed styles
+     * ============================================ */
+    --color-bg-primary: 255 255 255;          /* #FFFFFF - rgb(255, 255, 255) */
+    --color-bg-secondary: 250 250 250;        /* #FAFAFA - rgb(250, 250, 250) */
+    --color-bg-muted: 235 235 235;            /* #EBEBEB - rgb(235, 235, 235) */
+    --color-bg-inverted: 23 23 23;            /* #171717 - rgb(23, 23, 23) */
+
+    /* Accent Blues */
+    --color-bg-accent: 0 112 243;             /* #0070F3 - rgb(0, 112, 243) */
+    --color-bg-accent-light: 235 245 255;     /* #EBF5FF - rgb(235, 245, 255) */
+    --color-bg-accent-medium: 204 230 255;    /* #CCE6FF - rgb(204, 230, 255) */
+    --color-bg-accent-hover: 82 174 255;      /* #52AEFF - rgb(82, 174, 255) */
+    --color-bg-accent-dark: 0 98 209;         /* #0062D1 - rgb(0, 98, 209) */
+
+    /* Status Colors */
+    --color-bg-success: 57 142 74;            /* #398E4A - rgb(57, 142, 74) */
+    --color-bg-success-light: 240 255 249;    /* #F0FFF9 - rgb(240, 255, 249) */
+    --color-bg-error: 229 72 77;              /* #E5484D - rgb(229, 72, 77) */
+    --color-bg-error-light: 255 247 245;      /* #FFF7F5 - rgb(255, 247, 245) */
+    --color-bg-warning: 255 153 10;           /* #FF990A - rgb(255, 153, 10) */
+    --color-bg-warning-light: 255 250 240;    /* #FFFAF0 - rgb(255, 250, 240) */
+    --color-bg-info: 240 251 255;             /* #F0FBFF - rgb(240, 251, 255) */
+
+    /* Brand Colors */
+    --color-bg-purple: 120 32 188;            /* #7820BC - rgb(120, 32, 188) */
+    --color-bg-purple-light: 191 137 236;     /* #BF89EC - rgb(191, 137, 236) */
+    --color-bg-pink: 234 62 131;              /* #EA3E83 - rgb(234, 62, 131) */
+    --color-bg-teal: 69 222 197;              /* #45DEC5 - rgb(69, 222, 197) */
+    --color-bg-teal-dark: 6 122 110;          /* #067A6E - rgb(6, 122, 110) */
+
+    /* ============================================
+     * COLORS - Text
+     * ============================================ */
+    --color-text-primary: 23 23 23;           /* #171717 - rgb(23, 23, 23) */
+    --color-text-secondary: 102 102 102;      /* #666666 - rgb(102, 102, 102) */
+    --color-text-tertiary: 125 125 125;       /* #7D7D7D - rgb(125, 125, 125) */
+    --color-text-muted: 168 168 168;          /* #A8A8A8 - rgb(168, 168, 168) */
+    --color-text-inverted: 255 255 255;       /* #FFFFFF - rgb(255, 255, 255) */
+    --color-text-link: 0 112 243;             /* #0070F3 - rgb(0, 112, 243) */
+    --color-text-link-hover: 0 104 214;       /* #0068D6 - rgb(0, 104, 214) */
+    --color-text-success: 41 122 58;          /* #297A3A - rgb(41, 122, 58) */
+    --color-text-code-keyword: 189 40 100;    /* #BD2864 - rgb(189, 40, 100) */
+    --color-text-code-purple: 120 32 188;     /* #7820BC - rgb(120, 32, 188) */
+
+    /* ============================================
+     * COLORS - Borders
+     * Vercel uses very subtle borders
+     * ============================================ */
+    --color-border-subtle: 0 0 0 / 0.08;      /* rgba(0, 0, 0, 0.08) */
+    --color-border-default: 235 235 235;      /* #EBEBEB - rgb(235, 235, 235) */
+    --color-border-medium: 168 168 168;       /* #A8A8A8 - rgb(168, 168, 168) */
+    --color-border-dark: 102 102 102;         /* #666666 - rgb(102, 102, 102) */
+    --color-border-inverted: 23 23 23;        /* #171717 - rgb(23, 23, 23) */
+
+    /* ============================================
+     * SPACING
+     * Based on 4px base unit
+     * ============================================ */
+    --spacing-0: 0px;
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-5: 20px;
+    --spacing-6: 24px;
+    --spacing-8: 32px;
+    --spacing-10: 40px;
+    --spacing-12: 48px;
+    --spacing-14: 56px;
+    --spacing-16: 64px;
+    --spacing-20: 80px;
+    --spacing-24: 96px;
+
+    /* Section Padding */
+    --section-padding-y: 64px;
+    --container-padding-x: 24px;
+
+    /* ============================================
+     * BORDER RADIUS
+     * ============================================ */
+    --radius-none: 0px;
+    --radius-sm: 4px;
+    --radius-default: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 32px;
+    --radius-2xl: 64px;
+    --radius-pill: 100px;
+    --radius-full: 9999px;
+    --radius-circle: 50%;
+
+    /* ============================================
+     * SHADOWS
+     * Vercel uses very subtle shadows
+     * ============================================ */
+    --shadow-border: rgb(235, 235, 235) 0px 0px 0px 1px;
+    --shadow-subtle-border: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    --shadow-sm: rgba(0, 0, 0, 0.04) 0px 1px 2px 0px;
+    --shadow-md: rgba(0, 0, 0, 0.04) 0px 2px 2px 0px;
+    --shadow-card: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 2px 0px, rgb(250, 250, 250) 0px 0px 0px 1px;
+    --shadow-card-hover: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 2px 0px, rgba(0, 0, 0, 0.04) 0px 8px 8px -8px, rgb(250, 250, 250) 0px 0px 0px 1px;
+    --shadow-inset: rgb(234, 234, 234) 0px -1px 0px 0px inset;
+    --shadow-outline: rgb(235, 235, 235) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+
+    /* ============================================
+     * TRANSITIONS
+     * Vercel uses consistent 0.15s timing
+     * ============================================ */
+    --transition-fast: 0.15s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.4s;
+    --ease-default: ease;
+    --ease-smooth: cubic-bezier(0.39, 0.18, 0.17, 0.99);
+
+    /* Common transition patterns */
+    --transition-colors: border-color 0.15s, background 0.15s, color 0.15s;
+    --transition-all: border-color 0.15s, background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s;
+    --transition-smooth: border-color 0.3s var(--ease-smooth), background 0.3s var(--ease-smooth), color 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+
+    /* ============================================
+     * BUTTON SIZES
+     * ============================================ */
+    --btn-height-sm: 32px;
+    --btn-height-md: 40px;
+    --btn-height-lg: 48px;
+    --btn-padding-sm: 0px 6px;
+    --btn-padding-md: 0px 10px;
+    --btn-padding-lg: 0px 14px;
+    --btn-font-sm: 14px;
+    --btn-font-md: 14px;
+    --btn-font-lg: 16px;
+  }
+
+  /* ============================================
+   * TABLET RESPONSIVE (768px)
+   * ============================================ */
+  @media (max-width: 1024px) {
+    :root {
+      --text-hero: 48px;
+      --leading-hero: 1.1;
+      --tracking-hero: -0.022em;
+
+      --text-h1: 56px;
+      --leading-h1: 1.1;
+      --tracking-h1: -0.0325em;
+
+      --text-h3: 21px;
+      --leading-h3: 1.333;
+      --tracking-h3: -0.018em;
+
+      --text-display: 40px;
+      --leading-display: 1.1;
+      --tracking-display: -0.022em;
+
+      --container-padding-x: 24px;
+    }
+  }
+
+  /* ============================================
+   * MOBILE RESPONSIVE (375px)
+   * ============================================ */
+  @media (max-width: 768px) {
+    :root {
+      --text-hero: 40px;
+      --leading-hero: 1.1;
+      --tracking-hero: -0.022em;
+
+      --text-h1: 40px;
+      --leading-h1: 1.1;
+      --tracking-h1: -0.015em;
+
+      --text-h2: 24px;
+      --leading-h2: 1.33;
+      --tracking-h2: -0.012em;
+
+      --text-h3: 21px;
+      --leading-h3: 1.333;
+      --tracking-h3: -0.018em;
+
+      --text-display: 40px;
+      --leading-display: 1.1;
+      --tracking-display: -0.022em;
+
+      --text-lead: 17px;
+      --leading-lead: 1.6;
+
+      --text-body: 15px;
+      --leading-body: 1.6;
+      --tracking-body: -0.011em;
+
+      --btn-height-lg: 40px;
+      --btn-padding-lg: 0px 16px;
+      --btn-font-lg: 15px;
+      --radius-pill: 10px;
+
+      --btn-height-sm: 32px;
+      --btn-padding-sm: 0px 12px;
+      --btn-font-sm: 13px;
+      --radius-default: 8px;
+
+      --container-padding-x: 24px;
+      --section-padding-y: 48px;
+    }
+  }
+}
+
+/* ============================================
+ * UTILITY CLASSES (Optional)
+ * Use these or map to Tailwind utilities
+ * ============================================ */
+
+@layer utilities {
+  /* Typography */
+  .text-hero {
+    font-size: var(--text-hero);
+    line-height: var(--leading-hero);
+    letter-spacing: var(--tracking-hero);
+    font-weight: var(--font-semibold);
+  }
+
+  .text-display {
+    font-size: var(--text-display);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    font-weight: var(--font-semibold);
+  }
+
+  .text-eyebrow {
+    font-size: var(--text-eyebrow);
+    line-height: var(--leading-eyebrow);
+    letter-spacing: var(--tracking-eyebrow);
+    font-weight: var(--font-medium);
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .text-lead {
+    font-size: var(--text-lead);
+    line-height: var(--leading-lead);
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .text-quote {
+    font-size: var(--text-quote);
+    line-height: var(--leading-quote);
+    letter-spacing: var(--tracking-quote);
+    color: rgb(var(--color-text-secondary));
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-medium);
+    transition: var(--transition-all);
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: rgb(var(--color-bg-inverted));
+    color: rgb(var(--color-text-inverted));
+    border-radius: var(--radius-pill);
+    height: var(--btn-height-lg);
+    padding: var(--btn-padding-lg);
+    font-size: var(--btn-font-lg);
+  }
+
+  .btn-secondary {
+    background-color: rgb(var(--color-bg-primary));
+    color: rgb(var(--color-text-primary));
+    border-radius: var(--radius-pill);
+    height: var(--btn-height-lg);
+    padding: var(--btn-padding-lg);
+    font-size: var(--btn-font-lg);
+  }
+
+  .btn-ghost {
+    background-color: rgb(var(--color-bg-primary));
+    color: rgb(var(--color-text-primary));
+    border-radius: var(--radius-default);
+    height: var(--btn-height-sm);
+    padding: var(--btn-padding-sm);
+    font-size: var(--btn-font-sm);
+  }
+
+  .btn-small {
+    height: var(--btn-height-sm);
+    padding: var(--btn-padding-sm);
+    font-size: var(--btn-font-sm);
+    border-radius: var(--radius-default);
+  }
+
+  .btn-pill {
+    height: var(--btn-height-md);
+    padding: var(--btn-padding-md);
+    font-size: var(--btn-font-md);
+    border-radius: var(--radius-pill);
+  }
+
+  /* Surfaces */
+  .surface-card {
+    background-color: rgb(var(--color-bg-primary));
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  .surface-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .surface-muted {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .surface-inverted {
+    background-color: rgb(var(--color-bg-inverted));
+    color: rgb(var(--color-text-inverted));
+  }
+}

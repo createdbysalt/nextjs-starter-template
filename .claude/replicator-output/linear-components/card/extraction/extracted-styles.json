@@ -1,0 +1,188 @@
+{
+  "url": "https://linear.app/features",
+  "extractedAt": "2026-01-31T15:00:00Z",
+  "component": "FeatureCard",
+  "description": "Linear's feature card component used on the /features page",
+
+  "viewports": {
+    "1440": {
+      "card": {
+        "backgroundColor": "rgb(15, 16, 17)",
+        "borderRadius": "16px",
+        "border": "none",
+        "boxShadow": "none",
+        "padding": {
+          "top": "32px",
+          "right": "24px",
+          "bottom": "32px",
+          "left": "24px"
+        },
+        "display": "flex",
+        "flexDirection": "column",
+        "overflow": "hidden",
+        "position": "relative",
+        "cursor": "pointer",
+        "transition": {
+          "property": "filter, transform",
+          "duration": "0.2s, 0.16s",
+          "timing": "ease-out, cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          "full": "filter 0.2s ease-out, transform 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        }
+      },
+      "cardVariants": {
+        "fullWidth": {
+          "width": "976px",
+          "height": "336px"
+        },
+        "halfWidth": {
+          "width": "476px",
+          "height": "400px"
+        }
+      },
+      "typography": {
+        "label": {
+          "fontSize": "13px",
+          "fontWeight": "510",
+          "lineHeight": "19.5px",
+          "letterSpacing": "-0.13px",
+          "color": "rgb(138, 143, 152)"
+        },
+        "title": {
+          "fontSize": "15px",
+          "fontWeight": "510",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.165px",
+          "color": "rgb(247, 248, 248)"
+        }
+      },
+      "arrow": {
+        "width": "18px",
+        "height": "18px",
+        "color": "rgb(138, 143, 152)"
+      },
+      "grid": {
+        "containerMaxWidth": "1024px",
+        "containerPadding": "0 24px",
+        "horizontalGap": "24px",
+        "verticalGap": "32px"
+      }
+    },
+    "768": {
+      "card": {
+        "backgroundColor": "rgb(15, 16, 17)",
+        "borderRadius": "16px",
+        "padding": {
+          "top": "24px",
+          "right": "24px",
+          "bottom": "24px",
+          "left": "24px"
+        }
+      },
+      "cardVariants": {
+        "fullWidth": {
+          "width": "720px",
+          "height": "791px"
+        },
+        "halfWidth": {
+          "width": "720px",
+          "height": "360px"
+        }
+      },
+      "typography": {
+        "label": {
+          "fontSize": "13px",
+          "fontWeight": "510",
+          "lineHeight": "19.5px",
+          "letterSpacing": "-0.13px"
+        },
+        "title": {
+          "fontSize": "15px",
+          "fontWeight": "510",
+          "lineHeight": "24px"
+        }
+      },
+      "grid": {
+        "containerPadding": "0 24px",
+        "layout": "single-column"
+      }
+    },
+    "375": {
+      "card": {
+        "backgroundColor": "rgb(15, 16, 17)",
+        "borderRadius": "16px",
+        "padding": {
+          "top": "24px",
+          "right": "24px",
+          "bottom": "24px",
+          "left": "24px"
+        }
+      },
+      "cardVariants": {
+        "fullWidth": {
+          "width": "327px",
+          "height": "386px"
+        },
+        "halfWidth": {
+          "width": "327px",
+          "height": "360px"
+        }
+      },
+      "typography": {
+        "label": {
+          "fontSize": "13px",
+          "fontWeight": "510",
+          "lineHeight": "19.5px"
+        },
+        "title": {
+          "fontSize": "15px",
+          "fontWeight": "510",
+          "lineHeight": "24px"
+        }
+      },
+      "grid": {
+        "containerPadding": "0 24px",
+        "layout": "single-column"
+      }
+    }
+  },
+
+  "colors": {
+    "pageBackground": "rgb(8, 9, 10)",
+    "cardBackground": "rgb(15, 16, 17)",
+    "labelColor": "rgb(138, 143, 152)",
+    "titleColor": "rgb(247, 248, 248)",
+    "arrowColor": "rgb(138, 143, 152)"
+  },
+
+  "tailwindMapping": {
+    "cardBackground": "bg-[rgb(15,16,17)]",
+    "pageBackground": "bg-[rgb(8,9,10)]",
+    "borderRadius": "rounded-2xl",
+    "paddingDesktop": "p-6 pt-8 pb-8",
+    "paddingMobile": "p-6",
+    "labelSize": "text-[13px]",
+    "labelWeight": "font-medium",
+    "labelLineHeight": "leading-[1.5]",
+    "labelTracking": "tracking-[-0.01em]",
+    "labelColor": "text-[rgb(138,143,152)]",
+    "titleSize": "text-[15px]",
+    "titleWeight": "font-medium",
+    "titleLineHeight": "leading-[1.6]",
+    "titleTracking": "tracking-[-0.011em]",
+    "titleColor": "text-[rgb(247,248,248)]",
+    "transition": "transition-[filter,transform] duration-200 ease-out"
+  },
+
+  "hoverBehavior": {
+    "note": "On hover, the card scales slightly (transform) and may apply a brightness filter",
+    "expectedTransform": "scale(1.01)",
+    "expectedFilter": "brightness(1.05)"
+  },
+
+  "internalStructure": {
+    "description": "Card contains: 1) Background image/illustration area (absolute positioned), 2) Content area at bottom with label, title, and arrow",
+    "contentLayout": "flex justify-between items-end",
+    "textContainer": "flex flex-col gap-0",
+    "arrowPosition": "self-end"
+  }
+}

@@ -1,0 +1,731 @@
+{
+  "wireframe_metadata": {
+    "page_name": "Homepage",
+    "page_id": "home",
+    "url": "/",
+    "priority": "CRITICAL",
+    "generated_date": "2026-01-17",
+    "based_on": {
+      "page_brief": "playground_studios_page_briefs.json → pages.home",
+      "component_specs": "playground_studios_component_specs.json",
+      "visual_system": "playground_studios_visual_system.json"
+    }
+  },
+
+  "page_summary": {
+    "one_job": "Orient visitors and route them to portfolio or contact within 5 seconds",
+    "target_awareness_level": "Solution-Aware",
+    "primary_conversion_goal": "Click to Work page (50%+ of visitors)",
+    "secondary_conversion_goal": "Click to Contact (10-15% direct)",
+    "total_sections": 5,
+    "cms_collections_used": ["Project", "ClientLogo"],
+    "estimated_elements": 65
+  },
+
+  "special_features": {
+    "loading_intro": {
+      "enabled": true,
+      "type": "DVTK-style ASCII text scramble animation",
+      "trigger": "First homepage visit per session",
+      "duration": "2-3 seconds",
+      "implementation": "GSAP custom code embed"
+    }
+  },
+
+  "sections": [
+    {
+      "section_id": "hero",
+      "section_index": 1,
+      "section_name": "Hero Section",
+      "purpose": "Communicate who + what + vibe instantly",
+      "cms_binding": null,
+      "from_page_brief": {
+        "headline": "Aspirational but clear. Convey creative production/content creation.",
+        "subhead": "Brief value prop - what Playground does and for whom",
+        "visual": "Full-bleed portfolio image or video reel. The WORK is the hero.",
+        "cta": "View Work (primary), Let's Talk (secondary)"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_hero",
+        "attributes": [
+          { "name": "data-section", "value": "hero" }
+        ],
+        "responsive": {
+          "desktop": "Full viewport height, content bottom-left or centered",
+          "tablet": "90vh, centered content",
+          "mobile": "100vh, centered content, stacked CTAs"
+        },
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "hero_background",
+            "purpose": "Background image/video container",
+            "children": [
+              {
+                "element": "Image",
+                "class": "hero_background-image",
+                "content_slot": "hero_background_image",
+                "content_direction": "Best portfolio image - full bleed, dark enough for text overlay",
+                "cms_binding": null,
+                "attributes": [
+                  { "name": "loading", "value": "eager" }
+                ]
+              },
+              {
+                "element": "DivBlock",
+                "class": "hero_overlay",
+                "purpose": "Gradient overlay for text legibility",
+                "styling_note": "Linear gradient from transparent to rgba(0,0,0,0.6)"
+              }
+            ]
+          },
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "hero_content",
+                    "layout": {
+                      "type": "flex",
+                      "direction": "column",
+                      "gap": "24px",
+                      "position": "bottom-left or centered"
+                    },
+                    "children": [
+                      {
+                        "element": "Heading",
+                        "tag": "h1",
+                        "class": "heading-style-h1 hero_headline",
+                        "content_slot": "hero_headline",
+                        "content": "Where Imagination Meets Reality",
+                        "cms_binding": null,
+                        "animation": {
+                          "type": "entrance",
+                          "effect": "fade-up",
+                          "delay": 0,
+                          "note": "Triggers after loading intro completes"
+                        }
+                      },
+                      {
+                        "element": "Paragraph",
+                        "class": "text-size-large hero_subheadline",
+                        "content_slot": "hero_subheadline",
+                        "content": "Photography and video production for brands ready to stand out. From concept to final delivery, we bring bold ideas to life.",
+                        "cms_binding": null,
+                        "animation": {
+                          "type": "entrance",
+                          "effect": "fade-up",
+                          "delay": 0.1
+                        }
+                      },
+                      {
+                        "element": "DivBlock",
+                        "class": "hero_cta-wrapper",
+                        "layout": {
+                          "type": "flex",
+                          "direction": "row",
+                          "gap": "16px",
+                          "responsive": {
+                            "mobile": "column"
+                          }
+                        },
+                        "animation": {
+                          "type": "entrance",
+                          "effect": "fade-up",
+                          "delay": 0.2
+                        },
+                        "children": [
+                          {
+                            "element": "LinkBlock",
+                            "class": "button is-secondary",
+                            "content_slot": "primary_cta",
+                            "content": "View Our Work",
+                            "link_to": "/work",
+                            "note": "Secondary style (outline) on dark background"
+                          },
+                          {
+                            "element": "LinkBlock",
+                            "class": "button is-inverse",
+                            "content_slot": "secondary_cta",
+                            "content": "Let's Talk",
+                            "link_to": "/contact",
+                            "note": "Inverse style (white fill) on dark background"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "element": "DivBlock",
+            "class": "hero_scroll-indicator",
+            "purpose": "Optional scroll cue",
+            "content_direction": "Arrow down or 'Scroll' text",
+            "animation": {
+              "type": "loop",
+              "effect": "subtle bounce"
+            }
+          }
+        ]
+      },
+
+      "animation_plan": [
+        {
+          "element": "hero_headline",
+          "animation": "Fade up after loading intro",
+          "implementation": "GSAP or Webflow IX2"
+        },
+        {
+          "element": "hero_subheadline",
+          "animation": "Fade up, 100ms delay",
+          "implementation": "GSAP or Webflow IX2"
+        },
+        {
+          "element": "hero_cta-wrapper",
+          "animation": "Fade up, 200ms delay",
+          "implementation": "GSAP or Webflow IX2"
+        }
+      ],
+
+      "accessibility": [
+        "H1 is first heading on page",
+        "Background image needs descriptive alt (can be empty if decorative)",
+        "CTAs have clear focus states",
+        "Color contrast meets WCAG AA on overlay"
+      ]
+    },
+
+    {
+      "section_id": "client-logos",
+      "section_index": 2,
+      "section_name": "Client Logos",
+      "purpose": "Instant credibility without explanation",
+      "cms_binding": {
+        "collection": "ClientLogo",
+        "filter": "isActive = true",
+        "limit": 8,
+        "sort": "sortOrder ascending"
+      },
+      "from_page_brief": {
+        "content": "Trusted by brands that don't settle",
+        "logos": ["Celsius", "Samsung", "Kendra Scott", "MVMT", "Brumate", "Liquid IV", "Bulletproof", "Michelob Ultra"],
+        "notes": "Can be simple, no explanation needed. Logos speak."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_client-logos",
+        "attributes": [
+          { "name": "data-section", "value": "client-logos" }
+        ],
+        "responsive": {
+          "desktop": "Single row, equal spacing",
+          "tablet": "Single row or 2 rows",
+          "mobile": "2 rows of 4 or horizontal scroll"
+        },
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-small",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "client-logos_component",
+                        "layout": {
+                          "type": "flex",
+                          "justify": "space-between",
+                          "align": "center",
+                          "gap": "48px",
+                          "responsive": {
+                            "tablet": "wrap",
+                            "mobile": "grid 4x2 or scroll"
+                          }
+                        },
+                        "children": [
+                          {
+                            "element": "CollectionList",
+                            "class": "client-logos_list",
+                            "cms_binding": {
+                              "collection": "ClientLogo",
+                              "filter": "isActive = true",
+                              "limit": 8,
+                              "sort": "sortOrder ascending"
+                            },
+                            "children": [
+                              {
+                                "element": "CollectionItem",
+                                "class": "client-logos_item",
+                                "children": [
+                                  {
+                                    "element": "Image",
+                                    "class": "client-logos_image",
+                                    "cms_binding": "logo",
+                                    "alt_binding": "name",
+                                    "styling_note": "Monochrome filter, 60-80% opacity, consistent height (32-40px)"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      "animation_plan": [
+        {
+          "element": "section_client-logos",
+          "animation": "Fade in on scroll into view",
+          "implementation": "Webflow IX2"
+        }
+      ]
+    },
+
+    {
+      "section_id": "featured-work",
+      "section_index": 3,
+      "section_name": "Featured Work",
+      "purpose": "Show portfolio quality, invite exploration",
+      "cms_binding": {
+        "collection": "Project",
+        "filter": "isFeatured = true",
+        "limit": 6,
+        "sort": "sortOrder ascending"
+      },
+      "from_page_brief": {
+        "content_direction": "3-6 featured projects as visual grid. Click to see more.",
+        "cta": "View All Work"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_featured-work",
+        "attributes": [
+          { "name": "data-section", "value": "featured-work" }
+        ],
+        "responsive": {
+          "desktop": "2-3 column grid",
+          "tablet": "2 column grid",
+          "mobile": "1 column stack"
+        },
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "featured-work_component",
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "featured-work_header",
+                            "layout": {
+                              "type": "flex",
+                              "justify": "space-between",
+                              "align": "center"
+                            },
+                            "children": [
+                              {
+                                "element": "Heading",
+                                "tag": "h2",
+                                "class": "heading-style-h3",
+                                "content_slot": "section_heading",
+                                "content": "Selected Work",
+                                "cms_binding": null
+                              },
+                              {
+                                "element": "LinkBlock",
+                                "class": "text-link is-arrow",
+                                "content": "View All Work",
+                                "link_to": "/work"
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "featured-work_grid",
+                            "layout": {
+                              "type": "grid",
+                              "columns": 2,
+                              "gap": "24px",
+                              "responsive": {
+                                "desktop_large": "columns: 3",
+                                "tablet": "columns: 2",
+                                "mobile": "columns: 1"
+                              }
+                            },
+                            "children": [
+                              {
+                                "element": "CollectionList",
+                                "class": "featured-work_list w-dyn-items",
+                                "cms_binding": {
+                                  "collection": "Project",
+                                  "filter": "isFeatured = true",
+                                  "limit": 6,
+                                  "sort": "sortOrder ascending"
+                                },
+                                "children": [
+                                  {
+                                    "element": "CollectionItem",
+                                    "class": "featured-work_item w-dyn-item",
+                                    "children": [
+                                      {
+                                        "element": "LinkBlock",
+                                        "class": "project-card_link",
+                                        "link_to": "/work/{slug}",
+                                        "children": [
+                                          {
+                                            "element": "DivBlock",
+                                            "class": "project-card_component",
+                                            "children": [
+                                              {
+                                                "element": "DivBlock",
+                                                "class": "project-card_image-wrapper",
+                                                "children": [
+                                                  {
+                                                    "element": "Image",
+                                                    "class": "project-card_image",
+                                                    "cms_binding": "heroImage",
+                                                    "alt_binding": "name",
+                                                    "styling_note": "Aspect ratio 4:3 or 3:2, object-fit: cover"
+                                                  },
+                                                  {
+                                                    "element": "DivBlock",
+                                                    "class": "project-card_overlay",
+                                                    "purpose": "Hover overlay with project name",
+                                                    "styling_note": "Visible on hover (desktop only)"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "element": "DivBlock",
+                                                "class": "project-card_content",
+                                                "children": [
+                                                  {
+                                                    "element": "Heading",
+                                                    "tag": "h3",
+                                                    "class": "project-card_title",
+                                                    "cms_binding": "name"
+                                                  },
+                                                  {
+                                                    "element": "DivBlock",
+                                                    "class": "project-card_meta",
+                                                    "children": [
+                                                      {
+                                                        "element": "TextBlock",
+                                                        "class": "project-card_client",
+                                                        "cms_binding": "clientName"
+                                                      },
+                                                      {
+                                                        "element": "TextBlock",
+                                                        "class": "project-card_category tag",
+                                                        "cms_binding": "category"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      "animation_plan": [
+        {
+          "element": "project-card_component",
+          "animation": "Stagger fade-up on scroll into view",
+          "delay_between": "100ms",
+          "implementation": "Webflow IX2"
+        },
+        {
+          "element": "project-card_image",
+          "animation": "Subtle scale (1.02) on hover",
+          "implementation": "CSS transition"
+        }
+      ]
+    },
+
+    {
+      "section_id": "brief-intro",
+      "section_index": 4,
+      "section_name": "Brief Intro",
+      "purpose": "Human touch, differentiation",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "2-3 sentences max. 'We're a creative production studio...' Warm but confident.",
+        "cta": "Learn More (→ About)"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_brief-intro",
+        "attributes": [
+          { "name": "data-section", "value": "brief-intro" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-medium",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "brief-intro_component",
+                        "layout": {
+                          "type": "flex",
+                          "direction": "column",
+                          "align": "center",
+                          "gap": "24px",
+                          "text_align": "center"
+                        },
+                        "children": [
+                          {
+                            "element": "Paragraph",
+                            "class": "text-size-large brief-intro_text",
+                            "content_slot": "intro_text",
+                            "content": "We're Playground Studios—a creative production company built for brands that want more than cookie-cutter content. Whether it's a campaign shoot or a single product photo, we bring the same thing to every project: genuine curiosity, meticulous craft, and a commitment to work that actually moves people.",
+                            "cms_binding": null,
+                            "styling_note": "Max-width 800px, larger text (20-22px)"
+                          },
+                          {
+                            "element": "LinkBlock",
+                            "class": "text-link is-arrow",
+                            "content": "Learn More About Us",
+                            "link_to": "/about"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      "animation_plan": [
+        {
+          "element": "brief-intro_text",
+          "animation": "Fade in on scroll",
+          "implementation": "Webflow IX2"
+        }
+      ]
+    },
+
+    {
+      "section_id": "contact-cta",
+      "section_index": 5,
+      "section_name": "Contact CTA",
+      "purpose": "Easy conversion path",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Simple invitation: 'Ready to create something?' with contact button",
+        "cta": "Let's Talk"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_contact-cta is-dark",
+        "attributes": [
+          { "name": "data-section", "value": "contact-cta" }
+        ],
+        "styling_note": "Dark background (#08090A) for contrast",
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-medium",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "contact-cta_component",
+                        "layout": {
+                          "type": "flex",
+                          "direction": "column",
+                          "align": "center",
+                          "gap": "32px",
+                          "text_align": "center"
+                        },
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h2",
+                            "class": "heading-style-h2 text-color-white",
+                            "content_slot": "cta_headline",
+                            "content": "Ready to Create Something?",
+                            "cms_binding": null
+                          },
+                          {
+                            "element": "LinkBlock",
+                            "class": "button is-inverse is-large",
+                            "content": "Get in Touch",
+                            "link_to": "/contact"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "global_elements": {
+    "navigation": {
+      "included": true,
+      "transparent_on_hero": true,
+      "sticky": true
+    },
+    "footer": {
+      "included": true
+    },
+    "loading_intro": {
+      "included": true,
+      "homepage_only": true
+    }
+  },
+
+  "cms_collections_summary": [
+    {
+      "collection_name": "ClientLogo",
+      "used_in_sections": ["client-logos"],
+      "fields_used": ["logo", "name"]
+    },
+    {
+      "collection_name": "Project",
+      "used_in_sections": ["featured-work"],
+      "fields_used": ["name", "slug", "heroImage", "clientName", "category"]
+    }
+  ],
+
+  "class_inventory": [
+    "section_hero",
+    "hero_background",
+    "hero_background-image",
+    "hero_overlay",
+    "hero_content",
+    "hero_headline",
+    "hero_subheadline",
+    "hero_cta-wrapper",
+    "hero_scroll-indicator",
+    "section_client-logos",
+    "client-logos_component",
+    "client-logos_list",
+    "client-logos_item",
+    "client-logos_image",
+    "section_featured-work",
+    "featured-work_component",
+    "featured-work_header",
+    "featured-work_grid",
+    "featured-work_list",
+    "featured-work_item",
+    "project-card_link",
+    "project-card_component",
+    "project-card_image-wrapper",
+    "project-card_image",
+    "project-card_overlay",
+    "project-card_content",
+    "project-card_title",
+    "project-card_meta",
+    "project-card_client",
+    "project-card_category",
+    "section_brief-intro",
+    "brief-intro_component",
+    "brief-intro_text",
+    "section_contact-cta",
+    "contact-cta_component",
+    "padding-global",
+    "container-large",
+    "container-medium",
+    "padding-section-small",
+    "padding-section-large",
+    "heading-style-h1",
+    "heading-style-h2",
+    "heading-style-h3",
+    "text-size-large",
+    "text-color-white",
+    "text-link",
+    "is-arrow",
+    "button",
+    "is-secondary",
+    "is-inverse",
+    "is-large",
+    "is-dark",
+    "tag"
+  ],
+
+  "next_steps": [
+    "Run /vibe to prototype Hero and Featured Work sections",
+    "Run /copy if headline/subhead copy not finalized",
+    "Prepare 15-20 Project CMS items",
+    "Gather 8 client logos for ClientLogo collection"
+  ]
+}

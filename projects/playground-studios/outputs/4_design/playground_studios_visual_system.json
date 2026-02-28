@@ -1,0 +1,393 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0"
+  },
+
+  "typography": {
+    "philosophy": "Bold display type for headlines, clean sans-serif for body. High contrast in scale creates visual hierarchy without decoration.",
+
+    "font_stack": {
+      "display": {
+        "primary_recommendation": "Neue Haas Grotesk Display",
+        "alternatives": ["Helvetica Neue Bold Extended", "Monument Extended", "ABC Favorit Extended"],
+        "webflow_fallback": "Inter or DM Sans (bold weights)",
+        "characteristics": "Bold, extended or wide proportions for hero headlines",
+        "note": "If budget allows, consider a distinctive display face. Monument Extended gives Gym Class energy."
+      },
+      "body": {
+        "primary_recommendation": "Neue Haas Grotesk Text",
+        "alternatives": ["Inter", "DM Sans", "Satoshi"],
+        "webflow_native": "Inter is available on Webflow natively",
+        "characteristics": "Clean, highly legible, neutral but not sterile"
+      },
+      "accent": {
+        "optional": "Mono or code-style for metadata",
+        "recommendations": ["JetBrains Mono", "IBM Plex Mono", "Space Mono"],
+        "use_cases": "Project metadata, dates, technical details"
+      }
+    },
+
+    "type_scale": {
+      "desktop": {
+        "hero": {
+          "size": "72-96px",
+          "weight": "700-800",
+          "line_height": "1.0-1.1",
+          "letter_spacing": "-0.02em to -0.03em",
+          "use": "Homepage hero headline only"
+        },
+        "h1": {
+          "size": "48-64px",
+          "weight": "700",
+          "line_height": "1.1-1.15",
+          "letter_spacing": "-0.02em",
+          "use": "Page titles, major section headers"
+        },
+        "h2": {
+          "size": "32-40px",
+          "weight": "600-700",
+          "line_height": "1.2",
+          "letter_spacing": "-0.01em",
+          "use": "Section headings"
+        },
+        "h3": {
+          "size": "24-28px",
+          "weight": "600",
+          "line_height": "1.3",
+          "letter_spacing": "0",
+          "use": "Subsection headings, card titles"
+        },
+        "h4": {
+          "size": "18-20px",
+          "weight": "600",
+          "line_height": "1.4",
+          "letter_spacing": "0",
+          "use": "Labels, small headings"
+        },
+        "body_large": {
+          "size": "20-22px",
+          "weight": "400",
+          "line_height": "1.6",
+          "letter_spacing": "0",
+          "use": "Intro paragraphs, feature descriptions"
+        },
+        "body": {
+          "size": "16-18px",
+          "weight": "400",
+          "line_height": "1.6-1.7",
+          "letter_spacing": "0",
+          "use": "Main body copy"
+        },
+        "small": {
+          "size": "14px",
+          "weight": "400",
+          "line_height": "1.5",
+          "letter_spacing": "0",
+          "use": "Captions, metadata, footer"
+        },
+        "micro": {
+          "size": "12px",
+          "weight": "500",
+          "line_height": "1.4",
+          "letter_spacing": "0.05em",
+          "text_transform": "uppercase",
+          "use": "Labels, tags, eyebrows"
+        }
+      },
+      "mobile": {
+        "hero": "48-56px",
+        "h1": "36-42px",
+        "h2": "28-32px",
+        "h3": "22-24px",
+        "h4": "18px",
+        "body_large": "18px",
+        "body": "16px",
+        "small": "14px",
+        "micro": "11px"
+      }
+    },
+
+    "text_styles": {
+      "hero_headline": {
+        "font": "Display",
+        "size": "hero scale",
+        "weight": "700-800",
+        "color": "text-primary or white (on dark)",
+        "case": "Title case or sentence case"
+      },
+      "page_title": {
+        "font": "Display",
+        "size": "h1 scale",
+        "weight": "700",
+        "color": "text-primary"
+      },
+      "section_title": {
+        "font": "Display or Body Bold",
+        "size": "h2 scale",
+        "weight": "600-700",
+        "color": "text-primary"
+      },
+      "project_title": {
+        "font": "Display",
+        "size": "h2-h3 scale",
+        "weight": "600",
+        "color": "text-primary"
+      },
+      "body_copy": {
+        "font": "Body",
+        "size": "body scale",
+        "weight": "400",
+        "color": "text-secondary"
+      },
+      "eyebrow": {
+        "font": "Body or Mono",
+        "size": "micro scale",
+        "weight": "500",
+        "letter_spacing": "0.05em",
+        "text_transform": "uppercase",
+        "color": "text-muted"
+      },
+      "metadata": {
+        "font": "Mono or Body",
+        "size": "small scale",
+        "weight": "400",
+        "color": "text-muted"
+      }
+    }
+  },
+
+  "color_system": {
+    "philosophy": "Neutral palette that serves as backdrop for portfolio. Color draws attention to work and CTAs, not decoration.",
+
+    "palette": {
+      "primary": {
+        "black": {
+          "hex": "#08090A",
+          "rgb": "8, 9, 10",
+          "use": "Primary text, dark backgrounds, footer"
+        },
+        "charcoal": {
+          "hex": "#2B2B2B",
+          "rgb": "43, 43, 43",
+          "use": "Secondary dark, hover states on dark"
+        },
+        "grey": {
+          "hex": "#7A7A7A",
+          "rgb": "122, 122, 122",
+          "use": "Muted text, borders, disabled states"
+        },
+        "off_white": {
+          "hex": "#F4F4F2",
+          "rgb": "244, 244, 242",
+          "use": "Primary background, light sections"
+        },
+        "white": {
+          "hex": "#FFFFFF",
+          "rgb": "255, 255, 255",
+          "use": "Cards, contrast sections, text on dark"
+        }
+      },
+      "extended": {
+        "light_grey": {
+          "hex": "#E5E5E3",
+          "rgb": "229, 229, 227",
+          "use": "Subtle dividers, hover backgrounds"
+        },
+        "dark_grey": {
+          "hex": "#1A1A1A",
+          "rgb": "26, 26, 26",
+          "use": "Dark section backgrounds, alternative to black"
+        }
+      }
+    },
+
+    "semantic_colors": {
+      "text": {
+        "primary": "#08090A",
+        "secondary": "#2B2B2B",
+        "muted": "#7A7A7A",
+        "inverse": "#FFFFFF"
+      },
+      "background": {
+        "primary": "#F4F4F2",
+        "secondary": "#FFFFFF",
+        "dark": "#08090A",
+        "dark_alt": "#1A1A1A"
+      },
+      "border": {
+        "default": "#E5E5E3",
+        "subtle": "rgba(0,0,0,0.08)",
+        "dark": "#2B2B2B"
+      },
+      "interactive": {
+        "default": "#08090A",
+        "hover": "#2B2B2B",
+        "active": "#08090A",
+        "focus_ring": "rgba(8,9,10,0.3)"
+      }
+    },
+
+    "dark_mode_tokens": {
+      "note": "For dark hero sections or if full dark mode implemented",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#F4F4F2",
+      "text_muted": "#7A7A7A",
+      "background_primary": "#08090A",
+      "background_secondary": "#1A1A1A",
+      "border": "rgba(255,255,255,0.12)"
+    },
+
+    "accessibility": {
+      "contrast_ratios": {
+        "black_on_off_white": "16.5:1 (AAA)",
+        "charcoal_on_off_white": "10.8:1 (AAA)",
+        "grey_on_off_white": "4.0:1 (AA for large text only)",
+        "white_on_black": "16.5:1 (AAA)"
+      },
+      "notes": [
+        "Grey (#7A7A7A) fails AA for body text on light backgrounds - use only for large text/decorative",
+        "All primary text combinations pass AAA",
+        "Ensure interactive elements have sufficient contrast"
+      ]
+    }
+  },
+
+  "spacing_system": {
+    "philosophy": "Generous whitespace. Let content breathe. Spacing creates hierarchy.",
+
+    "base_unit": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "2xl": "48px",
+      "3xl": "64px",
+      "4xl": "80px",
+      "5xl": "120px",
+      "6xl": "160px"
+    },
+
+    "component_spacing": {
+      "button_padding": {
+        "horizontal": "24-32px",
+        "vertical": "12-16px"
+      },
+      "card_padding": {
+        "default": "24px",
+        "large": "32px"
+      },
+      "section_padding": {
+        "desktop": "80-120px vertical",
+        "tablet": "64-80px vertical",
+        "mobile": "48-64px vertical"
+      },
+      "container_padding": {
+        "desktop": "48-64px horizontal",
+        "tablet": "32px horizontal",
+        "mobile": "20-24px horizontal"
+      }
+    },
+
+    "layout_spacing": {
+      "grid_gap": {
+        "desktop": "24-32px",
+        "tablet": "20px",
+        "mobile": "16px"
+      },
+      "stack_gap": {
+        "tight": "8px",
+        "default": "16px",
+        "loose": "24px",
+        "section": "48-64px"
+      }
+    }
+  },
+
+  "grid_system": {
+    "container": {
+      "max_width": "1440px",
+      "content_max_width": "1200px",
+      "narrow_max_width": "800px"
+    },
+    "columns": {
+      "desktop": "12 columns",
+      "tablet": "8 columns",
+      "mobile": "4 columns"
+    },
+    "gutters": {
+      "desktop": "24px",
+      "tablet": "20px",
+      "mobile": "16px"
+    },
+    "portfolio_grid": {
+      "work_page": {
+        "desktop": "3 columns",
+        "tablet": "2 columns",
+        "mobile": "1 column"
+      },
+      "homepage_featured": {
+        "desktop": "2-3 columns",
+        "tablet": "2 columns",
+        "mobile": "1 column"
+      }
+    }
+  },
+
+  "effects": {
+    "shadows": {
+      "philosophy": "Minimal shadows. Prefer borders or background shifts.",
+      "subtle": "0 1px 3px rgba(0,0,0,0.04)",
+      "card": "0 2px 8px rgba(0,0,0,0.06)",
+      "elevated": "0 4px 16px rgba(0,0,0,0.08)",
+      "note": "Use sparingly - design should feel flat/minimal"
+    },
+    "borders": {
+      "default": "1px solid #E5E5E3",
+      "subtle": "1px solid rgba(0,0,0,0.08)",
+      "radius": {
+        "none": "0px (preferred for most elements)",
+        "small": "4px (buttons, inputs if needed)",
+        "note": "Client prefers linear/straight edges - avoid rounded corners except subtle radius"
+      }
+    },
+    "transitions": {
+      "default": "200ms ease",
+      "fast": "150ms ease",
+      "slow": "300ms ease",
+      "properties": "opacity, transform, background-color"
+    }
+  },
+
+  "iconography": {
+    "style": "Line icons, minimal weight",
+    "source_recommendations": ["Lucide", "Feather Icons", "Phosphor (light weight)"],
+    "size_scale": {
+      "small": "16px",
+      "default": "20-24px",
+      "large": "32px"
+    },
+    "stroke_weight": "1.5-2px",
+    "color": "Inherits text color"
+  },
+
+  "imagery": {
+    "portfolio_images": {
+      "aspect_ratios": {
+        "grid_thumbnail": "4:3 or 3:2 (consistent within grid)",
+        "hero": "16:9 or full-bleed",
+        "gallery": "Variable (maintain original proportions)"
+      },
+      "treatment": "No filters, minimal editing - let work speak",
+      "hover": "Subtle scale (1.02-1.05) or overlay with info"
+    },
+    "backgrounds": {
+      "pattern": "None - clean solid backgrounds",
+      "gradients": "Avoid unless very subtle (dark to slightly darker)"
+    }
+  }
+}

@@ -1,512 +1,351 @@
-# /copy - Copywriting Command
+---
+name: copy
+description: "Generate brand-aligned marketing copy for Salt Core. Enforces voice guidelines and AI Detection Kill List."
+---
+
+# /copy - Marketing Copy Generation
+
+Generate conversion-optimized marketing copy that follows Salt Core's brand voice and passes AI detection scrutiny.
 
 ## Purpose
-Transform strategy outputs into conversion-focused page copy. Produces headlines, body copy, CTAs, and microcopy that speak directly to ICPs at their awareness level while maintaining brand voice.
+
+Create copy for marketing pages, features, CTAs, and other customer-facing content. This command orchestrates the `marketing-copywriter` agent with built-in Voice Guardian checks.
 
 ## When to Use
-- Page briefs are complete and you need actual copy
-- Moving from strategy phase to implementation
-- Need headlines, body copy, or CTAs
-- Writing copy for a specific page or section
+
+- Writing new marketing page copy
+- Refreshing existing page content
+- Creating feature descriptions
+- Writing CTAs and microcopy
+- Developing email subject lines
+- Any customer-facing text for saltcore.io
 
 ## Usage
 
+```bash
+# Generate hero section copy
+/copy hero
+/copy hero --page homepage
+/copy hero --page pricing
+
+# Generate feature copy
+/copy feature "strategic intelligence"
+/copy feature "client portal" --style minimal
+
+# Generate CTA variations
+/copy cta "signup"
+/copy cta "waitlist" --urgency low
+
+# Generate full page copy
+/copy page homepage
+/copy page pricing
+/copy page features
+
+# Generate specific section
+/copy section "problem-statement"
+/copy section "transformation"
+/copy section "social-proof"
+
+# Check existing copy
+/copy check "Your existing copy here..."
+/copy check --file app/(public)/page.tsx
 ```
-/copy [page or scope] for [Client Name]
+
+## Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `type` | Copy type: `hero`, `feature`, `cta`, `page`, `section`, `check` | `hero` |
+| `target` | Feature name, page name, or section name | - |
+| `--page` | Target page context | `homepage` |
+| `--style` | Writing style: `minimal`, `warm`, `urgent` | `minimal` |
+| `--urgency` | CTA urgency level: `low`, `medium`, `high` | `low` |
+| `--variations` | Number of options to generate | `3` |
+| `--file` | File path for checking existing copy | - |
+
+## Copy Types
+
+### hero
+Generate hero section copy (headline, subheadline, CTA).
+
+```bash
+/copy hero --page homepage
+
+Output:
+┌─────────────────────────────────────────────────────────────┐
+│ HEADLINE                                                     │
+│ "Win $10k+ projects"                                         │
+│                                                              │
+│ SUBHEADLINE                                                  │
+│ "The studio OS that transforms designer-developers          │
+│  into strategic consultants."                                │
+│                                                              │
+│ CTA                                                          │
+│ "Join the waitlist"                                          │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-**Examples:**
+### feature
+Generate feature description copy.
+
+```bash
+/copy feature "ambient intelligence"
+
+Output:
+┌─────────────────────────────────────────────────────────────┐
+│ TITLE                                                        │
+│ "Intelligence when you need it"                              │
+│                                                              │
+│ DESCRIPTION                                                  │
+│ "Contextual insights surface automatically. Deadlines,      │
+│  upsell opportunities, client patterns—all without you      │
+│  asking."                                                    │
+└─────────────────────────────────────────────────────────────┘
 ```
-/copy Write the homepage copy for GreenLeaf Organics
-/copy Create copy for all service pages for TechFlow
-/copy Write hero section headlines for the pricing page
-/copy Generate CTA copy for all pages
+
+### cta
+Generate call-to-action variations.
+
+```bash
+/copy cta "waitlist"
+
+Output:
+┌─────────────────────────────────────────────────────────────┐
+│ Option A (Recommended): "Join the waitlist"                  │
+│ Option B: "Get early access"                                 │
+│ Option C: "Reserve your spot"                                │
+└─────────────────────────────────────────────────────────────┘
 ```
 
----
+### page
+Generate complete page copy following structure.
 
-## Prerequisites
+```bash
+/copy page homepage
 
-### Required Inputs
-- [ ] **Page Brief** — Must know what the page needs to accomplish
-- [ ] **ICP Profile** — Must know who we're writing to
-- [ ] **Brand Voice** — Must know how to sound
+Output:
+Full markdown document with all sections:
+- Hero
+- Problem statement
+- Solution/transformation
+- Features (3-4)
+- Social proof approach
+- Final CTA
+```
 
-### Helpful Inputs
-- [ ] Content Requirements — Specific content needs
-- [ ] Competitor copy — What to differentiate from
-- [ ] Existing copy — What to improve on
-- [ ] Client examples — Copy they like
+### section
+Generate a specific page section.
 
----
+```bash
+/copy section "problem-statement"
+```
+
+### check
+Run Voice Guardian on existing copy.
+
+```bash
+/copy check "Leverage our cutting-edge solution to streamline your workflow"
+
+Output:
+┌─────────────────────────────────────────────────────────────┐
+│ VOICE GUARDIAN REPORT                                        │
+│                                                              │
+│ ❌ VIOLATIONS FOUND: 3                                        │
+│                                                              │
+│ 1. "leverage" → Replace with "use"                           │
+│ 2. "cutting-edge" → Replace with "modern"                    │
+│ 3. "streamline" → Replace with "simplify"                    │
+│                                                              │
+│ SUGGESTED REWRITE:                                           │
+│ "Use our modern solution to simplify your workflow"          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Voice Guardian Integration
+
+Every output automatically runs through Voice Guardian checks:
+
+1. **Kill List Scan** - Checks for banned words/phrases
+2. **Word Count Validation** - Ensures copy meets length limits
+3. **Tone Verification** - Confirms pro-grade warmth
+4. **Claim Validation** - Verifies pre-revenue appropriateness
+
+## Style Options
+
+### minimal (default)
+Linear/Vercel style. Short, technical, assumes competence.
+```
+"Strategic intelligence. Built in."
+```
+
+### warm
+More emotional, validates the audience's journey.
+```
+"You're building at 10x speed. It's time your rates caught up."
+```
+
+### urgent
+Creates time pressure (use sparingly).
+```
+"Join 47 studios already on the waitlist."
+```
 
 ## Workflow
 
-### Step 1: Context Loading
-
-Load all required inputs:
-
 ```
-1. PAGE BRIEF
-   □ What's this page's ONE job?
-   □ What sections are defined?
-   □ What's the conversion goal?
-   □ What's the target awareness level?
-
-2. ICP PROFILE  
-   □ Which ICP is this page targeting?
-   □ What are their top pain points?
-   □ What are their key desires?
-   □ What objections need handling?
-   □ What language do they use?
-
-3. BRAND VOICE
-   □ What are the voice dimensions?
-   □ What words are forbidden?
-   □ What's the personality level?
-   □ Any example phrases to emulate?
-```
-
-### Step 2: Message Architecture
-
-Before writing, structure the argument:
-
-```
-PRIMARY MESSAGE
-└── The ONE thing they must understand from this page
-
-SUPPORTING MESSAGES  
-├── Point 1 (addresses which pain/desire)
-├── Point 2 (addresses which pain/desire)
-└── Point 3 (addresses which pain/desire)
-
-PROOF REQUIREMENTS
-├── What claims need evidence?
-└── What type of proof is available?
-
-CALL TO ACTION
-└── What ONE thing should they do?
+┌─────────────────────────────────────────────────────────────┐
+│                      /copy [type]                            │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  PHASE 1: CONTEXT LOADING                                    │
+│  ─────────────────────────                                   │
+│  • Load voice-principles.md                                  │
+│  • Load terminology.md                                       │
+│  • Load target-audience.md                                   │
+│  • Load value-proposition.md                                 │
+│                                                              │
+│  PHASE 2: FRAMEWORK SELECTION                                │
+│  ─────────────────────────────                               │
+│  • Hero → PAS framework                                      │
+│  • Feature → FAB framework                                   │
+│  • Transformation → BAB framework                            │
+│                                                              │
+│  PHASE 3: GENERATION                                         │
+│  ─────────────────────────                                   │
+│  • Generate 3 variations                                     │
+│  • Apply style modifiers                                     │
+│                                                              │
+│  PHASE 4: VOICE GUARDIAN                                     │
+│  ─────────────────────────                                   │
+│  • Kill List scan                                            │
+│  • Word count check                                          │
+│  • Tone verification                                         │
+│  • Claim validation                                          │
+│                                                              │
+│  PHASE 5: OUTPUT                                             │
+│  ─────────────────────────                                   │
+│  • Present variations with reasoning                         │
+│  • Recommend winner                                          │
+│  • Show Voice Guardian report                                │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### Step 3: Section-by-Section Writing
+## Pre-Revenue Constraints
 
-For each section in the page brief:
+The agent enforces pre-revenue appropriate copy:
 
-```
-For each section:
-1. Identify section purpose
-2. Determine awareness level
-3. Write headline (with alternatives)
-4. Write subheadline (if needed)
-5. Write body copy
-6. Specify proof element
-7. Write CTA copy (if section has one)
-```
+### Allowed
+- Product descriptions
+- Aspirational transformations
+- Origin story ("Built by a studio, for studios")
+- Technical credibility
+- Philosophy statements
 
-### Step 4: Voice Check
+### Not Allowed
+- User counts (unless true)
+- Unverified testimonials
+- ROI claims without data
+- "Trusted by X companies"
 
-Verify copy matches brand voice:
+## Example Output
 
-```
-□ Formality level matches profile
-□ Warmth level matches profile
-□ Enthusiasm level matches profile
-□ No forbidden words used
-□ Tone consistent throughout
-```
+```markdown
+═══════════════════════════════════════════════════════════════
+HOMEPAGE HERO COPY
+═══════════════════════════════════════════════════════════════
 
-### Step 5: Conversion Check
+### Option A (Recommended)
 
-Verify copy will convert:
-
-```
-□ Headlines are benefit-focused (not feature-focused)
-□ Body copy addresses ICP pain points
-□ Objections are neutralized
-□ CTAs are action-oriented
-□ Proof elements support claims
-□ Awareness level appropriate
-```
-
-### Step 6: Generate Output
-
-Produce structured copy document:
-
-```
-/mnt/user-data/outputs/
-└── {client}_{page}_copy.json
-```
-
----
-
-## Output Format
-
-### Per-Page Copy Document
-
-Each page produces a copy document with:
-
-```json
-{
-  "copy_metadata": {
-    "client_name": "",
-    "page": "",
-    "target_icp": "",
-    "awareness_level": "",
-    "version": "1.0"
-  },
-  
-  "seo": {
-    "meta_title": "",
-    "meta_description": ""
-  },
-  
-  "sections": [
-    {
-      "section_id": "",
-      "headline": {
-        "primary": "",
-        "alternatives": []
-      },
-      "subheadline": "",
-      "body_copy": "",
-      "cta": {
-        "button_text": "",
-        "supporting_text": ""
-      },
-      "proof_element": ""
-    }
-  ],
-  
-  "microcopy": {
-    "form_labels": {},
-    "button_states": {},
-    "error_messages": {}
-  }
-}
-```
-
----
-
-## Awareness-Level Strategies
-
-### Quick Reference
-
-| Level | Lead With | Headline Approach | CTA Style |
-|-------|-----------|-------------------|-----------|
-| Unaware | Problem | Surprising fact or question | Soft, curiosity |
-| Problem-Aware | Solution category | Acknowledge pain, promise relief | Educational |
-| Solution-Aware | Differentiation | Unique advantage | Comparison |
-| Product-Aware | Proof | Address doubt with evidence | Low-risk trial |
-| Most Aware | Offer | Direct, urgent | Strong action |
-
-### Examples by Level
-
-**Unaware:**
-```
-Headline: "The average person touches their face 23 times per hour. 
-          Here's why that matters for your skin."
-CTA: "Learn more"
-```
-
-**Problem-Aware:**
-```
-Headline: "Tired of skincare that promises everything and delivers nothing?"
-CTA: "Discover a better approach"
-```
-
-**Solution-Aware:**
-```
-Headline: "Unlike other 'clean' brands, every ingredient is 
-          third-party tested. See the certificates yourself."
-CTA: "Compare our standards"
-```
-
-**Product-Aware:**
-```
-Headline: "Will it work for sensitive skin? 
-          Here's what 500+ customers with eczema say."
-CTA: "Start your free trial"
-```
-
-**Most Aware:**
-```
-Headline: "Ready for your best skin yet? 
-          Get 20% off your first order."
-CTA: "Shop now"
-```
-
----
-
-## Headline Formulas
-
-### Benefit Headlines
-```
-[Get/Achieve] [Desired Result] [Without/In] [Obstacle/Timeframe]
-```
-
-### Problem-Solution
-```
-[Problem]? [Solution] [Delivers Result]
-```
-
-### Proof Headlines
-```
-[Number] [People/Companies] [Achieved Result] [With Product]
-```
-
-### Question Headlines
-```
-[Question That Gets "Yes" or Triggers Curiosity]?
-```
-
-### How-To Headlines
-```
-How to [Achieve Result] [Without Common Obstacle]
-```
-
----
-
-## CTA Patterns
-
-### By Commitment Level
-
-**Low (Free):** "Get the Guide" | "See How It Works" | "Take the Quiz"
-
-**Medium (Time):** "Book a Call" | "Get a Quote" | "Schedule Demo"
-
-**High (Money):** "Start Now" | "Join Today" | "Buy Now"
-
-### By Psychology
-
-**Benefit:** "Start Saving Time" | "Get More Leads"
-
-**Identity:** "Become a Better [X]" | "Join the Top 1%"
-
-**Action:** "Send My First [X]" | "Build My [X]"
-
-**Risk-Reducing:** "Try Risk-Free" | "Start Free" | "Cancel Anytime"
-
----
-
-## Placeholder Protocol
-
-When information is missing, use clear placeholders:
-
-```
-[COMPANY NAME] — Client's company name
-[PRODUCT NAME] — Specific product reference
-[NUMBER] — Statistic needing verification
-[TESTIMONIAL] — Quote needed from client
-[RESULT] — Specific outcome needing data
-[PRICE] — Pricing needing confirmation
-[TIMEFRAME] — Duration needing verification
-```
-
-**Example:**
-```
-"Join [NUMBER]+ happy customers who've achieved 
-[RESULT] with [PRODUCT NAME]."
-
-[TESTIMONIAL PLACEHOLDER: Need quote from customer 
-addressing trust objection, ideally mentioning ingredients]
-```
-
----
-
-## Quality Checklist
-
-Before delivering copy:
-
-### Completeness
-- [ ] All sections from brief have copy
-- [ ] Headlines have 2-3 alternatives
-- [ ] All CTAs have button + supporting text
-- [ ] SEO elements complete
-- [ ] Microcopy included where needed
-
-### Voice
-- [ ] Matches brand voice profile
-- [ ] No forbidden words
-- [ ] Consistent tone throughout
-- [ ] Appropriate formality level
-
-### Conversion
-- [ ] Benefits over features
-- [ ] Objections addressed
-- [ ] Proof supports claims
-- [ ] CTAs are action-oriented
-- [ ] Awareness level matched
-
-### Technical
-- [ ] No unresolved placeholders (or clearly flagged)
-- [ ] Assumptions documented
-- [ ] Grammar/spelling checked
-- [ ] Formatting consistent
-
----
-
-## Example Interaction
-
-**User:** `/copy Write the services page copy for TechFlow`
-
-**Agent Response:**
-
-```
-## Services Page Copy: TechFlow
-
-### Context
-- **Page Purpose:** Convert visitors to demo bookings
-- **Target ICP:** Mid-market CTOs (Solution-Aware)
-- **Key Objection:** "Is this worth switching from our current stack?"
-- **Key Desire:** Reduce DevOps overhead, ship faster
-- **Voice:** Professional (7/10), Direct (8/10), Confident (9/10)
-
----
-
-### SEO
-
-**Meta Title:**
-Enterprise DevOps Platform | TechFlow Services
-
-**Meta Description:**
-Ship faster with less overhead. TechFlow's DevOps platform 
-handles infrastructure so your team can focus on building. 
-Trusted by 500+ engineering teams.
-
----
-
-### Hero Section
-
-**Headline (Primary):**
-Your engineers should be building features, not fighting infrastructure.
-
-**Alternatives:**
-- "DevOps that gets out of your way."
-- "Ship 3x faster with half the infrastructure headaches."
+**Headline:**
+> Win $10k+ projects
 
 **Subheadline:**
-TechFlow handles deployment, scaling, and monitoring automatically—
-so your team can focus on what actually moves the business forward.
+> The studio OS that transforms designer-developers into strategic 
+> consultants. Strategy, operations, client portal—unified.
 
-**CTA:** 
-- Primary: "Book a Demo"
-- Secondary: "See How It Works"
+**CTA:**
+> Join the waitlist
 
----
-
-### Services Grid
-
-**Service 1: Automated Deployments**
-
-Headline: "Deploy in minutes, not meetings."
-
-Body: Push code. TechFlow handles the rest. Automatic builds, 
-testing, and zero-downtime deployments—no DevOps engineer required.
-
-**Service 2: Auto-Scaling Infrastructure**
-
-Headline: "Scale up for launch day. Scale down for your budget."
-
-Body: Traffic spike? Handled. Quiet weekend? We scale down automatically. 
-You only pay for what you use, and you never worry about capacity.
-
-**Service 3: Proactive Monitoring**
-
-Headline: "Know about issues before your customers do."
-
-Body: Real-time alerts, automated diagnostics, and AI-powered 
-predictions. Most issues get resolved before they become incidents.
+*Reasoning: Direct benefit in headline. Subheadline explains the
+how and for whom. Low-friction CTA appropriate for pre-revenue.*
 
 ---
 
-### Social Proof
+### Option B
 
 **Headline:**
-Trusted by 500+ engineering teams who'd rather ship than babysit servers.
+> Stop competing on price
 
-**Testimonial:**
-"We cut our deployment time from 4 hours to 12 minutes. 
-Our DevOps team went from firefighting to actually improving our stack."
-— Marcus Chen, VP Engineering at ScaleUp Inc.
+**Subheadline:**
+> Salt Core gives you the strategic intelligence that separates
+> $3k projects from $10k+ engagements.
 
-**Stats:**
-- 500+ engineering teams
-- 2.3M deployments per month
-- 99.99% uptime SLA
+**CTA:**
+> Get early access
+
+*Reasoning: Pain-focused approach. May resonate more with
+audience already feeling the squeeze. Slightly more urgent CTA.*
 
 ---
 
-### Objection Handler
+### Option C
 
 **Headline:**
-"But switching platforms is a nightmare..."
+> Strategic intelligence for studios
 
-**Body:**
-We hear you. That's why TechFlow includes white-glove migration support. 
-Our team handles the heavy lifting, runs parallel environments, 
-and ensures zero disruption to your current operations.
+**Subheadline:**
+> Everything you need to win premium projects and run a
+> profitable studio. Built by designers, for designers.
 
-Average migration time: 2 weeks.
-Downtime during migration: Zero.
+**CTA:**
+> Reserve your spot
 
----
+*Reasoning: More descriptive, less punchy. Good for audiences
+needing more context before committing.*
 
-### Final CTA
+───────────────────────────────────────────────────────────────
+VOICE GUARDIAN REPORT
+───────────────────────────────────────────────────────────────
+✅ Kill List violations: 0
+✅ Word counts: All within limits
+✅ Tone: Pro-grade warmth
+✅ Claims: Pre-revenue appropriate
 
-**Headline:**
-Ready to give your team their time back?
-
-**Body:**
-See TechFlow in action with a personalized demo. 
-We'll show you exactly how it works with your stack.
-
-**CTA:** "Book Your Demo"
-**Supporting:** "30 minutes. No commitment. Real answers."
-
----
-
-### Files Generated
-- `techflow_services_copy.json`
-
-Need copy for additional pages?
+All options passed Voice Guardian checks.
+═══════════════════════════════════════════════════════════════
 ```
 
----
+## Integration with Other Commands
 
-## Integration
+| Command | Integration |
+|---------|-------------|
+| `/optimize` | Provides SEO keywords for copy |
+| `/build-page` | Receives copy for implementation |
+| `/write` | Shares voice guidelines |
+| `/brand-check` | Validates against brand docs |
 
-### Consumes
-- Page Briefs (from `/strategy`)
-- ICP Profiles (from `/icp`)
-- Brand Voice Profile (from `/discover`)
-- Content Requirements (from `/strategy`)
+## Output Locations
 
-### Produces For
-- Design team (copy to place in layouts)
-- Development team (copy to implement)
-- Client review (copy for approval)
-- Webflow builder (content to add)
+Generated copy can be:
+- Displayed in terminal (default)
+- Saved to file with `--output [path]`
+- Piped to `/build-page` for implementation
 
-### Can Be Audited By
-- `/review` can audit copy against conversion best practices
+## Troubleshooting
 
----
+### "Voice Guardian flagged this word"
+Check the AI Detection Kill List. Replace with suggested alternative.
 
-## Command Variations
+### "Word count exceeded"
+Edit for brevity. Headlines max 8 words, CTAs max 4 words.
 
-```
-/copy homepage for [Client]
-→ Full homepage copy with all sections
+### "Claim not appropriate for pre-revenue"
+Remove or rephrase claims that require social proof we don't have.
 
-/copy all pages for [Client]
-→ Copy for every page in the sitemap
+## See Also
 
-/copy headlines for [Client]
-→ Just headlines + alternatives for all pages
-
-/copy ctas for [Client]
-→ Just CTA copy for all pages
-
-/copy [section] for [page] for [Client]
-→ Specific section only (e.g., "hero section for homepage")
-```
+- `marketing-copywriter` agent (core implementation)
+- `brand-identity/research/research-marketing-copywriter-agent.md` (research)
+- `brand-identity/foundation/voice-principles.md` (voice rules)
+- `brand-identity/voice/terminology.md` (terminology)

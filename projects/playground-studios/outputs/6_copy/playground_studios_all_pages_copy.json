@@ -1,0 +1,535 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0",
+    "voice_profile": "The Talented Friend - approachable expertise with genuine enthusiasm",
+    "primary_icp": "Brand Builder (Solution-Aware)",
+    "secondary_icp": "Agency Producer (Most-Aware)"
+  },
+
+  "pages": {
+    "homepage": {
+      "page_name": "Homepage",
+      "slug": "/",
+      "target_awareness": "Solution-Aware",
+      "one_job": "Orient visitors and route them to portfolio or contact within 5 seconds",
+
+      "seo": {
+        "meta_title": "Playground Studios | Creative Production for Bold Brands",
+        "meta_description": "Photography and video production for lifestyle and CPG brands. From concept to final delivery. Clients include Celsius, Samsung, and Kendra Scott."
+      },
+
+      "sections": {
+        "hero": {
+          "purpose": "Communicate who + what + vibe instantly",
+          "headline": {
+            "primary": "Where Imagination Meets Reality",
+            "alternatives": [
+              "Creative Production for Brands That Move",
+              "Play. Create. Deliver.",
+              "Your Vision. Our Playground."
+            ]
+          },
+          "subheadline": "Photography and video production for brands ready to stand out. From concept to final delivery, we bring bold ideas to life.",
+          "cta": {
+            "primary": {
+              "text": "View Our Work",
+              "destination": "/work"
+            },
+            "secondary": {
+              "text": "Let's Talk",
+              "destination": "/contact"
+            }
+          },
+          "design_note": "Hero image/video should be best portfolio work. First impression = everything."
+        },
+
+        "client_logos": {
+          "purpose": "Instant credibility",
+          "intro_text": "Trusted by brands that don't settle",
+          "logos_to_display": ["Celsius", "Samsung", "Kendra Scott", "MVMT", "Brumate", "Liquid IV", "Bulletproof", "Michelob Ultra"],
+          "note": "Awaiting logo usage confirmation from client"
+        },
+
+        "featured_work": {
+          "purpose": "Show portfolio quality, invite exploration",
+          "section_headline": "Selected Work",
+          "cta": {
+            "text": "View All Work",
+            "destination": "/work"
+          },
+          "layout_note": "3-6 featured projects as visual grid. Let images do the talking."
+        },
+
+        "brief_intro": {
+          "purpose": "Human touch, differentiation",
+          "headline": "A Different Kind of Production Studio",
+          "body": "We're Playground Studios—a creative production company built for brands that want more than cookie-cutter content. Whether it's a campaign shoot or a single product photo, we bring the same thing to every project: genuine curiosity, meticulous craft, and a commitment to work that actually moves people.",
+          "cta": {
+            "text": "Learn More About Us",
+            "destination": "/about"
+          }
+        },
+
+        "contact_cta": {
+          "purpose": "Easy conversion path",
+          "headline": "Ready to Create Something?",
+          "subheadline": "Let's talk about your next project.",
+          "cta": {
+            "text": "Get in Touch",
+            "destination": "/contact"
+          }
+        }
+      }
+    },
+
+    "work": {
+      "page_name": "Work",
+      "slug": "/work",
+      "target_awareness": "Solution-Aware",
+      "one_job": "Showcase portfolio breadth and quality, invite deeper exploration",
+
+      "seo": {
+        "meta_title": "Our Work | Playground Studios",
+        "meta_description": "Photography and video production for Celsius, Samsung, Kendra Scott, MVMT, and more. View our portfolio of brand content, lifestyle photography, and commercial video."
+      },
+
+      "sections": {
+        "header": {
+          "purpose": "Confirm location, set expectations",
+          "headline": "Selected Work",
+          "subheadline": "Photography, video, and creative production for brands that aim higher."
+        },
+
+        "filter_categories": {
+          "purpose": "Help visitors find relevant work",
+          "options": ["All", "Brand", "Hospitality", "Studio"],
+          "note": "Keep simple. Don't over-categorize with few projects."
+        },
+
+        "project_grid": {
+          "purpose": "Display portfolio, invite clicks",
+          "interaction_note": "Images do the talking. Hover states reveal project/client name."
+        },
+
+        "contact_cta": {
+          "purpose": "Conversion path for those ready",
+          "headline": "Like What You See?",
+          "subheadline": "Let's make something together.",
+          "cta": {
+            "text": "Start a Project",
+            "destination": "/contact"
+          }
+        }
+      }
+    },
+
+    "work_detail": {
+      "page_name": "Project Detail",
+      "slug": "/work/[project-slug]",
+      "target_awareness": "Product-Aware",
+      "one_job": "Deep dive on specific project, prove relevant capability",
+      "dynamic": true,
+
+      "sections": {
+        "project_hero": {
+          "purpose": "Immerse in the work",
+          "content": "[Project title and client name overlaid on hero image]",
+          "layout_note": "Full-width hero image from project"
+        },
+
+        "project_info": {
+          "purpose": "Context and scope",
+          "fields": {
+            "description": "[2-4 sentences about the project - what was the challenge, what did we create]",
+            "services": "[Services provided - e.g., Brand Photography, Video Production, Post-Production]",
+            "year": "[Project year]"
+          },
+          "template_example": {
+            "description": "Celsius needed bold lifestyle photography for their summer campaign—something that captured the energy of the brand while feeling authentic to their audience. We produced a full day shoot across three locations, delivering a library of assets for social, web, and retail.",
+            "services": "Brand Photography, Creative Direction, Post-Production",
+            "year": "2025"
+          },
+          "note": "Keep it brief. Images are the star."
+        },
+
+        "image_gallery": {
+          "purpose": "Show range of deliverables",
+          "layout_note": "6-15 images. Mix of full-width and grid layouts for visual interest."
+        },
+
+        "next_project": {
+          "purpose": "Keep exploration going",
+          "headline": "Next Project",
+          "cta": {
+            "text": "View Project",
+            "destination": "[next project slug]"
+          }
+        },
+
+        "contact_cta": {
+          "purpose": "Convert impressed visitors",
+          "headline": "Want Something Like This?",
+          "subheadline": "Let's talk about bringing your vision to life.",
+          "cta": {
+            "text": "Start a Conversation",
+            "destination": "/contact"
+          }
+        }
+      }
+    },
+
+    "about": {
+      "page_name": "About",
+      "slug": "/about",
+      "target_awareness": "Product-Aware",
+      "one_job": "Humanize the studio, build trust and connection",
+
+      "seo": {
+        "meta_title": "About Playground Studios | Our Story & Approach",
+        "meta_description": "Founded on a simple idea: bring the wonder of play into professional creative work. Learn about our approach to photography and video production."
+      },
+
+      "sections": {
+        "hero": {
+          "purpose": "Set tone, introduce the studio",
+          "headline": "Where Imagination Meets Reality",
+          "subheadline": "We're Playground Studios. We create content that moves."
+        },
+
+        "origin_story": {
+          "purpose": "Build emotional connection",
+          "headline": "How It Started",
+          "body": [
+            "The idea for Playground Studios was born on a simple walk through a Portland neighborhood.",
+            "I looked over and saw a bunch of kids on a break, playing at the playground. Unbothered. Carefree. Lost in their own worlds of imagination. And I thought—when did we stop doing that?",
+            "Somewhere along the way, we forget how to play. We get caught up in the 'right way' to do things, the safe way, the expected way. But the best creative work? It happens when you give yourself permission to play again.",
+            "That's what Playground Studios is about. We approach every project with the wonder of a child and the expertise of seasoned professionals. We play, we experiment, we push—and then we deliver work that actually moves people."
+          ],
+          "layout_note": "Can pair with image of Portland playground or Barrett working"
+        },
+
+        "process_philosophy": {
+          "purpose": "Differentiate, set expectations",
+          "headline": "How We Work",
+          "intro": "Every project follows the same philosophy—whether it's a single product photo or a full campaign.",
+          "steps": [
+            {
+              "name": "Play on Set",
+              "description": "We start with exploration. Big ideas, wild concepts, creative risks. This is where the magic happens—before we pick up a camera, we pick up the 'why.'"
+            },
+            {
+              "name": "Get in the Box",
+              "description": "Then we focus. All that creative energy gets channeled into precise, purposeful execution. Every shot has intention. Every edit serves the story."
+            },
+            {
+              "name": "Go Home",
+              "description": "And then we deliver. On time, on budget, and exceeding expectations. Work you're proud to share. Work that actually performs."
+            }
+          ],
+          "layout_note": "Three steps could be visualized as a horizontal process flow"
+        },
+
+        "founder_bio": {
+          "purpose": "Put a face to the brand",
+          "headline": "Meet Barrett",
+          "body": "I'm Barrett Shutt—founder, creative director, and the person behind most of what happens here at Playground Studios. I've spent years working with brands like Celsius, Samsung, Kendra Scott, and MVMT, but the work I'm most proud of is the work where we genuinely solved a problem.",
+          "philosophy": "I believe in honest work. No bullying. No bullshit. Just clear communication, creative collaboration, and content that does what it's supposed to do. If that sounds like what you're looking for, I'd love to chat.",
+          "photo_note": "Needs updated headshot (flagged in missing info)"
+        },
+
+        "values": {
+          "purpose": "Reinforce differentiators",
+          "headline": "What We Believe",
+          "values_list": [
+            {
+              "value": "Purpose Over Production",
+              "description": "Making content is secondary. Finding purpose is primary. Every project starts with understanding the 'why.'"
+            },
+            {
+              "value": "Honest Work",
+              "description": "No bullying. No bullshit. We approach every relationship with integrity and transparency."
+            },
+            {
+              "value": "Quality That Moves",
+              "description": "We deliver work that exceeds expectations and creates lasting impact for your brand."
+            }
+          ]
+        },
+
+        "contact_cta": {
+          "purpose": "Convert those who connected with the story",
+          "headline": "Let's Create Something Together",
+          "subheadline": "Ready to start a conversation?",
+          "cta": {
+            "text": "Get in Touch",
+            "destination": "/contact"
+          }
+        }
+      }
+    },
+
+    "services": {
+      "page_name": "Services",
+      "slug": "/services",
+      "target_awareness": "Solution-Aware",
+      "one_job": "Clarify offerings, help visitors self-qualify",
+
+      "seo": {
+        "meta_title": "Services | Photography & Video Production | Playground Studios",
+        "meta_description": "From concept to final delivery—photography, video production, and post-production for lifestyle and CPG brands. Learn how we work."
+      },
+
+      "sections": {
+        "header": {
+          "purpose": "Frame the offerings",
+          "headline": "Full-Service Creative Production",
+          "subheadline": "From the first concept to final delivery, we handle it all. Photography, video, post-production—whatever your project needs."
+        },
+
+        "services": {
+          "purpose": "Organize and explain offerings",
+          "categories": [
+            {
+              "name": "Creative Development",
+              "description": "Every great project starts with a great idea. We work with you to develop concepts, build mood boards, and craft the story before we ever pick up a camera.",
+              "includes": ["Concept Development", "Mood Boards & Direction", "Story & Positioning", "Creative Strategy"],
+              "cta": {
+                "text": "See Creative Work",
+                "destination": "/work"
+              }
+            },
+            {
+              "name": "Production",
+              "description": "This is where ideas become reality. Whether it's a full commercial shoot, lifestyle photography, or product shots in our studio—we bring the vision to life.",
+              "includes": ["Video Production", "Commercial & Branded Content", "Lifestyle Photography", "Product & Studio Photography", "Social Content"],
+              "cta": {
+                "text": "View Portfolio",
+                "destination": "/work"
+              }
+            },
+            {
+              "name": "Post-Production",
+              "description": "The polish that takes good to great. Color grading, editing, retouching, sound design—every detail matters.",
+              "includes": ["Video Editing", "Color Grading", "Photo Retouching", "Sound Design & Mix"],
+              "cta": {
+                "text": "Start a Project",
+                "destination": "/contact"
+              }
+            }
+          ]
+        },
+
+        "how_we_work": {
+          "purpose": "Set expectations, reduce friction",
+          "headline": "What Working With Us Looks Like",
+          "body": "We keep it simple. Here's the typical flow:",
+          "steps": [
+            {
+              "step": "1. Discovery",
+              "description": "We start with a conversation. What are you trying to achieve? What's the story? What does success look like?"
+            },
+            {
+              "step": "2. Planning",
+              "description": "We develop the concept, build the timeline, and align on scope. No surprises, no hidden fees."
+            },
+            {
+              "step": "3. Production",
+              "description": "We bring it to life. Whether it's a one-day shoot or a multi-week campaign, we handle the details."
+            },
+            {
+              "step": "4. Delivery",
+              "description": "Polished, on-brand assets delivered on time. Ready to deploy."
+            }
+          ]
+        },
+
+        "budget_guidance": {
+          "purpose": "Qualify leads, set expectations",
+          "headline": "Investment",
+          "body": "Projects typically start in the $5,000-$8,000 range for focused shoots, with most campaigns landing in the $8,000-$15,000 range. Larger productions scale from there. We work within budgets—let's talk about what you're working with and what makes sense.",
+          "note": "Subtle qualification without scaring away inquiries"
+        },
+
+        "contact_cta": {
+          "purpose": "Convert interested visitors",
+          "headline": "Have a Project in Mind?",
+          "subheadline": "Let's figure out the right approach together.",
+          "cta": {
+            "text": "Start a Conversation",
+            "destination": "/contact"
+          }
+        }
+      }
+    },
+
+    "contact": {
+      "page_name": "Contact",
+      "slug": "/contact",
+      "target_awareness": "Most-Aware",
+      "one_job": "Capture lead information and start conversation",
+
+      "seo": {
+        "meta_title": "Contact Playground Studios | Start a Project",
+        "meta_description": "Ready to create something great? Get in touch to discuss your photography, video, or creative production project."
+      },
+
+      "sections": {
+        "header": {
+          "purpose": "Warm welcome, reduce friction",
+          "headline": "Let's Make Something Great",
+          "subheadline": "Tell us about your project. We'll get back to you within 24-48 hours."
+        },
+
+        "form": {
+          "purpose": "Capture inquiry details",
+          "fields": [
+            {
+              "label": "Your Name",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Email",
+              "type": "email",
+              "required": true
+            },
+            {
+              "label": "Company / Brand",
+              "type": "text",
+              "required": false,
+              "placeholder": "Optional"
+            },
+            {
+              "label": "Project Type",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                "Brand/Lifestyle Photography",
+                "Studio Photography",
+                "Video Production",
+                "Full Production (Photo + Video)",
+                "Not Sure Yet"
+              ]
+            },
+            {
+              "label": "Budget Range",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                "Under $5K",
+                "$5K-$10K",
+                "$10K-$25K",
+                "$25K+",
+                "Not Sure"
+              ]
+            },
+            {
+              "label": "Tell Us About Your Project",
+              "type": "textarea",
+              "required": true,
+              "placeholder": "What are you trying to create? What's the timeline? Any details that help us understand your vision."
+            }
+          ],
+          "submit_button": {
+            "text": "Send Message",
+            "loading_text": "Sending...",
+            "success_text": "Sent!"
+          }
+        },
+
+        "what_to_expect": {
+          "purpose": "Reduce anxiety, set expectations",
+          "headline": "What Happens Next",
+          "body": "We'll review your message and get back to you within 24-48 hours to schedule a quick call. No pressure, just a conversation to see if we're a good fit."
+        },
+
+        "alternative_contact": {
+          "purpose": "Options for those who prefer direct",
+          "headline": "Prefer to Reach Out Directly?",
+          "email": {
+            "label": "Email",
+            "value": "barrett@ontheplayground.studio"
+          },
+          "instagram": {
+            "label": "Instagram",
+            "value": "@ontheplayground.studio"
+          }
+        },
+
+        "location": {
+          "purpose": "Address geographic question",
+          "body": "Based in Louisville & Portland. Available for projects nationwide."
+        }
+      },
+
+      "form_behavior": {
+        "success_message": {
+          "headline": "Thanks for Reaching Out!",
+          "body": "We'll be in touch soon. In the meantime, feel free to check out more of our work."
+        },
+        "error_message": {
+          "headline": "Something Went Wrong",
+          "body": "Please try again, or email us directly at barrett@ontheplayground.studio"
+        }
+      }
+    }
+  },
+
+  "global_microcopy": {
+    "navigation": {
+      "menu_items": ["Work", "About", "Services", "Contact"],
+      "cta_button": "Let's Talk"
+    },
+    "footer": {
+      "tagline": "Where Imagination Meets Reality",
+      "copyright": "Playground Studios. All rights reserved.",
+      "newsletter_placeholder": "Enter your email",
+      "newsletter_cta": "Subscribe",
+      "social_heading": "Follow Along"
+    },
+    "404_page": {
+      "headline": "Hmm, This Page Wandered Off",
+      "body": "Looks like this page doesn't exist. Let's get you back on track.",
+      "cta": {
+        "text": "Back to Home",
+        "destination": "/"
+      }
+    },
+    "loading_states": {
+      "general": "Loading...",
+      "images": "Loading images...",
+      "form_submitting": "Sending..."
+    }
+  },
+
+  "cta_patterns": {
+    "primary_cta_style": "Action-oriented, direct",
+    "examples": {
+      "homepage_to_work": "View Our Work",
+      "homepage_to_contact": "Let's Talk",
+      "work_to_contact": "Start a Project",
+      "about_to_contact": "Get in Touch",
+      "services_to_contact": "Start a Conversation",
+      "project_to_contact": "Start a Conversation"
+    },
+    "note": "CTAs are warm but direct. Not salesy, not corporate. Like inviting someone to coffee."
+  },
+
+  "testimonial_placeholders": {
+    "note": "Awaiting testimonials from client - see missing_info.json",
+    "ideal_themes": [
+      "Quality of work",
+      "Communication and process",
+      "Meeting deadlines",
+      "Value and results"
+    ],
+    "template": {
+      "homepage": "[TESTIMONIAL: Quote about working with Playground Studios - quality or experience. Name, Title, Company]",
+      "about": "[TESTIMONIAL: Quote about Barrett specifically or the collaborative process. Name, Title, Company]",
+      "services": "[TESTIMONIAL: Quote about the production process or deliverables. Name, Title, Company]"
+    }
+  }
+}

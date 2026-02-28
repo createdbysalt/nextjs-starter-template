@@ -1,0 +1,458 @@
+{
+  "url": "https://vercel.com",
+  "extractedAt": "2026-01-31T00:00:00Z",
+  "method": "getComputedStyle() extraction via browser automation",
+
+  "fonts": {
+    "primary": {
+      "family": "Geist, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "fallback": "ui-sans-serif, system-ui, -apple-system, 'system-ui', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif"
+    },
+    "mono": {
+      "family": "'Geist Mono', ui-monospace, SFMono-Regular, 'Roboto Mono', Menlo, Monaco, 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace"
+    }
+  },
+
+  "viewports": {
+    "1440": {
+      "typography": {
+        "h1-hero": {
+          "fontSize": "48px",
+          "fontWeight": "600",
+          "lineHeight": "48px",
+          "letterSpacing": "-2.4px",
+          "color": "rgb(23, 23, 23)",
+          "sample": "Build and deploy on the AI Cloud."
+        },
+        "h2-section": {
+          "fontSize": "40px",
+          "fontWeight": "600",
+          "lineHeight": "48px",
+          "letterSpacing": "-2.4px",
+          "color": "rgb(23, 23, 23)",
+          "sample": "Deploy your first app in seconds."
+        },
+        "h3-large": {
+          "fontSize": "48px",
+          "fontWeight": "600",
+          "lineHeight": "56px",
+          "letterSpacing": "-2.88px",
+          "color": "rgb(23, 23, 23)",
+          "sample": "Start Deploying"
+        },
+        "h3-card-title": {
+          "fontSize": "32px",
+          "fontWeight": "600",
+          "lineHeight": "40px",
+          "letterSpacing": "-1.28px",
+          "color": "rgb(23, 23, 23)",
+          "sample": "Your product, delivered."
+        },
+        "h3-feature": {
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.96px",
+          "color": "rgb(23, 23, 23)",
+          "sample": "Agents"
+        },
+        "h2-pill": {
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.96px",
+          "color": "rgb(23, 23, 23)",
+          "sample": "Scale your"
+        },
+        "h2-eyebrow": {
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.28px",
+          "color": "rgb(102, 102, 102)",
+          "sample": "Framework-Defined Infrastructure"
+        },
+        "h5-nav-category": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "letterSpacing": "normal",
+          "color": "rgb(102, 102, 102)",
+          "sample": "AI Cloud"
+        },
+        "body-lead": {
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "lineHeight": "36px",
+          "letterSpacing": "normal",
+          "color": "rgb(102, 102, 102)"
+        },
+        "body": {
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "color": "rgb(102, 102, 102)"
+        },
+        "body-small": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "letterSpacing": "normal",
+          "color": "rgb(102, 102, 102)"
+        },
+        "caption": {
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "normal",
+          "color": "rgb(102, 102, 102)"
+        },
+        "code": {
+          "fontFamily": "'Geist Mono'",
+          "fontSize": "13px",
+          "fontWeight": "500",
+          "lineHeight": "20px",
+          "letterSpacing": "normal",
+          "color": "rgb(23, 23, 23)"
+        },
+        "code-keyword": {
+          "fontFamily": "'Geist Mono'",
+          "fontSize": "13px",
+          "fontWeight": "500",
+          "lineHeight": "20px",
+          "color": "rgb(189, 40, 100)"
+        },
+        "nav-link": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "letterSpacing": "normal",
+          "color": "rgb(102, 102, 102)"
+        },
+        "nav-link-active": {
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "lineHeight": "20px",
+          "letterSpacing": "normal",
+          "color": "rgb(23, 23, 23)"
+        },
+        "testimonial": {
+          "fontSize": "32px",
+          "fontWeight": "400",
+          "lineHeight": "48px",
+          "letterSpacing": "-1.28px",
+          "color": "rgb(102, 102, 102)"
+        },
+        "list-feature": {
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "27.36px",
+          "letterSpacing": "normal",
+          "color": "rgb(102, 102, 102)"
+        }
+      },
+      "colors": {
+        "backgrounds": {
+          "primary": "rgb(255, 255, 255)",
+          "secondary": "rgb(250, 250, 250)",
+          "muted": "rgb(235, 235, 235)",
+          "inverted": "rgb(23, 23, 23)",
+          "accent-blue": "rgb(0, 112, 243)",
+          "accent-blue-light": "rgb(235, 245, 255)",
+          "accent-blue-medium": "rgb(204, 230, 255)",
+          "accent-blue-hover": "rgb(82, 174, 255)",
+          "accent-blue-dark": "rgb(0, 98, 209)",
+          "success": "rgb(57, 142, 74)",
+          "success-light": "rgb(240, 255, 249)",
+          "error": "rgb(229, 72, 77)",
+          "error-light": "rgb(255, 247, 245)",
+          "warning": "rgb(255, 153, 10)",
+          "warning-light": "rgb(255, 250, 240)",
+          "info": "rgb(240, 251, 255)",
+          "purple": "rgb(120, 32, 188)",
+          "purple-light": "rgb(191, 137, 236)",
+          "pink": "rgb(234, 62, 131)",
+          "teal": "rgb(69, 222, 197)",
+          "teal-dark": "rgb(6, 122, 110)",
+          "gray-mid": "rgb(143, 143, 143)",
+          "gray-border": "rgb(230, 230, 230)"
+        },
+        "text": {
+          "primary": "rgb(23, 23, 23)",
+          "secondary": "rgb(102, 102, 102)",
+          "tertiary": "rgb(125, 125, 125)",
+          "muted": "rgb(168, 168, 168)",
+          "inverted": "rgb(255, 255, 255)",
+          "success": "rgb(41, 122, 58)",
+          "link": "rgb(0, 112, 243)",
+          "link-hover": "rgb(0, 104, 214)",
+          "code-keyword": "rgb(189, 40, 100)",
+          "code-purple": "rgb(120, 32, 188)"
+        },
+        "borders": {
+          "subtle": "rgba(0, 0, 0, 0.08)",
+          "default": "rgb(235, 235, 235)",
+          "medium": "rgb(168, 168, 168)",
+          "dark": "rgb(102, 102, 102)",
+          "inverted": "rgb(23, 23, 23)"
+        }
+      },
+      "buttons": {
+        "primary": {
+          "backgroundColor": "rgb(23, 23, 23)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "100px",
+          "padding": "0px 14px",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": "48px",
+          "transition": "border-color 0.15s, background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s"
+        },
+        "secondary": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(23, 23, 23)",
+          "borderRadius": "100px",
+          "padding": "0px 14px",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "height": "48px",
+          "transition": "border-color 0.15s, background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s"
+        },
+        "small": {
+          "backgroundColor": "rgb(23, 23, 23)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "6px",
+          "padding": "0px 6px",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "height": "32px"
+        },
+        "ghost": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(23, 23, 23)",
+          "borderRadius": "6px",
+          "padding": "0px 6px",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "height": "32px"
+        },
+        "pill": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(23, 23, 23)",
+          "borderRadius": "100px",
+          "padding": "0px 10px",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "height": "40px"
+        },
+        "icon": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(23, 23, 23)",
+          "borderRadius": "100%",
+          "padding": "0px",
+          "width": "40px",
+          "height": "40px"
+        },
+        "tab-active": {
+          "backgroundColor": "transparent",
+          "color": "rgb(23, 23, 23)",
+          "borderBottom": "2px solid rgb(23, 23, 23)",
+          "padding": "14px 2px",
+          "fontSize": "14px",
+          "fontWeight": "400"
+        },
+        "tab-inactive": {
+          "backgroundColor": "transparent",
+          "color": "rgb(102, 102, 102)",
+          "borderBottom": "2px solid transparent",
+          "padding": "14px 2px",
+          "fontSize": "14px",
+          "fontWeight": "400"
+        }
+      },
+      "spacing": {
+        "sectionPadding": "64px 0px 0px",
+        "containerPadding": "0px",
+        "navPadding": "10px 12px 0px"
+      },
+      "surfaces": {
+        "borderRadius": {
+          "none": "0px",
+          "sm": "4px",
+          "default": "6px",
+          "md": "8px",
+          "lg": "12px",
+          "xl": "32px",
+          "2xl": "64px",
+          "pill": "100px",
+          "full": "9999px",
+          "circle": "100%"
+        },
+        "boxShadows": {
+          "border": "rgb(235, 235, 235) 0px 0px 0px 1px",
+          "subtle-border": "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
+          "elevation-1": "rgba(0, 0, 0, 0.04) 0px 1px 2px 0px",
+          "elevation-2": "rgba(0, 0, 0, 0.04) 0px 2px 2px 0px",
+          "card": "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 2px 0px, rgb(250, 250, 250) 0px 0px 0px 1px",
+          "card-hover": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 2px 0px, rgba(0, 0, 0, 0.04) 0px 8px 8px -8px, rgb(250, 250, 250) 0px 0px 0px 1px",
+          "inset": "rgb(234, 234, 234) 0px -1px 0px 0px inset",
+          "outline": "rgb(235, 235, 235) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
+        }
+      },
+      "transitions": {
+        "default": "border-color 0.15s, background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s",
+        "smooth": "border-color 0.3s cubic-bezier(0.39, 0.18, 0.17, 0.99), background 0.3s cubic-bezier(0.39, 0.18, 0.17, 0.99), color 0.3s cubic-bezier(0.39, 0.18, 0.17, 0.99), transform 0.3s cubic-bezier(0.39, 0.18, 0.17, 0.99), box-shadow 0.3s cubic-bezier(0.39, 0.18, 0.17, 0.99)",
+        "width": "width 0.4s cubic-bezier(0.39, 0.18, 0.17, 0.99)"
+      }
+    },
+    "768": {
+      "typography": {
+        "h1-hero": {
+          "fontSize": "48px",
+          "fontWeight": "510",
+          "lineHeight": "52.8px",
+          "letterSpacing": "-1.056px"
+        },
+        "h2-section": {
+          "fontSize": "56px",
+          "fontWeight": "538",
+          "lineHeight": "61.6px",
+          "letterSpacing": "-1.82px"
+        },
+        "h3-feature": {
+          "fontSize": "21px",
+          "fontWeight": "510",
+          "lineHeight": "28px",
+          "letterSpacing": "-0.37px"
+        },
+        "h3-card-title": {
+          "fontSize": "24px",
+          "fontWeight": "510",
+          "lineHeight": "31.92px",
+          "letterSpacing": "-0.288px"
+        },
+        "h3-large": {
+          "fontSize": "40px",
+          "fontWeight": "510",
+          "lineHeight": "44px",
+          "letterSpacing": "-0.88px"
+        }
+      },
+      "layout": {
+        "containerPadding": "0px 24px",
+        "maxWidth": "1024px"
+      }
+    },
+    "375": {
+      "typography": {
+        "h1-hero": {
+          "fontSize": "40px",
+          "fontWeight": "510",
+          "lineHeight": "44px",
+          "letterSpacing": "-0.88px"
+        },
+        "h2-section": {
+          "fontSize": "40px",
+          "fontWeight": "538",
+          "lineHeight": "44px",
+          "letterSpacing": "-0.6px"
+        },
+        "h3-feature": {
+          "fontSize": "21px",
+          "fontWeight": "510",
+          "lineHeight": "28px",
+          "letterSpacing": "-0.37px"
+        },
+        "h3-card-title": {
+          "fontSize": "24px",
+          "fontWeight": "510",
+          "lineHeight": "31.92px",
+          "letterSpacing": "-0.288px"
+        },
+        "h3-large": {
+          "fontSize": "40px",
+          "fontWeight": "510",
+          "lineHeight": "44px",
+          "letterSpacing": "-0.88px"
+        },
+        "body-lead": {
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "lineHeight": "27.2px",
+          "letterSpacing": "normal"
+        },
+        "body": {
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.165px"
+        }
+      },
+      "buttons": {
+        "primary": {
+          "height": "40px",
+          "padding": "0px 16px",
+          "fontSize": "15px",
+          "borderRadius": "10px"
+        },
+        "small": {
+          "height": "32px",
+          "padding": "0px 12px",
+          "fontSize": "13px",
+          "borderRadius": "8px"
+        }
+      },
+      "layout": {
+        "containerPadding": "0px 24px"
+      }
+    }
+  },
+
+  "responsiveChanges": {
+    "1440-to-768": [
+      "h1 fontSize: 48px stays same but lineHeight changes to 52.8px",
+      "h2 fontSize increases to 56px for section headers",
+      "h3 feature fontSize decreases from 24px to 21px",
+      "Container padding: 0px 24px",
+      "Font weight changes to 510 (variable font interpolation)"
+    ],
+    "768-to-375": [
+      "h1 fontSize: 48px decreases to 40px",
+      "h2 fontSize: 56px decreases to 40px",
+      "Body text: 16px decreases to 15px",
+      "Button height: 48px decreases to 40px",
+      "Button borderRadius: 100px changes to 10px (more rounded corners)",
+      "Container padding stays: 0px 24px"
+    ]
+  },
+
+  "designPatterns": {
+    "navigation": {
+      "style": "Horizontal mega-menu with dropdowns",
+      "logoPlacement": "Left",
+      "ctaPlacement": "Right (Log In, Contact, Sign Up)",
+      "height": "64px estimated"
+    },
+    "hero": {
+      "layout": "Centered text with gradient/illustration below",
+      "buttonGroup": "Two CTAs side by side (primary dark, secondary white)",
+      "spacing": "64px top padding"
+    },
+    "cards": {
+      "style": "Minimal borders with subtle shadows",
+      "borderRadius": "8px-12px",
+      "shadow": "Very subtle: rgba(0,0,0,0.08) 1px border + 2px elevation"
+    },
+    "buttons": {
+      "style": "Pill-shaped for CTAs, rounded rectangles for nav",
+      "animation": "0.15s transitions on all interactive states"
+    },
+    "colorScheme": {
+      "theme": "Light mode default with dark mode support",
+      "contrast": "High contrast black (#171717) on white",
+      "accent": "Blue (#0070F3) for links and actions",
+      "muted": "Gray (#666666) for secondary text"
+    }
+  }
+}

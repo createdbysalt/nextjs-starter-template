@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "last_updated": "2026-01-17",
+    "version": "1.0",
+    "confidence_level": "MEDIUM-HIGH",
+    "sources_analyzed": [
+      "Discovery Call transcript (Barrett's direct speech)",
+      "Checkin Call transcript (Barrett's direct speech)",
+      "Creative Project Kickoff.csv (written responses)",
+      "Website Copy draft (approved tone)"
+    ],
+    "note": "Voice extracted from founder's natural speech patterns in calls and written questionnaire responses. Website copy was approved as capturing tone correctly."
+  },
+
+  "voice_summary": {
+    "one_liner": "Authentic, conversational, and creatively ambitious - like talking to a talented friend who happens to be a professional.",
+    "core_essence": "Barrett speaks like someone who genuinely loves what they do but doesn't take themselves too seriously. The voice is confident without being arrogant, professional without being corporate, and creative without being pretentious.",
+    "brand_voice_archetype": "The Talented Friend - approachable expertise with genuine enthusiasm"
+  },
+
+  "voice_dimensions": {
+    "formal_casual": {
+      "score": 3,
+      "scale": "1 (Very Formal) - 5 (Very Casual)",
+      "position": "Casual-Professional",
+      "evidence": [
+        "Uses conversational fillers: 'um', 'like', 'you know'",
+        "Self-deprecating humor: 'That's probably a terrible analogy'",
+        "Direct informal phrases: 'Love to hear it', 'Sweet'"
+      ],
+      "sample_quotes": [
+        "I'm like the least organized creative person. I swear. Like sometimes I'm like how do I even get stuff done?",
+        "No bullying. No bullshit. We approach every relationship with integrity and transparency."
+      ],
+      "confidence": "HIGH"
+    },
+
+    "serious_playful": {
+      "score": 3.5,
+      "scale": "1 (Very Serious) - 5 (Very Playful)",
+      "position": "Balanced with slight playful lean",
+      "evidence": [
+        "Origin story rooted in childlike wonder",
+        "Process names are playful: 'Play on Set', 'Get in the Box', 'Go Home'",
+        "But execution feedback: 'too playful' for visuals"
+      ],
+      "sample_quotes": [
+        "It's your playground too. No pun intended.",
+        "The playground was where kids dreamed, created, and imagined."
+      ],
+      "note": "Voice can be playful but visuals should balance toward sophisticated",
+      "confidence": "HIGH"
+    },
+
+    "technical_accessible": {
+      "score": 4,
+      "scale": "1 (Very Technical) - 5 (Very Accessible)",
+      "position": "Highly Accessible",
+      "evidence": [
+        "Explains concepts in everyday language",
+        "Avoids industry jargon when describing work",
+        "Uses analogies (even self-proclaimed bad ones)"
+      ],
+      "sample_quotes": [
+        "It's like going to a restaurant having a very small menu but like it's catered more local rather than having a big menu.",
+        "Making Content is secondary, finding purpose is primary."
+      ],
+      "confidence": "HIGH"
+    },
+
+    "reserved_enthusiastic": {
+      "score": 4,
+      "scale": "1 (Very Reserved) - 5 (Very Enthusiastic)",
+      "position": "Genuinely Enthusiastic",
+      "evidence": [
+        "Expresses excitement openly: 'I'm feeling excited'",
+        "Positive energy in conversations: 'Love to hear it' (repeated)",
+        "Passionate about creative work and brand building"
+      ],
+      "sample_quotes": [
+        "I'm excited about the project 100% still.",
+        "inspired, creative, and think 'wow this company is super sick.'"
+      ],
+      "confidence": "HIGH"
+    },
+
+    "humble_confident": {
+      "score": 3.5,
+      "scale": "1 (Very Humble) - 5 (Very Confident)",
+      "position": "Confident Humility",
+      "evidence": [
+        "Acknowledges limitations: 'it's not like Photon levels'",
+        "Self-aware: 'I'm like the least organized creative person'",
+        "But proud of work and vision: 'quality work' emphasis"
+      ],
+      "sample_quotes": [
+        "This is a guy I know who is insane and sometimes I feel like I can't keep up.",
+        "We deliver work that exceeds expectations and creates lasting impact for your brand."
+      ],
+      "confidence": "HIGH"
+    },
+
+    "corporate_personal": {
+      "score": 4,
+      "scale": "1 (Very Corporate) - 5 (Very Personal)",
+      "position": "Personal and Authentic",
+      "evidence": [
+        "Shares personal stories (origin story, walks in Portland)",
+        "Mentions family in business context (wife, brother giving feedback)",
+        "First-person narrative style"
+      ],
+      "sample_quotes": [
+        "I was on a walk and looked over and saw a bunch of kids on break playing at the playground.",
+        "Had my wife look at it. Had my brother is pretty creative too."
+      ],
+      "confidence": "HIGH"
+    }
+  },
+
+  "voice_characteristics": {
+    "sentence_structure": {
+      "typical_length": "Medium - mixes short punchy statements with longer explanatory sentences",
+      "complexity": "Simple to medium - accessible language, occasional run-ons in speech",
+      "patterns": [
+        "Often starts thoughts, interrupts self, then clarifies",
+        "Uses rhetorical questions: 'Does that make sense?'",
+        "Checks for understanding frequently"
+      ]
+    },
+
+    "vocabulary": {
+      "register": "Conversational professional",
+      "preferred_words": [
+        "Quality", "Creative", "Bold", "Authentic",
+        "Purpose", "Vision", "Reality", "Honest",
+        "Elevated", "Inspired", "Dynamic"
+      ],
+      "avoided_words": [
+        "Synergy", "Leverage (as jargon)", "Revolutionary",
+        "Best-in-class", "Cutting-edge", "Disruptive"
+      ],
+      "industry_terms_used": [
+        "Branded content", "Post-production", "Color grading",
+        "UGC", "Lifestyle photography", "Studio work"
+      ]
+    },
+
+    "rhetorical_devices": {
+      "uses": [
+        "Analogies (even self-acknowledged imperfect ones)",
+        "Rhetorical questions for connection",
+        "Repetition for emphasis ('Love to hear it')",
+        "Self-deprecation to build rapport"
+      ],
+      "avoids": [
+        "Hyperbole and superlatives",
+        "Corporate buzzwords",
+        "Overly polished marketing speak"
+      ]
+    }
+  },
+
+  "tone_guidelines": {
+    "primary_tone": "Confident Authenticity",
+    "supporting_tones": ["Warm", "Direct", "Enthusiastic", "Grounded"],
+
+    "tone_by_context": {
+      "homepage_hero": {
+        "tone": "Inspiring and bold",
+        "example": "Where Imagination Meets Reality",
+        "note": "Can be aspirational but grounded in purpose"
+      },
+      "about_page": {
+        "tone": "Personal and story-driven",
+        "example": "The idea for Playground Studios was born on a simple walk through a Portland neighborhood.",
+        "note": "Founder's voice comes through clearly"
+      },
+      "services": {
+        "tone": "Confident and clear",
+        "example": "Creativity starts with collaboration. We partner closely with our clients.",
+        "note": "Professional but not sterile"
+      },
+      "contact": {
+        "tone": "Warm and inviting",
+        "example": "Let's Make Something Great",
+        "note": "Encouraging without being pushy"
+      },
+      "error_messages": {
+        "tone": "Friendly and helpful",
+        "example": "Hmm, something went off-script. Let's try that again.",
+        "note": "Light touch, no corporate stiffness"
+      }
+    }
+  },
+
+  "dos_and_donts": {
+    "do": [
+      {
+        "guideline": "Use conversational language that sounds like talking to a creative peer",
+        "example": "We're not afraid to take risks and push boundaries.",
+        "anti_example": "Our organization leverages innovative methodologies to maximize creative output."
+      },
+      {
+        "guideline": "Share the 'why' behind the work - purpose over process",
+        "example": "Every project starts with understanding the 'why' before we pick up a camera.",
+        "anti_example": "Our proprietary 7-step methodology ensures optimal deliverables."
+      },
+      {
+        "guideline": "Be direct and honest - no fluff or overselling",
+        "example": "No bullying. No bullshit. We approach every relationship with integrity.",
+        "anti_example": "We pride ourselves on being the industry-leading solution provider."
+      },
+      {
+        "guideline": "Show enthusiasm genuinely - excited about creative work",
+        "example": "We believe in approaching every project with the wonder of a child and the expertise of seasoned professionals.",
+        "anti_example": "Our team is committed to exceeding client expectations."
+      },
+      {
+        "guideline": "Acknowledge limitations while highlighting strengths",
+        "example": "We're a modular production company, which means we scale our team up or down based on your specific needs.",
+        "anti_example": "We handle projects of any size with our world-class capabilities."
+      }
+    ],
+    "dont": [
+      {
+        "guideline": "Don't use corporate jargon or buzzwords",
+        "avoid": "Synergize", "Disrupt", "Best-in-class", "Revolutionary",
+        "why": "Feels inauthentic to brand personality"
+      },
+      {
+        "guideline": "Don't be overly formal or stiff",
+        "avoid": "We would be delighted to assist you with your requirements",
+        "why": "Creates distance, opposite of 'seamless communication' promise"
+      },
+      {
+        "guideline": "Don't oversell or make grandiose claims",
+        "avoid": "The best creative agency in the industry",
+        "why": "Contradicts humble-confident balance and authenticity"
+      },
+      {
+        "guideline": "Don't be overly playful in professional contexts",
+        "avoid": "Let's have a blast making your brand totally awesome!",
+        "why": "Too playful undermines professionalism - remember 'mature playfulness'"
+      },
+      {
+        "guideline": "Don't ignore the purpose/meaning behind work",
+        "avoid": "We create high-quality content for brands",
+        "why": "Misses the 'purpose is primary' differentiator"
+      }
+    ]
+  },
+
+  "writing_samples": {
+    "approved_headlines": [
+      "Where Imagination Meets Reality",
+      "Play, Innovate, Create",
+      "Where Dreams Meet Deadlines",
+      "Work That Moves"
+    ],
+    "approved_body_copy_excerpts": [
+      "At Playground Studios, we play in a world where imagination knows no bounds.",
+      "We cater every project with honesty, efficiency and purpose. Making Content is secondary, finding purpose is primary.",
+      "We're not afraid to take risks and push boundaries. We bring fresh perspectives to storytelling and aren't satisfied until every detail feels right."
+    ],
+    "founder_voice_samples": [
+      "Love to hear it. Trying to get back in the swing of things.",
+      "I'm feeling excited. I'm feeling like I'm... I mean, I'm excited about the project 100% still.",
+      "We're rolling with the punches, but we're getting there."
+    ]
+  },
+
+  "voice_consistency_notes": {
+    "website_to_social": "Instagram captions can be slightly more casual than website copy, but should maintain the same authentic, enthusiastic tone",
+    "proposals_pitches": "Can be more polished/professional but should still feel personal, not templated",
+    "client_communication": "Most casual version of voice - friendly, direct, responsive"
+  }
+}

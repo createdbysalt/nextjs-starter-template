@@ -1,10 +1,10 @@
 #!/bin/bash
-# Setup new client project from template (pnpm)
+# Setup new client project from template (Next.js + pnpm)
 
 set -e
 
 echo "╔══════════════════════════════════════════════════════════════╗"
-echo "║  SALT STUDIO - Webflow Client Project Setup                 ║"
+echo "║  SALT STUDIO - Next.js Client Project Setup                  ║"
 echo "╚══════════════════════════════════════════════════════════════╝"
 echo ""
 
@@ -43,24 +43,39 @@ read -p "Project codename (e.g., acme-corp): " PROJECT_CODENAME
 read -p "Industry (e.g., Tech, Healthcare, Finance): " INDUSTRY
 echo ""
 
-echo "🌐 Webflow Configuration"
+echo "🌐 URLs"
 echo "──────────────────────────────────────────────────────────────"
-read -p "Webflow Site ID: " WEBFLOW_SITE_ID
-read -p "Live URL (optional, press Enter to skip): " LIVE_URL
+read -p "Production URL (optional, press Enter to skip): " PRODUCTION_URL
+PRODUCTION_URL=${PRODUCTION_URL:-"TBD"}
+echo ""
+
+echo "🔧 Optional Integrations"
+echo "──────────────────────────────────────────────────────────────"
+read -p "Use Sanity CMS? (y/n): " USE_SANITY
+read -p "Use Supabase? (y/n): " USE_SUPABASE
 echo ""
 
 # Generate dates
 START_DATE=$(date +%Y-%m-%d)
 LAST_UPDATED=$(date +%Y-%m-%d)
 
-# Default values if empty
-LIVE_URL=${LIVE_URL:-"TBD"}
-STAGING_URL="TBD"
+# Set CMS/DB choices
+CMS_CHOICE="None"
+DB_CHOICE="None"
+if [[ "$USE_SANITY" =~ ^[Yy]$ ]]; then
+    CMS_CHOICE="Sanity"
+fi
+if [[ "$USE_SUPABASE" =~ ^[Yy]$ ]]; then
+    DB_CHOICE="Supabase"
+fi
 
 # Brand placeholders (will be filled in later)
 PRIMARY_COLOR="{{PRIMARY_COLOR}}"
 SECONDARY_COLOR="{{SECONDARY_COLOR}}"
 ACCENT_COLOR="{{ACCENT_COLOR}}"
+PRIMARY_HSL="{{PRIMARY_HSL}}"
+SECONDARY_HSL="{{SECONDARY_HSL}}"
+ACCENT_HSL="{{ACCENT_HSL}}"
 HEADING_FONT="{{HEADING_FONT}}"
 BODY_FONT="{{BODY_FONT}}"
 
@@ -72,77 +87,112 @@ echo "  → CLAUDE.md"
 sed "s/{{CLIENT_NAME}}/$CLIENT_NAME/g" CLAUDE.template.md | \
 sed "s/{{PROJECT_CODENAME}}/$PROJECT_CODENAME/g" | \
 sed "s/{{INDUSTRY}}/$INDUSTRY/g" | \
-sed "s/{{WEBFLOW_SITE_ID}}/$WEBFLOW_SITE_ID/g" | \
-sed "s|{{LIVE_URL}}|$LIVE_URL|g" | \
+sed "s|{{PRODUCTION_URL}}|$PRODUCTION_URL|g" | \
+sed "s|{{PREVIEW_URL}}|TBD|g" | \
 sed "s/{{START_DATE}}/$START_DATE/g" | \
 sed "s/{{LAST_UPDATED}}/$LAST_UPDATED/g" | \
+sed "s/{{CMS_CHOICE}}/$CMS_CHOICE/g" | \
+sed "s/{{DB_CHOICE}}/$DB_CHOICE/g" | \
 sed "s/{{PRIMARY_COLOR}}/$PRIMARY_COLOR/g" | \
 sed "s/{{SECONDARY_COLOR}}/$SECONDARY_COLOR/g" | \
 sed "s/{{ACCENT_COLOR}}/$ACCENT_COLOR/g" | \
+sed "s/{{PRIMARY_HSL}}/$PRIMARY_HSL/g" | \
+sed "s/{{SECONDARY_HSL}}/$SECONDARY_HSL/g" | \
+sed "s/{{ACCENT_HSL}}/$ACCENT_HSL/g" | \
 sed "s/{{HEADING_FONT}}/$HEADING_FONT/g" | \
 sed "s/{{BODY_FONT}}/$BODY_FONT/g" | \
-sed "s/{{PROJECT_STATUS}}/In Development/g" > CLAUDE.md
+sed "s/{{ICP_SUMMARY}}/Run \/icp to generate ICP profiles/g" | \
+sed "s/{{CURRENT_FOCUS}}/Project setup and discovery/g" | \
+sed "s/{{PROJECT_STATUS}}/In Discovery/g" > CLAUDE.md
 
-# Customize root package.json
+# Customize package.json
 echo "  → package.json"
 sed "s/{{CLIENT_NAME}}/$CLIENT_NAME/g" package.template.json | \
-sed "s/{{PROJECT_CODENAME}}/$PROJECT_CODENAME/g" | \
-sed "s/{{INDUSTRY}}/$INDUSTRY/g" > package.json
-
-# Customize prototype package.json
-echo "  → prototype/package.json"
-sed "s/{{CLIENT_NAME}}/$CLIENT_NAME/g" prototype/package.template.json | \
-sed "s/{{PROJECT_CODENAME}}/$PROJECT_CODENAME/g" > prototype/package.json
+sed "s/{{PROJECT_CODENAME}}/$PROJECT_CODENAME/g" > package.json
 
 # Customize README.md
 echo "  → README.md"
 sed "s/{{CLIENT_NAME}}/$CLIENT_NAME/g" README.template.md | \
 sed "s/{{PROJECT_CODENAME}}/$PROJECT_CODENAME/g" | \
 sed "s/{{INDUSTRY}}/$INDUSTRY/g" | \
-sed "s/{{WEBFLOW_SITE_ID}}/$WEBFLOW_SITE_ID/g" | \
-sed "s|{{LIVE_URL}}|$LIVE_URL|g" | \
-sed "s|{{STAGING_URL}}|$STAGING_URL|g" | \
+sed "s|{{PRODUCTION_URL}}|$PRODUCTION_URL|g" | \
 sed "s/{{START_DATE}}/$START_DATE/g" | \
-sed "s/{{LAST_UPDATED}}/$LAST_UPDATED/g" | \
-sed "s/{{PRIMARY_COLOR}}/$PRIMARY_COLOR/g" | \
-sed "s/{{SECONDARY_COLOR}}/$SECONDARY_COLOR/g" | \
-sed "s/{{ACCENT_COLOR}}/$ACCENT_COLOR/g" | \
-sed "s/{{HEADING_FONT}}/$HEADING_FONT/g" | \
-sed "s/{{BODY_FONT}}/$BODY_FONT/g" | \
-sed "s/{{PROJECT_STATUS}}/In Development/g" > README.md
+sed "s/{{PROJECT_STATUS}}/In Discovery/g" > README.md
 
-# Create .env
-echo "  → .env"
-cat > .env << EOF
-# Webflow API Configuration
-# Get your token from: Webflow Project Settings → Integrations → API Access
-WEBFLOW_API_TOKEN=your_webflow_api_token_here
-WEBFLOW_SITE_ID=$WEBFLOW_SITE_ID
+# Create .env.local
+echo "  → .env.local"
+cat > .env.local << EOF
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=$PRODUCTION_URL
 
 # Project Information
 CLIENT_NAME=$CLIENT_NAME
 PROJECT_CODENAME=$PROJECT_CODENAME
 INDUSTRY=$INDUSTRY
 
-# Development
-NODE_ENV=development
-VITE_APP_NAME=$CLIENT_NAME
+EOF
 
+# Add Sanity config if selected
+if [[ "$USE_SANITY" =~ ^[Yy]$ ]]; then
+cat >> .env.local << EOF
+# Sanity CMS
+# Get these from: sanity.io/manage → Project Settings
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=your_api_token
+
+EOF
+fi
+
+# Add Supabase config if selected
+if [[ "$USE_SUPABASE" =~ ^[Yy]$ ]]; then
+cat >> .env.local << EOF
+# Supabase
+# Get these from: supabase.com → Project Settings → API
+NEXT_PUBLIC_SUPABASE_URL=your_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+
+EOF
+fi
+
+cat >> .env.local << EOF
 # Created: $START_DATE
 EOF
 
-# Create .mcp.json
-echo "  → .mcp.json"
-sed "s/{{WEBFLOW_SITE_ID}}/$WEBFLOW_SITE_ID/g" .mcp.template.json > .mcp.json
+# Create project directories
+echo "  → project/$PROJECT_CODENAME/"
+mkdir -p "project/$PROJECT_CODENAME/inputs"
+mkdir -p "project/$PROJECT_CODENAME/outputs"/{1_discovery,2_audience,3_architecture,4_design,5_copy,6_review}
+
+# Create project status file
+cat > "project/$PROJECT_CODENAME/_project_status.json" << EOF
+{
+  "project_id": "$PROJECT_CODENAME",
+  "client_name": "$CLIENT_NAME",
+  "industry": "$INDUSTRY",
+  "created_date": "$START_DATE",
+  "last_updated": "$START_DATE",
+  "status": "discovery",
+  "phases": {
+    "discovery": "not_started",
+    "audience": "not_started",
+    "architecture": "not_started",
+    "design": "not_started",
+    "copy": "not_started",
+    "review": "not_started"
+  }
+}
+EOF
 
 # Create brand guidelines
 echo "  → design-system/brand-guidelines.md"
-mkdir -p design-system
+mkdir -p design-system/tokens
 cat > design-system/brand-guidelines.md << EOF
 # $CLIENT_NAME Brand Guidelines
 
-**Project**: $PROJECT_CODENAME  
-**Industry**: $INDUSTRY  
+**Project**: $PROJECT_CODENAME
+**Industry**: $INDUSTRY
 **Last Updated**: $LAST_UPDATED
 
 ---
@@ -153,7 +203,7 @@ cat > design-system/brand-guidelines.md << EOF
 [Add client's mission statement]
 
 ### Target Audience
-[Define primary target audience]
+[Define primary target audience - run /icp for detailed profiles]
 
 ### Brand Personality
 [Describe brand personality traits]
@@ -171,58 +221,32 @@ cat > design-system/brand-guidelines.md << EOF
 
 **Neutral Colors:**
 - Background: #[HEX]
-- Text: #[HEX]
-- Border: #[HEX]
-
-**Semantic Colors:**
-- Success: #[HEX]
-- Warning: #[HEX]
-- Error: #[HEX]
-- Info: #[HEX]
+- Foreground: #[HEX]
+- Muted: #[HEX]
 
 ### Typography
 
 **Headings:**
 - Font Family: [Font name]
 - Weights: [e.g., 700 Bold, 600 Semibold]
-- Line Height: [e.g., 1.2]
 
 **Body Text:**
 - Font Family: [Font name]
 - Weights: [e.g., 400 Regular, 500 Medium]
-- Line Height: [e.g., 1.6]
-
-**Font Sizes:**
-- H1: [size]
-- H2: [size]
-- H3: [size]
-- H4: [size]
-- Body: [size]
-- Small: [size]
 
 ### Spacing System
 
-- xs: 4px
-- sm: 8px
-- md: 16px
-- lg: 24px
-- xl: 32px
-- 2xl: 48px
-- 3xl: 64px
-
-### Border Radius
-
-- Small: 4px
-- Medium: 8px
-- Large: 16px
-- Full: 9999px (pill shape)
+Using Tailwind defaults:
+- Section padding: py-24 lg:py-32
+- Container: container px-4 md:px-6
+- Component gaps: gap-4, gap-6, gap-8
 
 ---
 
 ## Voice & Tone
 
 ### Brand Voice
-[Describe overall brand voice]
+[Describe overall brand voice - run /discover to extract from client materials]
 
 ### Tone Guidelines
 
@@ -232,219 +256,91 @@ cat > design-system/brand-guidelines.md << EOF
 **Casual Contexts:**
 [How to communicate in casual settings]
 
-**Error Messages:**
-[How to communicate errors]
-
----
-
-## Imagery Guidelines
-
-### Photography Style
-[Describe photography style]
-
-### Illustration Style
-[Describe illustration style if applicable]
-
-### Icon Style
-[Describe icon style]
-
----
-
-## Usage Examples
-
-### Do's ✅
-- [Example of correct brand usage]
-- [Example of correct brand usage]
-
-### Don'ts ❌
-- [Example of incorrect brand usage]
-- [Example of incorrect brand usage]
-
 ---
 
 **For questions about brand guidelines, contact**: [Brand Manager Name/Email]
 EOF
 
-# Create style tokens
-echo "  → design-system/style-tokens.md"
-cat > design-system/style-tokens.md << EOF
-# $CLIENT_NAME Style Tokens
+# Create TypeScript tokens
+echo "  → design-system/tokens/colors.ts"
+cat > design-system/tokens/colors.ts << EOF
+// $CLIENT_NAME Color Tokens
+// Generated: $LAST_UPDATED
+// Update these values after completing /brief
 
-Design tokens for $CLIENT_NAME website. These values should be referenced in both React prototypes and Webflow builds.
+export const colors = {
+  // Brand Colors (update with actual values)
+  primary: {
+    DEFAULT: '#1a365d',
+    foreground: '#ffffff',
+  },
+  secondary: {
+    DEFAULT: '#2b77ad',
+    foreground: '#ffffff',
+  },
+  accent: {
+    DEFAULT: '#ed8936',
+    foreground: '#ffffff',
+  },
 
-**Last Updated**: $LAST_UPDATED
+  // Semantic Colors
+  destructive: {
+    DEFAULT: '#ef4444',
+    foreground: '#ffffff',
+  },
+  success: {
+    DEFAULT: '#22c55e',
+    foreground: '#ffffff',
+  },
 
----
-
-## Colors
-
-### Brand Colors
-\`\`\`css
-/* Primary */
---color-primary: #[HEX];
---color-primary-hover: #[HEX];
---color-primary-active: #[HEX];
-
-/* Secondary */
---color-secondary: #[HEX];
---color-secondary-hover: #[HEX];
-
-/* Accent */
---color-accent: #[HEX];
-\`\`\`
-
-### Neutral Colors
-\`\`\`css
---color-white: #FFFFFF;
---color-gray-50: #[HEX];
---color-gray-100: #[HEX];
---color-gray-200: #[HEX];
---color-gray-300: #[HEX];
---color-gray-400: #[HEX];
---color-gray-500: #[HEX];
---color-gray-600: #[HEX];
---color-gray-700: #[HEX];
---color-gray-800: #[HEX];
---color-gray-900: #[HEX];
---color-black: #000000;
-\`\`\`
-
-### Semantic Colors
-\`\`\`css
---color-success: #[HEX];
---color-warning: #[HEX];
---color-error: #[HEX];
---color-info: #[HEX];
-\`\`\`
-
----
-
-## Typography
-
-\`\`\`css
-/* Font Families */
---font-heading: '[Font name]', sans-serif;
---font-body: '[Font name]', sans-serif;
-
-/* Font Sizes */
---text-xs: 0.75rem;    /* 12px */
---text-sm: 0.875rem;   /* 14px */
---text-base: 1rem;     /* 16px */
---text-lg: 1.125rem;   /* 18px */
---text-xl: 1.25rem;    /* 20px */
---text-2xl: 1.5rem;    /* 24px */
---text-3xl: 1.875rem;  /* 30px */
---text-4xl: 2.25rem;   /* 36px */
---text-5xl: 3rem;      /* 48px */
---text-6xl: 3.75rem;   /* 60px */
-
-/* Font Weights */
---font-normal: 400;
---font-medium: 500;
---font-semibold: 600;
---font-bold: 700;
-
-/* Line Heights */
---leading-tight: 1.25;
---leading-normal: 1.5;
---leading-relaxed: 1.75;
-\`\`\`
-
----
-
-## Spacing
-
-\`\`\`css
---space-0: 0;
---space-1: 0.25rem;   /* 4px */
---space-2: 0.5rem;    /* 8px */
---space-3: 0.75rem;   /* 12px */
---space-4: 1rem;      /* 16px */
---space-5: 1.25rem;   /* 20px */
---space-6: 1.5rem;    /* 24px */
---space-8: 2rem;      /* 32px */
---space-10: 2.5rem;   /* 40px */
---space-12: 3rem;     /* 48px */
---space-16: 4rem;     /* 64px */
---space-20: 5rem;     /* 80px */
---space-24: 6rem;     /* 96px */
---space-32: 8rem;     /* 128px */
-\`\`\`
-
----
-
-## Border Radius
-
-\`\`\`css
---radius-none: 0;
---radius-sm: 0.25rem;   /* 4px */
---radius-md: 0.5rem;    /* 8px */
---radius-lg: 1rem;      /* 16px */
---radius-full: 9999px;  /* Pill shape */
-\`\`\`
-
----
-
-## Shadows
-
-\`\`\`css
---shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
---shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
---shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
---shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-\`\`\`
-
----
-
-## Z-Index Scale
-
-\`\`\`css
---z-base: 0;
---z-dropdown: 1000;
---z-sticky: 1020;
---z-fixed: 1030;
---z-modal: 1040;
---z-popover: 1050;
---z-tooltip: 1060;
-\`\`\`
-
----
-
-## Transitions
-
-\`\`\`css
---transition-fast: 150ms ease-in-out;
---transition-base: 300ms ease-in-out;
---transition-slow: 500ms ease-in-out;
-\`\`\`
-
----
-
-## Usage in React (Tailwind)
-
-Map these tokens to Tailwind config:
-
-\`\`\`js
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#[HEX]',
-        secondary: '#[HEX]',
-        // ... etc
-      }
-    }
-  }
+  // Neutral Colors
+  background: '#ffffff',
+  foreground: '#0a0a0a',
+  muted: {
+    DEFAULT: '#f5f5f5',
+    foreground: '#737373',
+  },
+  border: '#e5e5e5',
 }
-\`\`\`
 
-## Usage in Webflow
+// HSL values for CSS variables (shadcn/ui compatible)
+export const hslColors = {
+  primary: '217 54% 23%',
+  secondary: '207 60% 42%',
+  accent: '28 85% 57%',
+  // Add more as needed
+}
+EOF
 
-Apply these as:
-1. Webflow Style Guide colors
-2. Global class styles
-3. CSS embed variables
+echo "  → design-system/tokens/typography.ts"
+cat > design-system/tokens/typography.ts << EOF
+// $CLIENT_NAME Typography Tokens
+// Generated: $LAST_UPDATED
+
+export const typography = {
+  fonts: {
+    heading: 'Inter, system-ui, sans-serif',
+    body: 'Inter, system-ui, sans-serif',
+  },
+  sizes: {
+    xs: '0.75rem',    // 12px
+    sm: '0.875rem',   // 14px
+    base: '1rem',     // 16px
+    lg: '1.125rem',   // 18px
+    xl: '1.25rem',    // 20px
+    '2xl': '1.5rem',  // 24px
+    '3xl': '1.875rem', // 30px
+    '4xl': '2.25rem', // 36px
+    '5xl': '3rem',    // 48px
+    '6xl': '3.75rem', // 60px
+  },
+  weights: {
+    normal: '400',
+    medium: '500',
+    semibold: '600',
+    bold: '700',
+  },
+}
 EOF
 
 # Install dependencies
@@ -453,14 +349,20 @@ echo "📦 Installing dependencies with pnpm..."
 echo "──────────────────────────────────────────────────────────────"
 pnpm install
 
-echo "📦 Installing prototype dependencies..."
-cd prototype
-pnpm install
-cd ..
-
-# Initialize git
+# Initialize shadcn/ui
 echo ""
-echo "🌳 Initializing git repository..."
+echo "🎨 Initializing shadcn/ui..."
+echo "──────────────────────────────────────────────────────────────"
+pnpm dlx shadcn@latest init -y || true
+
+# Add common shadcn components
+echo ""
+echo "📦 Adding common shadcn/ui components..."
+pnpm dlx shadcn@latest add button card input textarea || true
+
+# Initialize git if not already
+echo ""
+echo "🌳 Checking git repository..."
 echo "──────────────────────────────────────────────────────────────"
 if [ ! -d .git ]; then
     git init
@@ -469,23 +371,29 @@ if [ ! -d .git ]; then
 
 - Client: $CLIENT_NAME
 - Industry: $INDUSTRY
-- Webflow Site: $WEBFLOW_SITE_ID
+- Tech Stack: Next.js 15 + TypeScript + Tailwind + shadcn/ui
 - Created: $START_DATE"
-    
+
     echo "✅ Git repository initialized"
 else
     echo "ℹ️  Git repository already exists"
+    git add .
+    git commit -m "Configure project for $CLIENT_NAME
+
+- Updated CLAUDE.md with client info
+- Created output directories
+- Set up design tokens" || true
 fi
 
-# Optional: Clean up template files
+# Clean up template files
 echo ""
 echo "🧹 Cleaning up template files..."
 echo "──────────────────────────────────────────────────────────────"
 rm -f CLAUDE.template.md
 rm -f package.template.json
-rm -f prototype/package.template.json
-rm -f .mcp.template.json
 rm -f README.template.md
+rm -f .mcp.template.json
+rm -f .env.template
 
 echo "✅ Template files removed"
 
@@ -497,34 +405,39 @@ echo "╚═══════════════════════�
 echo ""
 echo "📋 Project: $CLIENT_NAME ($PROJECT_CODENAME)"
 echo "🏭 Industry: $INDUSTRY"
-echo "🌐 Webflow Site: $WEBFLOW_SITE_ID"
+echo "🛠️  Stack: Next.js 15 + TypeScript + Tailwind + shadcn/ui"
+if [[ "$USE_SANITY" =~ ^[Yy]$ ]]; then
+    echo "📝 CMS: Sanity (configure in .env.local)"
+fi
+if [[ "$USE_SUPABASE" =~ ^[Yy]$ ]]; then
+    echo "🗄️  Database: Supabase (configure in .env.local)"
+fi
 echo ""
 echo "🚀 Next Steps:"
 echo "──────────────────────────────────────────────────────────────"
-echo "1. Add your Webflow API token to .env file"
-echo "   • Get token: Webflow Project Settings → Integrations → API"
-echo "   • Edit: .env (line 3)"
+echo "1. Configure environment variables in .env.local"
 echo ""
-echo "2. Complete brand guidelines:"
-echo "   • design-system/brand-guidelines.md"
-echo "   • design-system/style-tokens.md"
+echo "2. Start discovery workflow:"
+echo "   /discover - Extract client DNA from intake materials"
+echo "   /icp      - Develop ideal customer profiles"
 echo ""
-echo "3. Test Webflow connection:"
-echo "   pnpm validate-webflow"
-echo ""
-echo "4. Start prototyping:"
+echo "3. Start the dev server:"
 echo "   pnpm dev"
 echo ""
 echo "📚 Documentation:"
-echo "   • README.md - Project overview and commands"
+echo "   • CLAUDE.md - Project context for Claude Code"
 echo "   • docs/WORKFLOW.md - Development workflow"
-echo "   • docs/DEPLOYMENT.md - Deployment process"
+echo "   • docs/DEPLOYMENT.md - Vercel deployment"
 echo ""
-echo "💡 Claude Code Commands:"
-echo "   /vibe              - Create React component"
-echo "   /gsap-animation    - Add animation"
-echo "   /push-to-webflow   - Deploy to Webflow"
+echo "💡 Key Commands:"
+echo "   /discover   - Client discovery"
+echo "   /icp        - ICP development"
+echo "   /strategy   - Site architecture"
+echo "   /brief      - Design direction"
+echo "   /vibe       - Rapid prototyping"
+echo "   /page       - Create pages"
+echo "   /deploy     - Deploy to Vercel"
 echo ""
 echo "──────────────────────────────────────────────────────────────"
-echo "Happy building! 🎨"
+echo "Happy building! 🚀"
 echo ""

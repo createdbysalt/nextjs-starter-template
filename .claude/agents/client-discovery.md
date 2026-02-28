@@ -12,7 +12,7 @@ description: |
   - Preparing context for copywriting, design, or strategy work
   
   OUTPUTS: Client DNA JSON + Brand Voice Profile JSON + Missing Info Manifest
-tools: Read, Grep, Glob, WebFetch
+tools: Read, Grep, Glob, WebFetch, mcp__firecrawl__firecrawl_scrape, mcp__firecrawl__firecrawl_crawl, mcp__firecrawl__firecrawl_map
 model: sonnet
 ---
 
@@ -76,6 +76,50 @@ For each input, note:
 - What it IS (document type)
 - What it CONTAINS (brief summary)
 - What it's MISSING (obvious gaps)
+
+### Phase 1.5: Deep Website Analysis (Firecrawl)
+
+If a website URL is provided, use Firecrawl for comprehensive extraction:
+
+**Firecrawl Tools Available:**
+| Tool | Use For |
+|------|---------|
+| `firecrawl_scrape` | Single page → LLM-ready markdown (homepage, about) |
+| `firecrawl_crawl` | Full site crawl → all pages (for comprehensive analysis) |
+| `firecrawl_map` | Discover all URLs on domain (understand site structure) |
+
+**Extraction Workflow:**
+```
+1. firecrawl_map({ url: "https://client.com" })
+   → Get all URLs, understand site structure
+   → Identify key pages: About, Services, Team, Contact, Blog
+
+2. firecrawl_scrape({ url: "https://client.com", formats: ["markdown"] })
+   → Extract homepage content in LLM-ready format
+   → Get metadata: title, description, og:image
+
+3. firecrawl_crawl({ url: "https://client.com", limit: 10 })
+   → Deep crawl key pages (About, Services, etc.)
+   → Extract: messaging, value props, tech stack signals
+```
+
+**Transform with Firecrawl Adapter:**
+```typescript
+import { transformToDiscoveryData, analyzeContentStructure } from '@/app/_lib/discovery/firecrawl-adapter'
+
+// Transform Firecrawl output to Salt Core DiscoveryData
+const discoveryData = transformToDiscoveryData(scrapeResult, crawlResult)
+```
+
+**What to Extract from Website:**
+- Company name and tagline
+- Value proposition statements
+- Service/product descriptions
+- Team information (names, roles)
+- Social media links
+- Technology stack signals
+- Brand colors and visual identity
+- Competitor mentions or positioning
 
 ### Phase 2: Information Extraction
 
@@ -497,8 +541,7 @@ Before finalizing outputs, verify:
 3. Extract information with source citations
 4. Identify gaps and contradictions
 5. Generate all three outputs
-6. Update project configuration with brand tokens (if available)
-7. Run verification checklist
+6. Run verification checklist
 
 **Output**:
 - `bloom_botanicals_client_dna.json`
@@ -509,68 +552,6 @@ Plus a brief summary highlighting:
 - Key findings
 - Critical gaps that need resolution
 - Recommended next steps before proceeding
-
----
-
-## Brand Token Integration
-
-After generating outputs, if brand tokens (colors, fonts) were discovered, update the project configuration:
-
-### Brand Tokens to Extract
-
-**Visual Elements:**
-- **Primary Color**: Main brand color (hex code)
-- **Secondary Color**: Supporting brand color (hex code)
-- **Accent Color**: Accent/CTA color (hex code)
-- **Heading Font**: Primary typeface for headings
-- **Body Font**: Primary typeface for body text
-
-### Update Process
-
-If brand tokens are found, update `CLAUDE.md` placeholders:
-
-```bash
-# Only update if actual values were discovered (don't fabricate)
-# Replace placeholders with discovered values
-sed -i "s/{{PRIMARY_COLOR}}/#1A365D/g" CLAUDE.md
-sed -i "s/{{SECONDARY_COLOR}}/#2B77AD/g" CLAUDE.md
-sed -i "s/{{ACCENT_COLOR}}/#ED8936/g" CLAUDE.md
-sed -i "s/{{HEADING_FONT}}/Inter/g" CLAUDE.md
-sed -i "s/{{BODY_FONT}}/Inter/g" CLAUDE.md
-```
-
-### Documentation Requirements
-
-For each token updated:
-- **Source**: Where was this value found? (brand guidelines, website analysis, etc.)
-- **Confidence**: STATED (explicit in docs) vs INFERRED (sampled from website)
-- **Status**: CONFIRMED (client approved) vs PROVISIONAL (needs verification)
-
-### Example Documentation
-
-```json
-"brand_tokens_updated": {
-  "primary_color": {
-    "value": "#1A365D",
-    "source": "Brand guidelines PDF, page 3",
-    "confidence": "STATED",
-    "status": "CONFIRMED"
-  },
-  "heading_font": {
-    "value": "Inter",
-    "source": "Website analysis - h1 elements",
-    "confidence": "INFERRED",
-    "status": "PROVISIONAL - needs client confirmation"
-  }
-}
-```
-
-### When NOT to Update
-
-- **Don't guess**: If colors aren't clearly defined, leave placeholders
-- **Don't sample generic**: If website uses system fonts, don't default to Arial
-- **Don't override**: If CLAUDE.md already has real values (not placeholders), don't replace
-- **Flag instead**: Add missing brand tokens to Missing Info Manifest
 
 ---
 

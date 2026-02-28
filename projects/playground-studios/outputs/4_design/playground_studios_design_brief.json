@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0",
+    "references_analyzed": [
+      "DVTK (dvtk.us)",
+      "Gym Class (thisisgymclass.com)",
+      "Larra Studio (larra.studio)",
+      "Tristan Bagot (tristanbagot.com)",
+      "Studio Augmenta (studioaugmenta.com)",
+      "Bandit Running (banditrunning.com)"
+    ]
+  },
+
+  "design_direction": {
+    "one_liner": "Sophisticated minimalism with bold typography - the work speaks, the design listens",
+    "concept": "A portfolio-forward creative studio site that balances Barrett's playful brand origin with mature visual execution. Dark/neutral palette provides a gallery-like backdrop that elevates the portfolio imagery.",
+    "keywords": ["Portfolio-first", "Bold typography", "Generous whitespace", "Gallery aesthetic", "Mature playfulness"]
+  },
+
+  "reference_synthesis": {
+    "dvtk": {
+      "url": "https://dvtk.us/",
+      "what_to_borrow": [
+        "ASCII/code-inspired typographic elements as subtle personality",
+        "Minimal black/white with generous whitespace",
+        "Project list with metadata (client, year, type)",
+        "Clean sans-serif typography hierarchy"
+      ],
+      "what_to_adapt": "Less stark black-on-white - softer with off-white backgrounds",
+      "relevance": "HIGH - directional branding, clean approach"
+    },
+    "gym_class": {
+      "url": "https://www.thisisgymclass.com/",
+      "what_to_borrow": [
+        "Bold extended typography for impact headlines",
+        "Dark background option for hero sections",
+        "Dynamic energy through type scale contrast",
+        "Single accent color for interactive elements"
+      ],
+      "what_to_adapt": "Less blue accent - Playground uses neutral palette. Use more subtly.",
+      "relevance": "HIGH - production company energy, bold typography"
+    },
+    "larra_studio": {
+      "url": "https://larra.studio/",
+      "what_to_borrow": [
+        "Ultra-refined grid for portfolio thumbnails",
+        "Subtle serif for certain headlines (contrast)",
+        "Generous whitespace between sections",
+        "Masonry/grid layout options for work page"
+      ],
+      "what_to_adapt": "More bold typography - Larra is very refined/quiet",
+      "relevance": "HIGH - portfolio presentation, agency approach"
+    },
+    "tristan_bagot": {
+      "url": "https://www.tristanbagot.com/",
+      "what_to_borrow": [
+        "Project list with detailed credits format",
+        "Dark background as default option",
+        "Monospace/grotesque typography character",
+        "Clean hover states revealing project info"
+      ],
+      "what_to_adapt": "Less designer-personal, more studio/agency feel",
+      "relevance": "MEDIUM - style reference for typographic treatment"
+    }
+  },
+
+  "design_principles": {
+    "1_portfolio_hero": {
+      "principle": "The work IS the design",
+      "application": "Portfolio imagery dominates every page. Design supports but never competes with the work.",
+      "reference": "All analyzed sites let imagery breathe with minimal UI interference"
+    },
+    "2_bold_restraint": {
+      "principle": "Bold typography, restrained everything else",
+      "application": "Headlines make statements. Body copy stays clean. Color stays neutral. Let type carry personality.",
+      "reference": "DVTK + Gym Class balance - bold type within minimal system"
+    },
+    "3_gallery_backdrop": {
+      "principle": "Design as gallery wall",
+      "application": "Neutral backgrounds (off-white or soft dark) frame portfolio like gallery walls. Work is the art.",
+      "reference": "Larra Studio's refined backdrop approach"
+    },
+    "4_mature_playfulness": {
+      "principle": "Playful in concept, sophisticated in execution",
+      "application": "The 'playground' concept lives in the brand story, not visual gimmicks. Typography can have character without being childish.",
+      "reference": "DVTK's ASCII elements - technically playful but visually mature"
+    },
+    "5_seamless_flow": {
+      "principle": "Every page routes to Work or Contact",
+      "application": "Navigation is minimal. CTAs are clear. Never more than one click from portfolio or contact form.",
+      "reference": "All reference sites have clean, obvious user paths"
+    }
+  },
+
+  "mood_attributes": {
+    "primary": ["Sophisticated", "Bold", "Clean", "Confident"],
+    "secondary": ["Energetic", "Creative", "Authentic"],
+    "avoid": ["Busy", "Cluttered", "Childish", "Generic", "Corporate"]
+  },
+
+  "layout_direction": {
+    "overall_approach": "Full-width sections with contained content. Generous vertical rhythm.",
+    "grid": {
+      "type": "12-column on desktop, fluid on mobile",
+      "max_width": "1440px for content, full-bleed for portfolio images",
+      "gutters": "24px-32px desktop, 16px mobile"
+    },
+    "section_rhythm": {
+      "pattern": "Large visual → Supporting content → CTA → Next section",
+      "spacing": "80-120px between major sections on desktop"
+    },
+    "portfolio_layouts": {
+      "grid": "Masonry or uniform grid for Work page (see Larra)",
+      "detail": "Mix of full-width hero + flexible gallery layouts",
+      "hover": "Subtle reveal of project name/category on hover"
+    }
+  },
+
+  "interaction_direction": {
+    "philosophy": "Subtle and purposeful. No animation for animation's sake - EXCEPT the loading intro which is a signature moment.",
+    "hover_states": {
+      "links": "Underline reveal or opacity shift",
+      "portfolio_items": "Subtle scale or overlay with project info",
+      "buttons": "Background color shift, no dramatic transforms"
+    },
+    "transitions": {
+      "page": "Clean fade or slide, fast (<300ms)",
+      "scroll": "Minimal parallax - images can have subtle depth",
+      "reveal": "Content fades in on scroll (subtle, not dramatic)"
+    },
+    "avoid": ["Excessive scroll hijacking", "Dramatic page transitions", "Bouncy animations", "Cursor effects"]
+  },
+
+  "animation_direction": {
+    "philosophy": "Motion should feel intentional and premium. The loading intro is the ONE place for creative expression through animation.",
+
+    "loading_intro": {
+      "inspiration": "DVTK (dvtk.us) ASCII matrix animation",
+      "concept": "Generative typographic animation that reveals 'Playground Studios' or logo mark",
+      "visual_description": {
+        "background": "Full-screen black (#08090A)",
+        "animation": "Random characters/symbols morph and resolve into readable brand name",
+        "typography": "Monospace or display font for the animated characters",
+        "reveal": "Characters scramble/shift and gradually lock into place to spell brand name"
+      },
+      "timing": {
+        "duration": "2-3 seconds",
+        "easing": "Ease-out for resolution, giving satisfying 'landing' feel",
+        "exit": "Fade to black, then reveal homepage OR slide up to reveal content"
+      },
+      "behavior": {
+        "first_visit": "Play full animation",
+        "return_visit_same_session": "Skip animation",
+        "click_to_skip": "Allow click/tap anywhere to skip",
+        "reduced_motion": "Show static logo, fade in directly"
+      },
+      "character_set": {
+        "option_a": "ASCII-style: arrows (→ ↓ ↑ ←), slashes, brackets",
+        "option_b": "Alphanumeric scramble: random letters that resolve",
+        "option_c": "Hybrid: mix of symbols and letters",
+        "recommendation": "Option A or C for DVTK-inspired feel, Option B for cleaner approach"
+      },
+      "technical_approach": {
+        "method": "GSAP + JavaScript for character randomization",
+        "alternative": "CSS animations with JS text manipulation",
+        "canvas_option": "HTML5 Canvas for more complex generative effects",
+        "performance": "Preload homepage content while animation plays"
+      }
+    },
+
+    "page_animations": {
+      "on_load": {
+        "hero_content": "Fade in + slight translateY (20px), staggered timing",
+        "navigation": "Fade in after hero, 200ms delay",
+        "below_fold": "Animate on scroll intersection"
+      },
+      "scroll_triggered": {
+        "content_blocks": "Fade in + translateY on viewport entry",
+        "images": "Optional lazy reveal effect",
+        "threshold": "Trigger when 20% visible",
+        "once": true
+      }
+    },
+
+    "micro_interactions": {
+      "button_hover": "Background color transition (200ms ease)",
+      "link_hover": "Underline slides in from left (150ms ease-out)",
+      "card_hover": "Scale 1.02 + subtle shadow increase",
+      "image_hover": "Scale 1.03 within container (overflow hidden)"
+    },
+
+    "animation_principles": [
+      "Fast and snappy - nothing sluggish (200-300ms max for most interactions)",
+      "Ease-out for entering elements (feels natural)",
+      "Ease-in-out for transitions between states",
+      "Consistent timing across similar elements",
+      "Respect user motion preferences"
+    ]
+  },
+
+  "responsive_direction": {
+    "breakpoints": {
+      "desktop": "1280px+",
+      "tablet": "768px - 1279px",
+      "mobile": "< 768px"
+    },
+    "mobile_priorities": [
+      "Portfolio grid collapses to 1-2 columns",
+      "Navigation becomes hamburger menu",
+      "Typography scales down proportionally",
+      "Touch-friendly tap targets (44px min)"
+    ]
+  },
+
+  "dark_vs_light": {
+    "recommendation": "Light (off-white) as primary, with dark hero option",
+    "rationale": "Client's color palette features off-white (#F4F4F2). Dark sections can be used for hero impact like Gym Class, but portfolio imagery often looks best on light/neutral backgrounds.",
+    "hero_option": "Dark (#08090A) hero section with light body is acceptable per Gym Class influence"
+  },
+
+  "client_alignment": {
+    "brand_personality_match": {
+      "creative": "Bold typography and unique layout choices",
+      "bold": "High-contrast type scale, confident messaging",
+      "authentic": "Clean design that doesn't hide behind gimmicks"
+    },
+    "anti_patterns_avoided": {
+      "overpriced_feeling": "Clean, efficient design - no unnecessary flourishes",
+      "cheesy": "Sophisticated execution of playful concept",
+      "generic": "Custom typography and layout approach, not template-feeling"
+    },
+    "resolved_tensions": {
+      "playful_vs_professional": "Playful brand story + professional visual execution",
+      "bold_vs_minimal": "Bold typography within minimal system",
+      "studio_vs_freelancer": "'We' voice supported by polished, studio-quality design"
+    }
+  }
+}

@@ -5,61 +5,108 @@
 - **Client**: {{CLIENT_NAME}}
 - **Project Codename**: {{PROJECT_CODENAME}}
 - **Industry**: {{INDUSTRY}}
-- **Webflow Site ID**: {{WEBFLOW_SITE_ID}}
-- **Live URL**: {{LIVE_URL}}
+- **Production URL**: {{PRODUCTION_URL}}
+- **Preview URL**: {{PREVIEW_URL}}
 - **Project Start**: {{START_DATE}}
+- **Project Status**: {{PROJECT_STATUS}}
 
 ## Tech Stack
 
-- **Prototype**: React 18 + Vite + Tailwind CSS
-- **Animations**: GSAP 3.12
-- **Deployment**: Webflow Designer + Custom Code Embeds
-- **Package Manager**: pnpm 9.x
-- **Node Version**: 20.x
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript 5.x (strict mode) |
+| Styling | Tailwind CSS v4 |
+| Components | shadcn/ui |
+| Animations | Framer Motion |
+| CMS | {{CMS_CHOICE}} |
+| Database | {{DB_CHOICE}} |
+| Deployment | Vercel |
+| Package Manager | pnpm 9.x |
+| Node Version | 20.x |
 
-## ⚡ Operational Commands
+## Operational Commands
 
-**Prototype Development:**
-- `pnpm dev` - Start dev server (http://localhost:5173)
-- `pnpm build` - Build for production
-- `pnpm preview` - Preview production build
-- `pnpm lint` - Check code quality
-- `pnpm format` - Format code with Prettier
+**Development:**
+```bash
+pnpm dev          # Start dev server (http://localhost:3000)
+pnpm build        # Build for production
+pnpm start        # Start production server
+pnpm lint         # ESLint check
+pnpm typecheck    # TypeScript check
+pnpm format       # Format with Prettier
+```
 
-**Webflow Workflow:**
-- `/vibe` - Create React component prototype
-- `/gsap-animation` - Add GSAP animation
-- `/push-to-webflow` - Deploy component to Webflow Designer
-- `/sync-cms-schema` - Create CMS collections from mock data
-- `/deploy-embed` - Push custom JavaScript to Webflow
+**Workflow Commands:**
+```bash
+/discover         # Extract client DNA from materials
+/icp              # Develop ideal customer profiles
+/strategy         # Create site architecture
+/brief            # Generate design direction
+/copy             # Write page copy
+/vibe             # Rapid component prototyping
+/build            # Structured component creation
+/page             # Create Next.js pages
+/motion           # Add Framer Motion animations
+/review           # Conversion audit
+/deploy           # Deploy to Vercel
+/ship             # Full build → deploy pipeline
+```
 
-**Utilities:**
-- `pnpm validate-webflow` - Test Webflow API connection
-- `pnpm clean` - Remove node_modules
-- `pnpm clean:cache` - Clear pnpm cache
+**Velocity Shortcuts:**
+| Shortcut | What It Does |
+|----------|--------------|
+| `qplan` | Analyze task, list files to modify. NO CODE. |
+| `qbuild` | Implement the plan with TypeScript/Tailwind |
+| `qship` | Build + lint + typecheck + commit + push |
+| `qfix` | Read error, find cause, apply fix |
 
-## 🎯 Role & Behavior
+## Role & Behavior
 
-You are a Webflow specialist working on {{CLIENT_NAME}}'s website. Your code runs in the browser, NOT Node.js.
+You are a Next.js specialist working on {{CLIENT_NAME}}'s website. You write production-grade TypeScript with a focus on performance and developer experience.
 
-**Critical Rules:**
-1. **No jQuery**: Use vanilla JavaScript only
-2. **No Build Step for Webflow**: Code must work as-is when pasted into Webflow
-3. **Data Attributes**: Always use `[data-*]` selectors, never Webflow auto-generated classes
-4. **CMS-First**: Solve with CMS structure before resorting to custom code
-5. **Performance**: Keep embeds under 5KB; lazy-load heavy scripts
-6. **Browser Support**: Last 2 versions of Chrome, Firefox, Safari, Edge
+**Your Principles:**
+1. **TypeScript Strict** — No `any` types, ever
+2. **Server Components First** — Only use `'use client'` when necessary
+3. **Tailwind Only** — No CSS modules or inline styles
+4. **shadcn/ui First** — Use existing components before building custom
+5. **Performance Matters** — Think about bundle size and Core Web Vitals
+6. **Accessibility Required** — WCAG 2.1 AA compliance
 
-## 🚀 Velocity Shortcuts
+## Project Structure
 
-Use these triggers for common workflows:
+```
+{{PROJECT_CODENAME}}/
+├── src/
+│   ├── app/                     # Next.js App Router
+│   │   ├── layout.tsx           # Root layout
+│   │   ├── page.tsx             # Home page
+│   │   ├── (marketing)/         # Marketing pages
+│   │   └── api/                  # API routes
+│   ├── components/
+│   │   ├── ui/                   # shadcn/ui components
+│   │   ├── sections/             # Page sections
+│   │   ├── layout/               # Header, Footer, Nav
+│   │   └── forms/                # Form components
+│   ├── lib/
+│   │   ├── utils.ts              # Utility functions
+│   │   └── animations.ts         # Framer Motion presets
+│   ├── hooks/                    # Custom React hooks
+│   ├── styles/
+│   │   └── globals.css           # Tailwind + CSS variables
+│   └── types/                    # TypeScript types
+├── public/                       # Static assets
+├── outputs/                      # Strategy outputs
+│   ├── 1_discovery/
+│   ├── 2_audience/
+│   ├── 3_architecture/
+│   ├── 4_design/
+│   ├── 5_copy/
+│   └── 6_review/
+└── CLAUDE.md                     # This file
+```
 
-- **qplan**: Analyze request and codebase, draft step-by-step plan. DO NOT write code yet.
-- **qcode**: Implement the approved plan following TDD pattern.
-- **qcheck**: Review changes for security, type safety, performance, and brand alignment.
-- **qfix**: Read error message, analyze stack trace, propose fix.
-
-## 🎨 Brand Guidelines
+## Brand Guidelines
 
 **Primary Brand Colors:**
 - Primary: {{PRIMARY_COLOR}}
@@ -70,77 +117,157 @@ Use these triggers for common workflows:
 - Headings: {{HEADING_FONT}}
 - Body: {{BODY_FONT}}
 
+**CSS Variables (in globals.css):**
+```css
+:root {
+  --primary: {{PRIMARY_HSL}};
+  --secondary: {{SECONDARY_HSL}};
+  --accent: {{ACCENT_HSL}};
+}
+```
+
 **Detailed Guidelines**: See `design-system/brand-guidelines.md`
 
-## 📚 Critical Documentation Index
+## Critical Documentation
 
 *(Do not hallucinate features. Read these files for ground truth)*
 
-- **Brand Guidelines**: `./design-system/brand-guidelines.md`
-- **Style Tokens**: `./design-system/style-tokens.md`
-- **Component Library**: `./design-system/components.md`
-- **Workflow Guide**: `./docs/WORKFLOW.md`
+| Document | Path |
+|----------|------|
+| Brand Guidelines | `design-system/brand-guidelines.md` |
+| Design Tokens | `design-system/tokens/` |
+| Component Library | `design-system/components.md` |
+| Workflow Guide | `docs/WORKFLOW.md` |
+| Deployment Guide | `docs/DEPLOYMENT.md` |
+| Conventions | `docs/CONVENTIONS.md` |
 
-## 🛡️ Non-Negotiable Standards
+## Non-Negotiable Standards
 
-**React Components:**
-- Functional components only (no class components)
-- Props must map 1:1 to future CMS fields
-- Keep nesting under 4 levels for Webflow translation
-- Use BEM naming: `.component__element--modifier`
+### TypeScript
+- Strict mode enabled
+- No `any` types — define proper interfaces
+- Props interfaces named `ComponentNameProps`
+- Use `type` for unions, `interface` for objects
 
-**Styling:**
-- Use Tailwind utility classes for prototyping
-- Classes must be Webflow-compatible (no arbitrary values in production embeds)
-- All colors/spacing must reference design tokens
+### React Components
+- Server Components by default
+- `'use client'` only when hooks/events needed
+- Functional components only
+- Props must have TypeScript interface
+- Use `cn()` for class composition
 
-**Animations:**
-- All animations must be 60fps on mobile
-- Use `transform` and `opacity` only (GPU-accelerated)
-- GSAP animations over 10 lines should be in separate files (`/animations/`)
-- Document whether animation will be Webflow IX2 or custom embed
+### Styling
+- Tailwind utility classes only
+- No CSS modules or styled-components
+- Colors via CSS variables (shadcn/ui pattern)
+- Responsive: Mobile-first (`sm:`, `md:`, `lg:`)
 
-**Custom Code:**
-- All JavaScript must pass ESLint
-- All embeds must be wrapped in IIFE
-- Check `document.readyState` before executing
-- Add error handling for missing DOM elements
-- Never use `console.log` in production embeds
+### Animations
+- Framer Motion for complex animations
+- Tailwind transitions for simple effects
+- Always respect `prefers-reduced-motion`
+- Keep durations under 500ms for UI feedback
 
-**CMS Structure:**
-- Collection names: Singular PascalCase (e.g., `BlogPost`, `Feature`)
-- Field names: camelCase (e.g., `heroImage`, `ctaText`)
-- Reference fields: Suffix with `Ref` (e.g., `authorRef`)
-- Boolean fields for conditional rendering (e.g., `isFeatured`)
+### Performance
+- Images via `next/image` with proper sizing
+- Fonts via `next/font`
+- Dynamic imports for heavy components
+- Avoid unnecessary client-side JavaScript
 
-## 🔄 Prototype to Webflow Workflow
+## Component Template
 
-1. **Prototype** (`/vibe`) → Create component in React
-2. **Refine** → Test in browser, get stakeholder approval
-3. **Animate** (`/gsap-animation`) → Add GSAP animations
-4. **Translate** (`/translate`) → Generate Webflow rebuild guide
-5. **Push** (`/push-to-webflow`) → Deploy via Webflow API (if applicable)
-6. **Deploy** (`/deploy-embed`) → Push custom code embeds
-7. **QA** → Test in Webflow Designer, publish to staging
+```typescript
+// src/components/sections/[name]-section.tsx
+import { cn } from '@/lib/utils'
 
-## 🚨 Common Pitfalls to Avoid
+interface [Name]SectionProps {
+  // props
+  className?: string
+}
 
-- ❌ Using Webflow-generated class names like `.w-1`, `.div-block-23`
-- ❌ Assuming props will be passed (Webflow has no React runtime)
-- ❌ Using async/await in components (Webflow is static HTML)
-- ❌ Complex state management (useState, useContext won't exist in Webflow)
-- ❌ Importing npm packages in Webflow embeds (must use CDN)
-- ❌ Using build tools (Webpack, Vite) outputs in Webflow (must be vanilla JS)
+export function [Name]Section({
+  // destructure
+  className,
+}: [Name]SectionProps) {
+  return (
+    <section className={cn('py-24 lg:py-32', className)}>
+      <div className="container px-4 md:px-6">
+        {/* Content */}
+      </div>
+    </section>
+  )
+}
+```
 
-## 📝 Notes
+## Page Template
 
-- This project uses pnpm for package management
-- Prototype serves as living documentation and component specification
-- Translation docs bridge the gap between React and Webflow
-- Final Webflow site may differ from prototype (CMS-driven content)
-- Custom code should be minimal; leverage Webflow's visual tools when possible
+```typescript
+// src/app/[route]/page.tsx
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Page Title | {{CLIENT_NAME}}',
+  description: 'Page description.',
+}
+
+export default function PageName() {
+  return (
+    <main>
+      {/* Sections */}
+    </main>
+  )
+}
+```
+
+## Common Patterns
+
+### Data Fetching
+```typescript
+// Server Component (default)
+async function getData() {
+  const res = await fetch('...', { next: { revalidate: 3600 } })
+  return res.json()
+}
+```
+
+### Loading State
+```typescript
+// app/[route]/loading.tsx
+import { Skeleton } from '@/components/ui/skeleton'
+
+export default function Loading() {
+  return <Skeleton className="h-64 w-full" />
+}
+```
+
+### Error State
+```typescript
+// app/[route]/error.tsx
+'use client'
+
+export default function Error({ reset }: { reset: () => void }) {
+  return <button onClick={reset}>Try again</button>
+}
+```
+
+## Things to Avoid
+
+- ❌ Using `any` type
+- ❌ Creating CSS modules or inline styles
+- ❌ Skipping loading/error states
+- ❌ Ignoring accessibility
+- ❌ Over-engineering simple components
+- ❌ Adding features not requested
+- ❌ `console.log` in production code
+
+## ICP Context
+
+{{ICP_SUMMARY}}
+
+## Current Focus
+
+{{CURRENT_FOCUS}}
 
 ---
 
 **Last Updated**: {{LAST_UPDATED}}
-**Project Status**: {{PROJECT_STATUS}}

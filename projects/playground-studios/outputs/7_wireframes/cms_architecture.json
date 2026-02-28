@@ -1,0 +1,426 @@
+{
+  "cms_architecture": {
+    "client_name": "Playground Studios",
+    "generated_date": "2026-01-17",
+    "version": "1.0",
+    "cms_coverage_percentage": 72,
+    "philosophy": "CMS-First: Every repeating element and client-updatable content is CMS-powered for easy maintenance",
+
+    "collections": [
+      {
+        "collection_name": "Project",
+        "singular_name": "Project",
+        "slug": "projects",
+        "purpose": "Portfolio pieces - the core of Playground's business",
+        "estimated_items": "15-25",
+        "used_on_pages": ["homepage (featured)", "work (all)", "work-detail (template)"],
+        "priority": "CRITICAL",
+
+        "fields": [
+          {
+            "name": "name",
+            "type": "PlainText",
+            "required": true,
+            "help_text": "Project name, e.g., 'Celsius Summer Campaign'",
+            "max_length": 100,
+            "binds_to": ["project-title", "card-title", "hero-title"]
+          },
+          {
+            "name": "slug",
+            "type": "Slug",
+            "required": true,
+            "auto_generate": true,
+            "source_field": "name"
+          },
+          {
+            "name": "clientName",
+            "type": "PlainText",
+            "required": true,
+            "help_text": "Client/brand name",
+            "max_length": 50,
+            "binds_to": ["project-client", "card-client"]
+          },
+          {
+            "name": "category",
+            "type": "Option",
+            "required": true,
+            "options": ["Brand", "Hospitality", "Studio"],
+            "help_text": "Project category for filtering",
+            "binds_to": ["card-category", "filter-target"]
+          },
+          {
+            "name": "heroImage",
+            "type": "Image",
+            "required": true,
+            "help_text": "Main project image (16:9 or 3:2, min 1920px wide)",
+            "binds_to": ["hero-image", "card-image"]
+          },
+          {
+            "name": "thumbnailImage",
+            "type": "Image",
+            "required": false,
+            "help_text": "Optional smaller thumbnail for grid (if different from hero)",
+            "binds_to": ["card-image-override"]
+          },
+          {
+            "name": "description",
+            "type": "RichText",
+            "required": true,
+            "help_text": "Project description (2-4 sentences)",
+            "binds_to": ["project-description"]
+          },
+          {
+            "name": "servicesProvided",
+            "type": "PlainText",
+            "required": false,
+            "help_text": "Comma-separated list: Photography, Video, Creative Direction",
+            "binds_to": ["project-services"]
+          },
+          {
+            "name": "year",
+            "type": "PlainText",
+            "required": false,
+            "help_text": "Year of project, e.g., '2025'",
+            "max_length": 4,
+            "binds_to": ["project-year"]
+          },
+          {
+            "name": "galleryImages",
+            "type": "MultiImage",
+            "required": true,
+            "help_text": "6-15 images showcasing the project",
+            "binds_to": ["gallery-grid"]
+          },
+          {
+            "name": "isFeatured",
+            "type": "Switch",
+            "required": false,
+            "default": false,
+            "help_text": "Show on homepage featured section",
+            "binds_to": ["conditional_visibility"]
+          },
+          {
+            "name": "sortOrder",
+            "type": "Number",
+            "required": false,
+            "help_text": "Display order (lower = first). Leave blank for default.",
+            "binds_to": ["sort_order"]
+          }
+        ],
+
+        "reference_fields": [],
+
+        "collection_page_template": "work-detail",
+        "collection_list_locations": [
+          {
+            "page": "homepage",
+            "section": "featured-work",
+            "filter": "isFeatured = true",
+            "limit": 6,
+            "sort": "sortOrder ascending"
+          },
+          {
+            "page": "work",
+            "section": "project-grid",
+            "filter": "none",
+            "limit": "all",
+            "sort": "sortOrder ascending"
+          }
+        ]
+      },
+
+      {
+        "collection_name": "ClientLogo",
+        "singular_name": "Client Logo",
+        "slug": "client-logos",
+        "purpose": "Social proof logo bar - easy for Barrett to add new clients",
+        "estimated_items": "8-15",
+        "used_on_pages": ["homepage"],
+        "priority": "HIGH",
+
+        "fields": [
+          {
+            "name": "name",
+            "type": "PlainText",
+            "required": true,
+            "help_text": "Client name (for alt text and admin)",
+            "max_length": 50,
+            "binds_to": ["logo-alt"]
+          },
+          {
+            "name": "logo",
+            "type": "Image",
+            "required": true,
+            "help_text": "Logo image (SVG or PNG, transparent background preferred)",
+            "binds_to": ["logo-image"]
+          },
+          {
+            "name": "isActive",
+            "type": "Switch",
+            "required": false,
+            "default": true,
+            "help_text": "Show/hide logo without deleting",
+            "binds_to": ["conditional_visibility"]
+          },
+          {
+            "name": "sortOrder",
+            "type": "Number",
+            "required": false,
+            "help_text": "Display order",
+            "binds_to": ["sort_order"]
+          }
+        ],
+
+        "reference_fields": [],
+        "collection_page_template": null,
+        "collection_list_locations": [
+          {
+            "page": "homepage",
+            "section": "client-logos",
+            "filter": "isActive = true",
+            "limit": 8,
+            "sort": "sortOrder ascending"
+          }
+        ]
+      },
+
+      {
+        "collection_name": "Service",
+        "singular_name": "Service",
+        "slug": "services",
+        "purpose": "Service offerings - CMS for flexibility as offerings evolve",
+        "estimated_items": "6-10",
+        "used_on_pages": ["services"],
+        "priority": "MEDIUM",
+
+        "fields": [
+          {
+            "name": "name",
+            "type": "PlainText",
+            "required": true,
+            "help_text": "Service name, e.g., 'Brand Photography'",
+            "max_length": 50,
+            "binds_to": ["service-title"]
+          },
+          {
+            "name": "slug",
+            "type": "Slug",
+            "required": true,
+            "auto_generate": true
+          },
+          {
+            "name": "category",
+            "type": "Option",
+            "required": true,
+            "options": ["Creative Development", "Production", "Post-Production"],
+            "help_text": "Service category for grouping",
+            "binds_to": ["service-category-heading"]
+          },
+          {
+            "name": "shortDescription",
+            "type": "PlainText",
+            "required": false,
+            "help_text": "Brief description for list display",
+            "max_length": 150,
+            "binds_to": ["service-description"]
+          },
+          {
+            "name": "icon",
+            "type": "Image",
+            "required": false,
+            "help_text": "Optional icon (SVG, 64x64)",
+            "binds_to": ["service-icon"]
+          },
+          {
+            "name": "relatedProjectRef",
+            "type": "Reference",
+            "reference_collection": "Project",
+            "required": false,
+            "help_text": "Link to a portfolio example of this service",
+            "binds_to": ["service-example-link"]
+          },
+          {
+            "name": "sortOrder",
+            "type": "Number",
+            "required": false,
+            "binds_to": ["sort_order"]
+          },
+          {
+            "name": "isActive",
+            "type": "Switch",
+            "default": true,
+            "help_text": "Show/hide service",
+            "binds_to": ["conditional_visibility"]
+          }
+        ],
+
+        "reference_fields": [
+          {
+            "field": "relatedProjectRef",
+            "to_collection": "Project",
+            "relationship": "many-to-one"
+          }
+        ],
+
+        "collection_page_template": null,
+        "collection_list_locations": [
+          {
+            "page": "services",
+            "section": "services-list",
+            "filter": "isActive = true",
+            "limit": "all",
+            "sort": "category, sortOrder ascending"
+          }
+        ]
+      }
+    ],
+
+    "reference_relationships": [
+      {
+        "from_collection": "Service",
+        "field": "relatedProjectRef",
+        "to_collection": "Project",
+        "relationship": "many-to-one",
+        "purpose": "Link services to portfolio examples"
+      }
+    ],
+
+    "static_sections": {
+      "note": "These sections remain hardcoded for brand consistency",
+      "sections": [
+        {
+          "section": "Navigation",
+          "reason": "Core brand element, rarely changes"
+        },
+        {
+          "section": "Footer",
+          "reason": "Legal/structural, rarely changes"
+        },
+        {
+          "section": "Homepage Hero",
+          "reason": "Core brand messaging, changes infrequently",
+          "future_consideration": "Could CMS-power for A/B testing later"
+        },
+        {
+          "section": "About Origin Story",
+          "reason": "Brand story, static narrative"
+        },
+        {
+          "section": "About Process (Play/Box/Home)",
+          "reason": "Core philosophy, rarely changes"
+        },
+        {
+          "section": "About Founder Bio",
+          "reason": "Single founder, update directly when needed"
+        },
+        {
+          "section": "Contact Form",
+          "reason": "Webflow Forms, structure rarely changes"
+        },
+        {
+          "section": "Contact CTA sections",
+          "reason": "Simple, consistent calls-to-action"
+        }
+      ]
+    },
+
+    "cms_coverage_breakdown": {
+      "homepage": {
+        "total_sections": 5,
+        "cms_powered": 2,
+        "sections": {
+          "hero": "Static",
+          "client_logos": "CMS (ClientLogo collection)",
+          "featured_work": "CMS (Project collection, filtered)",
+          "brief_intro": "Static",
+          "contact_cta": "Static"
+        }
+      },
+      "work": {
+        "total_sections": 3,
+        "cms_powered": 1,
+        "sections": {
+          "page_header": "Static",
+          "project_grid": "CMS (Project collection)",
+          "contact_cta": "Static"
+        }
+      },
+      "work_detail": {
+        "total_sections": 5,
+        "cms_powered": 4,
+        "sections": {
+          "project_hero": "CMS (Project.heroImage, name, clientName)",
+          "project_info": "CMS (Project.description, services, year)",
+          "image_gallery": "CMS (Project.galleryImages)",
+          "next_project": "CMS (next Project in collection)",
+          "contact_cta": "Static"
+        }
+      },
+      "about": {
+        "total_sections": 5,
+        "cms_powered": 0,
+        "sections": {
+          "hero_intro": "Static",
+          "origin_story": "Static",
+          "process_philosophy": "Static",
+          "founder_bio": "Static",
+          "contact_cta": "Static"
+        },
+        "note": "About is brand-centric. Static content is appropriate."
+      },
+      "services": {
+        "total_sections": 4,
+        "cms_powered": 1,
+        "sections": {
+          "intro": "Static",
+          "services_list": "CMS (Service collection)",
+          "how_we_work": "Static (could be CMS later)",
+          "contact_cta": "Static"
+        }
+      },
+      "contact": {
+        "total_sections": 4,
+        "cms_powered": 0,
+        "sections": {
+          "headline": "Static",
+          "contact_form": "Webflow Forms",
+          "what_to_expect": "Static",
+          "alternative_contact": "Static"
+        },
+        "note": "Contact page is functional, not content-driven. Static is fine."
+      }
+    },
+
+    "content_checklist_summary": {
+      "collections_to_populate": [
+        {
+          "collection": "Project",
+          "items_needed": "15-20 for launch",
+          "priority": "CRITICAL",
+          "fields_per_item": 10
+        },
+        {
+          "collection": "ClientLogo",
+          "items_needed": "8",
+          "priority": "HIGH",
+          "fields_per_item": 3
+        },
+        {
+          "collection": "Service",
+          "items_needed": "8-10",
+          "priority": "MEDIUM",
+          "fields_per_item": 6
+        }
+      ],
+      "static_content_needed": [
+        "Homepage hero headline and subhead",
+        "Homepage brief intro paragraph",
+        "About origin story (exists in approved copy)",
+        "About founder bio (needs updated headshot)",
+        "Services intro paragraph",
+        "Services 'how we work' content",
+        "Contact page copy"
+      ]
+    }
+  }
+}

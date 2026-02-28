@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0",
+    "icp_focus": "Brand Builder (ICP-001)",
+    "confidence": "MEDIUM - based on industry patterns, not customer research"
+  },
+
+  "journey_overview": {
+    "typical_timeline": "1-4 weeks from first touch to signed project",
+    "key_touchpoints": ["Portfolio/Website", "Instagram", "Cold outreach response", "Discovery call", "Proposal"],
+    "primary_conversion_path": "Portfolio → Contact form → Call → Proposal → Signed"
+  },
+
+  "stages": {
+    "1_unaware": {
+      "stage_name": "Not Looking",
+      "description": "Brand marketer isn't actively searching. Content needs are handled (for now).",
+      "customer_state": {
+        "thinking": "Our current setup is fine",
+        "feeling": "Comfortable, maybe slightly frustrated with status quo",
+        "doing": "Working with existing vendors or in-house"
+      },
+      "trigger_to_next_stage": [
+        "Bad experience with current vendor",
+        "New campaign/product launch announced",
+        "Leadership asks 'why does our content look dated?'",
+        "See a competitor's amazing content"
+      ],
+      "playground_opportunity": "Instagram presence keeps Playground visible for when trigger hits",
+      "content_needs": "None - not in market"
+    },
+
+    "2_problem_aware": {
+      "stage_name": "Feeling the Pain",
+      "description": "Something went wrong or needs have grown. Current solution isn't working.",
+      "customer_state": {
+        "thinking": "We need better content / a better partner",
+        "feeling": "Frustrated, stressed about upcoming needs",
+        "doing": "Starting to think about alternatives"
+      },
+      "trigger_to_next_stage": [
+        "Deadline pressure forces action",
+        "Budget approved for content",
+        "Colleague recommends someone"
+      ],
+      "playground_opportunity": "Word of mouth, referrals",
+      "content_needs": "Not actively consuming - still internal problem recognition"
+    },
+
+    "3_solution_aware": {
+      "stage_name": "Searching for Options",
+      "description": "Actively looking for a photographer/production partner. Comparing options.",
+      "customer_state": {
+        "thinking": "Who's out there? Who's good? Who fits our budget?",
+        "feeling": "Hopeful but cautious, time pressure",
+        "doing": "Googling, asking network, browsing portfolios, checking Instagram"
+      },
+      "trigger_to_next_stage": [
+        "Find 2-3 promising options",
+        "See portfolio that resonates",
+        "Get a recommendation"
+      ],
+      "playground_opportunity": "THIS IS WHERE THE WEBSITE MATTERS MOST",
+      "content_needs": {
+        "portfolio": "Show work similar to what they need",
+        "credibility": "Client logos, testimonials",
+        "differentiation": "Why Playground vs. agencies vs. freelancers",
+        "process": "What's it like to work together?"
+      },
+      "website_pages": ["Homepage", "Work/Portfolio", "About"],
+      "key_questions_to_answer": [
+        "Have they done work like mine?",
+        "Are they legit (client logos)?",
+        "What's their vibe?",
+        "How do I contact them?"
+      ]
+    },
+
+    "4_product_aware": {
+      "stage_name": "Evaluating Playground",
+      "description": "They've found Playground and are deciding if it's worth reaching out.",
+      "customer_state": {
+        "thinking": "This looks promising. Are they the right fit?",
+        "feeling": "Interested but still vetting",
+        "doing": "Deep-diving portfolio, reading about page, checking Instagram"
+      },
+      "trigger_to_next_stage": [
+        "Portfolio convinces them",
+        "About story resonates",
+        "See a specific project similar to their need"
+      ],
+      "playground_opportunity": "Convert interest to contact",
+      "content_needs": {
+        "deeper_portfolio": "Case studies or project details",
+        "about_story": "Who is Barrett? What's the approach?",
+        "services_clarity": "What exactly do they offer?",
+        "low_friction_cta": "Easy way to start conversation"
+      },
+      "website_pages": ["Work (detail views)", "About", "Services", "Contact"],
+      "key_questions_to_answer": [
+        "Can they do specifically what I need?",
+        "What's the process like?",
+        "Are they in my budget ballpark?",
+        "How do I get started?"
+      ],
+      "drop_off_risks": [
+        "Portfolio doesn't show relevant work",
+        "Can't figure out how to contact",
+        "Seems too expensive or too cheap",
+        "Website feels outdated (doesn't match portfolio quality)"
+      ]
+    },
+
+    "5_most_aware": {
+      "stage_name": "Ready to Reach Out",
+      "description": "Decided Playground is worth a conversation. Taking action.",
+      "customer_state": {
+        "thinking": "Let's see if they're available and what this would cost",
+        "feeling": "Optimistic, ready to move forward",
+        "doing": "Filling out contact form, sending email, DMing on Instagram"
+      },
+      "trigger_to_next_stage": [
+        "Positive response to inquiry",
+        "Good discovery call",
+        "Proposal fits budget and timeline"
+      ],
+      "playground_opportunity": "Smooth contact experience → fast response",
+      "content_needs": {
+        "contact_form": "Simple, not intimidating",
+        "confirmation": "What to expect next",
+        "response_speed": "Fast reply builds confidence"
+      },
+      "website_pages": ["Contact"],
+      "key_questions_to_answer": [
+        "What info do they need from me?",
+        "When will I hear back?",
+        "What's the next step?"
+      ],
+      "drop_off_risks": [
+        "Contact form is too long/intimidating",
+        "No confirmation of submission",
+        "Slow response time"
+      ]
+    }
+  },
+
+  "conversion_path_summary": {
+    "primary_path": {
+      "entry": "Instagram / Referral / Cold outreach response",
+      "first_impression": "Homepage → Portfolio",
+      "evaluation": "Work detail → About → Services",
+      "conversion": "Contact form",
+      "goal": "Discovery call booked"
+    },
+    "key_conversion_points": [
+      {
+        "point": "Homepage to Portfolio",
+        "success_factor": "Hero communicates 'creative production' immediately. Work visible above fold."
+      },
+      {
+        "point": "Portfolio to Contact",
+        "success_factor": "Work impresses. Easy to find contact. No friction."
+      },
+      {
+        "point": "Contact to Response",
+        "success_factor": "Form is short. Confirmation is clear. Barrett responds fast."
+      }
+    ]
+  },
+
+  "website_implications": {
+    "must_haves": [
+      "Portfolio front and center (this is the product)",
+      "Client logos visible for credibility",
+      "Clear, simple contact path",
+      "Mobile-optimized (they'll check on phone)"
+    ],
+    "nice_to_haves": [
+      "Case studies with context",
+      "Testimonials near portfolio",
+      "Services page with clarity on offerings"
+    ],
+    "avoid": [
+      "Long text blocks before showing work",
+      "Hidden contact information",
+      "Complex navigation",
+      "Anything that feels 'templated' or generic"
+    ]
+  }
+}

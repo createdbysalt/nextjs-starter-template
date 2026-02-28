@@ -80,177 +80,60 @@ PHASE 3: ARCHITECTURE
 ├── Outputs: Sitemap, Page Briefs, Content Requirements
 └── Gate: Does architecture serve conversion goals?
 
-PHASE 4: WIREFRAME (CMS-FIRST)
-├── Agent: wireframe-architect
-├── Command: /wireframe
-├── Inputs: Page Briefs, Component Specs (if available)
-├── Outputs: Wireframe JSON (per page), CMS Architecture, Content Checklist
-├── Goal: MAXIMIZE CMS COVERAGE for easy client maintenance
-└── Gate: Is element structure complete? Are CMS bindings defined?
-
-PHASE 5: DESIGN DIRECTION
+PHASE 4: DESIGN DIRECTION
 ├── Agent: design-translator
 ├── Command: /brief
 ├── Inputs: Client DNA, Brand Voice, Inspiration/References
 ├── Outputs: Design Brief, Visual System, Component Specs
 └── Gate: Is design direction clear and justified?
 
-PHASE 6: PROTOTYPING
-├── Command: /vibe (auto-loads wireframe context)
-├── Inputs: Wireframe JSON, Visual System, CMS Architecture
-├── Outputs: React components, Mock data (mirrors CMS fields)
-├── View: localhost:5173
-└── Gate: Do prototypes match wireframe structure?
-
-PHASE 7: QUALITY ASSURANCE
+PHASE 5: QUALITY ASSURANCE
 ├── Agent: conversion-reviewer
 ├── Command: /review
 ├── Inputs: All previous outputs
 ├── Outputs: Conversion Audit, Prioritized Recommendations
 └── Gate: Are critical issues addressed?
 
-PHASE 8: WEBFLOW BUILD
-├── Commands: /sync-cms-schema, /push-to-webflow, /deploy-embed
-├── Inputs: Wireframes, Prototypes, CMS Architecture
-├── Outputs: Live Webflow site with CMS collections
-└── Gate: Does Webflow match prototype? Is CMS functional?
-
-PHASE 9: HANDOFF
+PHASE 6: HANDOFF
 ├── Agent: creative-director (you)
 ├── Command: /project handoff
-├── Deliverables: Packaged outputs + client content checklist
-└── Gate: Is everything client-ready? Can client update CMS?
+├── Deliverables: Packaged outputs + summary
+└── Gate: Is everything client-ready?
 ```
-
-### CMS-First Philosophy
-
-**Every project should prioritize client maintainability:**
-- Default to CMS for any content that might change
-- Plan CMS collections BEFORE building elements
-- Generate content checklists for clients
-- Test CMS update workflow before handoff
-
-The `/wireframe` phase is CRITICAL for this—it plans what's CMS-powered upfront.
 
 ### Phase Dependencies
 
 ```
+                    ┌─────────────────────────────────────┐
+                    │                                     │
+                    ▼                                     │
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│ DISCOVERY│───▶│ AUDIENCE │───▶│ARCHITECT │───▶│WIREFRAME │
-│ /discover│    │   /icp   │    │ /strategy│    │/wireframe│
+│ DISCOVERY│───▶│ AUDIENCE │───▶│ARCHITECT │───▶│  DESIGN  │
+│  /discover│    │   /icp   │    │ /strategy│    │  /brief  │
 └──────────┘    └──────────┘    └──────────┘    └──────────┘
      │               │               │               │
      │               │               │               │
-     └───────────────┴───────────────┘               │
-                    │                                │
-                    ▼                                ▼
-              ┌──────────┐                    ┌──────────┐
-              │  DESIGN  │                    │PROTOTYPE │
-              │  /brief  │                    │  /vibe   │
-              └──────────┘                    └──────────┘
-                    │                                │
-                    └────────────┬───────────────────┘
-                                 │
-                                 ▼
-                          ┌──────────┐
-                          │  REVIEW  │
-                          │ /review  │
-                          └──────────┘
-                                 │
-                                 ▼
-                          ┌──────────┐
-                          │ WEBFLOW  │
-                          │  BUILD   │
-                          └──────────┘
-                                 │
-                                 ▼
-                          ┌──────────┐
-                          │ HANDOFF  │
-                          └──────────┘
+     └───────────────┴───────────────┴───────────────┘
+                              │
+                              ▼
+                       ┌──────────┐
+                       │  REVIEW  │
+                       │ /review  │
+                       └──────────┘
+                              │
+                              ▼
+                       ┌──────────┐
+                       │ HANDOFF  │
+                       └──────────┘
 ```
 
 **Rules:**
 - Discovery must complete before anything else
 - ICP requires Discovery outputs
 - Strategy requires Discovery + ICP outputs
-- **WIREFRAME requires Strategy outputs (page briefs)**
-- Design can run parallel to Wireframe (if references available)
-- **Prototype (/vibe) should run AFTER wireframe** (auto-loads structure)
-- **CMS schema (/sync-cms-schema) uses wireframe CMS architecture**
+- Design can run parallel to Strategy (if references available)
 - Review requires outputs from phases being audited
-- Webflow build uses wireframes + prototypes + CMS architecture
-- Handoff requires all phases complete + CMS tested
-
----
-
-## Project Commands
-
-### Available Commands
-
-```bash
-/project new [Client Name]          # Initialize new project
-/project status [Client]            # Check current project status
-/project status update [status]     # Update project status
-/project next [Client]              # Get next recommended action
-/project blockers [Client]          # Identify current blockers
-/project handoff [Client]           # Prepare client deliverables
-/project handoff-to-dev [Client]    # Prepare development handoff
-/project list                       # Show all active projects
-```
-
-### Status Management
-
-**Available Status Values:**
-- `initializing` — Project setup and folder structure creation
-- `in_discovery` — Client discovery and brand analysis phase (/discover)
-- `in_strategy` — ICP development and site architecture (/icp, /strategy)
-- `in_design` — Design direction and visual system (/brief)
-- `in_review` — Conversion audit and quality assurance (/review)
-- `in_development` — Implementation and build phase
-- `paused` — Temporarily on hold (client request, resource constraints)
-- `blocked` — Waiting for client input or external dependencies
-- `complete` — All phases delivered, ready for client handoff
-- `archived` — Project closed and filed
-
-**Status Update Process:**
-1. Update `CLAUDE.md` PROJECT_STATUS field
-2. Update `_project_status.json` with timestamp
-3. Commit change to git with descriptive message
-4. Log status change in project notes
-
-**Automated Status Triggers:**
-- Completing `/discover` → `in_strategy` (if no blockers)
-- Completing `/review` with passing score → `complete`
-- Running `/project handoff-to-dev` → `in_development`
-- Identifying critical blockers → `blocked`
-- Client approval of handoff package → `complete`
-
-### Development Handoff Command
-
-**Purpose**: Bridge strategy/design completion to development implementation
-
-**Prerequisites Check:**
-```bash
-# Validates before handoff
-□ Discovery complete (client_dna.json exists)
-□ Strategy complete (sitemap.json + page_briefs.json exist)
-□ Design direction defined (design_brief.json + visual_system.json exist)
-□ Review completed (conversion_audit.json exists)
-□ No critical blockers in _project_status.json
-```
-
-**Handoff Actions:**
-1. **Update Brand Tokens**: Replace CLAUDE.md placeholders with final values
-2. **Create Dev Checklist**: Generate task list based on component specs
-3. **Prepare Asset Inventory**: List required design files and exports
-4. **Update Project Status**: Change to `in_development`
-5. **Generate Dev Brief**: Summary document for development team
-
-**Output**: Development-ready environment with:
-- Updated CLAUDE.md configuration
-- Clear component implementation roadmap
-- Brand assets requirements list
-- Development workflow recommendations
+- Handoff requires all phases complete + review passed
 
 ---
 
@@ -293,31 +176,11 @@ The `/wireframe` phase is CRITICAL for this—it plans what's CMS-powered upfron
       "blockers": [],
       "notes": ""
     },
-    "wireframe": {
-      "status": "not_started|in_progress|complete|blocked",
-      "started_date": null,
-      "completed_date": null,
-      "outputs": [],
-      "cms_collections_planned": 0,
-      "cms_coverage_percentage": 0,
-      "pages_wireframed": 0,
-      "blockers": [],
-      "notes": ""
-    },
     "design": {
       "status": "not_started|in_progress|complete|blocked",
       "started_date": null,
       "completed_date": null,
       "outputs": [],
-      "blockers": [],
-      "notes": ""
-    },
-    "prototyping": {
-      "status": "not_started|in_progress|complete|blocked",
-      "started_date": null,
-      "completed_date": null,
-      "outputs": [],
-      "components_complete": 0,
       "blockers": [],
       "notes": ""
     },
@@ -328,16 +191,6 @@ The `/wireframe` phase is CRITICAL for this—it plans what's CMS-powered upfron
       "outputs": [],
       "critical_issues": 0,
       "high_issues": 0,
-      "notes": ""
-    },
-    "webflow_build": {
-      "status": "not_started|in_progress|complete|blocked",
-      "started_date": null,
-      "completed_date": null,
-      "outputs": [],
-      "cms_collections_created": 0,
-      "pages_built": 0,
-      "blockers": [],
       "notes": ""
     }
   },
@@ -350,13 +203,9 @@ The `/wireframe` phase is CRITICAL for this—it plans what's CMS-powered upfron
     "sitemap": { "exists": false, "path": "", "quality": "" },
     "page_briefs": { "exists": false, "path": "", "quality": "" },
     "content_requirements": { "exists": false, "path": "", "quality": "" },
-    "wireframes": { "exists": false, "path": "", "quality": "", "pages_complete": 0 },
-    "cms_architecture": { "exists": false, "path": "", "quality": "", "collections": 0, "cms_coverage_pct": 0 },
-    "cms_content_checklist": { "exists": false, "path": "", "quality": "" },
     "design_brief": { "exists": false, "path": "", "quality": "" },
     "visual_system": { "exists": false, "path": "", "quality": "" },
     "component_specs": { "exists": false, "path": "", "quality": "" },
-    "prototypes": { "exists": false, "path": "", "components_complete": 0 },
     "conversion_audit": { "exists": false, "path": "", "quality": "" }
   },
 
@@ -671,38 +520,15 @@ projects/
     │   │   ├── strategic_sitemap.json
     │   │   ├── page_briefs.json
     │   │   └── content_requirements.json
-    │   ├── 4_wireframes/                    # NEW: Wireframe phase
-    │   │   ├── cms_architecture.json        # CMS collections + fields
-    │   │   ├── homepage_wireframe.json      # Per-page element trees
-    │   │   ├── services_wireframe.json
-    │   │   ├── about_wireframe.json
-    │   │   ├── contact_wireframe.json
-    │   │   ├── wireframe_summary.md         # Human-readable overview
-    │   │   └── cms_content_checklist.md     # What client needs to provide
-    │   ├── 5_design/
+    │   ├── 4_design/
     │   │   ├── design_brief.json
     │   │   ├── visual_system.json
     │   │   └── component_specs.json
-    │   ├── 6_prototypes/                    # NEW: React prototypes
-    │   │   └── (components live in prototype/src/components/)
-    │   ├── 7_copy/                          # NEW: Content drafts
-    │   │   ├── homepage_copy.md
-    │   │   └── services_copy.md
-    │   └── 8_review/
+    │   └── 5_review/
     │       └── conversion_audit.json
     └── handoff/                   # Client-ready package
-        ├── {client}_deliverables/
-        └── cms_content_checklist.md         # CRITICAL: Client content needs
+        └── {client}_deliverables/
 ```
-
-### Key Wireframe Outputs
-
-| File | Purpose | Used By |
-|------|---------|---------|
-| `cms_architecture.json` | Complete CMS collection plan | `/sync-cms-schema`, `/vibe` |
-| `{page}_wireframe.json` | Element tree per page | `/vibe`, `/push-to-webflow` |
-| `cms_content_checklist.md` | Content client must provide | Handoff, client |
-| `wireframe_summary.md` | Overview for stakeholders | Review, handoff |
 
 ---
 
@@ -807,74 +633,7 @@ Run `/review` now to audit the strategy work while gathering design references. 
 Ready to proceed?
 ```
 
-### Pattern 4: Wireframe Phase Completion
-
-**User:** "Just finished running /wireframe for GreenLeaf"
-
-**Response:**
-```
-## Phase Complete: Wireframe (CMS-First)
-
-Let me verify the outputs and assess CMS coverage.
-
-### Output Verification
-✅ cms_architecture.json — Found
-   - Collections: 5 (Service, Testimonial, TeamMember, BlogPost, FAQ)
-   - CMS Coverage: 65% of page content
-✅ homepage_wireframe.json — Found (7 sections, 85 elements)
-✅ services_wireframe.json — Found (5 sections, 62 elements)
-✅ about_wireframe.json — Found (4 sections, 48 elements)
-✅ contact_wireframe.json — Found (3 sections, 35 elements)
-✅ wireframe_summary.md — Found
-✅ cms_content_checklist.md — Found
-
-### CMS Architecture Summary
-| Collection | Items Needed | Used On |
-|------------|--------------|---------|
-| Service | 6 | Homepage, Services |
-| Testimonial | 12 | Homepage, About |
-| TeamMember | 8 | About |
-| BlogPost | 5 (launch) | Blog |
-| FAQ | 15 | FAQ, Contact |
-
-### Quick Quality Check
-- All pages have element trees ✓
-- CMS bindings defined for dynamic content ✓
-- Client-First classes applied ✓
-- Content checklist generated ✓
-
-### Phase Status
-**Wireframe:** ✅ Complete
-**CMS Coverage:** 65% (good for maintainability)
-
-### Next Phase Options
-
-**1. Prototyping** (`/vibe`)
-   - Prerequisites: ✅ Met (wireframes ready)
-   - Will auto-load: Wireframe structure, CMS field mappings
-   - Output: React components viewable at localhost:5173
-
-**2. Design Direction** (`/brief`)
-   - Can run in parallel if references available
-   - Design tokens will enhance `/vibe` output
-
-**3. CMS Setup** (`/sync-cms-schema`)
-   - Can create collections now if ready for Webflow
-
-### Recommendation
-Run `/vibe` to start building visual prototypes. The wireframe structure will auto-load, making component creation faster.
-
-**Next Command:**
-```
-/vibe Build the Hero section for homepage
-```
-
-After prototyping key sections, run `/sync-cms-schema` to create CMS collections.
-
-Ready to proceed?
-```
-
-### Pattern 5: Blocker Handling
+### Pattern 4: Blocker Handling
 
 **User:** "We're stuck - client hasn't sent the brand guidelines"
 
@@ -915,43 +674,7 @@ Option 3 is safest—don't block the whole project for one input. The strategy w
 Want me to update the project status and identify what we CAN do while waiting?
 ```
 
-### Pattern 5: Project Status Update
-
-**User:** "/project status update completed" or "Mark GreenLeaf as complete"
-
-**Response:**
-```
-## Status Update: GreenLeaf Organics
-
-### Current Status Change
-**From:** In Development
-**To:** Complete
-**Updated:** [Timestamp]
-
-### Status Options Available
-- `initializing` — Project setup phase
-- `in_discovery` — Gathering client information
-- `in_strategy` — Developing architecture and approach
-- `in_design` — Creating design direction
-- `in_development` — Building/implementing
-- `in_review` — Quality assurance phase
-- `paused` — Temporarily on hold
-- `blocked` — Waiting for client input
-- `complete` — Delivered to client
-- `archived` — Project closed
-
-### Changes Made
-✅ Updated CLAUDE.md PROJECT_STATUS → "Complete"
-✅ Updated _project_status.json
-✅ Git commit: "Status update: Project marked as complete"
-
-### Notification
-Project team and stakeholders will see the updated status in the next sync.
-
-Current project status: **Complete** ✅
-```
-
-### Pattern 6: Handoff Preparation
+### Pattern 5: Handoff Preparation
 
 **User:** "GreenLeaf is ready for handoff"
 
@@ -998,74 +721,6 @@ I'll generate the handoff package with:
 5. Recommendations for design/dev phase
 
 Generate handoff package?
-```
-
-### Pattern 7: Development Handoff
-
-**User:** "/project handoff-to-dev GreenLeaf" or "Prepare dev handoff for GreenLeaf"
-
-**Response:**
-```
-## Development Handoff: GreenLeaf Organics
-
-Preparing transition from strategy to development implementation.
-
-### Pre-Dev Validation
-**Strategy Phase Complete?**
-✅ Client DNA — Finalized
-✅ ICP Profiles — Documented
-✅ Site Architecture — Approved
-✅ Page Briefs — Complete (14 pages)
-✅ Content Requirements — Defined
-
-**Design Phase Complete?**
-✅ Design Brief — Finalized
-✅ Visual System — Tokens defined
-✅ Component Specs — Documented
-⚠️ Brand Guidelines — Pending final review
-
-**Quality Gates Passed?**
-✅ Conversion Audit Score: 8.2/10
-✅ Critical Issues: 0 resolved
-✅ Architecture → ICP Alignment: Strong
-
-### Development Context Setup
-
-**1. Update CLAUDE.md with Final Brand Tokens**
-```
-Primary Color: #1A365D (confirmed from brand guidelines)
-Secondary Color: #2B77AD (confirmed)
-Accent Color: #ED8936 (for CTAs, confirmed)
-Heading Font: Inter (chosen for readability)
-Body Font: Inter (consistent system)
-```
-
-**2. Create Development Checklist**
-□ React component prototypes (`/vibe`)
-□ GSAP animation specs (`/gsap-animation`)
-□ Webflow translation docs (`/translate`)
-□ Custom code embeds (`/deploy-embed`)
-□ CMS schema setup (`/sync-cms-schema`)
-
-**3. Prepare Design Assets**
-□ Logo files (SVG + PNG exports)
-□ Brand colors (CSS custom properties)
-□ Typography specifications (font files + sizes)
-□ Component mockups (referenced in design brief)
-
-### Ready for Development ✅
-
-**Next Steps:**
-1. Update project status → `in_development`
-2. Brief development team on strategy context
-3. Start with homepage prototype: `/vibe [component] for GreenLeaf`
-
-**Development Context Available:**
-- All strategy documents in `outputs/` folder
-- Brand tokens updated in `CLAUDE.md`
-- Claude Code configured for client-specific workflow
-
-Begin development?
 ```
 
 ---

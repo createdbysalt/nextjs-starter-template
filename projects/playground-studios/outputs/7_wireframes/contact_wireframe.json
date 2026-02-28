@@ -1,0 +1,562 @@
+{
+  "wireframe_metadata": {
+    "page_name": "Contact",
+    "page_id": "contact",
+    "url": "/contact",
+    "priority": "CRITICAL",
+    "generated_date": "2026-01-17",
+    "based_on": {
+      "page_brief": "playground_studios_page_briefs.json → pages.contact",
+      "component_specs": "playground_studios_component_specs.json"
+    }
+  },
+
+  "page_summary": {
+    "one_job": "Capture lead information and start conversation",
+    "target_awareness_level": "Most-Aware (ready to reach out)",
+    "primary_conversion_goal": "Form submission",
+    "total_sections": 4,
+    "cms_collections_used": [],
+    "cms_note": "Contact is functional, not content-driven. Static implementation.",
+    "estimated_elements": 35
+  },
+
+  "sections": [
+    {
+      "section_id": "contact-header",
+      "section_index": 1,
+      "section_name": "Headline",
+      "purpose": "Warm welcome, reduce friction",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "'Let's Make Something Great' or 'Start a Project'",
+        "notes": "Friendly, inviting. This is not a corporate contact page."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_contact-header",
+        "attributes": [
+          { "name": "data-section", "value": "contact-header" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-medium",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "contact-header_component",
+                        "layout": {
+                          "text_align": "center"
+                        },
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h1",
+                            "class": "heading-style-display",
+                            "content_slot": "page_headline",
+                            "content_direction": "Let's Make Something Great"
+                          },
+                          {
+                            "element": "Paragraph",
+                            "class": "text-size-large contact-header_subtitle",
+                            "content_slot": "page_subtitle",
+                            "content_direction": "Tell us about your project and we'll be in touch."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "contact-form",
+      "section_index": 2,
+      "section_name": "Contact Form",
+      "purpose": "Capture inquiry details",
+      "cms_binding": null,
+      "from_page_brief": {
+        "fields": [
+          { "field": "Name", "required": true },
+          { "field": "Email", "required": true },
+          { "field": "Company/Brand", "required": false },
+          { "field": "Project Type", "type": "dropdown", "required": false },
+          { "field": "Budget Range", "type": "dropdown", "required": false },
+          { "field": "Tell us about your project", "type": "textarea", "required": true }
+        ],
+        "notes": "Keep it short. Don't intimidate. Optional fields help qualify but shouldn't block submission."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_contact-form",
+        "attributes": [
+          { "name": "data-section", "value": "contact-form" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-small",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "contact-form_component",
+                    "children": [
+                      {
+                        "element": "FormBlock",
+                        "class": "contact-form_form w-form",
+                        "attributes": [
+                          { "name": "name", "value": "Contact Form" },
+                          { "name": "data-name", "value": "Contact Form" }
+                        ],
+                        "children": [
+                          {
+                            "element": "Form",
+                            "class": "contact-form_fields",
+                            "layout": {
+                              "type": "flex",
+                              "direction": "column",
+                              "gap": "24px"
+                            },
+                            "children": [
+                              {
+                                "element": "DivBlock",
+                                "class": "form-field_wrapper",
+                                "children": [
+                                  {
+                                    "element": "Label",
+                                    "class": "form-field_label",
+                                    "content_direction": "Name *",
+                                    "for": "name"
+                                  },
+                                  {
+                                    "element": "TextInput",
+                                    "class": "form-field_input w-input",
+                                    "attributes": [
+                                      { "name": "name", "value": "name" },
+                                      { "name": "required", "value": "true" },
+                                      { "name": "placeholder", "value": "Your name" }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "form-field_wrapper",
+                                "children": [
+                                  {
+                                    "element": "Label",
+                                    "class": "form-field_label",
+                                    "content_direction": "Email *",
+                                    "for": "email"
+                                  },
+                                  {
+                                    "element": "EmailInput",
+                                    "class": "form-field_input w-input",
+                                    "attributes": [
+                                      { "name": "name", "value": "email" },
+                                      { "name": "required", "value": "true" },
+                                      { "name": "placeholder", "value": "your@email.com" }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "form-field_wrapper",
+                                "children": [
+                                  {
+                                    "element": "Label",
+                                    "class": "form-field_label",
+                                    "content_direction": "Company/Brand",
+                                    "for": "company"
+                                  },
+                                  {
+                                    "element": "TextInput",
+                                    "class": "form-field_input w-input",
+                                    "attributes": [
+                                      { "name": "name", "value": "company" },
+                                      { "name": "placeholder", "value": "Your company (optional)" }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "form-field_row",
+                                "layout": {
+                                  "type": "grid",
+                                  "columns": 2,
+                                  "gap": "24px",
+                                  "responsive": {
+                                    "mobile": "columns: 1"
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "element": "DivBlock",
+                                    "class": "form-field_wrapper",
+                                    "children": [
+                                      {
+                                        "element": "Label",
+                                        "class": "form-field_label",
+                                        "content_direction": "Project Type",
+                                        "for": "project-type"
+                                      },
+                                      {
+                                        "element": "Select",
+                                        "class": "form-field_select w-select",
+                                        "attributes": [
+                                          { "name": "name", "value": "project-type" }
+                                        ],
+                                        "options": [
+                                          "Select an option",
+                                          "Brand/Lifestyle Photography",
+                                          "Studio Photography",
+                                          "Video Production",
+                                          "Full Production",
+                                          "Not Sure Yet"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "element": "DivBlock",
+                                    "class": "form-field_wrapper",
+                                    "children": [
+                                      {
+                                        "element": "Label",
+                                        "class": "form-field_label",
+                                        "content_direction": "Budget Range",
+                                        "for": "budget"
+                                      },
+                                      {
+                                        "element": "Select",
+                                        "class": "form-field_select w-select",
+                                        "attributes": [
+                                          { "name": "name", "value": "budget" }
+                                        ],
+                                        "options": [
+                                          "Select a range",
+                                          "Under $5K",
+                                          "$5K - $10K",
+                                          "$10K - $25K",
+                                          "$25K+",
+                                          "Not Sure"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "form-field_wrapper",
+                                "children": [
+                                  {
+                                    "element": "Label",
+                                    "class": "form-field_label",
+                                    "content_direction": "Tell us about your project *",
+                                    "for": "message"
+                                  },
+                                  {
+                                    "element": "Textarea",
+                                    "class": "form-field_textarea w-input",
+                                    "attributes": [
+                                      { "name": "name", "value": "message" },
+                                      { "name": "required", "value": "true" },
+                                      { "name": "placeholder", "value": "What are you looking to create?" },
+                                      { "name": "rows", "value": "5" }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "Button",
+                                "class": "button is-primary is-large w-button",
+                                "content_direction": "Send Message",
+                                "attributes": [
+                                  { "name": "type", "value": "submit" }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "form-success w-form-done",
+                            "children": [
+                              {
+                                "element": "Paragraph",
+                                "class": "form-success_message",
+                                "content_direction": "Thanks! We'll be in touch within 24-48 hours."
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "form-error w-form-fail",
+                            "children": [
+                              {
+                                "element": "Paragraph",
+                                "class": "form-error_message",
+                                "content_direction": "Oops! Something went wrong. Please try again."
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      "form_behavior": {
+        "on_submit": "Show success message",
+        "notification": "Email to barrett@ontheplayground.studio",
+        "tracking": "Form submission event for analytics"
+      }
+    },
+
+    {
+      "section_id": "what-to-expect",
+      "section_index": 3,
+      "section_name": "What to Expect",
+      "purpose": "Reduce anxiety, set expectations",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "'We'll get back to you within 24-48 hours to schedule a call.'",
+        "notes": "Clarity builds trust"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_what-to-expect",
+        "attributes": [
+          { "name": "data-section", "value": "what-to-expect" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-small",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-medium",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "what-to-expect_component",
+                        "layout": {
+                          "text_align": "center"
+                        },
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h2",
+                            "class": "heading-style-h4",
+                            "content_direction": "What Happens Next?"
+                          },
+                          {
+                            "element": "Paragraph",
+                            "class": "text-size-regular text-style-muted",
+                            "content_direction": "We'll get back to you within 24-48 hours to schedule a discovery call. No pressure, just conversation."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "alternative-contact",
+      "section_index": 4,
+      "section_name": "Alternative Contact",
+      "purpose": "Options for those who prefer direct contact",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Email: barrett@ontheplayground.studio | Instagram: @ontheplayground.studio",
+        "location": "Based in Louisville & Portland. Available for projects nationwide."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_alternative-contact",
+        "attributes": [
+          { "name": "data-section", "value": "alternative-contact" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-small",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "alternative-contact_component",
+                        "layout": {
+                          "type": "grid",
+                          "columns": 3,
+                          "gap": "48px",
+                          "text_align": "center",
+                          "responsive": {
+                            "mobile": "columns: 1"
+                          }
+                        },
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "contact-info_item",
+                            "children": [
+                              {
+                                "element": "TextBlock",
+                                "class": "contact-info_label text-style-muted",
+                                "content_direction": "Email"
+                              },
+                              {
+                                "element": "Link",
+                                "class": "contact-info_value text-link",
+                                "content_direction": "barrett@ontheplayground.studio",
+                                "link_to": "mailto:barrett@ontheplayground.studio"
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "contact-info_item",
+                            "children": [
+                              {
+                                "element": "TextBlock",
+                                "class": "contact-info_label text-style-muted",
+                                "content_direction": "Instagram"
+                              },
+                              {
+                                "element": "Link",
+                                "class": "contact-info_value text-link",
+                                "content_direction": "@ontheplayground.studio",
+                                "link_to": "https://instagram.com/ontheplayground.studio",
+                                "attributes": [
+                                  { "name": "target", "value": "_blank" }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "contact-info_item",
+                            "children": [
+                              {
+                                "element": "TextBlock",
+                                "class": "contact-info_label text-style-muted",
+                                "content_direction": "Location"
+                              },
+                              {
+                                "element": "TextBlock",
+                                "class": "contact-info_value",
+                                "content_direction": "Louisville & Portland"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "global_elements": {
+    "navigation": {
+      "included": true,
+      "current_page_indicator": "Contact"
+    },
+    "footer": {
+      "included": true
+    }
+  },
+
+  "class_inventory": [
+    "section_contact-header",
+    "contact-header_component",
+    "contact-header_subtitle",
+    "section_contact-form",
+    "contact-form_component",
+    "contact-form_form",
+    "contact-form_fields",
+    "form-field_wrapper",
+    "form-field_row",
+    "form-field_label",
+    "form-field_input",
+    "form-field_select",
+    "form-field_textarea",
+    "form-success",
+    "form-success_message",
+    "form-error",
+    "form-error_message",
+    "section_what-to-expect",
+    "what-to-expect_component",
+    "section_alternative-contact",
+    "alternative-contact_component",
+    "contact-info_item",
+    "contact-info_label",
+    "contact-info_value",
+    "padding-global",
+    "container-small",
+    "container-medium",
+    "padding-section-medium",
+    "padding-section-large",
+    "heading-style-display",
+    "heading-style-h4",
+    "text-size-regular",
+    "text-size-large",
+    "text-style-muted",
+    "text-link",
+    "button",
+    "is-primary",
+    "is-large"
+  ]
+}

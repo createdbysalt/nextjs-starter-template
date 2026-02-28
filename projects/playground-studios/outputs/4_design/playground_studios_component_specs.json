@@ -1,0 +1,540 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0"
+  },
+
+  "global_components": {
+    "loading_intro": {
+      "purpose": "Create memorable first impression with DVTK-style animated intro",
+      "inspiration": "DVTK (dvtk.us) ASCII matrix loading animation",
+      "structure": {
+        "container": "Full-viewport overlay, fixed position, z-index: 9999",
+        "content": "Centered text animation area",
+        "skip_hint": "Optional 'Click anywhere to skip' text (appears after 1s)"
+      },
+      "visual_elements": {
+        "background": {
+          "color": "#08090A (black)",
+          "fullscreen": true
+        },
+        "text_animation": {
+          "content": "'PLAYGROUND STUDIOS' or logo mark",
+          "font": "Monospace for scramble effect (JetBrains Mono, Space Mono)",
+          "size": "24-48px depending on viewport",
+          "color": "#FFFFFF",
+          "alignment": "center"
+        },
+        "character_matrix": {
+          "type": "ASCII-style characters that scramble and resolve",
+          "characters": ["→", "↓", "↑", "←", "/", "\\", "|", "-", "+", "P", "L", "A", "Y", "G", "R", "O", "U", "N", "D"],
+          "animation": "Characters rapidly change, gradually locking into final text"
+        }
+      },
+      "animation_sequence": {
+        "phase_1": {
+          "name": "scramble",
+          "duration": "1.5s",
+          "description": "Random characters fill the text positions, constantly changing"
+        },
+        "phase_2": {
+          "name": "resolve",
+          "duration": "1s",
+          "description": "Characters progressively lock into correct letters from left to right or randomly"
+        },
+        "phase_3": {
+          "name": "hold",
+          "duration": "0.3s",
+          "description": "Final text visible briefly"
+        },
+        "phase_4": {
+          "name": "exit",
+          "duration": "0.4s",
+          "description": "Fade out or slide up to reveal homepage"
+        }
+      },
+      "behavior": {
+        "trigger": "Homepage load (first visit per session)",
+        "skip": "Click/tap anywhere OR wait for animation to complete",
+        "session_storage": "Set flag to skip on subsequent page loads in same session",
+        "reduced_motion": "Show static logo, simple fade in (respect prefers-reduced-motion)"
+      },
+      "technical_implementation": {
+        "approach": "GSAP + custom JavaScript",
+        "steps": [
+          "1. Create array of character positions",
+          "2. Randomly assign characters to each position",
+          "3. Use setInterval to scramble characters rapidly",
+          "4. Progressively 'lock' characters to final values",
+          "5. Animate exit and remove overlay"
+        ],
+        "code_reference": "See GSAP TextPlugin or custom scramble effect",
+        "fallback": "Simple fade-in logo for browsers without JS"
+      },
+      "responsive": {
+        "desktop": "Full effect with larger text",
+        "tablet": "Slightly smaller text, same effect",
+        "mobile": "Smaller text (20-32px), faster animation (2s total) for performance"
+      },
+      "accessibility": {
+        "aria_live": "polite for announcing loading state",
+        "skip_link": "Focusable skip button for keyboard users",
+        "motion_preference": "Check prefers-reduced-motion and disable animation if true"
+      }
+    },
+
+    "navigation": {
+      "structure": {
+        "logo": "Left-aligned, links to homepage",
+        "links": ["Work", "About", "Services", "Contact"],
+        "cta": "Let's Talk (optional prominent CTA)"
+      },
+      "behavior": {
+        "desktop": "Fixed horizontal bar, sticky on scroll (optional)",
+        "mobile": "Hamburger menu → full-screen overlay",
+        "scroll_behavior": "Can be transparent on hero, solid on scroll"
+      },
+      "styling": {
+        "background": "Transparent over hero, #F4F4F2 on scroll",
+        "height": "80px desktop, 64px mobile",
+        "logo_size": "~120-160px width",
+        "link_style": "Body font, regular weight, uppercase optional",
+        "hover": "Underline reveal or opacity shift",
+        "active": "Underline or bold"
+      },
+      "reference": "Larra Studio - minimal, clean nav"
+    },
+
+    "footer": {
+      "structure": {
+        "sections": [
+          "Logo + brief tagline",
+          "Navigation links (Work, About, Services, Contact)",
+          "Social link (Instagram)",
+          "Copyright + legal"
+        ]
+      },
+      "styling": {
+        "background": "#08090A (dark) or #F4F4F2 (light)",
+        "text": "White on dark, charcoal on light",
+        "padding": "80px vertical desktop, 48px mobile",
+        "layout": "2-4 column grid, stacks on mobile"
+      },
+      "content": {
+        "tagline": "Optional - e.g., 'Play, Innovate, Create'",
+        "location": "Louisville & Portland",
+        "copyright": "2026 Playground Studios"
+      }
+    },
+
+    "button": {
+      "variants": {
+        "primary": {
+          "background": "#08090A",
+          "text": "#FFFFFF",
+          "hover_background": "#2B2B2B",
+          "use": "Main CTAs (Contact, Submit)"
+        },
+        "secondary": {
+          "background": "transparent",
+          "text": "#08090A",
+          "border": "1px solid #08090A",
+          "hover": "Background #08090A, text #FFFFFF",
+          "use": "Secondary actions (View Work, Learn More)"
+        },
+        "ghost": {
+          "background": "transparent",
+          "text": "#08090A",
+          "hover": "Underline",
+          "use": "Inline links, minimal CTAs"
+        },
+        "inverse": {
+          "background": "#FFFFFF",
+          "text": "#08090A",
+          "hover_background": "#F4F4F2",
+          "use": "CTAs on dark backgrounds"
+        }
+      },
+      "sizing": {
+        "default": {
+          "padding": "16px 32px",
+          "font_size": "16px",
+          "font_weight": "500"
+        },
+        "small": {
+          "padding": "12px 24px",
+          "font_size": "14px"
+        },
+        "large": {
+          "padding": "20px 40px",
+          "font_size": "18px"
+        }
+      },
+      "styling": {
+        "border_radius": "0px (square) or 4px max",
+        "text_transform": "None or uppercase for emphasis",
+        "transition": "200ms ease background-color, color"
+      }
+    },
+
+    "text_link": {
+      "styling": {
+        "color": "#08090A",
+        "text_decoration": "Underline on hover",
+        "transition": "150ms ease"
+      },
+      "variants": {
+        "inline": "Inherits text styling, underline on hover",
+        "standalone": "Can be bolder, arrow icon optional"
+      }
+    }
+  },
+
+  "page_components": {
+    "hero_homepage": {
+      "purpose": "Communicate who + what + vibe instantly",
+      "layout": {
+        "type": "Full-viewport or near-full with scroll cue",
+        "content_position": "Centered or bottom-left",
+        "ctas": "Stacked or inline (View Work, Let's Talk)"
+      },
+      "content": {
+        "headline": "Hero scale (72-96px), bold display font",
+        "subhead": "Body large (20-22px), lighter weight",
+        "ctas": "Primary + Secondary buttons"
+      },
+      "visual": {
+        "background_options": [
+          "Full-bleed portfolio image",
+          "Video reel (looping, muted)",
+          "Dark solid (#08090A) with text only"
+        ],
+        "overlay": "If image/video: subtle gradient or opacity for text legibility"
+      },
+      "reference": "Gym Class dark hero energy + DVTK typography boldness"
+    },
+
+    "client_logos": {
+      "purpose": "Instant credibility without explanation",
+      "layout": {
+        "desktop": "Horizontal row, 6-8 logos",
+        "mobile": "2 rows of 3-4, or horizontal scroll"
+      },
+      "styling": {
+        "logo_treatment": "Monochrome (all black or all grey)",
+        "opacity": "60-80% (subdued, not competing with content)",
+        "spacing": "Equal spacing, 48-64px between logos",
+        "size": "Consistent height (~32-40px)"
+      },
+      "section_styling": {
+        "padding": "48-64px vertical",
+        "background": "Same as surrounding or subtle contrast",
+        "dividers": "Optional subtle line above/below"
+      }
+    },
+
+    "featured_work_grid": {
+      "purpose": "Show portfolio quality, invite exploration",
+      "layout": {
+        "desktop": "2-3 columns",
+        "tablet": "2 columns",
+        "mobile": "1 column"
+      },
+      "card_content": {
+        "image": "Project thumbnail, consistent aspect ratio (4:3 or 3:2)",
+        "title": "Project/client name",
+        "category": "Optional tag (Brand, Hospitality, Studio)"
+      },
+      "hover_behavior": {
+        "option_a": "Subtle scale (1.02) + overlay with project name",
+        "option_b": "Image dims slightly, text appears",
+        "reference": "Larra Studio hover states"
+      },
+      "styling": {
+        "gap": "24-32px",
+        "image_radius": "0px (straight edges)",
+        "text_position": "Below image or on hover overlay"
+      }
+    },
+
+    "work_grid": {
+      "purpose": "Full portfolio display with optional filtering",
+      "layout": {
+        "desktop": "3 columns masonry or uniform",
+        "tablet": "2 columns",
+        "mobile": "1-2 columns"
+      },
+      "filter_bar": {
+        "categories": ["All", "Brand", "Hospitality", "Studio"],
+        "styling": "Horizontal pills or text links",
+        "behavior": "Click to filter, 'All' selected by default"
+      },
+      "card": "Same as featured_work_grid card",
+      "reference": "Larra Studio work page masonry"
+    },
+
+    "project_detail_hero": {
+      "purpose": "Immerse visitor in specific project",
+      "layout": {
+        "full_width": "Edge-to-edge hero image",
+        "height": "70-100vh or aspect ratio based"
+      },
+      "content": {
+        "project_name": "H1 scale, positioned over or below image",
+        "client_name": "Smaller, secondary text"
+      },
+      "styling": {
+        "text_over_image": "Bottom-left with gradient overlay",
+        "text_below_image": "Centered or left-aligned"
+      }
+    },
+
+    "project_info": {
+      "purpose": "Context and scope for project",
+      "layout": {
+        "type": "2-column (info left, description right) or stacked"
+      },
+      "content": {
+        "description": "2-4 sentences, body large",
+        "metadata": {
+          "services": "List of services provided",
+          "year": "Year of project",
+          "client": "Client name (if not in hero)"
+        }
+      },
+      "styling": {
+        "metadata_style": "Small text, uppercase labels, mono font optional",
+        "padding": "80px vertical"
+      },
+      "reference": "Tristan Bagot project credits format"
+    },
+
+    "image_gallery": {
+      "purpose": "Show range of deliverables",
+      "layout_options": {
+        "full_width": "Single images spanning full width",
+        "two_column": "Side-by-side images",
+        "mixed": "Combination of full-width and grid",
+        "masonry": "Variable height images in flow"
+      },
+      "styling": {
+        "gap": "16-24px between images",
+        "max_images": "6-15 per project",
+        "lazy_load": "Yes, for performance"
+      }
+    },
+
+    "next_project_cta": {
+      "purpose": "Keep exploration going",
+      "layout": {
+        "full_width": "Banner-style with next project preview"
+      },
+      "content": {
+        "label": "'Next' or 'Next Project'",
+        "project_name": "Name of next project",
+        "image": "Thumbnail or background image preview"
+      },
+      "behavior": {
+        "hover": "Image scales or reveals",
+        "click": "Navigate to next project"
+      }
+    },
+
+    "contact_cta_section": {
+      "purpose": "Convert impressed visitors",
+      "variants": {
+        "minimal": {
+          "content": "Single line + button",
+          "example": "'Ready to create something?' + [Let's Talk]"
+        },
+        "expanded": {
+          "content": "Headline + brief copy + button",
+          "example": "'Let's Make Something Great' + 'We'd love to hear about your project.' + [Get in Touch]"
+        }
+      },
+      "styling": {
+        "background": "#08090A (dark) for contrast or #F4F4F2",
+        "padding": "80-120px vertical",
+        "text_alignment": "Center"
+      }
+    },
+
+    "about_origin_story": {
+      "purpose": "Build emotional connection",
+      "layout": {
+        "type": "Text-heavy with optional supporting image"
+      },
+      "content": {
+        "structure": "2-3 paragraphs of story",
+        "tone": "Personal, founder's voice"
+      },
+      "styling": {
+        "max_width": "800px (narrow container)",
+        "text_size": "Body large (20-22px)",
+        "line_height": "1.7 for readability"
+      }
+    },
+
+    "process_section": {
+      "purpose": "Differentiate with unique philosophy",
+      "layout": {
+        "type": "3-column for 3 steps or vertical stack"
+      },
+      "content": {
+        "steps": [
+          {
+            "title": "Play on Set",
+            "description": "Blue sky imagination. No limits. Dream."
+          },
+          {
+            "title": "Get in the Box",
+            "description": "Take ideas and bring them into frame."
+          },
+          {
+            "title": "Go Home",
+            "description": "Leave with a product you're proud of."
+          }
+        ]
+      },
+      "styling": {
+        "step_number": "Optional, subtle (01, 02, 03)",
+        "title_style": "H3 or H4, bold",
+        "description": "Body text",
+        "visual_option": "Simple icons or illustrations optional"
+      }
+    },
+
+    "founder_bio": {
+      "purpose": "Put a face to the brand",
+      "layout": {
+        "type": "Image + text side-by-side"
+      },
+      "content": {
+        "photo": "Professional but approachable headshot",
+        "name": "Barrett Shutt",
+        "title": "Founder / Creative Director",
+        "bio": "1-2 paragraphs"
+      },
+      "styling": {
+        "image_aspect": "Square or 3:4",
+        "image_treatment": "No filters, natural",
+        "text_alignment": "Left-aligned"
+      }
+    },
+
+    "services_list": {
+      "purpose": "Clarify offerings",
+      "layout": {
+        "type": "3-column grid or accordion"
+      },
+      "content": {
+        "categories": [
+          {
+            "name": "Creative Development",
+            "items": ["Concept", "Story", "Positioning", "Mood Boards"]
+          },
+          {
+            "name": "Production",
+            "items": ["Commercials", "Branded Content", "Photography", "Studio Work"]
+          },
+          {
+            "name": "Post-Production",
+            "items": ["Editing", "Color Grading", "Retouching", "Sound"]
+          }
+        ]
+      },
+      "styling": {
+        "card_or_list": "Cards for visual interest or simple lists",
+        "icon_option": "Simple line icons per category optional"
+      }
+    },
+
+    "contact_form": {
+      "purpose": "Capture lead information",
+      "fields": [
+        {"name": "Name", "type": "text", "required": true},
+        {"name": "Email", "type": "email", "required": true},
+        {"name": "Company/Brand", "type": "text", "required": false},
+        {"name": "Project Type", "type": "select", "required": false, "options": ["Brand/Lifestyle Photography", "Studio Photography", "Video Production", "Full Production", "Not Sure Yet"]},
+        {"name": "Budget Range", "type": "select", "required": false, "options": ["Under $5K", "$5K-$10K", "$10K-$25K", "$25K+", "Not Sure"]},
+        {"name": "Tell us about your project", "type": "textarea", "required": true}
+      ],
+      "styling": {
+        "input_height": "48-56px",
+        "input_border": "1px solid #E5E5E3",
+        "input_focus": "Border #08090A",
+        "input_radius": "0px or 4px max",
+        "label_position": "Above or floating",
+        "spacing": "24px between fields"
+      },
+      "submit_button": "Primary button, 'Send Message' or 'Get in Touch'",
+      "success_state": "Thank you message: 'Thanks! We'll be in touch soon.'"
+    }
+  },
+
+  "responsive_behavior": {
+    "navigation": {
+      "breakpoint": "768px",
+      "mobile": "Hamburger → full-screen overlay menu"
+    },
+    "grids": {
+      "3_col_to_2": "1024px",
+      "2_col_to_1": "768px"
+    },
+    "typography": {
+      "scale_factor": "Hero reduces ~40%, headings reduce ~20-30%"
+    },
+    "spacing": {
+      "section_padding": "Reduces by ~30-40% on mobile"
+    }
+  },
+
+  "cms_template_components": {
+    "work_collection_page": {
+      "template_zones": [
+        "Hero (dynamic: hero_image, project_title, client_name)",
+        "Project Info (dynamic: description, services, year)",
+        "Gallery (dynamic: gallery_images)",
+        "Next Project (dynamic: next item in collection)",
+        "Contact CTA (static)"
+      ]
+    },
+    "collection_fields_needed": [
+      "project_title (text)",
+      "project_slug (slug)",
+      "client_name (text)",
+      "hero_image (image)",
+      "description (rich text)",
+      "services_provided (multi-reference or multi-select)",
+      "category (option: Brand, Hospitality, Studio)",
+      "year (text or number)",
+      "gallery_images (multi-image)",
+      "featured (boolean)",
+      "order (number for manual sorting)"
+    ]
+  },
+
+  "animation_notes": {
+    "page_load": {
+      "hero": "Fade in headline, then image (staggered ~200ms)",
+      "content": "Fade up on scroll enter"
+    },
+    "scroll": {
+      "content_reveal": "Subtle fade + slight translateY (10-20px)",
+      "images": "Optional lazy reveal"
+    },
+    "hover": {
+      "cards": "Scale 1.02 + subtle shadow or overlay",
+      "links": "Underline reveal (left to right)",
+      "buttons": "Background color transition"
+    },
+    "avoid": [
+      "Parallax scrolling (unless very subtle)",
+      "Scroll hijacking",
+      "Excessive motion",
+      "Cursor effects"
+    ]
+  }
+}

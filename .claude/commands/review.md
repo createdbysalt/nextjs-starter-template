@@ -143,30 +143,14 @@ Identify potential conversion killers:
 
 ### Step 9: Generate Outputs
 
-Create audit report and client message:
+Create audit report:
 
 ```
-/mnt/user-data/outputs/5_review/
-├── {client}_conversion_audit.json
-└── message-draft.md
+/mnt/user-data/outputs/
+└── {client}_conversion_audit.json
 ```
 
-### Step 10: Generate Client Message Draft
-
-**ALWAYS** create a `message-draft.md` file that can be sent to the client. This message should:
-
-1. **Summarize audit results** (score, readiness status, key findings)
-2. **List HIGH priority items** the client needs to provide/address
-3. **Include testimonial request template** if testimonials are a gap
-4. **Provide clear next steps** with priorities
-
-The message should be:
-- Ready to copy/paste and send
-- Professional but friendly tone
-- Organized with clear sections (Required, Recommended, Can Wait)
-- Include specific asks with context on why they matter for conversion
-
-### Step 11: Present Summary
+### Step 10: Present Summary
 
 Provide actionable summary:
 - Overall score and readiness assessment
@@ -200,14 +184,6 @@ Provide actionable summary:
 - [ ] Prioritized by impact × effort
 - [ ] Connected to conversion impact
 - [ ] Achievable with available resources
-
-### Client Message Draft Must Include:
-- [ ] Audit score and readiness status summary
-- [ ] HIGH priority items client needs to address (with deadlines)
-- [ ] Testimonial request template (if testimonials are a gap)
-- [ ] Logo/asset confirmation requests (if applicable)
-- [ ] Clear next steps organized by priority
-- [ ] Professional, ready-to-send formatting
 
 ---
 
@@ -449,7 +425,6 @@ All outputs from previous agents:
 
 ### Files Generated
 - `greenleaf_conversion_audit.json`
-- `message-draft.md` (ready to send to client)
 
 Ready to address these issues, or questions about specific findings?
 ```

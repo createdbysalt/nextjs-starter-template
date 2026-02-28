@@ -1,0 +1,507 @@
+{
+  "source": "https://linear.app",
+  "extractedAt": "2026-01-31T14:30:00Z",
+  "extractionMethod": "WAAPI + CSS Stylesheet Analysis",
+  "animations": [
+    {
+      "id": "button-interaction",
+      "name": "Button Interaction",
+      "target": ".Button-module__bZ-sGa__variant",
+      "type": "interaction",
+      "trigger": "hover/active/focus",
+      "properties": {
+        "transition": {
+          "properties": ["border", "background-color", "color", "box-shadow", "opacity", "filter", "transform"],
+          "duration": 0.16,
+          "timing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        },
+        "hover": {
+          "filter": "brightness(110%)"
+        },
+        "active": {
+          "transform": "scale(0.97)",
+          "filter": "brightness(98%)"
+        }
+      },
+      "framerMotion": {
+        "whileHover": { "filter": "brightness(1.1)" },
+        "whileTap": { "scale": 0.97, "filter": "brightness(0.98)" },
+        "transition": {
+          "duration": 0.16,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "id": "nav-link-hover",
+      "name": "Navigation Link Hover",
+      "target": ".Header-module__PXV_2W__anchor",
+      "type": "interaction",
+      "trigger": "hover",
+      "properties": {
+        "transition": {
+          "properties": ["color", "background"],
+          "duration": 0.1,
+          "timing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        },
+        "defaultColor": "rgb(138, 143, 152)",
+        "hoverColor": "rgb(247, 248, 248)"
+      },
+      "framerMotion": {
+        "initial": { "color": "rgb(138, 143, 152)" },
+        "whileHover": { "color": "rgb(247, 248, 248)" },
+        "transition": {
+          "duration": 0.1,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "id": "feature-card-hover",
+      "name": "Feature Card Hover",
+      "target": ".page-module__sykzga__cardContent",
+      "type": "interaction",
+      "trigger": "hover",
+      "properties": {
+        "transition": {
+          "properties": ["filter", "transform"],
+          "duration": [0.2, 0.16],
+          "timing": ["ease-out", "cubic-bezier(0.25, 0.46, 0.45, 0.94)"]
+        },
+        "hover": {
+          "transform": "scale(1.02)",
+          "filter": "brightness(125%)",
+          "boxShadow": "var(--shadow-large)"
+        }
+      },
+      "framerMotion": {
+        "whileHover": { "scale": 1.02, "filter": "brightness(1.25)" },
+        "transition": {
+          "duration": 0.2,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "id": "context-menu-open",
+      "name": "Context Menu Open/Close",
+      "target": ".ContextMenu-module",
+      "type": "entrance/exit",
+      "trigger": "state-change",
+      "keyframes": {
+        "open": {
+          "from": { "opacity": 0, "transform": "scale(0.9)" },
+          "to": { "opacity": 1, "transform": "scale(1)" }
+        },
+        "close": {
+          "from": { "opacity": 1, "transform": "scale(1)" },
+          "to": { "opacity": 0, "transform": "scale(0.9)" }
+        }
+      },
+      "timing": {
+        "duration": 0.12,
+        "easing": "ease-out"
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.9 },
+        "animate": { "opacity": 1, "scale": 1 },
+        "exit": { "opacity": 0, "scale": 0.9 },
+        "transition": {
+          "duration": 0.12,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "id": "dialog-open",
+      "name": "Dialog/Modal Open/Close",
+      "target": ".Dialog-module__iW3PxW__content",
+      "type": "entrance/exit",
+      "trigger": "state-change",
+      "keyframes": {
+        "open": {
+          "from": { "opacity": 0, "transform": "translate(-50%, -49%) scale(0.95)" },
+          "to": { "opacity": 1, "transform": "translate(-50%, -50%)" }
+        },
+        "close": {
+          "from": { "opacity": 1, "transform": "translate(-50%, -50%)" },
+          "to": { "opacity": 0, "transform": "translate(-50%, -49%) scale(0.95)" }
+        }
+      },
+      "timing": {
+        "duration": 0.18,
+        "easing": "ease"
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.95, "y": "-49%", "x": "-50%" },
+        "animate": { "opacity": 1, "scale": 1, "y": "-50%", "x": "-50%" },
+        "exit": { "opacity": 0, "scale": 0.95, "y": "-49%", "x": "-50%" },
+        "transition": {
+          "duration": 0.18,
+          "ease": "easeInOut"
+        }
+      }
+    },
+    {
+      "id": "header-dropdown",
+      "name": "Header Navigation Dropdown",
+      "target": ".Header-module__PXV_2W",
+      "type": "entrance/exit",
+      "trigger": "hover/focus",
+      "keyframes": {
+        "enterFromRight": {
+          "from": { "opacity": 0, "transform": "translateX(var(--anim-amount))" },
+          "to": { "opacity": 1, "transform": "translate(0px)" }
+        },
+        "enterFromLeft": {
+          "from": { "opacity": 0, "transform": "translateX(calc(-1*var(--anim-amount)))" },
+          "to": { "opacity": 1, "transform": "translate(0px)" }
+        },
+        "scaleIn": {
+          "from": { "opacity": 0, "transform": "scale(0.98)" },
+          "to": { "opacity": 1, "transform": "scale(1)" }
+        },
+        "scaleOut": {
+          "from": { "opacity": 1, "transform": "scale(1)" },
+          "to": { "opacity": 0, "transform": "scale(0.98)" }
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.98 },
+        "animate": { "opacity": 1, "scale": 1 },
+        "exit": { "opacity": 0, "scale": 0.98 },
+        "transition": {
+          "duration": 0.15,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "id": "image-load",
+      "name": "Image Load Fade-In",
+      "target": ".Image-module__CYTY7q__root",
+      "type": "entrance",
+      "trigger": "load",
+      "keyframes": {
+        "load": {
+          "to": { "opacity": 1, "mask": "var(--mask-end)" }
+        }
+      },
+      "timing": {
+        "duration": 0.8,
+        "easing": "ease",
+        "fillMode": "both"
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0 },
+        "animate": { "opacity": 1 },
+        "transition": {
+          "duration": 0.8,
+          "ease": "easeInOut"
+        }
+      }
+    },
+    {
+      "id": "marquee-scroll",
+      "name": "Marquee Continuous Scroll",
+      "target": ".Marquee-module__SWfNTW__content",
+      "type": "continuous",
+      "trigger": "auto",
+      "keyframes": {
+        "scroll": {
+          "from": { "transform": "translate(0px)" },
+          "to": { "transform": "translateX(calc(-100% - 24px))" }
+        }
+      },
+      "timing": {
+        "duration": 60,
+        "easing": "linear",
+        "iterations": "infinite"
+      },
+      "framerMotion": {
+        "animate": { "x": ["0%", "-100%"] },
+        "transition": {
+          "duration": 60,
+          "ease": "linear",
+          "repeat": "Infinity",
+          "repeatType": "loop"
+        }
+      }
+    },
+    {
+      "id": "marquee-stagger-fade",
+      "name": "Marquee Item Staggered Fade-In",
+      "target": ".page-module__sykzga__marqueeItem",
+      "type": "entrance",
+      "trigger": "viewport-enter",
+      "timing": {
+        "duration": 0.7,
+        "easing": "ease-out",
+        "staggerDelay": "random(0.4s - 2.3s)"
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0 },
+        "animate": { "opacity": 1 },
+        "transition": {
+          "duration": 0.7,
+          "ease": "easeOut"
+        },
+        "note": "Use staggerChildren with random delays or individual delays"
+      }
+    },
+    {
+      "id": "mobile-menu",
+      "name": "Mobile Menu Open/Close",
+      "target": ".Header-module__PXV_2W__mobileMenu",
+      "type": "entrance/exit",
+      "trigger": "state-change",
+      "keyframes": {
+        "open": {
+          "from": { "opacity": 0 },
+          "to": { "opacity": 1 }
+        },
+        "close": {
+          "from": { "opacity": 1 },
+          "to": { "opacity": 0 }
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0 },
+        "animate": { "opacity": 1 },
+        "exit": { "opacity": 0 },
+        "transition": {
+          "duration": 0.2,
+          "ease": "easeInOut"
+        }
+      }
+    },
+    {
+      "id": "cta-fade",
+      "name": "CTA Actions Fade-In",
+      "target": ".CTA-module__MsS1gq__actions",
+      "type": "entrance",
+      "trigger": "viewport-enter",
+      "timing": {
+        "duration": 0.5,
+        "delay": 0.1,
+        "easing": "ease",
+        "fillMode": "forwards"
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0 },
+        "whileInView": { "opacity": 1 },
+        "transition": {
+          "duration": 0.5,
+          "delay": 0.1,
+          "ease": "easeInOut"
+        },
+        "viewport": { "once": true }
+      }
+    },
+    {
+      "id": "scrollbar-visibility",
+      "name": "Scrollbar Fade In/Out",
+      "target": ".Scrollable-module__hF-PvG__scrollbar",
+      "type": "visibility",
+      "trigger": "state-change",
+      "timing": {
+        "duration": 0.12,
+        "easing": "ease-in"
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0 },
+        "animate": { "opacity": 1 },
+        "exit": { "opacity": 0 },
+        "transition": {
+          "duration": 0.12,
+          "ease": "easeIn"
+        }
+      }
+    },
+    {
+      "id": "cursor-blink",
+      "name": "Text Cursor Blink",
+      "target": ".page-module__HPIeYG__inputWrapper::after",
+      "type": "continuous",
+      "trigger": "auto",
+      "keyframes": {
+        "blink": {
+          "0%": { "visibility": "visible" },
+          "50%": { "visibility": "hidden" },
+          "100%": { "visibility": "visible" }
+        }
+      },
+      "timing": {
+        "duration": 1.25,
+        "easing": "step-end",
+        "iterations": "infinite"
+      },
+      "framerMotion": {
+        "animate": { "opacity": [1, 0, 1] },
+        "transition": {
+          "duration": 1.25,
+          "ease": "linear",
+          "times": [0, 0.5, 1],
+          "repeat": "Infinity"
+        }
+      }
+    },
+    {
+      "id": "verified-badge-rotate",
+      "name": "Verified Badge Rotation",
+      "target": ".Verified-module__aYMhbW__badge path",
+      "type": "continuous",
+      "trigger": "auto",
+      "keyframes": {
+        "rotate": {
+          "from": { "transform": "rotate(0deg)" },
+          "to": { "transform": "rotate(360deg)" }
+        }
+      },
+      "timing": {
+        "duration": 6,
+        "easing": "linear",
+        "iterations": "infinite"
+      },
+      "framerMotion": {
+        "animate": { "rotate": 360 },
+        "transition": {
+          "duration": 6,
+          "ease": "linear",
+          "repeat": "Infinity"
+        }
+      }
+    },
+    {
+      "id": "hamburger-menu-icon",
+      "name": "Hamburger Menu Icon Transform",
+      "target": ".Header-module__PXV_2W__mobileMenuTrigger rect",
+      "type": "interaction",
+      "trigger": "state-change",
+      "properties": {
+        "transition": {
+          "duration": 0.16,
+          "timing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        }
+      },
+      "framerMotion": {
+        "transition": {
+          "duration": 0.16,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    }
+  ],
+  "easingCurves": {
+    "linearStandard": {
+      "name": "Linear Standard",
+      "css": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "framerMotion": [0.25, 0.46, 0.45, 0.94],
+      "description": "Primary easing curve used for most UI transitions in Linear"
+    },
+    "ease": {
+      "name": "CSS Ease",
+      "css": "ease",
+      "framerMotion": "easeInOut",
+      "description": "Standard ease for simple transitions"
+    },
+    "easeOut": {
+      "name": "Ease Out",
+      "css": "ease-out",
+      "framerMotion": "easeOut",
+      "description": "Used for entrance animations"
+    },
+    "easeIn": {
+      "name": "Ease In",
+      "css": "ease-in",
+      "framerMotion": "easeIn",
+      "description": "Used for exit animations"
+    },
+    "linear": {
+      "name": "Linear",
+      "css": "linear",
+      "framerMotion": "linear",
+      "description": "Constant velocity, used for continuous animations like marquees"
+    },
+    "stepEnd": {
+      "name": "Step End",
+      "css": "step-end",
+      "framerMotion": "linear",
+      "description": "Discrete steps, used for cursor blink effects",
+      "note": "Simulate with times array in Framer Motion"
+    }
+  },
+  "durations": {
+    "instant": { "ms": 100, "s": 0.1, "usage": "Very fast micro-interactions" },
+    "fast": { "ms": 120, "s": 0.12, "usage": "Context menus, scrollbars" },
+    "quick": { "ms": 150, "s": 0.15, "usage": "Dropdowns, command palette" },
+    "normal": { "ms": 160, "s": 0.16, "usage": "Buttons, hamburger icon" },
+    "standard": { "ms": 180, "s": 0.18, "usage": "Dialogs, modals" },
+    "relaxed": { "ms": 200, "s": 0.2, "usage": "Feature cards, general transitions" },
+    "slow": { "ms": 250, "s": 0.25, "usage": "Sidebar collapse, video controls" },
+    "imageLoad": { "ms": 800, "s": 0.8, "usage": "Image fade-in on load" }
+  },
+  "scaleValues": {
+    "buttonActive": 0.97,
+    "menuEnter": 0.9,
+    "dialogEnter": 0.95,
+    "headerDropdown": 0.98,
+    "cardHover": 1.02
+  },
+  "buttonVariants": {
+    "primary": {
+      "default": {
+        "backgroundColor": "var(--color-brand-bg)",
+        "color": "var(--color-brand-text)"
+      },
+      "active": {
+        "transform": "scale(0.97)",
+        "filter": "brightness(98%)"
+      }
+    },
+    "secondary": {
+      "default": {
+        "backgroundColor": "rgb(40, 40, 44)",
+        "color": "rgb(247, 248, 248)",
+        "border": "1px solid rgb(62, 62, 68)"
+      },
+      "active": {
+        "transform": "scale(0.97)",
+        "filter": "brightness(98%)"
+      }
+    },
+    "invert": {
+      "default": {
+        "backgroundColor": "rgb(230, 230, 230)",
+        "color": "rgb(8, 9, 10)",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px"
+      },
+      "active": {
+        "transform": "scale(0.97)"
+      }
+    },
+    "tertiary": {
+      "default": {
+        "backgroundColor": "var(--color-bg-primary)",
+        "color": "var(--color-text-tertiary)",
+        "border": "1px solid var(--color-bg-secondary)"
+      },
+      "active": {
+        "transform": "scale(0.97)",
+        "color": "var(--color-text-primary)",
+        "backgroundColor": "var(--color-bg-quaternary)"
+      }
+    },
+    "ghost": {
+      "default": {
+        "backgroundColor": "transparent",
+        "color": "var(--color-text-tertiary)"
+      },
+      "active": {
+        "transform": "scale(0.97)",
+        "color": "var(--color-text-primary)",
+        "backgroundColor": "var(--color-bg-quinary)"
+      }
+    }
+  }
+}

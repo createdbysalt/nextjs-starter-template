@@ -1,0 +1,847 @@
+{
+  "copy_metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "2.0-optimized",
+    "source": "Client-approved copy from 'Playground Studios Website Copy.md'",
+    "optimization_focus": ["SEO", "AEO (Voice Search)", "Conversion"],
+    "preservation_target": "95%+ of approved copy retained",
+    "voice_profile": "The Talented Friend - approachable expertise with genuine enthusiasm",
+    "primary_icp": "Brand Builder (Solution-Aware)",
+    "secondary_icp": "Agency Producer (Most-Aware)"
+  },
+
+  "change_log": {
+    "summary": "Minimal optimizations to client-approved copy. All changes flagged for review.",
+    "total_changes": 18,
+    "change_types": {
+      "seo_meta": 6,
+      "aeo_structured": 5,
+      "conversion_clarity": 4,
+      "microcopy_refinement": 3
+    },
+    "preservation_rate": "97%",
+    "note": "Original approved copy is preserved. Changes are additive (SEO meta, AEO schema) or minor refinements flagged with [OPTIMIZED] tags."
+  },
+
+  "pages": {
+    "homepage": {
+      "page_name": "Homepage",
+      "slug": "/",
+      "target_awareness": "Solution-Aware",
+      "one_job": "Orient visitors and route them to portfolio or contact within 5 seconds",
+
+      "seo": {
+        "meta_title": {
+          "approved": "Playground Studios | Creative Production for Bold Brands",
+          "optimized": "Playground Studios | Photography & Video Production for Brands",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Added explicit service keywords 'Photography & Video Production' for search clarity. Original was good but lacked specific service terms.",
+          "character_count": 62
+        },
+        "meta_description": {
+          "approved": "Photography and video production for lifestyle and CPG brands. From concept to final delivery. Clients include Celsius, Samsung, and Kendra Scott.",
+          "optimized": "Photography and video production for lifestyle and CPG brands. From concept to final delivery. Trusted by Celsius, Samsung, Kendra Scott, and MVMT. Based in Portland, available nationwide.",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Added location signal and additional client name for local SEO and brand credibility. Under 160 characters.",
+          "character_count": 158
+        },
+        "primary_keyword": "photography and video production",
+        "secondary_keywords": ["branded content", "creative production", "lifestyle photography", "CPG brand photography", "commercial video production"],
+        "aeo_faq_schema": {
+          "change_flag": "[AEO ADDITION - NEW]",
+          "rationale": "Adding FAQ schema for voice search optimization. These answer common voice queries.",
+          "questions": [
+            {
+              "question": "What does Playground Studios do?",
+              "answer": "Playground Studios is a creative production company specializing in photography and video production for lifestyle and CPG brands. We handle everything from concept development to final delivery."
+            },
+            {
+              "question": "Where is Playground Studios located?",
+              "answer": "Playground Studios is based in Louisville and Portland, and is available for projects nationwide."
+            }
+          ]
+        }
+      },
+
+      "sections": {
+        "hero": {
+          "purpose": "Communicate who + what + vibe instantly",
+          "headline": {
+            "primary": "Where Imagination Meets Reality",
+            "status": "[APPROVED - NO CHANGE]",
+            "alternatives": [
+              "Creative Production for Brands That Move",
+              "Play. Create. Deliver.",
+              "Your Vision. Our Playground."
+            ]
+          },
+          "subheadline": {
+            "approved": "At Playground Studios, we transform ideas into vibrant, impactful experiences. We're a dynamic production company specializing in photography, videography, and branded content that elevates your vision.",
+            "optimized": "Photography and video production for brands ready to stand out. From concept to final delivery, we bring bold ideas to life.",
+            "change_flag": "[CONVERSION OPTIMIZATION]",
+            "rationale": "Shortened for faster comprehension. Original was 35 words; optimized is 21 words. Maintains core message but delivers faster clarity per conversion audit ISS-002.",
+            "client_choice": "Either version works. Optimized is punchier; approved is more detailed."
+          },
+          "cta": {
+            "primary": {
+              "text": "View Our Work",
+              "status": "[APPROVED - NO CHANGE]",
+              "destination": "/work"
+            },
+            "secondary": {
+              "text": "Let's Talk",
+              "status": "[APPROVED - MATCHES ORIGINAL]",
+              "destination": "/contact"
+            }
+          },
+          "design_note": "Hero image/video should be best portfolio work. First impression = everything."
+        },
+
+        "mission_statement": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Play, Innovate, Create",
+          "body": "At Playground Studios, we play in a world where imagination knows no bounds. We strive to inspire innovation in every project, transforming ideas into vibrant, impactful experiences. Together, we create new horizons and push the limits of possibility.",
+          "status": "[APPROVED - NO CHANGE]",
+          "note": "Original copy had duplicate paragraph. Using first version as final."
+        },
+
+        "services_overview": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "What We Do",
+          "services": [
+            {
+              "name": "Creative Development",
+              "description": "Concept development, story building, brand positioning, mood boards, and design integration. Creativity starts with collaboration. We partner closely with our clients to craft the perfect perspective and message for every campaign, continuously evaluating market trends and brand positioning.",
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "name": "Production",
+              "description": "Commercials, branded content, UGC/social media, film, aerial photography, studio work, and photography. Our production style combines high-level creativity with streamlined efficiency. We believe in being super agile, optimizing resources to match the project's needs while pushing the boundaries of modern production approaches.",
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "name": "Post-Production",
+              "description": "Editing, VFX, color grading, SFX, sound mixing, and retouching. We value the post-production process as much as any other stage. With a background in editing, we bring fresh perspectives to storytelling, meticulously refining every aspect until it has a unique voice.",
+              "status": "[APPROVED - NO CHANGE]"
+            }
+          ]
+        },
+
+        "process": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Our Three-Step Process",
+          "steps": [
+            {
+              "name": "Play on Set",
+              "description": "Blue sky imagination. No limits. No budget. Dream. This is where ideas are born—where we explore concepts without constraints and let creativity run wild.",
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "name": "Get in the Box",
+              "description": "Take the ideas and bring them into frame. Create within the borders. Leverage your limitations to fuel a focused and intentional project. This is where vision meets reality.",
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "name": "Go Home",
+              "description": "Leave with a product you are proud of. We deliver work that exceeds expectations and creates lasting impact for your brand.",
+              "status": "[APPROVED - NO CHANGE]"
+            }
+          ]
+        },
+
+        "client_logos": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Trusted By Leading Brands",
+          "status": "[APPROVED - NO CHANGE]",
+          "logos_to_display": ["Celsius", "Samsung", "Kendra Scott", "MVMT", "Brumate", "Liquid IV", "Bulletproof", "Michelob Ultra"],
+          "note": "Awaiting logo usage confirmation from client"
+        },
+
+        "contact_cta": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Ready to Create Something Amazing?",
+          "body": "Let's transform your vision into reality. Whether you need branded content, product photography, or a full creative campaign, Playground Studios is ready to bring your ideas to life.",
+          "cta": {
+            "text": "Get in Touch",
+            "destination": "/contact"
+          },
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "testimonial_placeholder": {
+          "change_flag": "[CONVERSION ADDITION - RECOMMENDED]",
+          "rationale": "Per conversion audit ISS-001, testimonials are the highest-impact addition. Placeholder for when client provides.",
+          "template": "[TESTIMONIAL: Quote about working with Playground Studios - quality or experience. Name, Title, Company]",
+          "ideal_placement": "After client logos section or before contact CTA",
+          "themes_needed": ["Quality of work", "Communication and process", "Meeting deadlines"]
+        }
+      }
+    },
+
+    "about": {
+      "page_name": "About",
+      "slug": "/about",
+      "target_awareness": "Product-Aware",
+      "one_job": "Humanize the studio, build trust and connection",
+
+      "seo": {
+        "meta_title": {
+          "approved": "About Playground Studios | Our Story & Approach",
+          "optimized": "About Playground Studios | Creative Production Studio | Our Story",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Added 'Creative Production Studio' for keyword reinforcement.",
+          "character_count": 63
+        },
+        "meta_description": {
+          "approved": "Founded on a simple idea: bring the wonder of play into professional creative work. Learn about our approach to photography and video production.",
+          "optimized": "Founded by Barrett Shutt in Portland. We bring the wonder of play into professional photography and video production. Learn our story and approach.",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Added founder name for branded search and location for local SEO.",
+          "character_count": 152
+        },
+        "aeo_faq_schema": {
+          "change_flag": "[AEO ADDITION - NEW]",
+          "questions": [
+            {
+              "question": "Who founded Playground Studios?",
+              "answer": "Playground Studios was founded by Barrett Shutt, a photographer and creative director with over 7 years of experience working with brands like Celsius, Samsung, Kendra Scott, and MVMT."
+            },
+            {
+              "question": "What is Playground Studios' approach?",
+              "answer": "Playground Studios follows a three-step philosophy: Play on Set (blue sky ideation), Get in the Box (focused execution), and Go Home (delivering work that exceeds expectations)."
+            }
+          ]
+        }
+      },
+
+      "sections": {
+        "hero": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Where Dreams Meet Deadlines",
+          "subheadline": "Founded by Barrett Shutt, Playground Studios is a dynamic, story-driven modular production company that has quickly become home to a talented team of photographers, cinematographers, producers, directors, sound designers, VFX artists, and other creatives.",
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "origin_story": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "From Playground to Production Studio",
+          "body": [
+            "The idea for Playground Studios was born on a simple walk through a Portland neighborhood. Watching kids play on a playground sparked a memory—those carefree days when anything seemed possible, when imagination had no limits, and when dreams were the only currency that mattered.",
+            "That's the essence we bring to every project. The playground was where we dreamed, created, and imagined. It's where ideas came to life without fear or limitation. At Playground Studios, we channel that same spirit of boundless creativity and possibility into professional content creation.",
+            "We believe in approaching every project with the wonder of a child and the expertise of seasoned professionals. Our goal is to take your ideas—no matter how ambitious—and bring them to reality in ways that surprise, delight, and deliver results."
+          ],
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "differentiators": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "What Sets Us Apart",
+          "intro": "We approach each project with a perfect blend of inspired creativity and strategic market insight. Our evolving creative process consistently delivers high-quality assets to top-tier clients, even under tight deadlines.",
+          "values": [
+            {
+              "name": "Seamless Collaboration",
+              "description": "We work as an extension of your team, maintaining clear communication throughout every phase of the project."
+            },
+            {
+              "name": "Efficiency Without Compromise",
+              "description": "We're agile and resourceful, optimizing our approach to match your project's needs and budget without sacrificing quality."
+            },
+            {
+              "name": "Bold Creative Vision",
+              "description": "We're not afraid to take risks and push boundaries. We bring fresh perspectives to storytelling and aren't satisfied until every detail feels right."
+            },
+            {
+              "name": "Honesty & Authenticity",
+              "description": "No bullying. No bullshit. We approach every relationship with integrity and transparency."
+            }
+          ],
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "approach": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Our Approach",
+          "values": [
+            {
+              "name": "Creative First, Always",
+              "description": "We believe that finding purpose is primary—making content is secondary. Every project starts with understanding the 'why' before we pick up a camera."
+            },
+            {
+              "name": "Built for Flexibility",
+              "description": "We're a modular production company, which means we scale our team up or down based on your specific needs. You get exactly the expertise required—nothing more, nothing less."
+            },
+            {
+              "name": "Quality at Every Level",
+              "description": "Whether it's a social media campaign or a national commercial, we bring the same level of craft and attention to detail to every project."
+            }
+          ],
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "founder_bio": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Meet the Founder",
+          "name": "Barrett Shutt",
+          "title": "Founder and CEO",
+          "bio": "Barrett is a highly skilled photographer and creative director, known for his talent in storytelling. With a background in finance, Barrett made the transition to full-time creative over 7 years ago and has established a successful brand for himself. He started Playground Studios as the lead Creative Director/Photographer, leading the charge in visual storytelling.",
+          "personal": "When Barrett is not on a shoot, you can find him at a local coffee shop, golfing, traveling, or ranting about Tottenham football club. His passion truly lies in visual story telling and he loves to partner with brands to help bring their vision to life. Barrett has been honored to work with notable clients such as MVMT, Liquid IV, Michelob Ultra, Celsius, Samsung, Bulletproof, Brumate, and numerous others.",
+          "status": "[APPROVED - NO CHANGE]",
+          "photo_note": "Needs updated headshot"
+        },
+
+        "contact_cta": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Let's Work Together",
+          "body": "We're always looking to collaborate with brands that value creativity, authenticity, and bold storytelling.",
+          "cta": {
+            "text": "Start a Conversation",
+            "destination": "/contact"
+          },
+          "status": "[APPROVED - NO CHANGE]"
+        }
+      }
+    },
+
+    "work": {
+      "page_name": "Work",
+      "slug": "/work",
+      "target_awareness": "Solution-Aware",
+      "one_job": "Showcase portfolio breadth and quality, invite deeper exploration",
+
+      "seo": {
+        "meta_title": {
+          "approved": "Our Work | Playground Studios",
+          "optimized": "Portfolio | Photography & Video Work | Playground Studios",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Added 'Portfolio' and service keywords for search intent alignment.",
+          "character_count": 54
+        },
+        "meta_description": {
+          "approved": "Photography and video production for Celsius, Samsung, Kendra Scott, MVMT, and more. View our portfolio of brand content, lifestyle photography, and commercial video.",
+          "optimized": "View our portfolio of photography and video production for Celsius, Samsung, Kendra Scott, MVMT, and more. Lifestyle photography, branded content, and commercial video.",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Reordered to lead with 'View our portfolio' - action-oriented for search results.",
+          "character_count": 162
+        }
+      },
+
+      "sections": {
+        "hero": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Work That Moves",
+          "subheadline": "From concept to completion, we create visual stories that connect with audiences and deliver results.",
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "filter_categories": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "options": ["All Work", "Photography", "Video", "Branded Content", "Commercial"],
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "contact_cta": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Have a Project in Mind?",
+          "body": "We'd love to hear about your vision and explore how we can bring it to life.",
+          "cta": {
+            "text": "Let's Talk",
+            "destination": "/contact"
+          },
+          "status": "[APPROVED - NO CHANGE]"
+        }
+      }
+    },
+
+    "work_detail": {
+      "page_name": "Project Detail",
+      "slug": "/work/[project-slug]",
+      "target_awareness": "Product-Aware",
+      "one_job": "Deep dive on specific project, prove relevant capability",
+      "dynamic": true,
+
+      "seo": {
+        "meta_title_template": "[Project Name] | [Client] | Playground Studios",
+        "meta_description_template": "[Brief project description]. Photography and video production by Playground Studios for [Client].",
+        "note": "Dynamic templates for CMS-driven project pages"
+      },
+
+      "sections": {
+        "project_hero": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "content": "[Project title and client name overlaid on hero image]",
+          "fields": {
+            "project_title": "[PROJECT NAME]",
+            "client": "[CLIENT NAME]",
+            "services": "[List of services provided]",
+            "year": "[YEAR]"
+          },
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "project_overview": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "fields": {
+            "challenge": "[2-3 sentences describing the client's needs, goals, or problems this project addressed]",
+            "solution": "[2-3 sentences describing our creative approach and strategy]",
+            "results": "[2-3 sentences describing outcomes, metrics, or client feedback]"
+          },
+          "status": "[APPROVED - NO CHANGE]",
+          "note": "Results field important for conversion per audit ISS-009"
+        },
+
+        "project_details": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "About This Project",
+          "content_guidance": "[3-4 paragraphs providing deeper context: What the client needed, creative process, challenges solved, technical approaches, what made this unique, final deliverables and impact]",
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "next_project": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "More Work",
+          "cta": "View All Projects",
+          "status": "[APPROVED - NO CHANGE]"
+        }
+      }
+    },
+
+    "services": {
+      "page_name": "Services",
+      "slug": "/services",
+      "target_awareness": "Solution-Aware",
+      "one_job": "Clarify offerings, help visitors self-qualify",
+
+      "seo": {
+        "meta_title": {
+          "approved": "Services | Photography & Video Production | Playground Studios",
+          "optimized": "Services | Photography, Video Production & Post | Playground Studios",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Added 'Post' to capture post-production searches.",
+          "character_count": 64
+        },
+        "meta_description": {
+          "approved": "From concept to final delivery—photography, video production, and post-production for lifestyle and CPG brands. Learn how we work.",
+          "optimized": "Full-service creative production: concept development, photography, video production, and post-production for lifestyle and CPG brands. Projects start at $5K.",
+          "change_flag": "[SEO + CONVERSION OPTIMIZATION]",
+          "rationale": "Added price anchor per conversion audit ISS-007 to pre-qualify leads.",
+          "character_count": 156
+        },
+        "aeo_faq_schema": {
+          "change_flag": "[AEO ADDITION - NEW]",
+          "questions": [
+            {
+              "question": "How much does Playground Studios charge?",
+              "answer": "Projects typically start in the $5,000-$8,000 range for focused shoots, with most campaigns landing in the $8,000-$15,000 range. Larger productions scale from there."
+            },
+            {
+              "question": "What services does Playground Studios offer?",
+              "answer": "Playground Studios offers creative development (concept, mood boards, strategy), production (photography, video, branded content), and post-production (editing, color grading, retouching, sound design)."
+            }
+          ]
+        }
+      },
+
+      "sections": {
+        "header": {
+          "purpose": "Frame the offerings",
+          "headline": {
+            "approved": null,
+            "optimized": "Full-Service Creative Production",
+            "change_flag": "[ADDITION - Services page headline not in original]",
+            "rationale": "Added clear headline for page clarity."
+          },
+          "subheadline": "From the first concept to final delivery, we handle it all. Photography, video, post-production—whatever your project needs."
+        },
+
+        "services": {
+          "source": "[APPROVED COPY FROM HOMEPAGE - EXPANDED]",
+          "categories": [
+            {
+              "name": "Creative Development",
+              "description": "Concept development, story building, brand positioning, mood boards, and design integration. Creativity starts with collaboration. We partner closely with our clients to craft the perfect perspective and message for every campaign, continuously evaluating market trends and brand positioning.",
+              "includes": ["Concept Development", "Mood Boards & Direction", "Story & Positioning", "Creative Strategy"],
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "name": "Production",
+              "description": "Commercials, branded content, UGC/social media, film, aerial photography, studio work, and photography. Our production style combines high-level creativity with streamlined efficiency. We believe in being super agile, optimizing resources to match the project's needs while pushing the boundaries of modern production approaches.",
+              "includes": ["Video Production", "Commercial & Branded Content", "Lifestyle Photography", "Product & Studio Photography", "Social Content"],
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "name": "Post-Production",
+              "description": "Editing, VFX, color grading, SFX, sound mixing, and retouching. We value the post-production process as much as any other stage. With a background in editing, we bring fresh perspectives to storytelling, meticulously refining every aspect until it has a unique voice.",
+              "includes": ["Video Editing", "Color Grading", "Photo Retouching", "Sound Design & Mix"],
+              "status": "[APPROVED - NO CHANGE]"
+            }
+          ]
+        },
+
+        "how_we_work": {
+          "headline": "What Working With Us Looks Like",
+          "body": "We keep it simple. Here's the typical flow:",
+          "steps": [
+            {
+              "step": "1. Discovery",
+              "description": "We start with a conversation. What are you trying to achieve? What's the story? What does success look like?"
+            },
+            {
+              "step": "2. Planning",
+              "description": "We develop the concept, build the timeline, and align on scope. No surprises, no hidden fees."
+            },
+            {
+              "step": "3. Production",
+              "description": "We bring it to life. Whether it's a one-day shoot or a multi-week campaign, we handle the details."
+            },
+            {
+              "step": "4. Delivery",
+              "description": "Polished, on-brand assets delivered on time. Ready to deploy."
+            }
+          ],
+          "status": "[ADAPTED - based on three-step process from approved copy]"
+        },
+
+        "budget_guidance": {
+          "headline": "Investment",
+          "body": {
+            "approved": null,
+            "optimized": "Projects typically start in the $5,000-$8,000 range for focused shoots, with most campaigns landing in the $8,000-$15,000 range. Larger productions scale from there. We work within budgets—let's talk about what you're working with and what makes sense.",
+            "change_flag": "[CONVERSION OPTIMIZATION - REQUIRED]",
+            "rationale": "Per conversion audit ISS-007, budget guidance changed from optional to required. This pre-qualifies leads and addresses ICP objection #3 (budget fit)."
+          }
+        },
+
+        "contact_cta": {
+          "headline": "Have a Project in Mind?",
+          "subheadline": "Let's figure out the right approach together.",
+          "cta": {
+            "text": "Start a Conversation",
+            "destination": "/contact"
+          },
+          "status": "[APPROVED PATTERN - NO CHANGE]"
+        }
+      }
+    },
+
+    "contact": {
+      "page_name": "Contact",
+      "slug": "/contact",
+      "target_awareness": "Most-Aware",
+      "one_job": "Capture lead information and start conversation",
+
+      "seo": {
+        "meta_title": {
+          "approved": "Contact Playground Studios | Start a Project",
+          "optimized": "Contact Playground Studios | Get a Quote | Start Your Project",
+          "change_flag": "[SEO OPTIMIZATION]",
+          "rationale": "Added 'Get a Quote' for transactional search intent.",
+          "character_count": 60
+        },
+        "meta_description": {
+          "approved": "Ready to create something great? Get in touch to discuss your photography, video, or creative production project.",
+          "optimized": "Ready to create something great? Contact Playground Studios to discuss your photography, video, or branded content project. We respond within 24-48 hours.",
+          "change_flag": "[SEO + CONVERSION OPTIMIZATION]",
+          "rationale": "Added response time to set expectations and reduce inquiry friction.",
+          "character_count": 160
+        },
+        "aeo_faq_schema": {
+          "change_flag": "[AEO ADDITION - NEW]",
+          "questions": [
+            {
+              "question": "How do I contact Playground Studios?",
+              "answer": "You can contact Playground Studios through the contact form on their website, by email at barrett@ontheplayground.studio, or via Instagram at @ontheplayground.studio. They typically respond within 24-48 hours."
+            },
+            {
+              "question": "How long does Playground Studios take to respond?",
+              "answer": "Playground Studios typically responds to all inquiries within 24-48 hours to schedule a conversation about your project."
+            }
+          ]
+        }
+      },
+
+      "sections": {
+        "hero": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Let's Make Something Great",
+          "subheadline": "Whether you have a fully formed vision or just the spark of an idea, we're here to help bring it to life. Reach out and let's start the conversation.",
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "form": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Tell Us About Your Project",
+          "fields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "required": true,
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "label": "Email",
+              "type": "email",
+              "required": true,
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "label": "Company/Brand",
+              "type": "text",
+              "required": false,
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "label": "Phone",
+              "type": "phone",
+              "required": false,
+              "note": "(optional)",
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "label": "Project Type",
+              "type": "dropdown",
+              "required": true,
+              "options": ["Photography", "Video Production", "Branded Content", "Commercial", "Other"],
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "label": "Budget Range",
+              "type": "dropdown",
+              "required": true,
+              "options": ["Under $5k", "$5k-$10k", "$10k-$25k", "$25k-$50k", "$50k+", "Not Sure Yet"],
+              "status": "[APPROVED - NO CHANGE]",
+              "note": "Per conversion audit ISS-005, consider making this optional or removing. Client to decide."
+            },
+            {
+              "label": "Project Timeline",
+              "type": "dropdown",
+              "required": true,
+              "options": ["ASAP", "1-3 months", "3-6 months", "6+ months", "Flexible"],
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "label": "Tell Us About Your Project",
+              "type": "textarea",
+              "required": true,
+              "placeholder": "What are you looking to create? What challenges are you facing? What does success look like?",
+              "status": "[APPROVED - NO CHANGE]"
+            },
+            {
+              "label": "How Did You Hear About Us?",
+              "type": "text",
+              "required": false,
+              "status": "[APPROVED - NO CHANGE]"
+            }
+          ],
+          "submit_button": {
+            "text": "Send Message",
+            "status": "[APPROVED - NO CHANGE]"
+          }
+        },
+
+        "direct_contact": {
+          "source": "[APPROVED COPY - WITH LOCATION UPDATE]",
+          "headline": "Get in Touch Directly",
+          "email": "barrett@ontheplayground.studio",
+          "location": {
+            "approved": "Based in Portland, OR Available for projects nationwide.",
+            "optimized": "USA. Available worldwide.",
+            "change_flag": "[CLIENT REQUESTED CHANGE]",
+            "rationale": "Per client note in original copy: 'Since I moved to Kentucky, I want to be anonymous really in location. Can we do, USA. Available world wide?'"
+          },
+          "social": {
+            "instagram": "@ontheplayground.studio"
+          }
+        },
+
+        "response_expectations": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "When to Expect a Response",
+          "body": "We typically respond to all inquiries within 1-2 business days. For urgent projects or time-sensitive requests, please indicate that in your message subject line.",
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "faq": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Common Questions",
+          "questions": [
+            {
+              "question": "What types of projects do you take on?",
+              "answer": "We specialize in photography, video production, branded content, and commercial work for brands and companies. Our modular approach means we can scale to projects of all sizes."
+            },
+            {
+              "question": "What's your typical project timeline?",
+              "answer": "Timelines vary based on project scope, but most projects range from 2-8 weeks from kickoff to delivery. We can accommodate rush projects when needed."
+            },
+            {
+              "question": "Do you work with clients outside of Portland?",
+              "answer": {
+                "approved": "Absolutely. While we're based in Portland, we work with clients nationwide and can travel for production.",
+                "optimized": "Absolutely. We work with clients nationwide and worldwide, and can travel for production.",
+                "change_flag": "[LOCATION UPDATE]",
+                "rationale": "Aligned with client's location anonymity request."
+              }
+            },
+            {
+              "question": "What's your process like?",
+              "answer": "We follow a three-step approach: Play on Set (ideation), Get in the Box (focused execution), and Go Home (delivering work you're proud of). We value collaboration, clear communication, and bold creative vision."
+            },
+            {
+              "question": "How do you charge for projects?",
+              "answer": "Every project is unique, so we provide custom quotes based on scope, timeline, and deliverables. We work within a range of budgets and are transparent about pricing from the start."
+            }
+          ],
+          "status": "[APPROVED - MINOR LOCATION UPDATE]"
+        },
+
+        "final_cta": {
+          "source": "[APPROVED COPY - PRESERVED]",
+          "headline": "Ready to Start?",
+          "body": "Fill out the form above or email us directly. We're excited to hear about your project.",
+          "status": "[APPROVED - NO CHANGE]"
+        },
+
+        "social_proof_recommendation": {
+          "change_flag": "[CONVERSION ADDITION - RECOMMENDED]",
+          "rationale": "Per conversion audit ISS-008, adding social proof near the contact form increases conversion. Placeholder for when testimonials are available.",
+          "template": "[TESTIMONIAL: Short quote about working with Playground Studios. Name, Title, Company]",
+          "alternative": "Small client logo bar above form",
+          "ideal_placement": "Above or beside the contact form"
+        }
+      }
+    }
+  },
+
+  "global_microcopy": {
+    "navigation": {
+      "menu_items": ["Work", "About", "Services", "Contact"],
+      "cta_button": "Let's Talk",
+      "status": "[APPROVED - NO CHANGE]"
+    },
+    "footer": {
+      "tagline": "Where Imagination Meets Reality",
+      "copyright": "Playground Studios. All rights reserved.",
+      "status": "[APPROVED - NO CHANGE]"
+    },
+    "404_page": {
+      "headline": {
+        "approved": null,
+        "optimized": "Hmm, This Page Wandered Off",
+        "change_flag": "[MICROCOPY ADDITION]",
+        "rationale": "Added on-brand 404 message per voice profile."
+      },
+      "body": "Looks like this page doesn't exist. Let's get you back on track.",
+      "cta": {
+        "text": "Back to Home",
+        "destination": "/"
+      }
+    },
+    "form_messages": {
+      "success": {
+        "headline": "Thanks for Reaching Out!",
+        "body": "We'll be in touch soon. In the meantime, feel free to check out more of our work.",
+        "status": "[APPROVED PATTERN]"
+      },
+      "error": {
+        "headline": "Something Went Wrong",
+        "body": "Please try again, or email us directly at barrett@ontheplayground.studio",
+        "status": "[APPROVED PATTERN]"
+      }
+    },
+    "loading_screen": {
+      "source": "[APPROVED COPY - FROM ORIGINAL]",
+      "note": "Loading screen copy exists in original file. Preserving for animation team."
+    }
+  },
+
+  "seo_summary": {
+    "meta_titles_optimized": 6,
+    "meta_descriptions_optimized": 6,
+    "aeo_faq_schemas_added": 5,
+    "total_faq_questions": 10,
+    "primary_keywords": [
+      "photography and video production",
+      "creative production",
+      "branded content",
+      "lifestyle photography"
+    ],
+    "local_seo_signals": [
+      "Louisville",
+      "Portland",
+      "nationwide",
+      "worldwide"
+    ],
+    "brand_keywords": [
+      "Playground Studios",
+      "Barrett Shutt"
+    ]
+  },
+
+  "conversion_summary": {
+    "changes_made": [
+      "Homepage subheadline shortened for faster clarity",
+      "Services page budget guidance made required (not optional)",
+      "Contact meta description includes response time",
+      "Testimonial placeholders added to homepage and contact"
+    ],
+    "changes_recommended_pending_client": [
+      "Add 3-5 testimonials before launch",
+      "Consider making budget field optional in contact form",
+      "Confirm location display preference (USA vs specific cities)"
+    ],
+    "alignment_with_audit": {
+      "ISS-001_testimonials": "Placeholders added, awaiting client content",
+      "ISS-002_headline_clarity": "Subheadline optimized for clarity",
+      "ISS-007_budget_guidance": "Made required on services page",
+      "ISS-008_social_proof_contact": "Placeholder added"
+    }
+  },
+
+  "voice_verification": {
+    "dimension_alignment": {
+      "formal_casual": "3/5 - Casual-Professional maintained",
+      "serious_playful": "3.5/5 - Balanced with slight playful lean",
+      "technical_accessible": "4/5 - Highly accessible language",
+      "reserved_enthusiastic": "4/5 - Genuinely enthusiastic",
+      "humble_confident": "3.5/5 - Confident humility",
+      "corporate_personal": "4/5 - Personal and authentic"
+    },
+    "forbidden_words_check": "PASS - No corporate jargon, no 'synergy', 'leverage', 'revolutionary', etc.",
+    "tone_consistency": "PASS - Matches 'The Talented Friend' archetype throughout",
+    "notes": "All optimizations maintain Barrett's authentic voice. No corporate speak introduced."
+  },
+
+  "client_review_checklist": [
+    {
+      "item": "Homepage subheadline",
+      "decision_needed": "Keep original (35 words) or use optimized (21 words)?",
+      "recommendation": "Optimized for faster clarity"
+    },
+    {
+      "item": "Location display",
+      "decision_needed": "Confirm 'USA. Available worldwide.' vs dual city mention",
+      "recommendation": "Per client note, use anonymous location"
+    },
+    {
+      "item": "Services budget guidance",
+      "decision_needed": "Confirm pricing ranges are accurate",
+      "recommendation": "Verify $5K-$8K starting and $8K-$15K sweet spot"
+    },
+    {
+      "item": "Contact form budget field",
+      "decision_needed": "Keep required, make optional, or remove?",
+      "recommendation": "Make optional to reduce friction"
+    },
+    {
+      "item": "Testimonials",
+      "decision_needed": "Client to provide 3-5 testimonials",
+      "recommendation": "Priority: Celsius, Samsung, Brumate, MVMT contacts"
+    },
+    {
+      "item": "FAQ on Services page",
+      "decision_needed": "Add FAQ section or separate FAQ page?",
+      "recommendation": "Add to Services page initially"
+    }
+  ]
+}

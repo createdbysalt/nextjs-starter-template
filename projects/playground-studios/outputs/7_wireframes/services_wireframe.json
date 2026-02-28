@@ -1,0 +1,552 @@
+{
+  "wireframe_metadata": {
+    "page_name": "Services",
+    "page_id": "services",
+    "url": "/services",
+    "priority": "MEDIUM",
+    "generated_date": "2026-01-17",
+    "based_on": {
+      "page_brief": "playground_studios_page_briefs.json → pages.services",
+      "component_specs": "playground_studios_component_specs.json"
+    }
+  },
+
+  "page_summary": {
+    "one_job": "Clarify offerings, help visitors self-qualify",
+    "target_awareness_level": "Solution-Aware",
+    "primary_conversion_goal": "Click to Contact",
+    "secondary_conversion_goal": "Click to Work (see examples)",
+    "total_sections": 4,
+    "cms_collections_used": ["Service"],
+    "estimated_elements": 50
+  },
+
+  "sections": [
+    {
+      "section_id": "services-intro",
+      "section_index": 1,
+      "section_name": "Intro",
+      "purpose": "Frame the offerings",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Brief intro: 'From concept to final delivery, we handle it all.' Full-service positioning."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_services-intro",
+        "attributes": [
+          { "name": "data-section", "value": "services-intro" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "services-intro_component",
+                        "layout": {
+                          "max_width": "800px"
+                        },
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h1",
+                            "class": "heading-style-h1",
+                            "content_slot": "page_title",
+                            "content_direction": "Services or What We Do"
+                          },
+                          {
+                            "element": "Paragraph",
+                            "class": "text-size-large services-intro_text",
+                            "content_slot": "intro_paragraph",
+                            "content_direction": "[From copy: Full-service positioning - concept to delivery]"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "services-list",
+      "section_index": 2,
+      "section_name": "Service Categories",
+      "purpose": "Organize and explain offerings",
+      "cms_binding": {
+        "collection": "Service",
+        "filter": "isActive = true",
+        "sort": "category, sortOrder ascending",
+        "grouping": "by category"
+      },
+      "from_page_brief": {
+        "content_direction": {
+          "creative_development": "Concept, story, positioning, mood boards",
+          "production": "Commercials, branded content, social, photography, studio work",
+          "post_production": "Editing, color grading, retouching, sound"
+        },
+        "notes": "Can link each category to relevant portfolio examples"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_services-list",
+        "attributes": [
+          { "name": "data-section", "value": "services-list" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-medium",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "services-list_component",
+                        "layout": {
+                          "type": "grid",
+                          "columns": 3,
+                          "gap": "48px",
+                          "responsive": {
+                            "tablet": "columns: 1",
+                            "mobile": "columns: 1"
+                          }
+                        },
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "services-category",
+                            "purpose": "Creative Development category",
+                            "children": [
+                              {
+                                "element": "Heading",
+                                "tag": "h2",
+                                "class": "heading-style-h3 services-category_title",
+                                "content_direction": "Creative Development"
+                              },
+                              {
+                                "element": "CollectionList",
+                                "class": "services-category_list w-dyn-items",
+                                "cms_binding": {
+                                  "collection": "Service",
+                                  "filter": "category = 'Creative Development'",
+                                  "sort": "sortOrder ascending"
+                                },
+                                "children": [
+                                  {
+                                    "element": "CollectionItem",
+                                    "class": "services-category_item w-dyn-item",
+                                    "children": [
+                                      {
+                                        "element": "DivBlock",
+                                        "class": "service-item",
+                                        "children": [
+                                          {
+                                            "element": "TextBlock",
+                                            "class": "service-item_name",
+                                            "cms_binding": "name"
+                                          },
+                                          {
+                                            "element": "TextBlock",
+                                            "class": "service-item_description text-style-muted",
+                                            "cms_binding": "shortDescription"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "services-category",
+                            "purpose": "Production category",
+                            "children": [
+                              {
+                                "element": "Heading",
+                                "tag": "h2",
+                                "class": "heading-style-h3 services-category_title",
+                                "content_direction": "Production"
+                              },
+                              {
+                                "element": "CollectionList",
+                                "class": "services-category_list w-dyn-items",
+                                "cms_binding": {
+                                  "collection": "Service",
+                                  "filter": "category = 'Production'",
+                                  "sort": "sortOrder ascending"
+                                },
+                                "children": [
+                                  {
+                                    "element": "CollectionItem",
+                                    "class": "services-category_item w-dyn-item",
+                                    "children": [
+                                      {
+                                        "element": "DivBlock",
+                                        "class": "service-item",
+                                        "children": [
+                                          {
+                                            "element": "TextBlock",
+                                            "class": "service-item_name",
+                                            "cms_binding": "name"
+                                          },
+                                          {
+                                            "element": "TextBlock",
+                                            "class": "service-item_description text-style-muted",
+                                            "cms_binding": "shortDescription"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "services-category",
+                            "purpose": "Post-Production category",
+                            "children": [
+                              {
+                                "element": "Heading",
+                                "tag": "h2",
+                                "class": "heading-style-h3 services-category_title",
+                                "content_direction": "Post-Production"
+                              },
+                              {
+                                "element": "CollectionList",
+                                "class": "services-category_list w-dyn-items",
+                                "cms_binding": {
+                                  "collection": "Service",
+                                  "filter": "category = 'Post-Production'",
+                                  "sort": "sortOrder ascending"
+                                },
+                                "children": [
+                                  {
+                                    "element": "CollectionItem",
+                                    "class": "services-category_item w-dyn-item",
+                                    "children": [
+                                      {
+                                        "element": "DivBlock",
+                                        "class": "service-item",
+                                        "children": [
+                                          {
+                                            "element": "TextBlock",
+                                            "class": "service-item_name",
+                                            "cms_binding": "name"
+                                          },
+                                          {
+                                            "element": "TextBlock",
+                                            "class": "service-item_description text-style-muted",
+                                            "cms_binding": "shortDescription"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      "alternative_implementation": {
+        "note": "If static approach preferred over CMS, use hardcoded lists",
+        "structure": "3-column grid with manually maintained service lists"
+      }
+    },
+
+    {
+      "section_id": "how-we-work",
+      "section_index": 3,
+      "section_name": "How We Work",
+      "purpose": "Set expectations, reduce friction",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Brief overview of typical process. Discovery → Production → Delivery.",
+        "notes": "Addresses 'what's it like to work together?' question"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_how-we-work",
+        "attributes": [
+          { "name": "data-section", "value": "how-we-work" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "how-we-work_component",
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "how-we-work_header",
+                            "layout": {
+                              "text_align": "center",
+                              "margin_bottom": "48px"
+                            },
+                            "children": [
+                              {
+                                "element": "Heading",
+                                "tag": "h2",
+                                "class": "heading-style-h2",
+                                "content_direction": "How We Work"
+                              },
+                              {
+                                "element": "Paragraph",
+                                "class": "text-size-regular text-style-muted",
+                                "content_direction": "A simple process designed for results."
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "how-we-work_timeline",
+                            "layout": {
+                              "type": "grid",
+                              "columns": 3,
+                              "gap": "32px"
+                            },
+                            "children": [
+                              {
+                                "element": "DivBlock",
+                                "class": "timeline_step",
+                                "children": [
+                                  {
+                                    "element": "TextBlock",
+                                    "class": "timeline_step-number",
+                                    "content_direction": "01"
+                                  },
+                                  {
+                                    "element": "Heading",
+                                    "tag": "h3",
+                                    "class": "heading-style-h4 timeline_step-title",
+                                    "content_direction": "Discovery"
+                                  },
+                                  {
+                                    "element": "Paragraph",
+                                    "class": "text-size-regular timeline_step-description",
+                                    "content_direction": "We learn about your brand, goals, and vision. No surprises later."
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "timeline_step",
+                                "children": [
+                                  {
+                                    "element": "TextBlock",
+                                    "class": "timeline_step-number",
+                                    "content_direction": "02"
+                                  },
+                                  {
+                                    "element": "Heading",
+                                    "tag": "h3",
+                                    "class": "heading-style-h4 timeline_step-title",
+                                    "content_direction": "Production"
+                                  },
+                                  {
+                                    "element": "Paragraph",
+                                    "class": "text-size-regular timeline_step-description",
+                                    "content_direction": "We bring the vision to life. Photography, video, whatever the project needs."
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "timeline_step",
+                                "children": [
+                                  {
+                                    "element": "TextBlock",
+                                    "class": "timeline_step-number",
+                                    "content_direction": "03"
+                                  },
+                                  {
+                                    "element": "Heading",
+                                    "tag": "h3",
+                                    "class": "heading-style-h4 timeline_step-title",
+                                    "content_direction": "Delivery"
+                                  },
+                                  {
+                                    "element": "Paragraph",
+                                    "class": "text-size-regular timeline_step-description",
+                                    "content_direction": "Polished assets delivered on time. Ready to use across all your channels."
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "contact-cta",
+      "section_index": 4,
+      "section_name": "Contact CTA",
+      "purpose": "Convert interested visitors",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "'Have a project in mind? Let's talk.'",
+        "cta": "Get in Touch"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_contact-cta is-dark",
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-medium",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "contact-cta_component",
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h2",
+                            "class": "heading-style-h2 text-color-white",
+                            "content_direction": "Have a project in mind?"
+                          },
+                          {
+                            "element": "LinkBlock",
+                            "class": "button is-inverse is-large",
+                            "content_direction": "Let's Talk",
+                            "link_to": "/contact"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "global_elements": {
+    "navigation": {
+      "included": true,
+      "current_page_indicator": "Services"
+    },
+    "footer": {
+      "included": true
+    }
+  },
+
+  "cms_collections_summary": [
+    {
+      "collection_name": "Service",
+      "used_in_sections": ["services-list"],
+      "fields_used": ["name", "shortDescription", "category"]
+    }
+  ],
+
+  "class_inventory": [
+    "section_services-intro",
+    "services-intro_component",
+    "services-intro_text",
+    "section_services-list",
+    "services-list_component",
+    "services-category",
+    "services-category_title",
+    "services-category_list",
+    "services-category_item",
+    "service-item",
+    "service-item_name",
+    "service-item_description",
+    "section_how-we-work",
+    "how-we-work_component",
+    "how-we-work_header",
+    "how-we-work_timeline",
+    "timeline_step",
+    "timeline_step-number",
+    "timeline_step-title",
+    "timeline_step-description",
+    "section_contact-cta",
+    "contact-cta_component",
+    "padding-global",
+    "container-large",
+    "container-medium",
+    "padding-section-medium",
+    "padding-section-large",
+    "heading-style-h1",
+    "heading-style-h2",
+    "heading-style-h3",
+    "heading-style-h4",
+    "text-size-regular",
+    "text-size-large",
+    "text-style-muted",
+    "text-color-white",
+    "button",
+    "is-inverse",
+    "is-large",
+    "is-dark"
+  ]
+}

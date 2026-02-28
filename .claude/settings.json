@@ -8,7 +8,7 @@
     "commit-commands@claude-plugins-official": true,
     "github@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
-    "ralph-loop@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": false,
     "frontend-design@claude-code-plugins": true
   },
   "hooks": {
@@ -16,6 +16,10 @@
       {
         "matcher": "Write|Edit|MultiEdit|Bash",
         "hooks": [{ "type": "command", "command": ".claude/hooks/protect-main.sh" }]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [{ "type": "command", "command": ".claude/hooks/block-heredoc-writes.sh" }]
       }
     ],
     "PostToolUse": [

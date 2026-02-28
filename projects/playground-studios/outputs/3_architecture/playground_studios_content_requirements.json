@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0"
+  },
+
+  "content_inventory": {
+    "copy_requirements": {
+      "homepage": {
+        "headline": {
+          "direction": "Aspirational, communicates creative production. Options from approved copy: 'Where Imagination Meets Reality', 'Play, Innovate, Create'",
+          "length": "3-8 words",
+          "status": "DRAFT EXISTS"
+        },
+        "subhead": {
+          "direction": "Brief value prop - what Playground does",
+          "length": "15-25 words",
+          "status": "NEEDS WRITING"
+        },
+        "intro_blurb": {
+          "direction": "Warm intro to studio. Conversational, not corporate.",
+          "length": "2-3 sentences",
+          "status": "DRAFT EXISTS - adapt from website copy"
+        },
+        "ctas": ["View Work", "Let's Talk"],
+        "status": "NEEDS WRITING"
+      },
+      "work": {
+        "page_intro": {
+          "direction": "Brief line about approach to work. Optional.",
+          "length": "1-2 sentences",
+          "status": "OPTIONAL"
+        },
+        "category_labels": ["All", "Brand", "Hospitality", "Studio"],
+        "cta": "Get in Touch",
+        "status": "NEEDS WRITING"
+      },
+      "work_detail": {
+        "template_copy": {
+          "direction": "Contact CTA copy, next project transition",
+          "status": "NEEDS WRITING"
+        },
+        "per_project": {
+          "fields": ["title", "description", "services_provided"],
+          "status": "BARRETT TO PROVIDE per project"
+        }
+      },
+      "about": {
+        "origin_story": {
+          "direction": "The playground walk story",
+          "length": "2-3 paragraphs",
+          "status": "DRAFT EXISTS - approved website copy"
+        },
+        "process_philosophy": {
+          "direction": "Play on Set → Get in the Box → Go Home explanation",
+          "status": "DRAFT EXISTS - needs polish"
+        },
+        "founder_bio": {
+          "direction": "Barrett's background, approach, personality",
+          "length": "1-2 paragraphs",
+          "status": "DRAFT EXISTS - adapt from website copy"
+        },
+        "values": {
+          "direction": "'No bullying. No bullshit.' section",
+          "status": "DRAFT EXISTS"
+        },
+        "status": "MOSTLY COMPLETE - needs adaptation"
+      },
+      "services": {
+        "intro": {
+          "direction": "Full-service positioning statement",
+          "length": "2-3 sentences",
+          "status": "NEEDS WRITING"
+        },
+        "service_descriptions": {
+          "creative_development": "1-2 sentences",
+          "production": "1-2 sentences",
+          "post_production": "1-2 sentences",
+          "status": "DRAFT EXISTS - adapt from website copy"
+        },
+        "process_overview": {
+          "direction": "How engagement typically works",
+          "status": "NEEDS WRITING"
+        },
+        "budget_guidance": {
+          "direction": "Soft indication of project ranges",
+          "status": "OPTIONAL - per client preference"
+        }
+      },
+      "contact": {
+        "headline": {
+          "direction": "Warm, inviting",
+          "options": ["Let's Make Something Great", "Start a Project", "Get in Touch"],
+          "status": "NEEDS SELECTION"
+        },
+        "form_labels": "Standard form field labels",
+        "expectations_copy": {
+          "direction": "What happens after submission",
+          "status": "NEEDS WRITING"
+        },
+        "location_line": {
+          "direction": "Dual location mention",
+          "example": "Based in Louisville & Portland. Available nationwide.",
+          "status": "NEEDS WRITING"
+        }
+      }
+    },
+
+    "image_requirements": {
+      "homepage": {
+        "hero_image_or_video": {
+          "spec": "Full-bleed, high-impact portfolio piece",
+          "format": "Image or video reel",
+          "status": "BARRETT TO SELECT"
+        },
+        "client_logos": {
+          "needed": ["Celsius", "Brumate", "Samsung", "Kendra Scott", "MVMT", "Liquid IV", "Michelob Ultra", "Bulletproof"],
+          "format": "SVG or high-res PNG, monochrome preferred",
+          "status": "NEED TO CONFIRM USAGE RIGHTS"
+        },
+        "featured_work_images": {
+          "count": "3-6 projects",
+          "spec": "Consistent aspect ratio, best work",
+          "status": "BARRETT TO SELECT"
+        }
+      },
+      "work_grid": {
+        "project_thumbnails": {
+          "spec": "Consistent aspect ratio (16:9 or square)",
+          "count": "All portfolio projects",
+          "status": "BARRETT TO PROVIDE"
+        }
+      },
+      "work_detail": {
+        "per_project": {
+          "hero_image": "1 per project",
+          "gallery_images": "6-15 per project",
+          "status": "BARRETT TO PROVIDE"
+        }
+      },
+      "about": {
+        "founder_headshot": {
+          "spec": "Professional but approachable",
+          "status": "NEEDS UPDATED PHOTO (flagged in missing info)"
+        },
+        "behind_the_scenes": {
+          "spec": "Optional BTS imagery",
+          "status": "NICE TO HAVE"
+        }
+      }
+    },
+
+    "proof_elements": {
+      "client_logos": {
+        "confirmed": ["Celsius", "Brumate", "Bulletproof", "Samsung", "Kendra Scott", "MVMT", "Liquid IV", "Michelob Ultra"],
+        "status": "NEED LOGO FILES + CONFIRM USAGE PERMISSION"
+      },
+      "testimonials": {
+        "status": "MISSING - flagged as high priority gap",
+        "action": "Barrett to request from past clients",
+        "ideal": "3-5 quotes with name, title, company"
+      },
+      "results_metrics": {
+        "status": "MISSING - nice to have",
+        "examples": "Campaign performance, engagement metrics, etc."
+      }
+    }
+  },
+
+  "cms_content": {
+    "projects_collection": {
+      "minimum_at_launch": "6-10 projects",
+      "ideal": "12-15 projects",
+      "per_project_needs": {
+        "required": [
+          "Project title",
+          "Client name",
+          "Hero image",
+          "2-3 sentence description",
+          "Category",
+          "6+ gallery images"
+        ],
+        "optional": [
+          "Services provided tags",
+          "Year",
+          "Results/outcomes"
+        ]
+      },
+      "status": "BARRETT TO PREPARE - inventory in progress"
+    }
+  },
+
+  "content_gaps_summary": {
+    "critical": [
+      {
+        "item": "Portfolio images (organized by project)",
+        "owner": "Barrett",
+        "status": "In progress - compressing for web"
+      },
+      {
+        "item": "Client logo files + usage confirmation",
+        "owner": "Barrett",
+        "status": "Needs action"
+      }
+    ],
+    "high": [
+      {
+        "item": "Testimonials",
+        "owner": "Barrett (outreach to clients)",
+        "status": "Needs action"
+      },
+      {
+        "item": "Updated founder headshot",
+        "owner": "Barrett",
+        "status": "Needs action"
+      }
+    ],
+    "medium": [
+      {
+        "item": "Project descriptions (per portfolio piece)",
+        "owner": "Barrett or copywriter",
+        "status": "Needs writing"
+      }
+    ],
+    "low": [
+      {
+        "item": "Behind-the-scenes imagery",
+        "owner": "Barrett",
+        "status": "Nice to have"
+      }
+    ]
+  },
+
+  "copy_source_status": {
+    "website_copy_draft": {
+      "location": "inputs/Playground Studios Website Copy.md",
+      "status": "EXISTS - approved tone, needs adaptation for final pages",
+      "usable_sections": [
+        "Origin story",
+        "Process philosophy (Play on Set, etc.)",
+        "Values section",
+        "Service descriptions",
+        "Barrett bio"
+      ]
+    }
+  }
+}

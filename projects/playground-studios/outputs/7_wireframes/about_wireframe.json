@@ -1,0 +1,534 @@
+{
+  "wireframe_metadata": {
+    "page_name": "About",
+    "page_id": "about",
+    "url": "/about",
+    "priority": "HIGH",
+    "generated_date": "2026-01-17",
+    "based_on": {
+      "page_brief": "playground_studios_page_briefs.json → pages.about",
+      "component_specs": "playground_studios_component_specs.json"
+    }
+  },
+
+  "page_summary": {
+    "one_job": "Humanize the studio, build trust and connection",
+    "target_awareness_level": "Product-Aware (considering Playground specifically)",
+    "primary_conversion_goal": "Click to Contact",
+    "secondary_conversion_goal": "Return to Work",
+    "total_sections": 5,
+    "cms_collections_used": [],
+    "cms_note": "About is brand-centric static content. CMS not needed.",
+    "estimated_elements": 55
+  },
+
+  "sections": [
+    {
+      "section_id": "hero-intro",
+      "section_index": 1,
+      "section_name": "Hero/Intro",
+      "purpose": "Set tone, introduce the studio",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Origin story hook. The playground walk in Portland. 'Where imagination meets reality.'",
+        "notes": "This is where the brand personality shines. Authentic, not corporate."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_about-hero",
+        "attributes": [
+          { "name": "data-section", "value": "about-hero" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "about-hero_component",
+                        "layout": {
+                          "max_width": "900px"
+                        },
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h1",
+                            "class": "heading-style-display about-hero_headline",
+                            "content_slot": "hero_headline",
+                            "content": "Where Imagination Meets Reality"
+                          },
+                          {
+                            "element": "Paragraph",
+                            "class": "text-size-large about-hero_intro",
+                            "content_slot": "hero_intro",
+                            "content": "We're Playground Studios. We create content that moves."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "origin-story",
+      "section_index": 2,
+      "section_name": "Origin Story",
+      "purpose": "Build emotional connection",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "The playground story - watching kids play, remembering boundless creativity, channeling that into professional work.",
+        "source": "Website copy draft already exists"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_origin-story",
+        "attributes": [
+          { "name": "data-section", "value": "origin-story" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-medium",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-medium",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "origin-story_component",
+                        "layout": {
+                          "type": "grid",
+                          "columns": "1fr 1fr",
+                          "gap": "64px",
+                          "responsive": {
+                            "tablet": "stacked"
+                          }
+                        },
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "origin-story_content",
+                            "children": [
+                              {
+                                "element": "RichText",
+                                "class": "origin-story_text",
+                                "content_slot": "origin_story",
+                                "content_direction": "[From approved copy: The full origin story - Portland playground, watching kids, boundless imagination, channeling into work]",
+                                "styling_note": "Body large, generous line-height (1.7)"
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "origin-story_image-wrapper",
+                            "children": [
+                              {
+                                "element": "Image",
+                                "class": "origin-story_image",
+                                "content_slot": "origin_story_image",
+                                "content_direction": "[Evocative image - could be abstract, playground-related, or creative process]"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "process-philosophy",
+      "section_index": 3,
+      "section_name": "Process/Philosophy",
+      "purpose": "Differentiate, set expectations",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Play on Set → Get in the Box → Go Home. The three-step philosophy.",
+        "notes": "This is unique to Playground. Lean into it."
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_process",
+        "attributes": [
+          { "name": "data-section", "value": "process" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "process_component",
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "process_header",
+                            "layout": {
+                              "text_align": "center",
+                              "margin_bottom": "64px"
+                            },
+                            "children": [
+                              {
+                                "element": "Heading",
+                                "tag": "h2",
+                                "class": "heading-style-h2",
+                                "content_slot": "process_heading",
+                                "content_direction": "Our Process or How We Work"
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "process_steps",
+                            "layout": {
+                              "type": "grid",
+                              "columns": 3,
+                              "gap": "48px",
+                              "responsive": {
+                                "tablet": "stacked"
+                              }
+                            },
+                            "children": [
+                              {
+                                "element": "DivBlock",
+                                "class": "process_step",
+                                "children": [
+                                  {
+                                    "element": "TextBlock",
+                                    "class": "process_step-number",
+                                    "content_direction": "01",
+                                    "styling_note": "Large, subtle, decorative"
+                                  },
+                                  {
+                                    "element": "Heading",
+                                    "tag": "h3",
+                                    "class": "heading-style-h4 process_step-title",
+                                    "content_direction": "Play on Set"
+                                  },
+                                  {
+                                    "element": "Paragraph",
+                                    "class": "text-size-regular process_step-description",
+                                    "content_direction": "Blue sky imagination. No limits. No budget. Dream. This is where ideas are born."
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "process_step",
+                                "children": [
+                                  {
+                                    "element": "TextBlock",
+                                    "class": "process_step-number",
+                                    "content_direction": "02"
+                                  },
+                                  {
+                                    "element": "Heading",
+                                    "tag": "h3",
+                                    "class": "heading-style-h4 process_step-title",
+                                    "content_direction": "Get in the Box"
+                                  },
+                                  {
+                                    "element": "Paragraph",
+                                    "class": "text-size-regular process_step-description",
+                                    "content_direction": "Take the ideas and bring them into frame. Create within the borders. Leverage limitations to fuel focus."
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "DivBlock",
+                                "class": "process_step",
+                                "children": [
+                                  {
+                                    "element": "TextBlock",
+                                    "class": "process_step-number",
+                                    "content_direction": "03"
+                                  },
+                                  {
+                                    "element": "Heading",
+                                    "tag": "h3",
+                                    "class": "heading-style-h4 process_step-title",
+                                    "content_direction": "Go Home"
+                                  },
+                                  {
+                                    "element": "Paragraph",
+                                    "class": "text-size-regular process_step-description",
+                                    "content_direction": "Leave with a product you are proud of. Deliver work that exceeds expectations."
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      "animation_plan": [
+        {
+          "element": "process_step",
+          "animation": "Stagger fade-up on scroll",
+          "implementation": "Webflow IX2"
+        }
+      ]
+    },
+
+    {
+      "section_id": "founder-bio",
+      "section_index": 4,
+      "section_name": "Founder Bio",
+      "purpose": "Put a face to the brand",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "Photo of Barrett + brief bio. Background, approach, personality.",
+        "notes": "Needs updated headshot (flagged in missing info)"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_founder",
+        "attributes": [
+          { "name": "data-section", "value": "founder" }
+        ],
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-large",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "founder_component",
+                        "layout": {
+                          "type": "grid",
+                          "columns": "1fr 2fr",
+                          "gap": "64px",
+                          "responsive": {
+                            "tablet": "stacked"
+                          }
+                        },
+                        "children": [
+                          {
+                            "element": "DivBlock",
+                            "class": "founder_image-wrapper",
+                            "children": [
+                              {
+                                "element": "Image",
+                                "class": "founder_image",
+                                "content_slot": "founder_headshot",
+                                "content_direction": "[Professional but approachable headshot of Barrett - NEEDS UPDATE]",
+                                "styling_note": "Square or 3:4 aspect ratio"
+                              }
+                            ]
+                          },
+                          {
+                            "element": "DivBlock",
+                            "class": "founder_content",
+                            "children": [
+                              {
+                                "element": "Heading",
+                                "tag": "h2",
+                                "class": "heading-style-h3 founder_name",
+                                "content_direction": "Barrett Shutt"
+                              },
+                              {
+                                "element": "TextBlock",
+                                "class": "text-size-regular text-style-muted founder_title",
+                                "content_direction": "Founder / Creative Director"
+                              },
+                              {
+                                "element": "RichText",
+                                "class": "founder_bio",
+                                "content_slot": "founder_bio",
+                                "content_direction": "[From copy: 1-2 paragraphs about Barrett - background, approach, personality]",
+                                "styling_note": "Body regular, max-width for readability"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "section_id": "contact-cta",
+      "section_index": 5,
+      "section_name": "Contact CTA",
+      "purpose": "Convert those who connected with the story",
+      "cms_binding": null,
+      "from_page_brief": {
+        "content_direction": "'Let's create something together.'",
+        "cta": "Get in Touch"
+      },
+
+      "element_tree": {
+        "element": "Section",
+        "class": "section_contact-cta is-dark",
+        "note": "Reuses standard CTA section component",
+        "children": [
+          {
+            "element": "DivBlock",
+            "class": "padding-global",
+            "children": [
+              {
+                "element": "Container",
+                "class": "container-medium",
+                "children": [
+                  {
+                    "element": "DivBlock",
+                    "class": "padding-section-large",
+                    "children": [
+                      {
+                        "element": "DivBlock",
+                        "class": "contact-cta_component",
+                        "children": [
+                          {
+                            "element": "Heading",
+                            "tag": "h2",
+                            "class": "heading-style-h2 text-color-white",
+                            "content_slot": "cta_headline",
+                            "content_direction": "Let's create something together."
+                          },
+                          {
+                            "element": "LinkBlock",
+                            "class": "button is-inverse is-large",
+                            "content_direction": "Get in Touch",
+                            "link_to": "/contact"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "global_elements": {
+    "navigation": {
+      "included": true,
+      "current_page_indicator": "About"
+    },
+    "footer": {
+      "included": true
+    }
+  },
+
+  "static_content_needed": [
+    "Hero headline and intro paragraph",
+    "Full origin story text (from approved copy)",
+    "Origin story supporting image",
+    "Process step descriptions (have from DNA)",
+    "Founder bio paragraphs",
+    "Updated founder headshot (flagged as missing)"
+  ],
+
+  "class_inventory": [
+    "section_about-hero",
+    "about-hero_component",
+    "about-hero_headline",
+    "about-hero_intro",
+    "section_origin-story",
+    "origin-story_component",
+    "origin-story_content",
+    "origin-story_text",
+    "origin-story_image-wrapper",
+    "origin-story_image",
+    "section_process",
+    "process_component",
+    "process_header",
+    "process_steps",
+    "process_step",
+    "process_step-number",
+    "process_step-title",
+    "process_step-description",
+    "section_founder",
+    "founder_component",
+    "founder_image-wrapper",
+    "founder_image",
+    "founder_content",
+    "founder_name",
+    "founder_title",
+    "founder_bio",
+    "section_contact-cta",
+    "contact-cta_component",
+    "padding-global",
+    "container-large",
+    "container-medium",
+    "padding-section-medium",
+    "padding-section-large",
+    "heading-style-display",
+    "heading-style-h2",
+    "heading-style-h3",
+    "heading-style-h4",
+    "text-size-regular",
+    "text-size-large",
+    "text-style-muted",
+    "text-color-white",
+    "button",
+    "is-inverse",
+    "is-large",
+    "is-dark"
+  ]
+}

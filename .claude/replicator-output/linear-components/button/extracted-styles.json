@@ -1,0 +1,159 @@
+{
+  "component": "LinearButton",
+  "source": "https://linear.app/homepage",
+  "extractedAt": "2026-01-31",
+  "viewports": [1440, 768, 375],
+
+  "variants": {
+    "invert": {
+      "description": "Primary CTA - Light button for dark backgrounds",
+      "cssClass": "Button-module__variant-invert",
+      "typography": {
+        "fontFamily": "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+        "fontWeight": 510,
+        "letterSpacing": "normal"
+      },
+      "colors": {
+        "backgroundColor": "rgb(230, 230, 230)",
+        "color": "rgb(8, 9, 10)",
+        "borderColor": "rgb(230, 230, 230)"
+      },
+      "border": "1px solid rgb(230, 230, 230)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+      "transition": "border 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "tailwindMapping": {
+        "bg": "bg-[rgb(230,230,230)]",
+        "text": "text-[rgb(8,9,10)]",
+        "border": "border border-[rgb(230,230,230)]",
+        "shadow": "shadow-[0px_0px_1px_0px_rgba(0,0,0,0.08),0px_1px_1px_0px_rgba(0,0,0,0.07),0px_3px_2px_0px_rgba(0,0,0,0.04),0px_5px_2px_0px_rgba(0,0,0,0.01)]",
+        "transition": "transition-[border,background-color,color,box-shadow,opacity,transform] duration-[160ms]"
+      }
+    },
+
+    "secondary": {
+      "description": "Secondary CTA - Dark button",
+      "cssClass": "Button-module__variant-secondary",
+      "typography": {
+        "fontFamily": "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+        "fontWeight": 510,
+        "letterSpacing": "normal"
+      },
+      "colors": {
+        "backgroundColor": "rgb(40, 40, 44)",
+        "color": "rgb(247, 248, 248)",
+        "borderColor": "rgb(62, 62, 68)"
+      },
+      "border": "1px solid rgb(62, 62, 68)",
+      "boxShadow": "none",
+      "transition": "border 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "tailwindMapping": {
+        "bg": "bg-[rgb(40,40,44)]",
+        "text": "text-[rgb(247,248,248)]",
+        "border": "border border-[rgb(62,62,68)]",
+        "shadow": "shadow-none",
+        "transition": "transition-[border,background-color,color,box-shadow,opacity,transform] duration-[160ms]"
+      }
+    },
+
+    "ghost": {
+      "description": "Ghost/Nav links - Transparent background",
+      "cssClass": "Header-module__anchor",
+      "typography": {
+        "fontFamily": "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+        "fontWeight": 510,
+        "letterSpacing": "normal"
+      },
+      "colors": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(138, 143, 152)",
+        "borderColor": "transparent"
+      },
+      "border": "none",
+      "boxShadow": "none",
+      "transition": "color 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "tailwindMapping": {
+        "bg": "bg-transparent",
+        "text": "text-[rgb(138,143,152)]",
+        "border": "border-0",
+        "transition": "transition-[color,background] duration-[100ms]"
+      }
+    }
+  },
+
+  "sizes": {
+    "small": {
+      "description": "Navigation/Nav buttons",
+      "cssClass": "Button-module__size-small",
+      "dimensions": {
+        "height": "32px",
+        "minWidth": "auto"
+      },
+      "typography": {
+        "fontSize": "13px",
+        "lineHeight": "32px"
+      },
+      "spacing": {
+        "paddingTop": "0px",
+        "paddingRight": "12px",
+        "paddingBottom": "0px",
+        "paddingLeft": "12px",
+        "gap": "8px"
+      },
+      "borderRadius": "8px",
+      "tailwindMapping": {
+        "height": "h-8",
+        "fontSize": "text-[13px]",
+        "lineHeight": "leading-8",
+        "padding": "px-3",
+        "borderRadius": "rounded-lg",
+        "gap": "gap-2"
+      }
+    },
+
+    "default": {
+      "description": "Primary CTA buttons",
+      "cssClass": "Button-module__size-default",
+      "dimensions": {
+        "height": "40px",
+        "minWidth": "auto"
+      },
+      "typography": {
+        "fontSize": "15px",
+        "lineHeight": "40px"
+      },
+      "spacing": {
+        "paddingTop": "0px",
+        "paddingRight": "16px",
+        "paddingBottom": "0px",
+        "paddingLeft": "16px",
+        "gap": "6px"
+      },
+      "borderRadius": "10px",
+      "tailwindMapping": {
+        "height": "h-10",
+        "fontSize": "text-[15px]",
+        "lineHeight": "leading-10",
+        "padding": "px-4",
+        "borderRadius": "rounded-[10px]",
+        "gap": "gap-1.5"
+      }
+    }
+  },
+
+  "interactions": {
+    "cursor": "pointer",
+    "activeScale": 0.98,
+    "disabledOpacity": 0.5
+  },
+
+  "layout": {
+    "display": "flex",
+    "alignItems": "center",
+    "justifyContent": "center"
+  },
+
+  "easing": {
+    "default": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+    "description": "Linear's custom easing curve - smooth ease-out"
+  }
+}

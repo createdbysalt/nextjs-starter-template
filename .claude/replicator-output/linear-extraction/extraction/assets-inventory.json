@@ -1,0 +1,154 @@
+{
+  "url": "https://linear.app",
+  "extractedAt": "2026-01-31T12:00:00Z",
+
+  "fonts": {
+    "primary": {
+      "name": "Inter Variable",
+      "source": "Google Fonts / Self-hosted variable font",
+      "weights": [400, 510, 538],
+      "features": ["cv01", "ss03"],
+      "notes": "Linear uses Inter's variable font with specific font-feature-settings for refined appearance"
+    },
+    "mono": {
+      "name": "Berkeley Mono",
+      "source": "Commercial / Self-hosted",
+      "weights": [400],
+      "notes": "Used for code snippets, issue IDs, and technical content"
+    }
+  },
+
+  "images": {
+    "hero": [
+      {
+        "description": "Linear app screenshot showing inbox and issue detail",
+        "format": "WebP/PNG",
+        "location": "Hero section",
+        "aspectRatio": "16:10 approximately"
+      }
+    ],
+    "logos": [
+      {
+        "name": "Linear Logo",
+        "usage": "Navigation header and footer",
+        "format": "SVG",
+        "variants": ["Light (for dark background)"]
+      },
+      {
+        "name": "Customer logos",
+        "usage": "Social proof section",
+        "format": "SVG/PNG",
+        "examples": ["Vercel", "Ramp", "Alan", "Retool", "Loom", "Arc", "Raycast", "Runway"]
+      }
+    ],
+    "icons": {
+      "navigation": ["Chevron arrows", "External link arrows"],
+      "features": ["AI/Agent icons", "Project icons", "Status indicators"],
+      "format": "SVG (inline)"
+    }
+  },
+
+  "svgAssets": [
+    {
+      "name": "Arrow icons",
+      "usage": "CTA buttons, links",
+      "style": "Stroke-based, 16x16 or 20x20"
+    },
+    {
+      "name": "Status icons",
+      "usage": "Progress indicators, project health",
+      "colors": ["Green (on track)", "Yellow (at risk)", "Red (off track)"]
+    },
+    {
+      "name": "Feature icons",
+      "usage": "Feature cards and sections",
+      "style": "Line/outline style, monochrome with accent colors"
+    }
+  ],
+
+  "illustrations": [
+    {
+      "description": "Roadmap view screenshot",
+      "location": "Plan section",
+      "type": "Product screenshot"
+    },
+    {
+      "description": "Issue board view",
+      "location": "Build section",
+      "type": "Product screenshot"
+    },
+    {
+      "description": "Cycle analytics chart",
+      "location": "Insights section",
+      "type": "Product screenshot/chart"
+    }
+  ],
+
+  "animations": {
+    "transitions": [
+      {
+        "name": "Button hover",
+        "duration": "0.16s",
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "properties": ["background-color", "color", "box-shadow", "transform"]
+      },
+      {
+        "name": "Card hover",
+        "duration": "0.2s",
+        "easing": "ease-out",
+        "properties": ["background"]
+      },
+      {
+        "name": "Link hover",
+        "duration": "0.1s",
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "properties": ["color", "background"]
+      },
+      {
+        "name": "Opacity fade",
+        "duration": "0.32s",
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "properties": ["opacity"]
+      }
+    ],
+    "microInteractions": [
+      {
+        "name": "Hero text animation",
+        "type": "Word-by-word reveal",
+        "notes": "Text appears progressively on page load"
+      }
+    ]
+  },
+
+  "colorPalette": {
+    "backgrounds": {
+      "primary": "#08090A",
+      "secondary": "#141516",
+      "tertiary": "#1C1C1F",
+      "elevated": "#232326",
+      "surface": "#28282C"
+    },
+    "text": {
+      "primary": "#F7F8F8",
+      "secondary": "#D0D6E0",
+      "muted": "#8A8F98",
+      "disabled": "#626669"
+    },
+    "accents": {
+      "purple": "#5E6AD2",
+      "violet": "#B59AFF",
+      "cyan": "#02B8CC",
+      "green": "#68CC58",
+      "yellow": "#DEB949",
+      "orange": "#F2994A",
+      "red": "#EC6A5E"
+    }
+  },
+
+  "recommendedAssets": [
+    "Inter Variable font (Google Fonts or self-hosted)",
+    "Berkeley Mono font (commercial license required)",
+    "Custom SVG icons matching Linear's stroke-based style",
+    "Dark mode only - Linear does not have a light theme on marketing site"
+  ]
+}

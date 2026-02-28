@@ -1,0 +1,503 @@
+{
+  "source": "https://linear.app",
+  "extractedAt": "2026-01-31T12:00:00Z",
+  "patterns": [
+    {
+      "name": "Command Palette Open/Close",
+      "element": ".CommandMenu (Cmd+K dialog)",
+      "description": "Scale and fade animation for command palette modal",
+      "animations": {
+        "open": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "translate(-50%) scale(0.96)" },
+            "to": { "opacity": 1, "transform": "translate(-50%) scale(1)" }
+          },
+          "duration": "150ms",
+          "easing": "ease-out"
+        },
+        "close": {
+          "keyframes": {
+            "from": { "opacity": 1, "transform": "translate(-50%) scale(1)" },
+            "to": { "opacity": 0, "transform": "translate(-50%) scale(0.96)" }
+          },
+          "duration": "100ms",
+          "easing": "ease-out"
+        },
+        "bounce": {
+          "description": "Subtle bounce when hitting boundary",
+          "keyframes": {
+            "50%": { "transform": "translate(-50%) scale(0.98)" }
+          }
+        },
+        "backdrop": {
+          "property": "opacity",
+          "from": 0,
+          "to": 1,
+          "duration": "150ms",
+          "easing": "ease-out"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.96, "x": "-50%" },
+        "animate": { "opacity": 1, "scale": 1, "x": "-50%" },
+        "exit": { "opacity": 0, "scale": 0.96, "x": "-50%" },
+        "transition": {
+          "duration": 0.15,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "name": "Button Hover State",
+      "element": ".Button-module (Primary/Secondary buttons)",
+      "description": "Multi-property transition for button interactions",
+      "animations": {
+        "property": "border, background-color, color, box-shadow, opacity, filter, transform",
+        "duration": "160ms",
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "framerMotion": {
+        "whileHover": { "scale": 1.02, "filter": "brightness(1.1)" },
+        "whileTap": { "scale": 0.98 },
+        "transition": {
+          "duration": 0.16,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "name": "Navigation Link Hover",
+      "element": ".Header-module__anchor (Nav links)",
+      "description": "Color and background transition for navigation links",
+      "animations": {
+        "property": "color, background",
+        "duration": "100ms",
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "framerMotion": {
+        "whileHover": { "color": "#f7f8f8", "backgroundColor": "rgba(255,255,255,0.05)" },
+        "transition": {
+          "duration": 0.1,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "name": "Feature Card Hover",
+      "element": ".WorkflowCard-module (Feature cards)",
+      "description": "Transform and filter transition for card hover effects",
+      "animations": {
+        "property": "filter, transform",
+        "duration": "200ms, 160ms",
+        "easing": "ease-out, cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "framerMotion": {
+        "whileHover": { "y": -4, "filter": "brightness(1.05)" },
+        "transition": {
+          "duration": 0.2,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "name": "Modal Open Transition",
+      "element": ".Dialog-module (Modal dialogs)",
+      "description": "Scale and fade animation for modal dialogs",
+      "animations": {
+        "open": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "translate(-50%, -49%) scale(0.95)" },
+            "to": { "opacity": 1, "transform": "translate(-50%, -50%)" }
+          },
+          "duration": "200ms",
+          "easing": "ease-out"
+        },
+        "close": {
+          "keyframes": {
+            "from": { "opacity": 1, "transform": "translate(-50%, -50%)" },
+            "to": { "opacity": 0, "transform": "translate(-50%, -49%) scale(0.95)" }
+          },
+          "duration": "150ms",
+          "easing": "ease-out"
+        },
+        "backdrop": {
+          "property": "opacity",
+          "from": 0,
+          "to": 1,
+          "duration": "200ms"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.95, "y": "-49%", "x": "-50%" },
+        "animate": { "opacity": 1, "scale": 1, "y": "-50%", "x": "-50%" },
+        "exit": { "opacity": 0, "scale": 0.95, "y": "-49%", "x": "-50%" },
+        "transition": {
+          "duration": 0.2,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "name": "Toast Notification Enter/Exit",
+      "element": "sonner toast (Toast notifications)",
+      "description": "Scale and fade animation for toast notifications",
+      "animations": {
+        "enter": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "scale(0.8)" },
+            "to": { "opacity": 1, "transform": "scale(1)" }
+          },
+          "duration": "200ms",
+          "easing": "ease-out"
+        },
+        "exit": {
+          "keyframes": {
+            "from": { "opacity": 1, "transform": "scale(1)" },
+            "to": { "opacity": 0, "transform": "scale(0.8)" }
+          },
+          "duration": "150ms",
+          "easing": "ease-in"
+        },
+        "swipeOut": {
+          "description": "Swipe dismissal animations",
+          "variants": ["swipe-out-left", "swipe-out-right", "swipe-out-up", "swipe-out-down"]
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.8, "y": 20 },
+        "animate": { "opacity": 1, "scale": 1, "y": 0 },
+        "exit": { "opacity": 0, "scale": 0.8, "y": 20 },
+        "transition": {
+          "duration": 0.2,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "name": "Sidebar Collapse Animation",
+      "element": ".Collapsible-module (Accordion/sidebar sections)",
+      "description": "Height and opacity animation for collapsible sections",
+      "animations": {
+        "expand": {
+          "keyframes": {
+            "from": { "opacity": 0, "height": "0px", "transform": "translateY(-8px)" },
+            "to": { "opacity": 1, "height": "var(--radix-collapsible-content-height)", "transform": "none" }
+          },
+          "duration": "250ms",
+          "easing": "ease-out"
+        },
+        "collapse": {
+          "keyframes": {
+            "from": { "opacity": 1, "height": "var(--radix-collapsible-content-height)", "transform": "none" },
+            "to": { "opacity": 0, "height": "0px", "transform": "translateY(-8px)" }
+          },
+          "duration": "200ms",
+          "easing": "ease-in"
+        },
+        "chevron": {
+          "property": "transform",
+          "duration": "120ms",
+          "easing": "ease"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "height": 0, "y": -8 },
+        "animate": { "opacity": 1, "height": "auto", "y": 0 },
+        "exit": { "opacity": 0, "height": 0, "y": -8 },
+        "transition": {
+          "duration": 0.25,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "name": "Dropdown Menu",
+      "element": ".DropdownMenu-module",
+      "description": "Scale and fade animation for dropdown menus",
+      "animations": {
+        "enter": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "scale(0.95)" },
+            "to": { "opacity": 1, "transform": "scale(1)" }
+          },
+          "duration": "150ms",
+          "easing": "ease-out"
+        },
+        "exit": {
+          "keyframes": {
+            "from": { "opacity": 1, "transform": "scale(1)" },
+            "to": { "opacity": 0, "transform": "scale(0.95)" }
+          },
+          "duration": "100ms",
+          "easing": "ease-in"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.95 },
+        "animate": { "opacity": 1, "scale": 1 },
+        "exit": { "opacity": 0, "scale": 0.95 },
+        "transition": {
+          "duration": 0.15,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "name": "Context Menu",
+      "element": ".ContextMenu-module",
+      "description": "Scale and fade animation for context menus",
+      "animations": {
+        "open": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "scale(0.9)" },
+            "to": { "opacity": 1, "transform": "scale(1)" }
+          },
+          "duration": "120ms",
+          "easing": "ease-out"
+        },
+        "close": {
+          "keyframes": {
+            "from": { "opacity": 1, "transform": "scale(1)" },
+            "to": { "opacity": 0, "transform": "scale(0.9)" }
+          },
+          "duration": "100ms",
+          "easing": "ease-out"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.9 },
+        "animate": { "opacity": 1, "scale": 1 },
+        "exit": { "opacity": 0, "scale": 0.9 },
+        "transition": {
+          "duration": 0.12,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "name": "Tooltip",
+      "element": ".Tooltip-module",
+      "description": "Scale and fade animation for tooltips",
+      "animations": {
+        "open": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "scale(0.9)" },
+            "to": { "opacity": 1, "transform": "scale(1)" }
+          },
+          "duration": "150ms",
+          "easing": "ease-out"
+        },
+        "close": {
+          "keyframes": {
+            "from": { "opacity": 1, "transform": "scale(1)" },
+            "to": { "opacity": 0, "transform": "scale(0.9)" }
+          },
+          "duration": "100ms",
+          "easing": "ease-out"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "scale": 0.9 },
+        "animate": { "opacity": 1, "scale": 1 },
+        "exit": { "opacity": 0, "scale": 0.9 },
+        "transition": {
+          "duration": 0.15,
+          "ease": "easeOut"
+        }
+      }
+    },
+    {
+      "name": "Document Card Hover",
+      "element": "a[href*='/docs/'] (Documentation cards)",
+      "description": "Background and border color transition for card hover",
+      "animations": {
+        "property": "background-color, border-color",
+        "duration": "250ms",
+        "easing": "ease"
+      },
+      "framerMotion": {
+        "whileHover": { "backgroundColor": "rgba(255,255,255,0.03)", "borderColor": "rgba(255,255,255,0.1)" },
+        "transition": {
+          "duration": 0.25,
+          "ease": "easeInOut"
+        }
+      }
+    },
+    {
+      "name": "Header Dropdown Panel",
+      "element": ".Header-module (Navigation dropdowns)",
+      "description": "Slide and fade animations for navigation dropdown panels",
+      "animations": {
+        "enterFromRight": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "translateX(var(--anim-amount))" },
+            "to": { "opacity": 1, "transform": "translate(0px)" }
+          }
+        },
+        "enterFromLeft": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "translateX(calc(-1*var(--anim-amount)))" },
+            "to": { "opacity": 1, "transform": "translate(0px)" }
+          }
+        },
+        "scaleIn": {
+          "keyframes": {
+            "from": { "opacity": 0, "transform": "scale(0.98)" },
+            "to": { "opacity": 1, "transform": "scale(1)" }
+          }
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "x": 20 },
+        "animate": { "opacity": 1, "x": 0 },
+        "exit": { "opacity": 0, "x": 20 },
+        "transition": {
+          "duration": 0.2,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "name": "Video Player Controls",
+      "element": ".VideoPlayer-module",
+      "description": "Opacity and transform transitions for video player controls",
+      "animations": {
+        "controls": {
+          "property": "opacity, transform",
+          "duration": "250ms",
+          "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        },
+        "scrim": {
+          "property": "opacity",
+          "duration": "250ms",
+          "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        },
+        "progress": {
+          "property": "height",
+          "duration": "250ms",
+          "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "y": 10 },
+        "animate": { "opacity": 1, "y": 0 },
+        "exit": { "opacity": 0, "y": 10 },
+        "transition": {
+          "duration": 0.25,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "name": "Editor Tab Switch",
+      "element": ".Editor-module (Tab/view transitions)",
+      "description": "Blur and fade transitions for editor view switching",
+      "animations": {
+        "blurOut": {
+          "keyframes": {
+            "from": { "opacity": 1, "filter": "none" },
+            "to": { "opacity": 0, "filter": "blur(4px)" }
+          }
+        },
+        "blurIn": {
+          "keyframes": {
+            "from": { "opacity": 0, "filter": "blur(4px)" },
+            "to": { "opacity": 1, "filter": "none" }
+          }
+        },
+        "colorTransition": {
+          "property": "color",
+          "duration": "240ms",
+          "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+        }
+      },
+      "framerMotion": {
+        "initial": { "opacity": 0, "filter": "blur(4px)" },
+        "animate": { "opacity": 1, "filter": "blur(0px)" },
+        "exit": { "opacity": 0, "filter": "blur(4px)" },
+        "transition": {
+          "duration": 0.24,
+          "ease": [0.25, 0.46, 0.45, 0.94]
+        }
+      }
+    },
+    {
+      "name": "Marquee/Carousel",
+      "element": ".Marquee-module",
+      "description": "Continuous scroll animation for marquee content",
+      "animations": {
+        "scroll": {
+          "keyframes": {
+            "from": { "transform": "translate(0px)" },
+            "to": { "transform": "translateX(calc(-100% - var(--Marquee-gap)))" }
+          },
+          "duration": "60s",
+          "timingFunction": "linear",
+          "iterationCount": "infinite"
+        }
+      },
+      "framerMotion": {
+        "animate": { "x": [0, "-100%"] },
+        "transition": {
+          "duration": 60,
+          "ease": "linear",
+          "repeat": "Infinity"
+        }
+      }
+    }
+  ],
+  "easingCurves": {
+    "linearStandard": {
+      "name": "Linear Standard",
+      "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "description": "Primary easing curve used throughout Linear UI",
+      "framerMotion": [0.25, 0.46, 0.45, 0.94]
+    },
+    "ease": {
+      "name": "CSS Ease",
+      "value": "ease",
+      "description": "Standard ease for simple transitions",
+      "framerMotion": "easeInOut"
+    },
+    "easeOut": {
+      "name": "Ease Out",
+      "value": "ease-out",
+      "description": "Used for entrance animations",
+      "framerMotion": "easeOut"
+    },
+    "easeIn": {
+      "name": "Ease In",
+      "value": "ease-in",
+      "description": "Used for exit animations",
+      "framerMotion": "easeIn"
+    },
+    "chevronEase": {
+      "name": "Chevron/Icon Rotation",
+      "value": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+      "description": "Easing for icon rotations like chevrons",
+      "framerMotion": [0.455, 0.03, 0.515, 0.955]
+    }
+  },
+  "durations": {
+    "instant": "100ms",
+    "fast": "120ms",
+    "quick": "150ms",
+    "normal": "160ms",
+    "standard": "200ms",
+    "relaxed": "250ms",
+    "slow": "300ms"
+  },
+  "summary": {
+    "buttonTransitionDuration": "160ms",
+    "modalTransitionDuration": "200ms",
+    "commandPaletteTransitionDuration": "150ms",
+    "toastTransitionDuration": "200ms",
+    "sidebarCollapseTransitionDuration": "250ms",
+    "primaryEasing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+    "scaleRange": {
+      "start": 0.95,
+      "end": 1.0
+    },
+    "commonTransformOrigin": "center center"
+  }
+}

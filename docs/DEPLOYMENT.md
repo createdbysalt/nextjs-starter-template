@@ -1,492 +1,424 @@
 # Deployment Guide
 
-**For**: SALT STUDIO Webflow Projects  
-**Stack**: React Prototype → Webflow Production  
-**Updated**: 2026-01-16
+**For**: SALT STUDIO Next.js Projects
+**Stack**: Next.js + TypeScript + Vercel
+**Updated**: 2026-01-21
 
 ---
 
 ## Deployment Overview
+
 ```
-Development          → Translation        → Webflow         → Production
-(React + pnpm dev)     (Docs/API)          (Designer)        (Published)
+Development     → Build      → Preview       → Production
+(localhost:3000)  (next build)  (Vercel PR)    (main branch)
 ```
 
-**Deployment methods:**
-1. **Automated** - Via Webflow MCP API (recommended for simple components)
-2. **Manual** - Rebuild in Webflow Designer (recommended for complex layouts)
-3. **Hybrid** - Mix of both (most common)
+**Deployment method**: Vercel (Git-based automatic deployments)
 
 ---
 
 ## Pre-Deployment Checklist
 
-### 1. Prototype Quality Check
+### 1. Code Quality Check
+
 ```bash
-# Run linter
-pnpm lint
+# Run all checks
+pnpm validate
 
-# Check formatting
-pnpm format:check
-
-# Build for production (catches build errors)
-pnpm build
+# Or individually:
+pnpm lint         # ESLint check
+pnpm typecheck    # TypeScript check
+pnpm build        # Production build
 ```
 
 **Expected:** No errors, all checks pass.
 
-### 2. Browser Testing
+### 2. Environment Variables
 
-Test prototype in:
+Verify all required environment variables are set:
+
+```bash
+# Check .env.local exists
+cat .env.local
+
+# Required variables:
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+**Optional (if using):**
+- Sanity: `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`
+- Supabase: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+### 3. Browser Testing
+
+Test in development:
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
 - [ ] Mobile (Chrome DevTools device mode)
 
-### 3. Animation Performance
+### 4. Performance Check
 
-- [ ] All animations 60fps on desktop
-- [ ] All animations 60fps on mobile
-- [ ] No layout shifts during animations
-- [ ] Animations use only `transform` and `opacity`
+```bash
+# Build and analyze
+pnpm build
 
-### 4. Accessibility
+# Check .next/analyze/ if bundle analyzer is enabled
+```
+
+**Target metrics:**
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Cumulative Layout Shift: < 0.1
+
+### 5. Accessibility
 
 - [ ] Keyboard navigation works
-- [ ] Screen reader friendly (aria labels)
+- [ ] Screen reader friendly (test with VoiceOver/NVDA)
 - [ ] Color contrast meets WCAG 2.1 AA
 - [ ] Focus states visible
+- [ ] Alt text on all images
 
 ---
 
-## Method 1: Automated Deployment (Webflow MCP)
+## Vercel Setup (One-Time)
 
-### When to Use
+### 1. Connect Repository
 
-- ✅ Simple components (hero, cards, forms)
-- ✅ Flat structure (< 4 nesting levels)
-- ✅ Standard layouts (flex, grid)
-- ❌ Complex interactions (use manual)
-- ❌ Custom animations (requires embeds)
-
-### Deploy Component
 ```bash
-# In Claude Code
-> /push-to-webflow Hero.jsx
+# Install Vercel CLI
+pnpm add -g vercel
 
-# Claude will:
-# 1. Analyze JSX structure
-# 2. Call Webflow API to create elements
-# 3. Apply classes and styles
-# 4. Return Designer link
+# Login
+vercel login
+
+# Link project
+vercel link
 ```
 
-**Expected output:**
-```
-✅ Created in Webflow Designer:
-- Section: "Hero Section" (ID: abc123)
-- Container: "Hero Container" (ID: def456)
-- Heading H1: "Hero Title" (ID: ghi789)
+Or connect via Vercel Dashboard:
+1. Go to [vercel.com/new](https://vercel.com/new)
+2. Import Git repository
+3. Select framework: Next.js
+4. Deploy
 
-🔗 Open in Designer:
-https://webflow.com/design/acme-corp/xyz?nodeId=abc123
+### 2. Configure Environment Variables
+
+In Vercel Dashboard → Settings → Environment Variables:
+
+```
+NEXT_PUBLIC_SITE_URL = https://your-domain.com
+
+# Optional
+NEXT_PUBLIC_SANITY_PROJECT_ID = your_id
+NEXT_PUBLIC_SANITY_DATASET = production
+SANITY_API_TOKEN = your_token
+
+NEXT_PUBLIC_SUPABASE_URL = your_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY = your_key
+SUPABASE_SERVICE_ROLE_KEY = your_service_key
 ```
 
-### Deploy CMS Collection
+### 3. Configure Build Settings
+
+**Framework Preset**: Next.js
+**Build Command**: `pnpm build`
+**Output Directory**: (auto-detected)
+**Install Command**: `pnpm install`
+
+---
+
+## Deployment Workflows
+
+### Preview Deployments (Pull Requests)
+
+Every pull request automatically creates a preview deployment:
+
 ```bash
-# In Claude Code
-> /sync-cms-schema mockHeroData.js
+# Create feature branch
+git checkout -b feature/new-component
 
-# Claude will:
-# 1. Analyze mock data structure
-# 2. Create CMS collection via API
-# 3. Add fields based on data types
-# 4. Populate with sample data
+# Make changes
+# ...
+
+# Commit and push
+git add .
+git commit -m "Add new component"
+git push -u origin feature/new-component
+
+# Create PR
+gh pr create --title "Add new component"
+
+# Vercel automatically deploys preview
+# URL format: https://project-git-branch-team.vercel.app
 ```
 
-**Expected output:**
-```
-✅ CMS Collection Created: "Hero Sections"
+**Preview URL shared in PR comments automatically.**
 
-📋 Fields:
-- Title (Plain Text) ← Required
-- Description (Plain Text)
-- CTA Text (Plain Text)
-- Hero Image (Image)
+### Production Deployment (Main Branch)
 
-🔗 Collection URL:
-https://webflow.com/design/acme-corp/cms/collections/coll_123
-```
-
----
-
-## Method 2: Manual Deployment
-
-### When to Use
-
-- Complex layouts
-- Fine-tuned responsive behavior
-- Custom Webflow interactions (IX2)
-- Client prefers visual control
-
-### Generate Translation Guide
 ```bash
-# In Claude Code
-> /translate Hero.jsx
+# Merge PR to main (triggers production deploy)
+gh pr merge
 
-# Claude creates:
-# translation-docs/components/Hero-webflow-guide.md
+# Or push directly to main (not recommended)
+git checkout main
+git merge feature/new-component
+git push origin main
 ```
 
-### Follow Step-by-Step Guide
+**Production deploys to your custom domain.**
 
-**Example guide structure:**
-```markdown
-# Hero Section → Webflow
+### Manual Deployment
 
-## 1. Create Section
-- Add Section (name: "Hero Section")
-- Display: Flex, Horizontal, Center
-- Padding: 80px all sides
-
-## 2. Add Container
-- Add Container inside Section
-- Max-width: 1200px
-- Flex, Gap: 64px
-
-## 3. Add Content Block...
-```
-
-**Rebuild manually in Webflow Designer following the guide.**
-
----
-
-## Method 3: Deploy Custom Code (GSAP Animations)
-
-### When to Use
-
-- ✅ GSAP animations (ScrollTrigger, timelines)
-- ✅ Complex interactions
-- ✅ Dynamic form validation
-- ❌ Simple hover states (use Webflow IX2)
-
-### Deploy Animation Embed
 ```bash
-# In Claude Code
-> /deploy-embed heroTimeline.js
+# Deploy to preview
+vercel
 
-# Claude will:
-# 1. Convert React GSAP to vanilla JS
-# 2. Create webflow-embeds/animations/hero-gsap.js
-# 3. Push via API (or provide code to paste)
+# Deploy to production
+vercel --prod
 ```
-
-### Manual Embed (if API fails)
-
-1. Copy code from `webflow-embeds/animations/hero-gsap.js`
-
-2. In Webflow:
-   - Go to **Page Settings** → **Custom Code**
-   - Paste in **Before </body> tag** section
-
-3. Add GSAP CDN to **Head**:
-```html
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-```
-
-4. Save and test
 
 ---
 
-## CMS Content Population
+## Using /deploy Command
 
-### Create Collection Items
+The `/deploy` command automates the deployment workflow:
 
-**Option A: Via Claude Code**
+```
+You: /deploy
+
+Claude:
+Running pre-flight checks...
+✅ TypeScript: No errors
+✅ ESLint: Passed
+✅ Build: Successful
+✅ Environment: Variables configured
+
+Deploying to Vercel...
+
+✅ Deployed!
+🔗 Preview: https://project-abc123.vercel.app
+🔗 Production: https://your-domain.com
+```
+
+---
+
+## Domain Configuration
+
+### Add Custom Domain
+
+1. Vercel Dashboard → Settings → Domains
+2. Add domain: `your-domain.com`
+3. Configure DNS:
+
+**Option A: Vercel DNS (Recommended)**
+- Add Vercel nameservers to your registrar
+
+**Option B: External DNS**
+- Add A record: `76.76.21.21`
+- Add CNAME record: `cname.vercel-dns.com`
+
+### SSL Certificate
+
+Vercel automatically provisions SSL certificates. No configuration needed.
+
+---
+
+## Environment Configuration
+
+### Per-Environment Variables
+
+| Variable | Development | Preview | Production |
+|----------|-------------|---------|------------|
+| `NEXT_PUBLIC_SITE_URL` | localhost:3000 | Preview URL | Production URL |
+| `NODE_ENV` | development | production | production |
+
+### Sensitive Variables
+
+Never commit sensitive variables. Set in Vercel Dashboard only:
+
+- `SANITY_API_TOKEN`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- API keys, secrets
+
+---
+
+## Deployment Best Practices
+
+### Do's
+
+- [ ] Run `pnpm validate` before every deploy
+- [ ] Use preview deployments for all changes
+- [ ] Test preview URLs on real devices
+- [ ] Keep environment variables in Vercel (not Git)
+- [ ] Use semantic commit messages
+- [ ] Document breaking changes
+
+### Don'ts
+
+- [ ] Push directly to main without testing
+- [ ] Skip TypeScript/lint checks
+- [ ] Deploy on Friday afternoons
+- [ ] Commit .env files with secrets
+- [ ] Ignore build warnings
+
+---
+
+## Monitoring & Analytics
+
+### Vercel Analytics
+
+Enable in `next.config.ts`:
+
+```typescript
+const nextConfig = {
+  // Vercel Analytics
+  analyticsId: process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID,
+}
+```
+
+### Speed Insights
+
 ```bash
-> /sync-cms-schema mockPricingData.js
+# Install
+pnpm add @vercel/speed-insights
 
-# Automatically creates items from mock data
+# Add to root layout
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        {children}
+        <SpeedInsights />
+      </body>
+    </html>
+  )
+}
 ```
 
-**Option B: Manually in Webflow**
-1. Go to CMS → Collections
-2. Select collection
-3. Click **Add Item**
-4. Fill in fields
-5. Set to **Published**
+### Error Tracking
 
-### Bind to Components
+Consider adding Sentry for error tracking:
 
-1. Select element in Designer
-2. Click **Get text from...** or **Get image from...**
-3. Select CMS field
-4. Repeat for all dynamic content
-
-**Pro tip:** Use collection list to show multiple items (e.g., blog posts, pricing tiers).
-
----
-
-## Testing in Webflow
-
-### Staging Testing
-
-1. **Preview Mode**: Test without publishing
-   - Click **Preview** button in Designer
-   - Test all interactions
-   - Check all breakpoints
-
-2. **Staging Domain**: Publish to Webflow subdomain
-   - Go to **Publish** → **Publish to Webflow.io**
-   - Share staging URL with client
-   - Gather feedback
-
-### QA Checklist
-
-- [ ] All components match prototype
-- [ ] Responsive design works (mobile, tablet, desktop)
-- [ ] CMS data binds correctly
-- [ ] Custom code has no console errors
-- [ ] Animations work smoothly
-- [ ] Forms submit correctly
-- [ ] Links go to correct pages
-- [ ] SEO meta tags present
-- [ ] Favicon loads
-
----
-
-## Publishing to Production
-
-### Pre-Publish
-
-1. **Set Custom Domain** (if not already done):
-   - Go to **Publish** → **Publish to Custom Domain**
-   - Follow DNS setup instructions
-
-2. **SEO Settings**:
-   - Page title tags
-   - Meta descriptions
-   - Open Graph images
-   - XML sitemap enabled
-
-3. **Performance Check**:
-   - Images optimized (WebP format)
-   - Custom code minified
-   - No unnecessary scripts
-
-### Publish
+```bash
+pnpm add @sentry/nextjs
 ```
-Webflow Designer → Publish button → Publish to [domain.com]
-```
-
-**Wait 1-2 minutes for CDN propagation.**
-
-### Post-Publish Verification
-
-- [ ] Visit live URL
-- [ ] Test on real mobile device
-- [ ] Check Google PageSpeed Insights
-- [ ] Verify analytics tracking (if applicable)
-- [ ] Test forms with real submissions
 
 ---
 
 ## Rollback Procedure
 
-### If something breaks in production:
+### Via Vercel Dashboard
 
-1. **Revert to previous version**:
-   - Webflow keeps version history
-   - Go to **Settings** → **Backup**
-   - Restore previous version
+1. Go to Deployments tab
+2. Find previous working deployment
+3. Click "..." → "Promote to Production"
 
-2. **Fix and republish**:
-   - Make fixes in Designer
-   - Test in preview
-   - Republish
+### Via Git
 
-**Webflow doesn't have true "rollback" - you restore a backup.**
-
----
-
-## Deployment Workflows (Common Scenarios)
-
-### New Page
-
-1. Create in `prototype/src/pages/NewPage.jsx`
-2. Test locally: `pnpm dev`
-3. Generate guide: `/translate NewPage.jsx`
-4. Create page in Webflow: **Pages** → **Add Page**
-5. Rebuild from guide
-6. Publish
-
-### Update Component
-
-1. Edit in `prototype/src/components/Component.jsx`
-2. Test changes locally
-3. Regenerate guide: `/translate Component.jsx`
-4. Update in Webflow Designer
-5. Publish
-
-### Add Animation
-
-1. Create in `prototype/src/animations/newAnimation.js`
-2. Test in prototype
-3. Deploy: `/deploy-embed newAnimation.js`
-4. Add to Webflow custom code
-5. Publish
-
-### Fix Bug
-
-1. Identify issue (prototype vs Webflow)
-2. If prototype: Fix in React, re-translate
-3. If Webflow: Fix in Designer directly
-4. Test thoroughly
-5. Publish
-
----
-
-## Performance Optimization
-
-### Before Publishing
 ```bash
-# Check prototype build size
+# Revert commit
+git revert HEAD
+
+# Push
+git push origin main
+
+# Creates new deployment with previous state
+```
+
+---
+
+## Troubleshooting
+
+### Build Fails
+
+```bash
+# Check build locally first
 pnpm build
 
-# Review bundle
-ls -lh prototype/dist/assets/
+# Common issues:
+# - TypeScript errors
+# - Missing environment variables
+# - Import path issues
 
-# Large files? Optimize:
-# - Compress images
-# - Remove unused code
-# - Split large components
+# Clear cache and retry
+rm -rf .next
+pnpm build
 ```
 
-### In Webflow
+### Environment Variables Not Working
 
-- **Images**: Use Webflow's image optimization (automatic WebP)
-- **Custom Code**: Minify before embedding
-- **Fonts**: Limit to 2-3 font families
-- **Scripts**: Load non-critical scripts async
+1. Check variable names start with `NEXT_PUBLIC_` for client-side
+2. Verify variables are set in Vercel Dashboard
+3. Redeploy after changing variables
 
-**Target metrics:**
-- First Contentful Paint: < 1.5s
-- Total Blocking Time: < 300ms
-- Cumulative Layout Shift: < 0.1
+### Deployment Stuck
+
+1. Check Vercel Dashboard for build logs
+2. Cancel deployment if needed
+3. Check for infinite loops in build process
+
+### Domain Not Working
+
+1. Verify DNS propagation: `dig your-domain.com`
+2. Check SSL certificate status in Vercel
+3. Wait up to 48 hours for DNS propagation
 
 ---
 
-## Monitoring & Maintenance
+## Deployment Checklist Template
 
-### Post-Launch
+```markdown
+## Pre-Deploy
+- [ ] `pnpm lint` passes
+- [ ] `pnpm typecheck` passes
+- [ ] `pnpm build` succeeds
+- [ ] Tested locally in Chrome, Firefox, Safari
+- [ ] Tested on mobile viewport
+- [ ] Environment variables verified
 
-1. **Set up monitoring**:
-   - Webflow analytics (built-in)
-   - Google Analytics 4 (if required)
-   - Uptime monitoring (UptimeRobot, Pingdom)
+## Post-Deploy
+- [ ] Preview URL works
+- [ ] All pages load correctly
+- [ ] Forms submit successfully
+- [ ] Analytics tracking works
+- [ ] No console errors
+- [ ] Performance acceptable
 
-2. **Schedule reviews**:
-   - Weekly: Check forms, links
-   - Monthly: Performance audit
-   - Quarterly: Content updates
-
-### Updating from Template
-
-If SALT STUDIO releases skill updates:
-```bash
-./scripts/sync-template-updates.sh
-
-# Review changes
-git diff .claude/
-
-# Commit if beneficial
-git commit -m "Update Claude skills from template"
+## Production
+- [ ] Final client approval received
+- [ ] Production domain configured
+- [ ] SSL certificate active
+- [ ] Monitoring enabled
 ```
 
 ---
 
-## Troubleshooting Deployments
+## Command Reference
 
-### Issue: API deployment fails
-
-**Check:**
-```bash
-pnpm validate-webflow
-```
-
-**Common causes:**
-- Expired API token
-- Insufficient permissions
-- Rate limit exceeded (wait 1 hour)
-
-### Issue: Custom code doesn't work in Webflow
-
-**Check:**
-1. Browser console for errors (F12)
-2. GSAP CDN loaded before your code
-3. Selectors match Webflow classes exactly
-4. Code wrapped in IIFE: `(function() { ... })()`
-5. `document.readyState` check present
-
-### Issue: CMS binding shows wrong data
-
-**Check:**
-1. Collection list wrapper present
-2. Correct field selected in binding
-3. Item published (not draft)
-4. Collection template page configured
-
-### Issue: Animations laggy
-
-**Check:**
-1. Using `transform` and `opacity` only
-2. Not animating `width`, `height`, `top`, `left`
-3. GPU acceleration: `will-change: transform`
-4. Reduce complexity on mobile
-
----
-
-## Deployment Command Reference
 ```bash
 # Development
-pnpm dev                    # Start prototype server
-pnpm build                  # Build prototype
-pnpm preview                # Preview production build
+pnpm dev              # Start dev server
+pnpm build            # Production build
+pnpm start            # Start production server
 
 # Quality
-pnpm lint                   # Check code quality
-pnpm format                 # Format code
-pnpm validate-webflow       # Test Webflow API
+pnpm lint             # ESLint
+pnpm typecheck        # TypeScript
+pnpm validate         # All checks + build
+
+# Deployment
+vercel                # Deploy to preview
+vercel --prod         # Deploy to production
+vercel env pull       # Pull env vars
 
 # Claude Code
-/translate [Component.jsx]  # Generate rebuild guide
-/push-to-webflow [Component.jsx]  # API deploy
-/sync-cms-schema [mockData.js]    # Create CMS
-/deploy-embed [animation.js]      # Deploy custom code
+/deploy               # Automated deployment flow
+/ship                 # Build + commit + deploy
 ```
-
----
-
-## Client Handoff
-
-### When handing off to client:
-
-1. **Documentation package**:
-   - Brand guidelines
-   - Component guide
-   - CMS content guide
-   - Contact info for support
-
-2. **Webflow access**:
-   - Transfer site ownership (if applicable)
-   - OR grant client "Editor" access
-   - Train on CMS content updates
-
-3. **Repository** (optional):
-   - Transfer GitHub repo to client
-   - OR archive internally
-   - Include README with setup instructions
 
 ---
 

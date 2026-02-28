@@ -1,0 +1,29 @@
+# Replicator Output Directory
+
+This directory contains temporary artifacts from the `/replicate` command.
+
+## Structure
+
+Each replication creates a project folder:
+
+```
+replicator-output/
+└── [project-name]/
+    ├── extraction/           # Style data, tokens, animation specs
+    ├── screenshots/          # Original and prototype screenshots
+    ├── validation/           # Validation reports
+    └── components/           # Generated code (ready to copy)
+```
+
+## Usage
+
+After `/replicate` completes:
+
+1. Review components in `[project]/components/`
+2. Copy to your feature: `cp -r [project]/components/* app/_features/[feature]/components/`
+3. Add tokens: Copy `extraction/tailwind-tokens.css` contents to `app/globals.css`
+4. Clean up: `rm -rf [project]/` when done
+
+## Git
+
+This directory is gitignored. Replication artifacts should not be committed.

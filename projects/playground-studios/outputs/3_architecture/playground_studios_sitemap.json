@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "version": "1.0",
+    "primary_icp": "Brand Builder (Solution-Aware)",
+    "secondary_icp": "Agency Producer (Most-Aware)"
+  },
+
+  "site_goals": {
+    "primary": {
+      "goal": "Generate qualified project inquiries",
+      "metric": "Contact form submissions",
+      "target": "5-10 inquiries per month",
+      "rationale": "Barrett's business model is project-based. Website is a pitch tool for cold outreach and referral validation."
+    },
+    "secondary": [
+      {
+        "goal": "Establish credibility for cold outreach",
+        "metric": "Time on site from email clicks",
+        "rationale": "Barrett does cold outreach - site validates his pitch"
+      },
+      {
+        "goal": "Position as studio (not freelancer)",
+        "metric": "Perception (qualitative)",
+        "rationale": "Transition from 'Barrett the photographer' to 'Playground Studios'"
+      }
+    ],
+    "conversion_action": "Submit contact form → Book discovery call"
+  },
+
+  "architecture_strategy": {
+    "approach": "Portfolio-First Creative Studio",
+    "rationale": "For creative production services, the work IS the product. Portfolio must be the hero. Everything else supports the portfolio.",
+    "primary_audience_awareness": "SOLUTION-AWARE",
+    "implication": "They're comparing options. Show why Playground is the right choice. Don't educate on 'why you need content.'"
+  },
+
+  "loading_experience": {
+    "enabled": true,
+    "inspiration": "DVTK (dvtk.us) loading/intro animation",
+    "purpose": "Create memorable first impression, establish brand personality before content loads",
+    "type": "intro_animation",
+    "behavior": {
+      "trigger": "First visit to homepage (session-based, not every page load)",
+      "duration": "2-3 seconds max",
+      "dismissal": "Auto-dismiss after animation completes OR click anywhere to skip",
+      "subsequent_visits": "Skip animation within same session"
+    },
+    "visual_direction": {
+      "concept": "Animated typographic/ASCII-style intro featuring 'Playground Studios' logo or brand mark",
+      "style": "Generative text animation - characters morph/shift to reveal brand name",
+      "color": "Black background (#08090A) with white text (#FFFFFF)",
+      "reference": "DVTK's ASCII matrix animation that morphs into readable content"
+    },
+    "technical_notes": {
+      "implementation": "CSS animations with JavaScript for character randomization, or GSAP for more control",
+      "performance": "Must not delay content load - run animation while content loads in background",
+      "accessibility": "Respect prefers-reduced-motion, provide skip option",
+      "mobile": "Simplified version for mobile performance"
+    },
+    "rationale": "Client specifically requested DVTK-style loading intro. Adds 'wow factor' and differentiates from generic portfolio sites. Supports 'mature playfulness' brand direction."
+  },
+
+  "entry_points": {
+    "primary": {
+      "source": "Cold outreach response / Referral",
+      "landing": "Homepage",
+      "intent": "Validate sender's credibility, see work quality"
+    },
+    "secondary": [
+      {
+        "source": "Instagram profile link",
+        "landing": "Homepage",
+        "intent": "Explore beyond social, see full portfolio"
+      },
+      {
+        "source": "Direct portfolio link (in pitch)",
+        "landing": "Work page or specific project",
+        "intent": "See specific relevant work"
+      }
+    ]
+  },
+
+  "sitemap": {
+    "pages": [
+      {
+        "id": "home",
+        "name": "Home",
+        "slug": "/",
+        "type": "conversion",
+        "priority": "CRITICAL",
+        "purpose": "Orient visitors, establish credibility, route to portfolio or contact",
+        "target_awareness": "SOLUTION-AWARE",
+        "conversion_goal": {
+          "primary": "Click to Work page",
+          "secondary": "Click to Contact"
+        }
+      },
+      {
+        "id": "work",
+        "name": "Work",
+        "slug": "/work",
+        "type": "persuasion",
+        "priority": "CRITICAL",
+        "purpose": "Showcase portfolio, prove capability, build desire",
+        "target_awareness": "SOLUTION-AWARE → PRODUCT-AWARE",
+        "conversion_goal": {
+          "primary": "Click into project detail",
+          "secondary": "Click to Contact"
+        },
+        "children": [
+          {
+            "id": "work-detail",
+            "name": "[Project Name]",
+            "slug": "/work/[project-slug]",
+            "type": "persuasion",
+            "priority": "HIGH",
+            "purpose": "Deep dive into specific project, show process and results",
+            "dynamic": true,
+            "cms_collection": "projects"
+          }
+        ]
+      },
+      {
+        "id": "about",
+        "name": "About",
+        "slug": "/about",
+        "type": "trust",
+        "priority": "HIGH",
+        "purpose": "Humanize the brand, share origin story, build connection",
+        "target_awareness": "PRODUCT-AWARE (considering Playground specifically)",
+        "conversion_goal": {
+          "primary": "Click to Contact",
+          "secondary": "Return to Work"
+        }
+      },
+      {
+        "id": "services",
+        "name": "Services",
+        "slug": "/services",
+        "type": "education",
+        "priority": "MEDIUM",
+        "purpose": "Clarify offerings, help self-qualify, address 'what do they do?' question",
+        "target_awareness": "SOLUTION-AWARE",
+        "conversion_goal": {
+          "primary": "Click to Contact",
+          "secondary": "Click to Work (see examples)"
+        }
+      },
+      {
+        "id": "contact",
+        "name": "Contact",
+        "slug": "/contact",
+        "type": "conversion",
+        "priority": "CRITICAL",
+        "purpose": "Capture leads, start conversation",
+        "target_awareness": "MOST-AWARE (ready to reach out)",
+        "conversion_goal": {
+          "primary": "Form submission"
+        }
+      }
+    ],
+    "navigation": {
+      "primary": ["Work", "About", "Services", "Contact"],
+      "cta": "Let's Talk",
+      "logo_links_to": "Home"
+    },
+    "footer": {
+      "links": ["Work", "About", "Services", "Contact"],
+      "social": ["Instagram"],
+      "legal": "© 2026 Playground Studios"
+    }
+  },
+
+  "page_count": {
+    "static": 5,
+    "dynamic": "Work detail pages (CMS)",
+    "total_templates": 6
+  },
+
+  "url_structure": {
+    "pattern": "Clean, semantic URLs",
+    "examples": [
+      "/",
+      "/work",
+      "/work/celsius-summer-campaign",
+      "/about",
+      "/services",
+      "/contact"
+    ]
+  },
+
+  "internal_linking": {
+    "strategy": "Every page routes to Contact. Work is always one click away.",
+    "patterns": [
+      {
+        "from": "Homepage",
+        "to": ["Work", "Contact"],
+        "rationale": "Primary paths: see work or start conversation"
+      },
+      {
+        "from": "Work (grid)",
+        "to": ["Work detail", "Contact"],
+        "rationale": "Explore deeper or convert"
+      },
+      {
+        "from": "Work detail",
+        "to": ["Other projects", "Contact"],
+        "rationale": "Keep exploring or convert"
+      },
+      {
+        "from": "About",
+        "to": ["Work", "Contact"],
+        "rationale": "Liked the story? See the work or start talking"
+      },
+      {
+        "from": "Services",
+        "to": ["Work (filtered)", "Contact"],
+        "rationale": "See examples of service or inquire"
+      }
+    ]
+  },
+
+  "cms_collections": {
+    "projects": {
+      "purpose": "Portfolio pieces",
+      "fields": [
+        "title",
+        "slug",
+        "client_name",
+        "category (brand/hospitality/studio)",
+        "featured_image",
+        "gallery_images",
+        "description",
+        "services_provided",
+        "year",
+        "featured (boolean)"
+      ],
+      "note": "Barrett will manage routine updates post-launch"
+    }
+  },
+
+  "seo_considerations": {
+    "primary_keywords": [
+      "creative production studio",
+      "brand photography",
+      "lifestyle photography",
+      "commercial videography",
+      "Portland photographer",
+      "Louisville photographer"
+    ],
+    "local_seo": {
+      "strategy": "Dual location (Portland + Louisville/Kentucky)",
+      "note": "Don't highlight the move, just be present in both markets"
+    }
+  },
+
+  "rationale_notes": {
+    "why_no_blog": "Not a priority for launch. Barrett's content discovery happens through social and outreach, not SEO. Can add later.",
+    "why_no_pricing_page": "Custom pricing per project. Contact form qualifies leads. Stating '$5K minimum' or ranges can happen on Services or Contact.",
+    "why_simple_nav": "Creative studios live and die by their portfolio. Keep navigation minimal so work is the focus."
+  }
+}

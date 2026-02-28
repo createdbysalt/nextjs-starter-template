@@ -1,0 +1,195 @@
+{
+  "url": "https://vercel.com",
+  "extractedAt": "2026-01-31T00:00:00Z",
+
+  "logos": [
+    {
+      "name": "Vercel Logotype",
+      "description": "Triangle logo with 'Vercel' text",
+      "location": "Header (left side)",
+      "format": "SVG/Image",
+      "altText": "VercelLogotype"
+    },
+    {
+      "name": "Vercel Triangle",
+      "description": "Triangle logo only (icon)",
+      "location": "Various buttons, hero visual",
+      "format": "SVG",
+      "usage": "CTA buttons, brand marks"
+    }
+  ],
+
+  "heroVisuals": [
+    {
+      "name": "Grid with Rainbow Rays",
+      "description": "Vercel's logo triangle sits in the center of a grid, surrounded by rays of light which are the colors of the rainbow",
+      "location": "Hero section background",
+      "type": "Animated/Static illustration",
+      "altText": "Vercel's logo, a triangle, sits in the center of a grid, surrounded by rays of light which are the colors of the rainbow."
+    }
+  ],
+
+  "partnerLogos": [
+    {
+      "name": "Runway",
+      "location": "Testimonial carousel",
+      "context": "build times went from 7m to 40s"
+    },
+    {
+      "name": "LeonardoAi",
+      "location": "Testimonial carousel",
+      "context": "saw a 95% reduction in page load times"
+    },
+    {
+      "name": "Zapier",
+      "location": "Testimonial carousel",
+      "context": "saw 24x faster builds"
+    }
+  ],
+
+  "frameworkIcons": [
+    { "name": "Svelte", "location": "Framework infrastructure section" },
+    { "name": "Vite", "location": "Framework infrastructure section" },
+    { "name": "Next.js", "location": "Framework infrastructure section, templates" },
+    { "name": "Nuxt", "location": "Framework infrastructure section, templates" },
+    { "name": "Turbopack", "location": "Framework infrastructure section" },
+    { "name": "React", "location": "Templates section" },
+    { "name": "Astro", "location": "Templates section" },
+    { "name": "Python", "location": "Templates section" }
+  ],
+
+  "featureVisuals": [
+    {
+      "name": "Agent Modal Thinking",
+      "description": "AI agent visualization showing thinking state",
+      "location": "Agents feature card",
+      "altText": "Agent modal thinking"
+    },
+    {
+      "name": "Web Browser Preview",
+      "description": "Browser window featuring 'What will you create?' text",
+      "location": "Web Apps feature card",
+      "altText": "Web browser featuring the text: What will you create?"
+    },
+    {
+      "name": "Commerce Preview",
+      "description": "Ecommerce storefront with polo shirts",
+      "location": "Composable Commerce feature card",
+      "altText": "Commerce webpage featuring polo shirts"
+    },
+    {
+      "name": "Multi-tenant Domains",
+      "description": "Stacked browser windows showing different subdomains",
+      "location": "Multi-tenant Platform card",
+      "domains": ["customer.domain.com", "project.domain.com", "jane.domain.com", "joe.domain.com"],
+      "altText": "The tops of 4 browser windows are stacked atop each other, with only the address bar of each visible."
+    },
+    {
+      "name": "Fluid Compute",
+      "description": "Visualization of fluid compute infrastructure",
+      "location": "Fluid Compute section",
+      "altText": "Fluid compute"
+    },
+    {
+      "name": "2D Grid Globe",
+      "description": "Animated globe with Vercel Edge Network nodes",
+      "location": "Infrastructure section",
+      "type": "Animated (WebGL/Canvas)",
+      "altText": "Animated 2D grid globe with Vercel Edge Network nodes arbitrarily placed"
+    }
+  ],
+
+  "aiProviderLogos": [
+    {
+      "name": "OpenAI",
+      "location": "AI Gateway section",
+      "usage": "Provider button"
+    },
+    {
+      "name": "xAI",
+      "location": "AI Gateway section",
+      "usage": "Provider button"
+    },
+    {
+      "name": "Anthropic",
+      "location": "AI Gateway section",
+      "usage": "Provider button"
+    }
+  ],
+
+  "socialIcons": [
+    { "name": "GitHub", "location": "Footer social links" },
+    { "name": "LinkedIn", "location": "Footer social links" },
+    { "name": "Twitter/X", "location": "Footer social links" },
+    { "name": "YouTube", "location": "Footer social links" }
+  ],
+
+  "uiIcons": {
+    "navigation": [
+      "Chevron down (dropdown indicator)",
+      "External link (for external URLs)",
+      "Arrow right (for links)"
+    ],
+    "actions": [
+      "Copy (code block copy button)",
+      "Check (success/copied state)",
+      "Arrow right (CTA arrows)"
+    ],
+    "theme": [
+      "System theme icon",
+      "Light theme icon (sun)",
+      "Dark theme icon (moon)"
+    ],
+    "decorative": [
+      "Check marks (feature lists)",
+      "Product icons (v0, AI SDK, etc.)"
+    ]
+  },
+
+  "screenshots": {
+    "captured": [
+      {
+        "viewport": "1440x900",
+        "filename": "vercel-1440.png",
+        "location": "Browser MCP output (.playwright-mcp/vercel-1440.png)"
+      }
+    ],
+    "recommended": [
+      { "viewport": "1440x900", "description": "Desktop full page" },
+      { "viewport": "768x1024", "description": "Tablet portrait" },
+      { "viewport": "375x812", "description": "Mobile (iPhone)" }
+    ]
+  },
+
+  "fonts": {
+    "primary": {
+      "name": "Geist",
+      "type": "Variable font",
+      "weights": "300-900 (variable)",
+      "source": "Vercel's custom font",
+      "fallback": "Arial, ui-sans-serif, system-ui"
+    },
+    "mono": {
+      "name": "Geist Mono",
+      "type": "Monospace",
+      "weights": "400, 500",
+      "source": "Vercel's custom font",
+      "fallback": "ui-monospace, SFMono-Regular, Menlo, Monaco"
+    }
+  },
+
+  "recommendations": {
+    "fonts": [
+      "Install @vercel/font package for Geist fonts",
+      "Or use: next/font with Geist from Vercel"
+    ],
+    "icons": [
+      "Use Lucide React or similar for UI icons",
+      "Framework logos from official sources or SVG sprites"
+    ],
+    "animations": [
+      "Globe animation would require Three.js or similar",
+      "Button/card transitions can use CSS transitions"
+    ]
+  }
+}

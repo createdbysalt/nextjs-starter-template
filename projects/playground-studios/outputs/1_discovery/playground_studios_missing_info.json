@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "last_updated": "2026-01-17",
+    "total_gaps": 8,
+    "critical_gaps": 0,
+    "high_priority_gaps": 3,
+    "medium_priority_gaps": 3,
+    "low_priority_gaps": 2,
+    "resolved_gaps": 5,
+    "notes": "Updated after conversion audit. Several gaps resolved during discovery/strategy phases."
+  },
+
+  "resolved_gaps": {
+    "description": "Previously identified gaps that have been resolved",
+    "items": [
+      {
+        "id": "GAP-001",
+        "topic": "Target Audience Definition",
+        "status": "RESOLVED",
+        "resolution": "Light ICP developed based on portfolio analysis. Primary: Brand Builder (lifestyle/CPG marketers). Secondary: Agency Producer.",
+        "resolved_in": "ICP Profiles (playground_studios_icp_profiles.json)"
+      },
+      {
+        "id": "GAP-002",
+        "topic": "Service Pricing & Packages",
+        "status": "RESOLVED",
+        "resolution": "Pricing documented: $5K minimum, $8K-$15K sweet spot, $15K-$25K+ premium range.",
+        "resolved_in": "Client DNA (positioning.pricing)"
+      },
+      {
+        "id": "GAP-003",
+        "topic": "Geographic Positioning Decision",
+        "status": "RESOLVED",
+        "resolution": "Dual presence - Portland & Kentucky markets. Do NOT highlight the move from Portland.",
+        "resolved_in": "Client DNA (business_identity.location)"
+      },
+      {
+        "id": "CONTRA-001",
+        "topic": "Playful vs Professional Balance",
+        "status": "RESOLVED",
+        "resolution": "Option B selected: Subtle playfulness throughout. Mature visual execution.",
+        "resolved_in": "Client DNA (contradictions_flagged)"
+      },
+      {
+        "id": "CONTRA-002",
+        "topic": "Agency vs Solo Voice",
+        "status": "RESOLVED",
+        "resolution": "Option A selected: Use 'We' (agency voice) throughout.",
+        "resolved_in": "Client DNA (contradictions_flagged)"
+      }
+    ]
+  },
+
+  "critical_gaps": {
+    "description": "Blocks downstream work - must resolve before proceeding",
+    "items": []
+  },
+
+  "high_priority_gaps": {
+    "description": "Required before launch - significantly impacts conversion",
+    "items": [
+      {
+        "id": "GAP-005",
+        "topic": "Client Testimonials",
+        "what_is_missing": [
+          "3-5 testimonials from past clients",
+          "Quotes with name, title, and company",
+          "Specific feedback about experience or results"
+        ],
+        "why_critical": "Conversion audit scored Evidence at 3/5 and Trust at 3/5 primarily due to missing testimonials. Portfolio shows capability; testimonials prove satisfaction. Solution-Aware buyers rely heavily on voice-of-customer proof when comparing options.",
+        "impact_on_work": "Affects: Homepage credibility, About page trust, Contact page conversion",
+        "audit_reference": "ISS-001, ISS-008",
+        "question_to_ask": "Can you reach out to 3-5 past clients (Celsius, Brumate, Samsung, Kendra Scott, MVMT) for brief testimonials? We need: their name, title, company, and 1-2 sentences about working with you.",
+        "suggested_format": "Email template provided below",
+        "ideal_testimonials": [
+          "One about quality of work",
+          "One about communication/process",
+          "One about meeting deadlines",
+          "One about value/ROI"
+        ],
+        "deadline": "Before launch"
+      },
+      {
+        "id": "GAP-013",
+        "topic": "Client Logo Usage Rights",
+        "what_is_missing": [
+          "Confirmation of permission to display logos on website",
+          "Logo files (SVG or high-res PNG, monochrome versions)"
+        ],
+        "why_critical": "Client logos are primary instant credibility signal. If usage rights not confirmed, may need to remove logos at launch.",
+        "impact_on_work": "Affects: Homepage logo bar, potential legal issues",
+        "audit_reference": "ISS-010",
+        "brands_to_confirm": ["Celsius", "Brumate", "Bulletproof", "Samsung", "Kendra Scott", "MVMT", "Liquid IV", "Michelob Ultra"],
+        "question_to_ask": "Do you have permission to display these client logos on your website? If so, can you provide logo files? If not, which ones should we remove?",
+        "suggested_format": "Yes/No per brand + logo files",
+        "deadline": "Before launch"
+      },
+      {
+        "id": "GAP-009",
+        "topic": "Updated Founder Headshot",
+        "what_is_missing": [
+          "Professional headshot for About page",
+          "Photo that matches 'professional but approachable' direction"
+        ],
+        "why_critical": "About page bio section requires photo. Humanizes the brand for Product-Aware visitors evaluating 'who are these people?'",
+        "impact_on_work": "Blocks: About page finalization",
+        "audit_reference": "ISS-006",
+        "question_to_ask": "When will you have the updated headshot ready? If it won't be ready by launch, can we use an existing professional photo?",
+        "suggested_format": "Photo delivery date OR approval to use existing",
+        "deadline": "Before launch (or use existing as fallback)"
+      }
+    ]
+  },
+
+  "medium_priority_gaps": {
+    "description": "Improves quality - can launch without but conversion improves with resolution",
+    "items": [
+      {
+        "id": "GAP-004",
+        "topic": "Measurable Success Metrics",
+        "what_is_missing": [
+          "Specific lead generation goals (X inquiries per month)",
+          "Client acquisition targets",
+          "Timeline for measuring ROI"
+        ],
+        "why_critical": "Cannot measure website effectiveness without defined metrics",
+        "impact_on_work": "Affects: Post-launch optimization, conversion tracking",
+        "question_to_ask": "Six months after launch, what numbers would make you say 'this website is working'? How many inquiries per month? How many booked clients?",
+        "suggested_format": "Quick response with target numbers",
+        "deadline": "Before or shortly after launch"
+      },
+      {
+        "id": "GAP-006",
+        "topic": "Portfolio Content Inventory",
+        "what_is_missing": [
+          "Final selection of projects for launch",
+          "6+ images per project",
+          "2-3 sentence descriptions per project"
+        ],
+        "why_critical": "Work page is the conversion driver. Need sufficient portfolio pieces at launch.",
+        "impact_on_work": "Affects: Work page, CMS population, launch timeline",
+        "question_to_ask": "How many projects will be ready at launch with full image sets? Can you share the list so we can prepare the CMS?",
+        "suggested_format": "Project list with image counts",
+        "minimum_at_launch": "6-10 projects",
+        "deadline": "Before launch"
+      },
+      {
+        "id": "GAP-007",
+        "topic": "Homepage Headline Approval",
+        "what_is_missing": [
+          "Final headline selection or approval",
+          "Confirmation that subhead includes 'photography and video production' or similar"
+        ],
+        "why_critical": "Conversion audit flagged that aspirational headlines like 'Where Imagination Meets Reality' may not communicate what Playground does within 5 seconds.",
+        "impact_on_work": "Affects: Homepage hero section clarity",
+        "audit_reference": "ISS-002",
+        "question_to_ask": "For the homepage headline, we recommend pairing an aspirational headline with a clear subhead like 'Creative production studio specializing in photography and video for brands.' Does this direction work for you?",
+        "suggested_format": "Approval or alternative suggestion",
+        "deadline": "During copy finalization"
+      }
+    ]
+  },
+
+  "low_priority_gaps": {
+    "description": "Nice to have - can be addressed post-launch",
+    "items": [
+      {
+        "id": "GAP-010",
+        "topic": "FAQ Content",
+        "what_is_missing": [
+          "Answers to common questions (timeline, process, budget, location)",
+          "Decision: FAQ page or FAQ section on Services"
+        ],
+        "why_critical": "Conversion audit identified no FAQ to address objections at scale. Not critical for launch but improves conversion.",
+        "impact_on_work": "Affects: Objection handling, self-service answers",
+        "audit_reference": "ISS-003",
+        "question_to_ask": "What are the 5-7 questions you get asked most often by potential clients?",
+        "suggested_format": "List of questions (we'll draft answers)",
+        "deadline": "Can be post-launch"
+      },
+      {
+        "id": "GAP-012",
+        "topic": "Team/Collaborator Information",
+        "what_is_missing": [
+          "Whether to feature any collaborators on About page",
+          "Collaborator names, roles, photos (if featuring)"
+        ],
+        "why_critical": "Minor - can use 'we' voice without detailing team. Addresses 'just a freelancer?' concern more explicitly.",
+        "impact_on_work": "Affects: About page depth",
+        "question_to_ask": "Do you want to feature any regular collaborators on the site, or keep it founder-focused for now?",
+        "suggested_format": "Quick decision",
+        "deadline": "Can be post-launch"
+      }
+    ]
+  },
+
+  "action_items_for_client": {
+    "before_launch_required": [
+      {
+        "item": "Request testimonials from 3-5 past clients",
+        "priority": "HIGH",
+        "time_estimate": "15 min to send emails, then wait for responses",
+        "gap_ref": "GAP-005"
+      },
+      {
+        "item": "Confirm logo usage rights for 8 brands",
+        "priority": "HIGH",
+        "time_estimate": "10 min to review and respond",
+        "gap_ref": "GAP-013"
+      },
+      {
+        "item": "Provide or approve headshot photo",
+        "priority": "HIGH",
+        "time_estimate": "Depends on photo availability",
+        "gap_ref": "GAP-009"
+      },
+      {
+        "item": "Finalize portfolio project list with images",
+        "priority": "MEDIUM",
+        "time_estimate": "Ongoing",
+        "gap_ref": "GAP-006"
+      }
+    ],
+    "before_launch_recommended": [
+      {
+        "item": "Approve homepage headline direction",
+        "priority": "MEDIUM",
+        "time_estimate": "5 min",
+        "gap_ref": "GAP-007"
+      },
+      {
+        "item": "Define success metrics",
+        "priority": "MEDIUM",
+        "time_estimate": "10 min",
+        "gap_ref": "GAP-004"
+      }
+    ],
+    "can_be_post_launch": [
+      {
+        "item": "Provide FAQ questions",
+        "priority": "LOW",
+        "gap_ref": "GAP-010"
+      },
+      {
+        "item": "Decide on collaborator feature",
+        "priority": "LOW",
+        "gap_ref": "GAP-012"
+      }
+    ]
+  },
+
+  "testimonial_request_template": {
+    "subject": "Quick favor - testimonial for new website?",
+    "body": "Hey [Name],\n\nHope you're doing well! I'm launching a new website for Playground Studios and would love to feature a brief testimonial from you if you're open to it.\n\nJust 1-2 sentences about your experience working together would be amazing. Something like what you appreciated about the process, the quality of work, or the results.\n\nNo pressure at all - just let me know either way!\n\nThanks,\nBarrett"
+  }
+}

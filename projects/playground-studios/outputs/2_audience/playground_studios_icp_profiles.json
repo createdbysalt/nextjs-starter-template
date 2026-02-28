@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "client_name": "Playground Studios",
+    "project_id": "playground-studios",
+    "created_date": "2026-01-17",
+    "last_updated": "2026-01-17",
+    "version": "1.0",
+    "approach": "LIGHT ICP - Portfolio-based inference",
+    "confidence_level": "MEDIUM",
+    "data_sources": [
+      "Client portfolio analysis (8 brands)",
+      "Client DNA from discovery",
+      "Industry pattern inference"
+    ],
+    "note": "Light ICP based on who Barrett has actually worked with. Not customer-research validated."
+  },
+
+  "primary_icp": {
+    "segment_name": "The Brand Builder",
+    "segment_id": "ICP-001",
+
+    "definition": {
+      "who": "Marketing managers and creative directors at mid-market lifestyle/CPG brands",
+      "company_profile": {
+        "industries": ["Beverage", "Consumer Products", "Wellness", "Fashion/Accessories"],
+        "size": "Series B+ startups to established mid-market ($10M-$500M revenue)",
+        "growth_stage": "Scaling brands investing in content to fuel growth",
+        "examples_from_portfolio": ["Celsius", "Brumate", "MVMT", "Liquid IV", "Kendra Scott"]
+      },
+      "role_titles": [
+        "Brand Marketing Manager",
+        "Creative Director",
+        "Head of Content",
+        "Marketing Director",
+        "VP Marketing (at smaller brands)"
+      ],
+      "confidence": "HIGH - matches portfolio"
+    },
+
+    "psychographics": {
+      "values": [
+        "Quality over quantity in content",
+        "Brand authenticity and consistency",
+        "Speed without sacrificing craft",
+        "Collaborative partnerships over vendor relationships"
+      ],
+      "beliefs": [
+        "Great content drives growth",
+        "The right creative partner makes their job easier",
+        "Premium brands need premium visuals"
+      ],
+      "fears": [
+        "Content that looks generic or 'stock-y'",
+        "Missing campaign deadlines",
+        "Working with difficult or unreliable creatives",
+        "Explaining bad creative to leadership"
+      ],
+      "confidence": "MEDIUM - inferred from industry patterns"
+    },
+
+    "awareness_level": {
+      "primary": "SOLUTION-AWARE",
+      "description": "They know they need a photographer/production partner. They're comparing options.",
+      "implication": "Don't educate on 'why content matters' - show why Playground is the right choice",
+      "confidence": "HIGH"
+    },
+
+    "pain_points": [
+      {
+        "pain": "Big agencies are slow, expensive, and bureaucratic",
+        "intensity": "HIGH",
+        "evidence": "Barrett's own positioning against 'agencies with hurdles'",
+        "quote_hypothesis": "I don't have time to go through 5 people just to get feedback on a shot",
+        "confidence": "STATED in DNA"
+      },
+      {
+        "pain": "Freelancers can be unreliable or hard to scale",
+        "intensity": "MEDIUM",
+        "evidence": "Market positioning gap Barrett fills",
+        "quote_hypothesis": "I need someone who can handle a bigger shoot, not just headshots",
+        "confidence": "INFERRED"
+      },
+      {
+        "pain": "Content needs are constant but budgets aren't unlimited",
+        "intensity": "HIGH",
+        "evidence": "Barrett's 'work within any budget' positioning",
+        "quote_hypothesis": "We have 4 campaigns this quarter and the same budget as last year",
+        "confidence": "INFERRED"
+      }
+    ],
+
+    "desires": {
+      "functional": [
+        "Quality content delivered on time",
+        "Easy communication and fast turnaround",
+        "Flexibility to scale up or down based on project"
+      ],
+      "emotional": [
+        "Feel confident presenting work to leadership",
+        "Enjoy the creative process (not dread it)",
+        "Trust their creative partner to 'get it'"
+      ],
+      "identity": [
+        "Be seen as someone who works with great creative talent",
+        "Build a brand they're proud of",
+        "Be the person who found the 'secret weapon' agency"
+      ],
+      "confidence": "MEDIUM - inferred"
+    },
+
+    "objections": [
+      {
+        "objection": "Are they big enough to handle our project?",
+        "frequency": "HIGH",
+        "counter": "Portfolio proof points (Samsung, Michelob Ultra, Celsius). Modular team scales to project needs.",
+        "confidence": "HIGH"
+      },
+      {
+        "objection": "Can they deliver on our timeline?",
+        "frequency": "HIGH",
+        "counter": "'Tight deadlines' is explicitly called out as a strength. Nimble = faster.",
+        "confidence": "STATED"
+      },
+      {
+        "objection": "Is this in our budget?",
+        "frequency": "MEDIUM",
+        "counter": "$8K-$15K sweet spot positions as premium-but-accessible. Not cheap, not enterprise.",
+        "confidence": "STATED"
+      }
+    ],
+
+    "buying_triggers": [
+      "New product launch coming up",
+      "Campaign refresh needed",
+      "Bad experience with previous vendor",
+      "Growing too fast for current creative resources",
+      "Leadership asking 'why does our content look dated?'"
+    ],
+
+    "transformation_narrative": {
+      "before": "Juggling unreliable freelancers or fighting agency bureaucracy. Stressed about deadlines. Content is a pain point.",
+      "after": "Have a trusted creative partner who 'gets it'. Campaigns launch smoothly. Content becomes a competitive advantage.",
+      "confidence": "MEDIUM"
+    },
+
+    "messaging_hooks": [
+      "No hurdles. Just great work.",
+      "Big agency quality. Startup speed.",
+      "We make content creation feel easy.",
+      "Your brand deserves better than stock photos."
+    ]
+  },
+
+  "secondary_icp": {
+    "segment_name": "The Agency Producer",
+    "segment_id": "ICP-002",
+
+    "definition": {
+      "who": "Producers and creative directors at marketing/creative agencies who hire production partners for client work",
+      "company_profile": {
+        "type": "Creative agencies, marketing agencies, brand consultancies",
+        "size": "Small to mid-size agencies (10-100 people)",
+        "client_types": "Consumer brands, lifestyle, hospitality"
+      },
+      "role_titles": [
+        "Producer",
+        "Executive Producer",
+        "Creative Director",
+        "Account Director"
+      ],
+      "confidence": "MEDIUM - some portfolio clients likely came through agencies"
+    },
+
+    "psychographics": {
+      "values": [
+        "Reliable partners who don't make them look bad",
+        "Creative excellence",
+        "Easy collaboration",
+        "Hitting client deadlines"
+      ],
+      "fears": [
+        "Production partner drops the ball on client shoot",
+        "Going over budget and eating the margin",
+        "Client unhappy with final deliverables"
+      ],
+      "confidence": "MEDIUM - inferred"
+    },
+
+    "awareness_level": {
+      "primary": "MOST-AWARE",
+      "description": "They already know production partners exist. Looking for the right fit for specific projects.",
+      "implication": "Portfolio and testimonials matter most. Make it easy to vet quickly.",
+      "confidence": "HIGH"
+    },
+
+    "pain_points": [
+      {
+        "pain": "Need to find reliable production partners for specialized work",
+        "intensity": "HIGH",
+        "evidence": "Standard agency workflow",
+        "confidence": "INFERRED"
+      },
+      {
+        "pain": "Production partners who are hard to work with or miss deadlines",
+        "intensity": "HIGH",
+        "evidence": "Barrett's 'seamless communication' positioning",
+        "confidence": "INFERRED"
+      }
+    ],
+
+    "desires": {
+      "functional": ["Reliable delivery", "Quality that impresses clients", "Easy to work with"],
+      "emotional": ["Confidence recommending to clients", "Smooth production days"],
+      "identity": ["Curator of great creative talent", "Agency with excellent partners"]
+    },
+
+    "objections": [
+      {
+        "objection": "Can they work within our client's budget?",
+        "counter": "Flexible pricing, works within budgets"
+      },
+      {
+        "objection": "Will they make us look good to our client?",
+        "counter": "Portfolio speaks for itself. White-label friendly."
+      }
+    ],
+
+    "transformation_narrative": {
+      "before": "Scrambling to find production help for client projects. Worried about quality and reliability.",
+      "after": "Have a go-to production partner they can trust. Client projects run smoothly."
+    }
+  },
+
+  "segment_priority": {
+    "primary": "Brand Builder (ICP-001)",
+    "secondary": "Agency Producer (ICP-002)",
+    "rationale": "Direct brand relationships are higher margin and build portfolio. Agency work is good volume but less control.",
+    "website_focus": "Lead with brand-direct messaging. Agency-friendly but not agency-focused."
+  },
+
+  "validation_needed": [
+    {
+      "hypothesis": "Brand marketers are primary buyers",
+      "method": "Ask Barrett who actually signs the checks",
+      "priority": "HIGH"
+    },
+    {
+      "hypothesis": "Timeline/speed is a top decision factor",
+      "method": "Post-project client survey",
+      "priority": "MEDIUM"
+    }
+  ]
+}
